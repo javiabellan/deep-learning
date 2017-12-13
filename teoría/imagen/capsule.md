@@ -87,24 +87,54 @@ Actualmete las CNN aprenden la forma 2D de los objetos (lo mejor que pueden) Per
 
 ![posicion](https://cdn-images-1.medium.com/max/1200/1*nUJl2W-YVHPIxykzpixmkA.jpeg)
 
-## Funcionamiento de las capsulas
-
 Hemos dicho que los pooling pierden información relevante, y además si empezamos a girar la imagen, la cnn empieza a fallar.
 
-Entoces se introucen las capules que codifican la información relevante en forma de vector
+## Funcionamiento de las capsulas
 
-la salida de una capsule no es un scalar, es un vector.
+Una cápsula es reponsable de detectar una característica-patrón, al igual que un filtro de una CNN.
 
-El vector de salida codifica **la probabilidad de detectar una característica-patrón**
+Pero la salida de una cápsula no es un scalar, es un vector. Este vector codifica información relevante a la posción de la característica-patrón
 
-Ese vector (que codifica una direección como vector que es), es el estado en que se encuentra la caracteristica
+Es decir, en lugar de dar solo la probabilidad de ver un patrón (un escalar), como hacen las redes convolucionles.
+Las cápsulas devuelven la probabilidad de ver un patrón (un escalar) + la posición-orientación de dicho patrón (un vector).
 
-Asi que cuando el objeto (o mejor dicho una característica-patrón de un ojeto) que estmos detectando se mueve (rota o traslada), la probabilidad seguirá siendo la misma (la longitud del vector no cambia), pero la orientación cambia (creo que se refiere a que los valores del vector cambian)
+Luego la salida de la cápsula codifica:
+* La probabilidad de detectar una característica-patrón (un número) (es la longitud espacial del vector Estado, creo)
+* La posición-estado-orientación en que se encuentra dicho patrón (un vector Estado)
+
+Asi que cuando el objeto (o mejor dicho una característica-patrón de un ojeto) que estmos detectando se mueve (rota o traslada), la probabilidad seguirá siendo la misma (la longitud del vector en el espacio no cambia), pero la orientación del vector cambia.
 
 #### Un ejemplo
 
-Imagina una capsula que detecta una cara
- 
+Imagina una cápsula que detecta una cara, si movemos la cara dentro de la imagen, el vector rotará en su espacio, pero su longitud se mantedrá fija. A esto es lo que se refiere Hilton con equivariance.
+
+* equivariance: La actividad neuronal cambirá si movemos-rotamos el objeto
+* invariance: La actividad neuronal es independiente de si movemos-rotamos el objeto
+
+Sugún Hilton, equivariance es mejor porque proporciona más información, es decir, la red será consciente de en que posición se encutra el objeto. Esto es mejor respecto una red invariante, es decir, que es ciega respecto a la pose del objeto, como pasa en las CNNs.
+
+## Computacin numérica
+
+#### Neurona tradicional (las entradas y salidas son escalares)
+
+1. multiplicar las entradas por los pesos
+2. Sumar
+3. Función de activación (scalar-to-scalar nonlinearity)
+
+#### Cápsula (las entradas y salidas son vectores)
+
+0. Multiplicación de los vectrores de entrada por una matriz de Transformación 
+1. Multiplicación escalar por los pesos
+2. Sumar los vectores
+3. Función de activación (vector-to-vector nonlinearity)
+
+![capsule](https://cdn-images-1.medium.com/max/2000/1*gkRl9_6LK9ZqNF0ttv2kFA.jpeg)
+
+
+## Resumiendo
+
+*
+* La salida de cápsulas que  en forma de vector.
 
 ## Más información
 
