@@ -86,6 +86,26 @@ Para definir la posición final, se juntan los 2 parámteros en una matriz de ta
 Actualmete las CNN aprenden la forma 2D de los objetos (lo mejor que pueden) Pero **si aprendiesen la forma 3D y además les facilitamos esta matriz de posión ¡serían capaces de reconoder un objeto en un imagen 2D desde cualquier ángulo!**
 
 ![posicion](https://cdn-images-1.medium.com/max/1200/1*nUJl2W-YVHPIxykzpixmkA.jpeg)
+
+## Funcionamiento de las capsulas
+
+Hemos dicho que los pooling pierden información relevante, y además si empezamos a girar la imagen, la cnn empieza a fallar.
+
+Entoces se introucen las capules que codifican la información relevante en forma de vector
+
+la salida de una capsule no es un scalar, es un vector.
+
+El vector de salida codifica **la probabilidad de detectar una característica-patrón**
+
+Ese vector (que codifica una direección como vector que es), es el estado en que se encuentra la caracteristica
+
+Asi que cuando el objeto (o mejor dicho una característica-patrón de un ojeto) que estmos detectando se mueve (rota o traslada), la probabilidad seguirá siendo la misma (la longitud del vector no cambia), pero la orientación cambia (creo que se refiere a que los valores del vector cambian)
+
+#### Un ejemplo
+
+Imagina una capsula que detecta una cara
+ 
+
 ## Más información
 
 #### Oficial
