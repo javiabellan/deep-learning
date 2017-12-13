@@ -8,6 +8,9 @@
  * Analizador de sentimientos (Twitter)
  * Crea tus propios artículos de Wikipedia
 
+#### Ideas
+* [NLP Medium](https://codeburst.io/nlp-fundamental-where-humans-team-up-with-machines-to-help-it-speak-ac8c6dbaba88)
+
 ## Hacker: IMÁGENES
  * Reconoce números del 1 al 10
  * Reconoce objetos de la vida real
@@ -18,7 +21,7 @@
 
 ## Hacker: AUDIO/MÚSICA
  * Pasa a texto tu voz (speech recognition)
- * Predice tus gustos musicales (Spotify)
+ * Predice tus gustos musicales [Medium](https://towardsdatascience.com/using-word2vec-for-music-recommendations-bb9649ac2484)
  * Construye un compositor de música
  * Crea tu propio Shazam
 
