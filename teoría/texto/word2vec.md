@@ -1,3 +1,10 @@
+---
+title: Representacion de palabras con vectores
+autor: Javi
+layout: post
+dificultad: fácil
+---
+
 # Representacion de palabras con vectores
 
 > #### Contenido

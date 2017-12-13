@@ -4,6 +4,7 @@ autor: Javi
 date: 13-12-2017
 paper: https://arxiv.org/pdf/1710.09829.pdf
 layout: post
+dificultad: alta
 ---
 
 # Parte 1: Introducción al problema

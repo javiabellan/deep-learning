@@ -1,3 +1,11 @@
+---
+title: Redes neuronales convolucionales
+autor: Javi
+layout: post
+dificultad: alta
+---
+
+
 # Ver lo que una CNN ha aprendido: [Inceptionism](https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html)
 
 ## Prerequisitos:
