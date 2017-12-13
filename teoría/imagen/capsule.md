@@ -30,13 +30,15 @@ El poblema es que aunque sigue una jerarquía correcta, se va perdiendo la distr
 
 ![image](https://cdn-images-1.medium.com/max/800/1*pTu8CbnA_MzRbTh6Ia87hA.png)
 
+Max pooling soluciona un poco este problema??
+
 #### Problema 2: Rotar e invertir la imagen
 
 Este es otro gran problema debido a que las imagenes que se usan para entrenar, suelen tener simpre en la misma posición. Por lo tanto los filtros se aprenderán para ese enfoque. Asi que conforme rotamos la imagen, la CNN dejará de predecir lo que ve. Es un problema de falso negativo.
 
 Una solución común es utilizar imagenes con distista rotación al entrenar la red, pero esto implica aprender los mismos patrones para diferentes posiciones, una solución algo ineficiente en cuanto el numero de patrones a aprender.
 
-#### Problema 3: Hackeo de pixeles
+#### Problema 3: Hackeo de pixeles --necesario??
 
 Además exite un tercer problema (inherente a todas las redes neuronales pero que afecta especialmete a las CNNs) que consiste en modificar lijeramente la imagen para engañar a la red neuronal. Esta modificación consiste en buscar y modificar algunos pixeles de forma concienzuda para engañar a la red, pero visaulmente la imagen no cambia casi nada para un humano. Es un problema de falso negativo.
 
@@ -45,6 +47,41 @@ Además exite un tercer problema (inherente a todas las redes neuronales pero qu
 Debido a estos 3 problemas, Hinton dice que las CNNs están condenadas. Y propone las Capsule netwoks
 
 > “Convolutional neural networks are doomed” — Geoffrey Hinton
+
+
+Prece que vamos a resolver solo el problema 1
+
+Segun Hinton,
+
+> “The pooling operation used in convolutional neural networks is a big mistake and the fact that it works so well is a disaster.”
+
+Por supuesto que se puede quitar el pooling, y la CNNs seguirá funcionano bien.
+
+## Representción interna de un mundo 3D
+
+Los programas de edición 3D que guardan los objetos en 3D (la posición relativa entre los puntos) y cuando hacen render, visualizan el objeto 3D en una imagen 2D.
+
+Hinton afirma que el cerebro hace el proceso inverso al render, es decir, formar el mapa 3D a partir de la imagen en 2D. Probablente analizar jeraqucamente los patrones de la imagen (como hacen las CNNs) pero va un poco más allá: Hay que intentar hacer coincidir esos patrones con los patrones 3D que tenemos aprendidos.
+
+La clave es darse cuenta que la representación de objetos en el cerebro no depende del ángulo de visión.
+
+Hilton afirma que para reconocer objetos de forma correcta, es importante mantener **las relaciones jerárqicas de posición** entre las partes de un objeto.
+
+De esta manera, el roconociento de un objeto podrá ser corrrecto en todas sus posiciones.
+
+Aqui hago un inciso de como se representa la posición de un objeto de forma matemática y usaado en los grogramas de diseño 3D
+
+## Representación matemática de la posición
+
+La posición de un obejeto depende de 2 cosas: dónde se ubica (translación) y en qué posición se encuentra (rotación). Matemáticamente se puede expresar de la siguiente manera:
+
+* **Traslación**: vector de tamaño 3, donde se indica la traslación en cada eje (x,y,z) 
+* [**Rotación**](https://es.wikipedia.org/wiki/Matriz_de_rotaci%C3%B3n): matriz de tamaño 3x3, donde se expresa ¿¿??
+
+Para definir la posición final, se juntan los 2 parámteros en una matriz de tamaño 4x4.
+[Leer este link](http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/MARBLE/high/pose/express.htm)
+
+Actualmete las CNN aprenden la forma 2D de los objetos (lo mejor que pueden) Pero **si aprendiesen la forma 3D y además les facilitamos esta matriz de posión ¡serían capaces de reconoder un objeto en un imagen 2D desde cualquier ángulo!**
 
 ## Más información
 
