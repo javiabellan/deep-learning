@@ -40,6 +40,12 @@ Una solución común es utilizar imagenes con distista rotación al entrenar la 
 
 Además exite un tercer problema (inherente a todas las redes neuronales pero que afecta especialmete a las CNNs) que consiste en modificar lijeramente la imagen para engañar a la red neuronal. Esta modificación consiste en buscar y modificar algunos pixeles de forma concienzuda para engañar a la red, pero visaulmente la imagen no cambia casi nada para un humano. Es un problema de falso negativo.
 
+## Conclusión de las CNNs 
+
+Debido a estos 3 problemas, Hinton dice que las CNNs están condenadas. Y propone las Capsule netwoks
+
+> “Convolutional neural networks are doomed” — Geoffrey Hinton
+
 ## Más información
 
 #### Oficial
