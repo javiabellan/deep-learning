@@ -6,7 +6,7 @@ paper: https://arxiv.org/pdf/1710.09829.pdf
 layout: post
 ---
 
-# Capsule networks
+# Parte 1: Introducción al problema
 
 ## Resumen
 
@@ -89,6 +89,8 @@ Actualmete las CNN aprenden la forma 2D de los objetos (lo mejor que pueden) Per
 
 Hemos dicho que los pooling pierden información relevante, y además si empezamos a girar la imagen, la cnn empieza a fallar.
 
+# Parte 2: Como funcionan las cápsulas
+
 ## Funcionamiento de las capsulas
 
 Una cápsula es reponsable de detectar una característica-patrón, al igual que un filtro de una CNN.
@@ -113,7 +115,7 @@ Imagina una cápsula que detecta una cara, si movemos la cara dentro de la image
 
 Sugún Hilton, equivariance es mejor porque proporciona más información, es decir, la red será consciente de en que posición se encutra el objeto. Esto es mejor respecto una red invariante, es decir, que es ciega respecto a la pose del objeto, como pasa en las CNNs.
 
-## Computacin numérica
+## Computación numérica
 
 #### Neurona tradicional (las entradas y salidas son escalares)
 
@@ -130,11 +132,19 @@ Sugún Hilton, equivariance es mejor porque proporciona más información, es de
 
 ![capsule](https://cdn-images-1.medium.com/max/2000/1*gkRl9_6LK9ZqNF0ttv2kFA.jpeg)
 
+#### Paso 0
+
+Los vectores de entrada son a su vez vectores de salida de alguna capa anterior.
 
 ## Resumiendo
 
 *
 * La salida de cápsulas que  en forma de vector.
+
+
+# Parte 3: Como se entrenan las capsule networks
+
+El algoritmo de entrenamiento es **Dynamic Routing Between Capsules**
 
 ## Más información
 
