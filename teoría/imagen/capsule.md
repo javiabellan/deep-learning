@@ -121,3 +121,7 @@ Imagina una capsula que detecta una cara
 * [Understanding Hinton’s Capsule Networks. Part III: Dynamic Routing Between Capsules.](https://medium.com/ai%C2%B3-theory-practice-business/understanding-hintons-capsule-networks-part-iii-dynamic-routing-between-capsules-349f6d30418)
 * [A Visual Representation](https://medium.com/@mike_ross/a-visual-representation-of-capsule-network-computations-83767d79e737)
 * [Capsule Networks Are Shaking up AI](https://hackernoon.com/capsule-networks-are-shaking-up-ai-heres-how-to-use-them-c233a0971952)
+
+#### Youtube
+
+* [Geoffrey Hinton: "Does the Brain do Inverse Graphics?"](https://youtu.be/TFIMqt0yT2I)
