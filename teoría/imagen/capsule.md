@@ -57,6 +57,8 @@ Segun Hinton,
 
 Por supuesto que se puede quitar el pooling, y la CNNs seguirá funcionano bien.
 
+[Vídeo](https://youtu.be/rTawFwUvnLE) de la charla donde Hilton explica porquá las CNNs funcionan mal. 
+
 ## Representción interna de un mundo 3D
 
 Los programas de edición 3D que guardan los objetos en 3D (la posición relativa entre los puntos) y cuando hacen render, visualizan el objeto 3D en una imagen 2D.
@@ -83,6 +85,7 @@ Para definir la posición final, se juntan los 2 parámteros en una matriz de ta
 
 Actualmete las CNN aprenden la forma 2D de los objetos (lo mejor que pueden) Pero **si aprendiesen la forma 3D y además les facilitamos esta matriz de posión ¡serían capaces de reconoder un objeto en un imagen 2D desde cualquier ángulo!**
 
+![posicion](https://cdn-images-1.medium.com/max/1200/1*nUJl2W-YVHPIxykzpixmkA.jpeg)
 ## Más información
 
 #### Oficial
