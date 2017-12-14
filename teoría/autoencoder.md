@@ -1,13 +1,23 @@
 # Autoencoders
 
-* La entrada y la salida de la red neuronal **es la misma**.
+* Es una red neuronal donde la entrada y la salida **es la misma**.
 * Las capas ocultas codifican la información.
 
 Un autoencoder es una aproximación de la función de identidad, y si ponemos restricciones como reducir el número de neuronas en la capa oculta, podemos comprimir la información y así descubrir patrones interesantes en la información.
 
+Se pueden hacer autoencoders con solo 1 capa oculta o con más.
+
 ![imagen](https://deeplearning4j.org/img/deep_autoencoder.png)
 
-Se pueden hacer a hacer con solo 1 capa oculta o con más
+#### Utilidad
+
+Para tener una representación de menos dimensiones de los datos.
+
+A veces nuestros datos, tienen datos redundates y utilizar los datos así en una red neuronal significa más parametros a aprender, más computación, y más probabilidad de overfitting.
+
+Si puedes recustruir bien el dato con el autencoder, significa que ese autoencoder funciona bien y es fiable.
+
+Entoces podrás usar la codificación del dato porporcionada por el autoencoder, como entrada para una futura red neuroal.
 
 ## Restricted boltzmann machine
 
