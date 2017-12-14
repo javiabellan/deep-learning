@@ -63,7 +63,8 @@ PCA is restricted to a linear map, while auto encoders can have nonlinear enoder
 
 A single layer auto encoder with linear transfer function is nearly equivalent to PCA, where nearly means that the WW found by AE and PCA won't be the same--but the subspace spanned by the respective WW's will.
 
-[prueba matemática](https://pvirie.wordpress.com/2016/03/29/linear-autoencoders-do-pca/)
+[prueba matemática](https://www.quora.com/How-is-a-linear-autoencoder-equal-to-PCA)
+[prueba matemática 2](https://pvirie.wordpress.com/2016/03/29/linear-autoencoders-do-pca/)
 
 
 ## Relación con Restricted boltzmann machine
