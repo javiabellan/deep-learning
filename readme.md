@@ -29,6 +29,8 @@
 
 # Practicar con código
 
+* http://deeplearning.net/tutorial/contents.html
+
 ## Cursos meduim
 
 * [TensorFlow for Hackers](https://medium.com/@curiousily)
