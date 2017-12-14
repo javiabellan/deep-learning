@@ -15,9 +15,14 @@ Las RBMs son un concepto similar a un autoencoder con 1 capa oculta pero con las
 
 * La parte de codificar y descodificar es la misma, es decir, es como "que va y vuelve"
 * Usa un enfoeque estocástico (los coefifcites son iniciados de forma aleaoria)
-* Son la base de las Deep-belief networks
+* Son útiles para sistemas de recomendación
+* Cundo tiene varias capas ocultas son las Deep-belief networks
 
-![RBM](https://deeplearning4j.org/img/two_layer_RBM.png)
+![RBM](https://deeplearning4j.org/img/multiple_hidden_layers_RBM.png)
+
+"A la vuleta" se multiplican por los mismos pesos que a la ida, pero los bias son nuevos.
+
+![RBM2](https://deeplearning4j.org/img/reconstruction_RBM.png)
 
 ## Referencias
 
