@@ -9,6 +9,13 @@
 5. Deep Reinforcement Learning
 
 
+#### Dimesionalitiy reduction
+
+* Autoencoder: Codificador + Descodificador (comprimir información)
+* Restricted boltzmann machine: Como el autoencoder pero va y vuelve
+* PCA: Codificador. Reduce el numero de dimensiones
+* word2vect: Similar al autoencoder
+
 
 
 
