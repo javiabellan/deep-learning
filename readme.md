@@ -2,17 +2,23 @@
 
 ## Cursos vídeo
 
+#### Solo redes neuronales
+* [3Blue1Brown](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi): Videos muy visuales para entender las redes neuronales. **RECOMENDADO POR JAVI**
+* [Welch Labs](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU): Otro canal de Youtube donde explica las redes neuronales.
+
+#### Deep learning
 * [Udacity](https://www.udacity.com/courses/deep-learning) **RECOMENDADO POR JAVI**
 * [Fast.ai](http://course.fast.ai/)
 * [Curso de Andrew Ng](https://www.deeplearning.ai/)
+* 
 
 ## Cursos lectura
 
 * [Libro de Ian Goodfellow](http://www.deeplearningbook.org): Mejor libro de referencia sobre el deep learning. Es largo, pero porque lo explica todo y bien con mucho detalle. Es bastante matemático.
 * [Libro de Michael Nielsen](http://neuralnetworksanddeeplearning.com/): Lectura online rápida donde se explica los conceptos fundamentales del deep learning bastante bien y de una forma más visual e intuitiva, no tan matemática. **RECOMENDADO POR JAVI**
-* [Tutoriales de Stanford de DL](http://deeplearning.stanford.edu/tutorial/)
-* [Curso Stanford de DL para imagen](http://cs231n.stanford.edu/): Bastante completo, se explican las NNs y CNNs
-* [Curso Stanford de DL para texto](http://cs224d.stanford.edu/)
+* [Tutoriales de Stanford](http://deeplearning.stanford.edu/tutorial/)
+* [Curso Stanford enfocado a imagen](http://cs231n.stanford.edu/): Bastante completo, se explican las NNs y CNNs
+* [Curso Stanford enfocado a texto](http://cs224d.stanford.edu/)
 * [Cognitiveclass](https://cognitiveclass.ai)
 
 ## Tutoriales alatorios
