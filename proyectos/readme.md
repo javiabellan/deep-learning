@@ -1,14 +1,16 @@
 # Proyectos
 
 ## Texto
-* Traductor
-* Predictor de palabras (autocompletion)
-* Genera resúmenes
+* Traductor (Machine Translation)
+* Predictor de palabras (Autocompletion)
+* Genera resúmenes (Summarizer)
+* Responder a preguntas de un texto (Question Answering) [link](https://github.com/vinhkhuc/MemN2N-babi-python)
+* Responder preguntas sobre una imagen (Question Answering) [link](https://github.com/abhshkdz/neural-vqa)
 * Crea un chatbot
-* Analizador de sentimientos (Twitter)
+* Búsqueda semántica de documentos (Semantic Search)
+* Analizador de sentimientos (Twitter) (Sentiment Analysis)
 * Crea tus propios artículos de Wikipedia
-* [Responder preguntas (texto)](https://github.com/vinhkhuc/MemN2N-babi-python)
-* [Responder preguntas (imagen)](https://github.com/abhshkdz/neural-vqa)
+* Speech Recognition
 
 #### Ideas
 * [NLP Medium](https://codeburst.io/nlp-fundamental-where-humans-team-up-with-machines-to-help-it-speak-ac8c6dbaba88)
@@ -90,7 +92,12 @@
 * [Github projects biology](https://github.com/hussius/deeplearning-biology)
  
 ---
- 
+
+# Proyectos usando apis
+* [Stanford NLP API](https://stanfordnlp.github.io/CoreNLP/)
+
+---
+
 ## Ideas
 
 #### Medium
