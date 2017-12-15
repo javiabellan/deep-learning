@@ -15,25 +15,31 @@
 * (https://algorithmia.com/tags/text-analysis)
 
 ## Imágen
+
+### Reconocimiento (dime lo que ves)
 * Reconoce números del 1 al 10
 * Reconoce objetos de la vida real
-* Caras
+* Reconocimiento de caras
    * [Reconocimiento](https://github.com/1adrianb/face-alignment)
    * [Reconocer emociones en caras](https://github.com/oarriaga/face_classification)
-   * [Editor de parámetros (genero, pelo, gafas, emoción,...)](https://github.com/ajbrock/Neural-Photo-Editor)
-   * [Reconstrucción en 3D](https://github.com/AaronJackson/vrn)
-   * [Quitar gafas](https://blog.insightdatascience.com/isee-removing-eyeglasses-from-faces-using-deep-learning-d4e7d935376f)
+* [Crea descripciones desde imágenes](https://github.com/karpathy/neuraltalk2)
+* [Cuenta una historia de la imágen](https://github.com/ryankiros/neural-storyteller)
+   
+### Generación (dibuja algo nuevo en base a algo)
 * [Aplica filtros de estilo a tus imágenes](https://github.com/jcjohnson/neural-style)
-* [De imagen a imagen (pix2pix)](https://github.com/phillipi/pix2pix)
-* Crea imagenes desde descripciones
 * Pintor de arte
    * [Con ayuda (de bocecto de paint a cuadro)](https://github.com/alexjc/neural-doodle)
    * Sin ayuda (de descripción a caudro)
+* [De imagen a imagen (pix2pix)](https://github.com/phillipi/pix2pix)
+* Caras
+   * [Editor de parámetros (genero, pelo, gafas, emoción,...)](https://github.com/ajbrock/Neural-Photo-Editor)
+   * [Reconstrucción en 3D](https://github.com/AaronJackson/vrn)
+   * [Quitar gafas](https://blog.insightdatascience.com/isee-removing-eyeglasses-from-faces-using-deep-learning-d4e7d935376f)
+* Crea imagenes desde descripciones
 * [Dar color a imágenes en blanco y negro](https://github.com/pavelgonchar/colornet)
 * [Aumentar la resolución](https://github.com/david-gpu/srez)
-* [Crea descripciones desde imágenes](https://github.com/karpathy/neuraltalk2)
 * Handwriting Generation (de texto a manuscrito)
- 
+
 #### Ideas
 * [DL computer vision python book](https://www.pyimagesearch.com/deep-learning-computer-vision-python-book/)
 
@@ -55,16 +61,26 @@
 
 ## Economía
 * Predice los precios de las acciones
- 
+
 ## Derecho
 * Construye un abogado (chatbot)
+
+#### Más info
+* https://www.topbots.com/automating-the-law-a-landscape-of-legal-a-i-solutions/
+* https://www.legalrobot.com/
     
 ## Medicina
 * [Predecir ataques de corazón](https://github.com/jisaacso/DeepHeart)
 * Analizando imágenes clínicas
-* Analizando tu ADN
+* [Analizando tu ADN](https://research.googleblog.com/2017/12/deepvariant-highly-accurate-genomes.html)
 * Descubriendo medicamentos
 * El fin del médico como persona
+
+#### Más info
+* [Nvidia medicine](http://www.nvidia.com/object/deep-learning-in-medicine.html)
+* [Nvidia healthcare](https://www.nvidia.com/en-us/deep-learning-ai/industries/healthcare/)
+* [Github papers imagen medicas](https://github.com/albarqouni/Deep-Learning-for-Medical-Applications)
+* [Github projects biology](https://github.com/hussius/deeplearning-biology)
  
 ---
  
