@@ -10,7 +10,10 @@
 * [Udacity](https://www.udacity.com/courses/deep-learning) **RECOMENDADO POR JAVI**
 * [Fast.ai](http://course.fast.ai/)
 * [Curso de Andrew Ng](https://www.deeplearning.ai/)
-* 
+
+#### Cursos de Stanford (Youtube)
+* [Natural Language Processing with Deep Learning](https://www.youtube.com/playlist?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6)
+* [Convolutional Neural Networks for Visual Recognition](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)
 
 ## Cursos lectura
 
