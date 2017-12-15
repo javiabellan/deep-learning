@@ -16,7 +16,7 @@
 
 ## Imágen
 
-### Reconocimiento (dime lo que ves)
+#### Reconocimiento (dime lo que ves)
 * Reconoce números del 1 al 10
 * Reconoce objetos de la vida real
 * Reconocimiento de caras
@@ -25,22 +25,33 @@
 * [Crea descripciones desde imágenes](https://github.com/karpathy/neuraltalk2)
 * [Cuenta una historia de la imágen](https://github.com/ryankiros/neural-storyteller)
    
-### Generación (dibuja algo nuevo en base a algo)
-* [Aplica filtros de estilo a tus imágenes](https://github.com/jcjohnson/neural-style)
+#### Generación (dibuja algo nuevo en base a algo)
+* [Aplica filtros de estilo a tus imágenes](https://github.com/jcjohnson/neural-style) (Style Networks)
 * Pintor de arte
    * [Con ayuda (de bocecto de paint a cuadro)](https://github.com/alexjc/neural-doodle)
    * Sin ayuda (de descripción a caudro)
-* [De imagen a imagen (pix2pix)](https://github.com/phillipi/pix2pix)
+* [De imagen a imagen (pix2pix)](https://github.com/phillipi/pix2pix)  (GAN)
+   * [Dar color a imágenes en blanco y negro](https://github.com/pavelgonchar/colornet)
 * Caras
-   * [Editor de parámetros (genero, pelo, gafas, emoción,...)](https://github.com/ajbrock/Neural-Photo-Editor)
+   * [Editor de parámetros (genero, pelo, gafas, emoción,...)](https://github.com/ajbrock/Neural-Photo-Editor) (GAN)
    * [Reconstrucción en 3D](https://github.com/AaronJackson/vrn)
    * [Quitar gafas](https://blog.insightdatascience.com/isee-removing-eyeglasses-from-faces-using-deep-learning-d4e7d935376f)
 * Crea imagenes desde descripciones
-* [Dar color a imágenes en blanco y negro](https://github.com/pavelgonchar/colornet)
-* [Aumentar la resolución](https://github.com/david-gpu/srez)
+* [Aumentar la resolución](https://github.com/david-gpu/srez) (DCGAN)
 * Handwriting Generation (de texto a manuscrito)
 
+#### Tecnologías
+
+* CNN
+* GAN
+   * [DCGAN](https://github.com/carpedm20/DCGAN-tensorflow)
+* [Deepdream](https://github.com/google/deepdream) (junio 2015)
+* [Style Networks](https://arxiv.org/abs/1508.06576) (agosto 2015)
+* [Neural Patches](https://arxiv.org/abs/1601.04589) (enero 2016)
+    * [Semantic Style Transfer](https://arxiv.org/abs/1603.01768) - [Neural doodles](https://nucl.ai/blog/neural-doodles/) (marzo 2016)
+
 #### Ideas
+* https://nucl.ai/blog/
 * [DL computer vision python book](https://www.pyimagesearch.com/deep-learning-computer-vision-python-book/)
 
 ## Música y audio
