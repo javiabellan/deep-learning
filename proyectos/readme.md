@@ -1,7 +1,7 @@
 # Proyectos
 
 ## Texto
-* Construye un traductor
+* Traductor
 * Predictor de palabras (autocompletion)
 * Genera resúmenes
 * Crea un chatbot
@@ -34,6 +34,7 @@
    * Sin ayuda (de descripción a caudro)
 * [De imagen a imagen (pix2pix)](https://github.com/phillipi/pix2pix)  (GAN)
    * [Dar color a imágenes en blanco y negro](https://github.com/pavelgonchar/colornet)
+   * [image-analogies](https://github.com/awentzonline/image-analogies)
 * Caras
    * [Editor de parámetros (genero, pelo, gafas, emoción,...)](https://github.com/ajbrock/Neural-Photo-Editor) (GAN)
    * [Reconstrucción en 3D](https://github.com/AaronJackson/vrn)
@@ -56,11 +57,14 @@
 * [Clasificar sonidos urbanos](https://github.com/aqibsaeed/Urban-Sound-Classification)
 
 ## Vídeo
-* Conducción autónoma
 * Reconocimiento de actividades
 * [Leer labios](https://github.com/astorfi/lip-reading-deeplearning)
 * Suplantar la cara de otro (face2face)
 * Intercamiar tu cara con alguien (face swap)
+
+## Vehículos y robots
+* Conducción autónoma (coche)
+* Conducción autonoma (dron) [vídeo](https://www.youtube.com/watch?v=umRdt3zGgpU)
 
 ## Economía
 * Predice los precios de las acciones
