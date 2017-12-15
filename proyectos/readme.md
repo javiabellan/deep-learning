@@ -17,14 +17,16 @@
 ## Imágen
 
 #### Reconocimiento (dime lo que ves)
-* Reconoce números del 1 al 10
-* Reconoce objetos de la vida real
-* Reconocimiento de caras
-   * [Reconocimiento](https://github.com/1adrianb/face-alignment)
-   * [Reconocer emociones en caras](https://github.com/oarriaga/face_classification)
-* [Crea descripciones desde imágenes](https://github.com/karpathy/neuraltalk2)
+* Reconocimiento de números (del 0 al 9)
+* Reconocimiento de objetos
+* [Descripción de imágenes](https://github.com/karpathy/neuraltalk2)
 * [Cuenta una historia de la imágen](https://github.com/ryankiros/neural-storyteller)
-   
+
+#### Localización (dime lo que ves y dónde está)
+* Locaclización de objetos
+* Reconocimiento de caras [openface](https://github.com/cmusatyalab/openface), [face-alignment](https://github.com/1adrianb/face-alignment)
+* [Reconocimiento de emociones](https://github.com/oarriaga/face_classification)
+
 #### Generación (dibuja algo nuevo en base a algo)
 * [Aplica filtros de estilo a tus imágenes](https://github.com/jcjohnson/neural-style) (Style Networks)
 * Pintor de arte
@@ -45,7 +47,7 @@
 * [DL computer vision python book](https://www.pyimagesearch.com/deep-learning-computer-vision-python-book/)
 
 ## Música y audio
-* Pasa a texto tu voz (speech recognition)
+* Pasa a texto tu voz (speech recognition) [wavenet](https://github.com/ibab/tensorflow-wavenet)
 * [Recomendación de música](https://towardsdatascience.com/using-word2vec-for-music-recommendations-bb9649ac2484)
 * [Componer música](http://www.hexahedria.com/2015/08/03/composing-music-with-recurrent-neural-networks/)
    * [Música clásica](https://github.com/hexahedria/biaxial-rnn-music-composition)
