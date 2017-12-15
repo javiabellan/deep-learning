@@ -1,8 +1,8 @@
 # Proyectos
 
 ## Texto
+* Teclado predictivo (Autocompletion) [link](https://medium.com/@curiousily/making-a-predictive-keyboard-using-recurrent-neural-networks-tensorflow-for-hackers-part-v-3f238d824218)
 * Traductor (Machine Translation)
-* Predictor de palabras (Autocompletion)
 * Genera resúmenes (Summarizer)
 * Responder a preguntas de un texto (Question Answering) [link](https://github.com/vinhkhuc/MemN2N-babi-python)
 * Responder preguntas sobre una imagen (Question Answering) [link](https://github.com/abhshkdz/neural-vqa)
@@ -64,9 +64,9 @@
 * Suplantar la cara de otro (face2face)
 * Intercamiar tu cara con alguien (face swap)
 
-## Vehículos y robots
-* Conducción autónoma (coche)
-* Conducción autonoma (dron) [vídeo](https://www.youtube.com/watch?v=umRdt3zGgpU)
+## Conducción autónoma
+* [Detectar semáforos](https://becominghuman.ai/traffic-light-detection-tensorflow-api-c75fdbadac62)
+* Conducción autonoma dron [vídeo](https://www.youtube.com/watch?v=umRdt3zGgpU)
 
 ## Economía
 * Predice los precios de las acciones
