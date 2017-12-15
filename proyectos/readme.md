@@ -40,16 +40,6 @@
 * [Aumentar la resolución](https://github.com/david-gpu/srez) (DCGAN)
 * Handwriting Generation (de texto a manuscrito)
 
-#### Tecnologías
-
-* CNN
-* GAN
-   * [DCGAN](https://github.com/carpedm20/DCGAN-tensorflow)
-* [Deepdream](https://github.com/google/deepdream) (junio 2015)
-* [Style Networks](https://arxiv.org/abs/1508.06576) (agosto 2015)
-* [Neural Patches](https://arxiv.org/abs/1601.04589) (enero 2016)
-    * [Semantic Style Transfer](https://arxiv.org/abs/1603.01768) - [Neural doodles](https://nucl.ai/blog/neural-doodles/) (marzo 2016)
-
 #### Ideas
 * https://nucl.ai/blog/
 * [DL computer vision python book](https://www.pyimagesearch.com/deep-learning-computer-vision-python-book/)
