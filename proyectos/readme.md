@@ -1,10 +1,11 @@
 # Proyectos
 
-|      Proyecto      |      Datos       | Tecnología |
-|:------------------:|:----------------:|:----------:|
-| Teclado predictivo | texto -> palabra | LSTM       |
-| Traductor          | texto -> texto   | seq2seq    |
-| Genera resúmenes   | texto -> texto   | seq2seq    |
+|      Proyecto      |      Datos       | Tecnología | Referencia |
+|:------------------:|:----------------:|:----------:|------------|
+| Teclado predictivo | texto -> letra   | LSTM       | [link](https://medium.com/@curiousily/making-a-predictive-keyboard-using-recurrent-neural-networks-tensorflow-for-hackers-part-v-3f238d824218) |
+| Teclado predictivo 2 | texto -> palabra | word embedding, LSTM | [Link](https://github.com/dipendra009/Text-generation) |
+| Traductor          | texto -> texto   | seq2seq    | |
+| Genera resúmenes   | texto -> texto   | seq2seq    | |
 
 ## Texto
 
