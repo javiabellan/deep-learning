@@ -1,6 +1,14 @@
 # Proyectos
 
+|      Proyecto      |      Datos       | Tecnología |
+|:------------------:|:----------------:|:----------:|
+| Teclado predictivo | texto -> palabra | LSTM       |
+| Traductor          | texto -> texto   | seq2seq    |
+| Genera resúmenes   | texto -> texto   | seq2seq    |
+
 ## Texto
+
+
 * Teclado predictivo (Autocompletion) [link](https://medium.com/@curiousily/making-a-predictive-keyboard-using-recurrent-neural-networks-tensorflow-for-hackers-part-v-3f238d824218)
 * Traductor (Machine Translation)
 * Genera resúmenes (Summarizer)
