@@ -45,6 +45,8 @@ El problea de las RNN es que el problema de **vanishing and exploding gradient**
 
 ## Datos
 
+Lo primero que tenemos que hacer es conseguir unos buenos datos, vamos a descargar un libro de Shakespeare.
+
 Vamo a usar el libro *Más allá del bien y del mal* de Friedrich Nietzsche para entrenar nuestra red. Y pasamos todas las letras a minúscula para simplificar.
 
 ```python
@@ -53,7 +55,16 @@ texto = open(ruta).read().lower()
 print('Número de letras:', len(text))
 ```
 
-Vemos que tenemos un texto de 600893 letras para entrenar la red
+Vemos que tenemos un texto de 600893 letras para entrenar la red.
+
+Una vez que obtenemos los datos vamos a limpiarlos un poco quitar signos de puntuación raros y todo eso.
+
+```python
+punctuation = string.punctuation
+punctuation = ''.join([x for x in punctuation if x not in ['-', "'"]])
+s_text = re.sub(r'[{}]'.format(punctuation), ' ', s_text)
+s_text = re.sub('\s+', ' ', s_text).strip().lower()
+```
 
 
 ## Construir el diccionario
@@ -65,65 +76,26 @@ Aquí estamos utilizando la técnica del diccionario, donde a cada palabra le as
 Otra opción, probalemente mucho mejor, es usar word emmbedings. De esta forma las palabras se codifican a un vector de tamaño fijo que aporta información sobre el significado de la palabra.
 
 
-## Modelo
-
-Concretamente vamos a pasarle un cadena de **40** letras y la red tendrá que predecir la siginte letra,
-
-
-# Implementación en Tensorflow
-Vamos a ver como se hece un
-
-## Descargar datos
-Lo primero que tenemos que hacer es conseguir unos buenos datos, vamos a descargar un libro de Shakespeare.
+Array de parejas que cuanta cuantas veces aparece cada palabra. Además están oredeanads descententemete (primero las más frecuentes).
 
 ```python
-data_dir = 'data'
-data_file = 'shakespeare.txt'
-if not os.path.isfile(os.path.join(data_dir, data_file)):
-    if not os.path.exists(data_dir):
-        os.makedirs(data_dir)
-    print('Data file not found, downloading the dataset')
-    shakespeare_url = 'http://www.gutenberg.org/cache/epub/100/pg100.txt'
-    response = requests.get(shakespeare_url)
-    shakespeare_file = response.content
+count = collections.Counter(words).most_common()
+[ (',', 14), ('the', 11), ('.', 8), ('and', 7), ...
 ```
 
-## Limpiar datos
-Vamos a limpar los datos, quitar signos de puntuación raros y todo eso.
+El dictionary, aprovechara el orden antarior, para asignar índices únicoas a cada palabra (el 0 para la palabra mas frecuente, y asi).
 
 ```python
-punctuation = string.punctuation
-punctuation = ''.join([x for x in punctuation if x not in ['-', "'"]])
-s_text = re.sub(r'[{}]'.format(punctuation), ' ', s_text)
-s_text = re.sub('\s+', ' ', s_text).strip().lower()
+dictionary = dict()
+    for word, _ in count:
+        dictionary[word] = len(dictionary)
+    reverse_dictionary = dict(zip(dictionary.values(), dictionary.keys()))
+    return dictionary, reverse_dictionary
+
+#     dictionary:         { ',':0,  'the':1,  '.':2,  'and':3, ...
+#     reverse_dictionary: { 0:',',  1:'the',  2:'.',  3:'and', ... 
 ```
-
-## Construir vocabulario
-
-```python
-def build_vocab(text, min_word_freq):
-    word_counts = collections.Counter(text.split(' '))
-    print ('word counts: ', len(word_counts), 'text len: ', len(text.split(' ')))
-    # limit word counts to those more frequent than cutoff
-    word_counts = {key: val for key, val in word_counts.items() if val > min_word_freq}
-    # Create vocab --> index mapping
-    words = word_counts.keys()
-    vocab_to_ix_dict = {key: (ix + 1) for ix, key in enumerate(words)}
-    # Add unknown key --> 0 index
-    vocab_to_ix_dict['unknown'] = 0
-    # Create index --> vocab mapping
-    ix_to_vocab_dict = {val: key for key, val in vocab_to_ix_dict.items()}
-    return (ix_to_vocab_dict, vocab_to_ix_dict)
-
-# Build Shakespeare vocabulary
-min_word_freq = 5  # Trim the less frequent words off
-ix2vocab, vocab2ix = build_vocab(s_text, min_word_freq)
-vocab_size = len(ix2vocab) + 1
-print('Vocabulary Length = {}'.format(vocab_size))
-# Sanity Check
-assert (len(ix2vocab) == len(vocab2ix))
-```
-
+    
 ## Convertir vocabulario a vectores de palabras
 
 ```python
