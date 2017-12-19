@@ -31,6 +31,7 @@
 * [setosa](http://setosa.io): Explicaciones visuales de cosas matemáticas (No solo deep learning)
 * [Backpropagation en CNNs](http://www.jefkine.com/general/2016/09/05/backpropagation-in-convolutional-neural-networks/)
 * http://kvfrans.com
+* https://jaan.io/blog/
 
 # Practicar con código
 
