@@ -49,7 +49,9 @@ No solo se comprimen datos, sino que una vez comprimidos mantienen su significad
 
 Pasar documentos de texto a "bag of words" (Probabilidad de ocurrencia de cada palabra) y usar para buscar documentos por tema concreto.
 
+## Variational autoencoder
 
+Leer http://kvfrans.com/variational-autoencoders-explained/
 
 ## Denoising Autoencoders
 
