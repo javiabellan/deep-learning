@@ -1,7 +1,9 @@
 # Traductor
 
 ## Teoría necesaría
-wordEmd, RNN, LSTM, Seq2seq;
+* wordEmd
+* RNN, LSTM
+* [Sequence to sequence](/teoría/seq2seq.md)
 
 ## Introducción
 
@@ -15,7 +17,7 @@ En concreto la parte que lee y va entendiendo, es el codificador, (en color azul
 
 ![img](https://github.com/tensorflow/nmt/blob/master/nmt/g3doc/img/encdec.jpg)
 
-Esta estructura de red neuronal se llama **sequence to sequence** y es muy útil para traducir porque separa la parte de entender de la parte de traducir. Por ejemplo, imagina que tenemos un traductor de chino a español, si ahora queremos un traductor de chino a inglés, el codificador que entiende chino ya lo tenemos, ahora sólo nos falta el decodificador que traduce a inglés.
+Esta estructura de red neuronal se llama [**sequence to sequence**](/teoría/seq2seq.md) y es muy útil para traducir porque separa la parte de entender de la parte de traducir. Por ejemplo, imagina que tenemos un traductor de chino a español, si ahora queremos un traductor de chino a inglés, el codificador que entiende chino ya lo tenemos, ahora sólo nos falta el decodificador que traduce a inglés.
 
 ## Vayamos por partes
 
