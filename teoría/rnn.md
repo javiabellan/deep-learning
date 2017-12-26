@@ -1,0 +1,3 @@
+# Red neurnal recurrente
+
+## LSTM
