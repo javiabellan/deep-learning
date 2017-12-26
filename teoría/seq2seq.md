@@ -2,9 +2,10 @@
 
 
 ## Aplicaciones
-* Traducción
-* Sistemas de preguntas y respuestas (Siri, Cortana etc.)
-* Transcripción de audio (reconocimiento de voz?)
+* Traducción (de un idoma a otro)
+* Diálogo (de preguntas a respuestas)
+* Transcripción de voz (de voz a texto)
+* Y cualquier otro problema que se trate de pasar algo a otra cosa!
 
 ## Idea principal
 
