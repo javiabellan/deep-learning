@@ -4,6 +4,7 @@
 ## Aplicaciones
 * Traducción (de un idoma a otro)
 * Diálogo (de preguntas a respuestas)
+* Resumen de texto (de texto largo a texto corto)
 * Transcripción de voz (de voz a texto)
 * Y cualquier otro problema que se trate de pasar algo a otra cosa!
 
@@ -21,3 +22,8 @@ La ventaja de estar separado en dos partes (codificador y decodificador) es que 
 * https://www.tensorflow.org/tutorials/seq2seq
 * https://github.com/tensorflow/nmt
 * https://arxiv.org/abs/1703.01619
+
+#### Papers oficiales
+
+* https://arxiv.org/abs/1409.3215
+* https://arxiv.org/abs/1406.1078
