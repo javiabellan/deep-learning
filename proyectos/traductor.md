@@ -11,7 +11,7 @@ Pero con la llegada de las redes neuronales recurrentes, la red va leyendo el te
 
 ## Funcionamiento
 
-En concreto la parte que lee y va entendiendo, es el codificador, (en color azul). El codificador representa la información que va leyendo  en forma de un vector de números. Finalemente cuando ya se ha leído el texto, la traducción resultante la genera el decodificardor (en color rojo) a partir del vector.
+En concreto la parte que lee y va entendiendo, es el codificador, (en color azul). Éste representa lo que va entendiendo en forma de un vector de números. Finalemente cuando acaba de leer, la traducción resultante la genera el decodificardor (en color rojo) a partir del vector "de entendimiento".
 
 ![img](https://github.com/tensorflow/nmt/blob/master/nmt/g3doc/img/encdec.jpg)
 
