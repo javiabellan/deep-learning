@@ -114,6 +114,7 @@
  * [Machine learning is fun](https://medium.com/@ageitgey)
 
 #### Otros
+* https://github.com/sachinruk/deepschool.io
 * http://deeplearninggallery.com/
 * https://ml-showcase.com/
 * https://algorithmia.com/algorithms
