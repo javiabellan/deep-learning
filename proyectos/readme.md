@@ -1,25 +1,20 @@
 # Proyectos
 
+## Texto
+
 |      Proyecto        |      Datos       | Tecnología | Referencia |
 |----------------------|:----------------:|:----------:|:----------:|
 | Teclado predictivo   | texto -> letra   | LSTM       | [link](https://medium.com/@curiousily/making-a-predictive-keyboard-using-recurrent-neural-networks-tensorflow-for-hackers-part-v-3f238d824218) |
-| Teclado predictivo 2 | texto -> palabra | word embedding, LSTM | [link](https://github.com/dipendra009/Text-generation) |
-| Traductor            | texto -> texto   | seq2seq    | |
-| Genera resúmenes     | texto -> texto   | seq2seq    | |
-
-## Texto
-
-
-* Teclado predictivo (Autocompletion) [link](https://medium.com/@curiousily/making-a-predictive-keyboard-using-recurrent-neural-networks-tensorflow-for-hackers-part-v-3f238d824218)
-* Traductor (Machine Translation)
-* Genera resúmenes (Summarizer)
-* Responder a preguntas de un texto (Question Answering) [link](https://github.com/vinhkhuc/MemN2N-babi-python)
-* Responder preguntas sobre una imagen (Question Answering) [link](https://github.com/abhshkdz/neural-vqa)
-* Crea un chatbot
-* Búsqueda semántica de documentos (Semantic Search)
-* Analizador de sentimientos (Twitter) (Sentiment Analysis)
-* Crea tus propios artículos de Wikipedia
-* Speech Recognition
+| Teclado predictivo 2 (Autocompletion) | texto -> palabra | word embedding, LSTM | [link](https://github.com/dipendra009/Text-generation) |
+| Traductor (Neural Machine Translation)    | texto -> texto traducido   | seq2seq    | [link](https://github.com/tensorflow/nmt) |
+| Genera resúmenes (Summarizer)    | texto -> texto resumido    | seq2seq    | |
+| bot (Question Answering)   | pregrunta -> respuesta     | seq2seq    | [link](https://github.com/vinhkhuc/MemN2N-babi-python)|
+| Conversación (bot)   | muchas pregruntas -> respuestas     | seq2seq    | [link](https://github.com/vinhkhuc/MemN2N-babi-python)|
+| Reconocimiento de voz (Speech Recognition) | audio -> texto            | seq2seq    | |
+| Responder preguntas sobre una imagen  | imagen -> texto            |     | [link](https://github.com/abhshkdz/neural-vqa) |
+| Búsqueda semántica de documentos (Semantic Search) | | | |
+| Analizador de sentimientos (Twitter) (Sentiment Analysis) | | | |
+| Crea tus propios artículos de Wikipedia | | | |
 
 #### Ideas
 * [NLP Medium](https://codeburst.io/nlp-fundamental-where-humans-team-up-with-machines-to-help-it-speak-ac8c6dbaba88)
