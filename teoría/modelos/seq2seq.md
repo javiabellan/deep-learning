@@ -18,6 +18,7 @@ La ventaja de estar separado en dos partes (codificador y decodificador) es que 
 
 ## Referencias
 
+* https://guillaumegenthial.github.io/sequence-to-sequence.html
 * https://towardsdatascience.com/sequence-to-sequence-tutorial-4fde3ee798d8
 * https://www.tensorflow.org/tutorials/seq2seq
 * https://github.com/tensorflow/nmt
