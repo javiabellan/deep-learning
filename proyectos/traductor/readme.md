@@ -25,6 +25,29 @@ Al igual que los humanos, una [**red neuronal recurrente**](/teoría/modelos/rnn
 
 In this tutorial, we consider as examples a deep multi-layer RNN which is unidirectional and uses LSTM as a recurrent unit. We show an example of such a model in Figure 2. In this example, we build a model to translate a source sentence "I am a student" into a target sentence "Je suis étudiant". At a high level, the NMT model consists of two recurrent neural networks: the encoder RNN simply consumes the input source words without making any prediction; the decoder, on the other hand, processes the target sentence while predicting the next words.
 
+## Entender las palabras
+
+Fijate en cualquer texto, es solo una lista de palabras, y cada palabra es un lista de letras. Para tí la palabras tienen sentido, pero para un ordenador, sólo son letras detrás de otras. Por lo tanto parece que antes que aprender a traducir, habrá que aprender el significado de las palabras de un idioma.
+
+Dar significado a las palabras, es un proceso previo que se debe hacer y se conoce como [**word embedding**](/teoría/modelos/embedding.md). Consiste en crear una representación en forma de vector las palabras más comunes, de forma que esos números apoerten información sobre lo que esa palabra representa. (Las palabras más raras tendrán un vector comun indicando que la palabra es desconocida).
+
+En nuestro caso vamos a coger los pesos de un word embeding ya entrenado como son word2vec o Glove. Pero en teoría, si tenemos una gran cantidad de datos, podemos hacer el word embedding nosotros mismos.
+
+Los pesos que transorman las palabras a vectores será la primera capa de la red neuronal.
+
+## Codificador
+
+La entrada de del codificador serán las palabras en forma de vector que el word emedding proporciona. Como el codificador es una red recurrente, la entrada será un vector, luego otro, luego otro y así. Pero nosotros vemos la "vista extendida" de la red neuronal recurrente, que nos permite ver las distintas palabras de entrada a lo largo del tiempo.
+
+> ### Como interpretar la imagen
+> * La red neuronal va de abajo (entrada) hacia arriba (salida)
+> * Por un lado tenemos el codificador en rojo a la izquierda y el decodificador en azul a la derecha.
+> * Cada fila horizontal de celdas, son la misma celda, pero en diferentes instantes de tiempo.
+> * Los instantes de tiempo avanzan de izquierda a derecha.
+> * Las flechas laterlales indican la actualización del estado interno para una celda recurrente LSTM.
+> * En la parte inferior (primera capa) se produce el word embedding
+> * En la parte superior (última capa) se produce el word embedding inverso.
+
 <p align="center">
 <img width="50%" src="https://github.com/tensorflow/nmt/blob/master/nmt/g3doc/img/seq2seq.jpg" />
 <br>
@@ -34,23 +57,10 @@ a target sentence "Je suis étudiant". Here, "&lts&gt" marks the start of the
 decoding process while "&lt/s&gt" tells the decoder to stop.
 </p>
 
-## Entender las palabras
-
-Fijate en cualquer texto, es solo una lista de palabras, y cada palabra es un lista de letras. Para tí la palabras tienen sentido, pero para un ordenador, sólo son letras detrás de otras. Por lo tanto parece que antes que aprender a traducir, habrá que aprender el significado de las palabras de un idioma.
-
-Dar significado a las palabras, es un proceso previo que se debe hacer y se conoce como [**word embedding**](/teoría/modelos/embedding.md). Consiste en crear una representación en forma de vector las palabras más comunes, de forma que esos números apoerten información sobre lo que esa palabra representa. (Las palabras más raras tendrán un vector comun indicando que la palabra es desconocida).
-
-En nuestro caso vamos a coger los pesos de un word embeding ya entrenado como son word2vec o Glove. Pero en teoría, si tenemos una gran cantidad de datos, podemos hacer el word embedding nosotros mismos.
-
-## Primera capa
-
-Los pesos que transorman las palabras a vectores será la primera capa de la red neuronal. Por lo tanto, la siguiente capa recivirá como entrada un vector que el word emedding proporciona. Como estamos trabajando con redes recurrente, la entrada será un vector, luego otro, luego otro y así. Pero nosotros vemos la "vista extendida" de la red neuronal recurrente, que nos permite ver las distintas palabras de entrada a lo largo del tiempo.
-
-
 Según estemos entrenando o provando porporcinamos el texto traducido o no, pero siempre hay que poner una marca o separador al final del texto a traducir. Ejemplo:
 
-* Una frase de entrenamiento: `I am a student _ Yo soy un estudiante`.
-* Una frase nueva para traducir: `You are a student _`.
+* Una frase de entrenamiento: `I am a student _ Yo soy un estudiante`
+* Una frase nueva para traducir: `You are a student _`
 
 
 
