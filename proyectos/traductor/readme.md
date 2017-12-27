@@ -1,9 +1,10 @@
-# Traductor
+---
+autor: Javi
+tipo: proyecto
+teoría necesaria: [wordEmd, RNN, seq2seq]
+---
 
-## Teoría necesaría
-* wordEmd
-* RNN, LSTM
-* [Sequence to sequence](/teoría/seq2seq.md)
+# Traductor
 
 ## Introducción
 
@@ -37,22 +38,29 @@ Los pesos que transorman las palabras a vectores será la primera capa de la red
 
 ## El modelo
 
-La entrada de del codificador serán las palabras en forma de vector que el word emedding proporciona. Como el codificador es una red recurrente, la entrada será un vector, luego otro, luego otro y así. Pero nosotros vemos la "vista extendida" de la red neuronal recurrente, que nos permite ver las distintas palabras de entrada a lo largo del tiempo.
+El modelo es muy simple, las capas son las siguientes:
+
+1. Capa word embeding
+2. Capa oculta 1: recurrente LSTM
+3. Capa oculta 2: recurrente LSTM
+4. Capa de proyección (word embeding inversa)
+
+<p align="center">
+<img width="50%" src="https://github.com/tensorflow/nmt/blob/master/nmt/g3doc/img/seq2seq.jpg" />
+</p>
 
 > #### Como interpretar la imagen
 > * La red neuronal va de abajo (entrada) hacia arriba (salida).
 > * Por un lado tenemos el codificador en azul a la izquierda y el decodificador en rojo a la derecha.
 > * Cada fila horizontal de celdas, son la misma celda, pero en diferentes instantes de tiempo.
 > * Los instantes de tiempo avanzan de izquierda a derecha.
-> * Las flechas laterlales indican la actualización del estado interno para una celda recurrente LSTM.
+> * Las flechas laterales indican la actualización del estado interno para una celda recurrente LSTM.
 > * En la parte inferior (primera capa) se produce el word embedding.
 > * En la parte superior (última capa) se produce el word embedding inverso.
 > * Las palabra de salida, será la entrada en el siguiente instante de tiempo.
 > * Las palabra `<s>`, indica que el texo ha finalizado y ya se puede empezar la traducción.
 
-<p align="center">
-<img width="50%" src="https://github.com/tensorflow/nmt/blob/master/nmt/g3doc/img/seq2seq.jpg" />
-</p>
+
 
 Según estemos entrenando o provando porporcinamos el texto traducido o no, pero siempre hay que poner una marca o separador al final del texto a traducir. Ejemplo:
 
