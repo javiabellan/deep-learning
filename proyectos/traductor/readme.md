@@ -38,13 +38,15 @@ decoding process while "&lt/s&gt" tells the decoder to stop.
 
 Fijate en cualquer texto, es solo una lista de palabras, y cada palabra es un lista de letras. Para tí la palabras tienen sentido, pero para un ordenador, sólo son letras detrás de otras. Por lo tanto parece que antes que aprender a traducir, habrá que aprender el significado de las palabras de un idioma.
 
-Dar significado a las palabras, es un proceso previo que se debe hacer y se conoce como [**word embedding**](/teoría/modelos/word2vec.md). Consiste en crear una representación en forma de vector las palabras más comunes, de forma que esos números apoerten información sobre lo que esa palabra representa. (Las palabras más raras tendrán un vector comun indicando que la palabra es desconocida).
+Dar significado a las palabras, es un proceso previo que se debe hacer y se conoce como [**word embedding**](/teoría/modelos/embedding.md). Consiste en crear una representación en forma de vector las palabras más comunes, de forma que esos números apoerten información sobre lo que esa palabra representa. (Las palabras más raras tendrán un vector comun indicando que la palabra es desconocida).
 
-En nuestro caso vamos a coger los pesos de un word embeding ya entrenado como son word2vec o Glove. Pero en teoría, si tenemos una gran cantidad de datos, podemos hacer el word embedding nosotros mismos. 
+En nuestro caso vamos a coger los pesos de un word embeding ya entrenado como son word2vec o Glove. Pero en teoría, si tenemos una gran cantidad de datos, podemos hacer el word embedding nosotros mismos.
 
 ## Primera capa
 
-La primera capa recivirá como entrada las palabras en forma de vector que el word emedding proporciona.
+Los pesos que transorman las palabras a vectores será la primera capa de la red neuronal. Por lo tanto, la siguiente capa recivirá como entrada un vector que el word emedding proporciona. Como estamos trabajando con redes recurrente, la entrada será un vector, luego otro, luego otro y así. Pero nosotros vemos la "vista extendida" de la red neuronal recurrente, que nos permite ver las distintas palabras de entrada a lo largo del tiempo.
+
+
 Según estemos entrenando o provando porporcinamos el texto traducido o no, pero siempre hay que poner una marca o separador al final del texto a traducir. Ejemplo:
 
 * Una frase de entrenamiento: `I am a student _ Yo soy un estudiante`.
