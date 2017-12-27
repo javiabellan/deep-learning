@@ -48,7 +48,7 @@ La entrada de del codificador serán las palabras en forma de vector que el word
 > * En la parte inferior (primera capa) se produce el word embedding
 > * En la parte superior (última capa) se produce el word embedding inverso.
 > * Las palabra de salida, será la entrada en el siguiente instante de tiempo.
-> * Las palabra <s>, indica que el texo ha finalizado y ya se puede empezar la traducción.
+> * Las palabra `<s>`, indica que el texo ha finalizado y ya se puede empezar la traducción.
 
 <p align="center">
 <img width="50%" src="https://github.com/tensorflow/nmt/blob/master/nmt/g3doc/img/seq2seq.jpg" />
