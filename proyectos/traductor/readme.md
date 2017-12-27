@@ -40,12 +40,12 @@ Los pesos que transorman las palabras a vectores será la primera capa de la red
 La entrada de del codificador serán las palabras en forma de vector que el word emedding proporciona. Como el codificador es una red recurrente, la entrada será un vector, luego otro, luego otro y así. Pero nosotros vemos la "vista extendida" de la red neuronal recurrente, que nos permite ver las distintas palabras de entrada a lo largo del tiempo.
 
 > ### Como interpretar la imagen
-> * La red neuronal va de abajo (entrada) hacia arriba (salida)
-> * Por un lado tenemos el codificador en rojo a la izquierda y el decodificador en azul a la derecha.
+> * La red neuronal va de abajo (entrada) hacia arriba (salida).
+> * Por un lado tenemos el codificador en azul a la izquierda y el decodificador en rojo a la derecha.
 > * Cada fila horizontal de celdas, son la misma celda, pero en diferentes instantes de tiempo.
 > * Los instantes de tiempo avanzan de izquierda a derecha.
 > * Las flechas laterlales indican la actualización del estado interno para una celda recurrente LSTM.
-> * En la parte inferior (primera capa) se produce el word embedding
+> * En la parte inferior (primera capa) se produce el word embedding.
 > * En la parte superior (última capa) se produce el word embedding inverso.
 > * Las palabra de salida, será la entrada en el siguiente instante de tiempo.
 > * Las palabra `<s>`, indica que el texo ha finalizado y ya se puede empezar la traducción.
