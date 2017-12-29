@@ -1,12 +1,6 @@
 # Teoría
 
-Esta es la teoría necesaria para aprender el deep learning desde cero hasta el nivel experto.
-
-* **Curso**: Si eres nuevo, empieza por aquí.
-* **Referencia**: Aprende más cosas según los temas que te interesen.
-
-## Curso
-Este curso es un resumen en español del [libro de Ian Goodfellow](http://www.deeplearningbook.org/) (probablemente la mejor fuente para aprender deep learning). Cada tema se corresponde con un capítulo del libro.
+Esta es la teoría necesaria para aprender el deep learning desde cero hasta el nivel experto. Este curso es un resumen en español del [libro de Ian Goodfellow](http://www.deeplearningbook.org/) (probablemente la mejor fuente para aprender deep learning). Cada tema se corresponde con un capítulo del libro.
 
 1. Introducción ([libro](http://www.deeplearningbook.org/contents/intro.html))
 
