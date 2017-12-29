@@ -29,17 +29,17 @@ Esta es la teoría necesaria para aprender el deep learning desde cero hasta el 
 * [Sequence to sequence](/teoría/modelos/seq2seq.md)
 
 #### Audio
-* 
+* Procesar audio
 
 #### Generación
-* GANs
+* Generative advesarial network
 
-#### Aprendizaje no supervisado
+#### Herramientas (Aprendizaje no supervisado)
 
-* Autoencoder: Codificador + Descodificador (comprimir información)
+* [Autoencoder](/teoría/modelos/autoencoder.md): Para comprimir información
 * Restricted boltzmann machine: Como el autoencoder pero va y vuelve
-* PCA: Codificador. Reduce el numero de dimensiones
-* T-SNE: Dimesionalitiy reduction
+* PCA: Reduce el numero de dimensiones
+* T-SNE: Reduce el numero de dimensiones
 
 #### Aprendizaje por refuerzo
 * Q-learning
