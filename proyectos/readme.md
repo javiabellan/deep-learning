@@ -1,12 +1,15 @@
 # Proyectos
 
+Lista de proyectos que puedes hacer. Están desarrollados en Python usando Tensorflow, consulta la [guía de instalación](/proyectos/instalación.md) para poner a punto tu máquina!
+
+Los proyectos se dividen en categorías segun la naturaleza de los datos: texto, imagen, audio, etc. Además cada proyecto indica que tecnología usa, por si quieres echarle un vistazo antes de ponerte a programar.
+
 ## Texto
 
 |      Proyecto        |      Datos       | Tecnología | Referencia |
 |----------------------|:----------------:|:----------:|:----------:|
-| Teclado predictivo   | texto -> letra   | LSTM       | [link](https://medium.com/@curiousily/making-a-predictive-keyboard-using-recurrent-neural-networks-tensorflow-for-hackers-part-v-3f238d824218) |
-| Teclado predictivo (Autocompletado) | texto -> palabra | word embedding, LSTM | [link](https://github.com/dipendra009/Text-generation) |
-| Traductor (Neural Machine Translation)    | texto -> texto traducido   | seq2seq    | [link](https://github.com/tensorflow/nmt) |
+| [Teclado predictivo](/proyectos/teclado-predictivo) | texto -> palabra | word embedding, LSTM |  |
+| [Traductor](/proyectos/traductor)    | texto -> texto traducido   | seq2seq    | [link](https://github.com/tensorflow/nmt) |
 | Genera resúmenes    | texto -> texto resumido    | seq2seq    | |
 | bot  | pregrunta -> respuesta     | seq2seq    | [link](https://github.com/vinhkhuc/MemN2N-babi-python)|
 | Conversación (chatbot)   | pregruntas -> respuestas     | seq2seq    | [link](https://github.com/vinhkhuc/MemN2N-babi-python)|
