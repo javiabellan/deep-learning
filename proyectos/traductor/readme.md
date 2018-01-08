@@ -72,6 +72,7 @@ Según estemos entrenando o provando porporcinamos el texto traducido o no, pero
 ## Referencia
 
 https://github.com/tensorflow/nmt
+https://buzzrobot.com/machine-translation-without-the-data-21846fecc4c0
 
 ## Industria
 
