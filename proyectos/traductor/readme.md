@@ -68,11 +68,23 @@ Según estemos entrenando o provando porporcinamos el texto traducido o no, pero
 * Una frase nueva para traducir: `You are a student _`
 
 
+## Attention
+
+Como tenemos un vector de representación interna con tamaño fijo, esto limita la cantidad de informción que podemos representar.
+Esto significa que si tenemos un texto muy largo, no seremos capaces de representar toda su información.
+
+Por lo tanto en lugar de codificar la secuencia en un solo vector. **Se codifica la secuencia en una sequencia de vectores y se van selecionando subconjuntos de vectores mientras se traduce.**
 
 ## Referencia
 
 * https://github.com/tensorflow/nmt
 * https://buzzrobot.com/machine-translation-without-the-data-21846fecc4c0
+* [Paper sep 2014: Seq2seq](https://arxiv.org/abs/1409.3215)
+* [Paper sep 2014: Seq2seq en traductor](https://arxiv.org/abs/1409.1259):
+Propone seq2seq para traducir. El vector de representación es de tamaño fijo (esto limita la cantidad de información a represntar). Funciona bien para frases cortas, pero cuando el texto aumenta, la traducción empeora.
+* [Paper sep 2014: Attention](https://arxiv.org/abs/1409.0473): Propone un vector de tamaño variable
+* [Paper ago 2015: Mejora la Attention](https://arxiv.org/abs/1508.04025)
+* https://www.iotforall.com/transformer-vs-deepL-attention-based-machine-translation/
 
 ## Industria
 
