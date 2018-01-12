@@ -12,10 +12,10 @@
 * [Curso de Andrew Ng](https://www.deeplearning.ai/)
 
 ### Natural language processing
-* [Curso oxford](https://github.com/oxford-cs-deepnlp-2017/lectures)
+* Curso Oxford: [github](https://github.com/oxford-cs-deepnlp-2017/lectures) [youtube](https://www.youtube.com/playlist?list=PL613dYIGMXoZBtZhbyiBqb0QtgK6oJbpm)
+* Curso Stanford: [youtube](https://www.youtube.com/playlist?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6)
 
-#### Cursos de Stanford (Youtube)
-* [Natural Language Processing with Deep Learning](https://www.youtube.com/playlist?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6)
+#### Visión
 * [Convolutional Neural Networks for Visual Recognition](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)
 
 #### Metemáticas
