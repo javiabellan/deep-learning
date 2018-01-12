@@ -15,6 +15,9 @@
 * [Natural Language Processing with Deep Learning](https://www.youtube.com/playlist?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6)
 * [Convolutional Neural Networks for Visual Recognition](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)
 
+#### Metemáticas
+* [Nonlinear dynamics and chaos](https://www.youtube.com/playlist?list=PLbN57C5Zdl6j_qJA-pARJnKsmROzPnO9V)
+
 ## Cursos lectura
 
 * [Libro de Ian Goodfellow](http://www.deeplearningbook.org): Mejor libro de referencia sobre el deep learning. Es largo, pero porque lo explica todo y bien con mucho detalle. Es bastante matemático.
