@@ -83,6 +83,7 @@ Por lo tanto en lugar de codificar la secuencia en un solo vector. **Se codifica
 * [Paper sep 2014: Seq2seq en traductor](https://arxiv.org/abs/1409.1259):
 Propone seq2seq para traducir. El vector de representación es de tamaño fijo (esto limita la cantidad de información a represntar). Funciona bien para frases cortas, pero cuando el texto aumenta, la traducción empeora.
 * [Paper sep 2014: Attention](https://arxiv.org/abs/1409.0473): Propone un vector de tamaño variable
+  * [Explicación Youtube](https://www.youtube.com/watch?v=QuvRWevJMZ4&t=34s)
 * [Paper ago 2015: Mejora la Attention](https://arxiv.org/abs/1508.04025)
   * [Explicación Youtube](https://www.youtube.com/watch?v=XvOKXJxDn1U)
 * Nueva arqutectura: Solo attention
