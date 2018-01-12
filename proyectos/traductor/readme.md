@@ -84,7 +84,11 @@ Por lo tanto en lugar de codificar la secuencia en un solo vector. **Se codifica
 Propone seq2seq para traducir. El vector de representación es de tamaño fijo (esto limita la cantidad de información a represntar). Funciona bien para frases cortas, pero cuando el texto aumenta, la traducción empeora.
 * [Paper sep 2014: Attention](https://arxiv.org/abs/1409.0473): Propone un vector de tamaño variable
 * [Paper ago 2015: Mejora la Attention](https://arxiv.org/abs/1508.04025)
-* https://www.iotforall.com/transformer-vs-deepL-attention-based-machine-translation/
+* Nueva arqutectura: Solo attention
+  * [Paper jun 2017: Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+  * [Google blog](https://research.googleblog.com/2017/08/transformer-novel-neural-network.html)
+  * [Explicación Youtube](https://www.youtube.com/watch?v=iDulhoQ2pro)
+  
 
 ## Industria
 
