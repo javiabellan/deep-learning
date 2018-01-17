@@ -26,6 +26,8 @@ Los agentes con política
 An on-policy agent learns the value based on its current action a, whereas its off-policy counter part learns it based on the greedy action a*. (We will talk more on that in Q-learning and SARSA)
 
 ## Q-Learning
+Es un algorítmo sin política y sin modelo, basado en en la ecuación de Bellman
+
 
 ## SARSA
 
