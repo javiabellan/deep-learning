@@ -79,27 +79,25 @@ En este otro caso, puede ser interesante mantener siempre la exploración activa
 > Hay que controlar el conjunto de acciones posibles que el algoritmo puede hacer.
 > Por ejemplo, no se puede poner una ficha encima de otra en el 3 en raya.
 
+### Actualizar la función Q
+
+* α = Learning rate. Valor entre 0 y 1. Cuanto más cercano a 1, más se acutializa.
+* γ = Discount factor.  Valor entre 0 y 1 que indica cuán importante es el largo plazo. 0 significa que sólo nos importan los refuerzos inmediatos, y 1 significa que los refuerzos inmediatos no importan, sólo importa el largo plazo. Ojo, porque valores muy cercanos a 1 tienden a divergir. Este factor nos ayuda a mezclar recompensas directas con recompensas a largo plazo y producir la recompensa mixta.
+
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/1df368653bf2eb16081f8738486ef4c9d60e9d03)
+
+El **learned value**, este es el nuevo valor de la función Q para un estado s y acción a determinados,
+(gracias al learning rate no olvidamos del todo el antiguo valor Q). Vamos a fijarnos en este learned value.
+
 ```python
 Q(s,a) = r(s,a) + λ·max(a,)
 ```
-![](https://wikimedia.org/api/rest_v1/media/math/render/svg/1df368653bf2eb16081f8738486ef4c9d60e9d03)
 
 ## Q-learning en sistemas continuos
 
 Juego como el el 3 en raya o el ajedrez, tiene un conjunto discreto de posibilidades a realizar.
 Pero existen otros problemas, que implican tomar una acción en un rango continuo,
 como por ejemplo un robot aspiradora, o el control de un automóvil.
-
-
----
-
- Ademas el algoritmo tiene 2 parametros:
-
-* Velocidad de aprendizaje (learning rate). Es un valor entre 0 y 1 que indica cuánto podemos aprender de cada experiencia. 0 significa que no aprendemos nada de una nueva experiencia, y 1 significa que olvidamos todo lo que sabíamos hasta ahora y nos fiamos completamente de la nueva experiencia.
-* Factor de descuento (discount factor). Es también un valor entre 0 y 1 que indica cuán importante es el largo plazo. 0 significa que sólo nos importan los refuerzos inmediatos, y 1 significa que los refuerzos inmediatos no importan, sólo importa el largo plazo. Ojo, porque valores muy cercanos a 1 tienden a divergir. Este factor nos ayuda a mezclar recompensas directas con recompensas a largo plazo y producir la recompensa mixta.
-
----
-
 
 
 ## Referencias
