@@ -43,11 +43,6 @@ recivimos una recompensa (positiva o negativa) y pasamos a un nuevo estado.
 Fijarse que el nuevo estado, es la respueta del entorno a nuestra acción.
 En el caso de las 3 en raya, el nuevo estado contedrá el movimiento que hace el oponente.
 
-```python
-Q(s,a) = r(s,a) + λ·max(a,)
-```
-![](https://wikimedia.org/api/rest_v1/media/math/render/svg/1df368653bf2eb16081f8738486ef4c9d60e9d03)
-
 Las experiencias son los datos fundamentales para aprender. Pero ojo,
 no podemos generar muchos datos para aprender (como el aprendizaje supervisado y no supervisado)
 ya que las experiencas necesitan saber la acción que se toma, y al principio no sabemos nada.
@@ -83,6 +78,11 @@ En este otro caso, puede ser interesante mantener siempre la exploración activa
 > #### Cuidado!
 > Hay que controlar el conjunto de acciones posibles que el algoritmo puede hacer.
 > Por ejemplo, no se puede poner una ficha encima de otra en el 3 en raya.
+
+```python
+Q(s,a) = r(s,a) + λ·max(a,)
+```
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/1df368653bf2eb16081f8738486ef4c9d60e9d03)
 
 ## Q-learning en sistemas continuos
 
