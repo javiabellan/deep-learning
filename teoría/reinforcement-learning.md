@@ -1,5 +1,7 @@
 # Reinforcement learning
 
+¿Cómo aprende un perro trucos nuevos como sentarse o tumbarse? Cada vez que lo hace bien, se le da un premio. Esa chuche simplemente es un refuerzo positivo. A la larga, nuestra mascota aprenderá que hacer el truco bien tiene una recompensa. La idea se puede extender a los algoritmos que aprenden de forma automática. Tenemos que dar a nuestros algoritmos chuches digitales.
+
 
 ### Entidades
 * **Agente**: Algorítmo de aprendizaje
@@ -18,12 +20,17 @@ Cuando el agente genera una nueva acción, pasa a un nuevo estado y además reci
 * **Valor (V)**: Resultado final esperado. Valor del estado final (S).
 * **Valor-Q (Q)**: Similar al Valor, excepto que también tiene en cuenta las acciones.
 
-## Modelo, SÍ o NO
+## Model-free vs Model-based
+Los algorítmos basados en modelo aprenden todas las probabilidades de pasar al siguiente estado `P(s1|(s0, a))`.
+Sin embargo este método resulta poco práctico ya que las probabilidades a aprender aumentan exponencialmente conforme queremos calcular estados más lejanos (s2, s3, s4...)
 
-## Política, SÍ o NO
+Por otra parte, los algorítmos de modelo libre no calculan todas las transiciones. Sio que se basan en parender por prueba y error.
 
-Los agentes con política
-An on-policy agent learns the value based on its current action a, whereas its off-policy counter part learns it based on the greedy action a*. (We will talk more on that in Q-learning and SARSA)
+## On-policy v.s. Off-policy
+
+Los agentes con política aprenden el valor con la acción acutal `A`. Mientras, los agentes sin política aprenden en base a `A*`.
+
+An on-policy agent learns the value based on its current action a, whereas its off-policy counter part learns it based on the greedy action a*.
 
 ## Q-Learning
 Es un algorítmo sin política y sin modelo, basado en en la ecuación de Bellman
@@ -35,6 +42,21 @@ Es un algorítmo sin política y sin modelo, basado en en la ecuación de Bellma
 
 ## DDPG
 
+## Comparación
+
+| Algorítmo      | Modelo     | Política   | Acciones  | Observaciones | Operador |
+|:--------------:|:----------:|:----------:|:---------:|:-------------:|:--------:|
+| **Q-learning** | Model-free | Off-policy | Discretas | Discretas     | Q-values |
+| **SARSA**      | Model-free | On-policy  | Discretas | Discretas     | Q-values |
+| **DQN**        | Model-free | Off-policy | Discretas | Continuas     | Q-values |
+| **DDPG**       | Model-free | Off-policy | Continuas | Continuas     | Q-values |
+| **TRPO**       | Model-free | Off-policy | Continuas | Continuas     | Ventaja  |
+| **PPO**        | Model-free | Off-policy | Continuas | Continuas     | Ventaja  |
+
+
 ## Referencias
 
-* [Introduction to Various Reinforcement Learning Algorithms (Medium)](https://towardsdatascience.com/introduction-to-various-reinforcement-learning-algorithms-i-q-learning-sarsa-dqn-ddpg-72a5e0cb6287)
+* [Introduction to Various Reinforcement Learning Algorithms Part 1 (Medium)](https://towardsdatascience.com/introduction-to-various-reinforcement-learning-algorithms-i-q-learning-sarsa-dqn-ddpg-72a5e0cb6287)
+* [Introduction to Various Reinforcement Learning Algorithms Part 2 (Medium)](https://towardsdatascience.com/introduction-to-various-reinforcement-learning-algorithms-part-ii-trpo-ppo-87f2c5919bb9)
+
+
