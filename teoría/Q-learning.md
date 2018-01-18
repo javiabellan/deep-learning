@@ -4,7 +4,7 @@ El objetivo es realizar la acción optima en cada momento, para llegar a un esta
 Al final se trata de encontrar una **función** `Q(s,a)` que te diga lo bueno que es hacer la **acción** `a` para el **estado** `s`.
 Esto te da una probabilidad o valor, (podemos ser fieles, o explorar otras acciones como veremos más adelante).
 
-Podemos representar la función Q en una tabla, que contenga los valores para todos los posibles estados y acciones. Al principio como no tenemos datos, rellenamos la con valores bajos (por ejemplo 0) pero ponemos valores altos (por ejemplo 1) cuando se trate de un par estado-acción ganadora. Estos valores son las recompensasPor ejemplo, en el juego de 3 en raya sería cuando ganamos.
+Podemos representar la función Q en una tabla, que contenga los valores para todos los posibles estados y acciones. Al principio, como no tenemos datos, rellenamos la con valores bajos (por ejemplo 0) pero ponemos valores altos (por ejemplo 1) cuando se trate de un par estado-acción ganadora. Estos valores son las recompensasPor ejemplo, en el juego de 3 en raya sería cuando ganamos.
 
 ### Recompensa = r(estado, acción)
 
@@ -26,14 +26,22 @@ La función de recompesa se puede hacer:
 * Con una tabla que tenga todas las configuraciones del tablero (Solución bruta)
 * Analizando el estado de alguna forma (Solución mas viable)
 
-### Experiencia = (estado, acción, recompensa, nuevo estado)
+![](https://rubenlopezg.files.wordpress.com/2015/05/direct_reward1.png)
+
+## Algorítmo
+
+Una vez tengamos nuestra función Q inicial, necesitamos jugar nuchas partidas (al principio a ciegas)
+para poder ir generando experiencais y aprender.
+Cuando llegemo a una solución ganadora, significa que nuestras acciones para llegar ahí fueron buenas y por lo tanto debemos aprenderlas
+
+#### Experiencia = (estado, acción, recompensa, nuevo estado)
 
 ![](https://rubenlopezg.files.wordpress.com/2015/05/experience1.png)
 
+Una experiencia es simplemente cauando relizamos una nueva acción en un estado determinado,
+recivimos una recompensa (positiva o negativa) y pasamos a un nuevo estado.
 Fijarse que el nuevo estado, es la respueta del entorno a nuestra acción.
 En el caso de las 3 en raya, el nuevo estado contedrá el movimiento que hace el oponente.
-
-## Algorítmo
 
 ```python
 Q(s,a) = r(s,a) + λ·max(a,)
