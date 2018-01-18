@@ -39,6 +39,7 @@ Es un algorítmo sin política y sin modelo, basado en en la ecuación de Bellma
 ## SARSA
 
 ## DQN
+Ver https://github.com/keon/deep-q-learning
 
 ## DDPG
 
