@@ -1,17 +1,10 @@
 # Q-learning
 
-Qeremos conseguir algo, ganar un juego. Como hemos dicho, aprendizaje por refurezo se basa en dar recomensas cuando el algoritmo lo hace bien.
-Pero tenemos que distinguir varios tipos de recomesas. Por ejemplo en el juego de ajedrez:
+El objetivo es realizar la acción optima en cada momento, para llegar a un estado final ganador.
+Al final se trata de encontrar una **función** `Q(s,a)` que te diga lo bueno que es hacer la **acción** `a` para el **estado** `s`.
+Esto te da una probabilidad o valor, (podemos ser fieles, o explorar otras acciones como veremos más adelante).
 
-* Recompensa a largo plazo: Ganar la partida
-* Recompenensa a corto plazo: Comer fichas
-
-## Datos
-
-El algorimo, necesita 2 cosas:
-* Recompesas: Saber cuando se ha ganado o se ha perdido
-* Experiencias: Jugar mucho para saber como se gana o se pierde.
-
+Podemos representar la función Q en una tabla, que contenga los valores para todos los posibles estados y acciones. Al principio como no tenemos datos, rellenamos la con valores bajos (por ejemplo 0) pero ponemos valores altos (por ejemplo 1) cuando se trate de un par estado-acción ganadora. Estos valores son las recompensasPor ejemplo, en el juego de 3 en raya sería cuando ganamos.
 
 ### Recompensa = r(estado, acción)
 
@@ -25,6 +18,10 @@ Si no ganamos, la recompensa es 0.
 
 Si ganamos, la recompensa es 1.
 
+> Pero tenemos que distinguir varios tipos de recomesas. Por ejemplo en el juego de ajedrez:
+> * Recompensa a largo plazo: Ganar la partida
+> * Recompenensa a corto plazo: Comer fichas
+
 La función de recompesa se puede hacer:
 * Con una tabla que tenga todas las configuraciones del tablero (Solución bruta)
 * Analizando el estado de alguna forma (Solución mas viable)
@@ -37,6 +34,11 @@ Fijarse que el nuevo estado, es la respueta del entorno a nuestra acción.
 En el caso de las 3 en raya, el nuevo estado contedrá el movimiento que hace el oponente.
 
 ## Algorítmo
+
+```python
+Q(s,a) = r(s,a) + λ·max(a,)
+```
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/1df368653bf2eb16081f8738486ef4c9d60e9d03)
 
 Las experiencias son los datos fundamentales para aprender. Pero ojo,
 no podemos generar muchos datos para aprender (como el aprendizaje supervisado y no supervisado)
@@ -89,6 +91,8 @@ como por ejemplo un robot aspiradora, o el control de un automóvil.
 * Factor de descuento (discount factor). Es también un valor entre 0 y 1 que indica cuán importante es el largo plazo. 0 significa que sólo nos importan los refuerzos inmediatos, y 1 significa que los refuerzos inmediatos no importan, sólo importa el largo plazo. Ojo, porque valores muy cercanos a 1 tienden a divergir. Este factor nos ayuda a mezclar recompensas directas con recompensas a largo plazo y producir la recompensa mixta.
 
 ---
+
+
 
 ## Referencias
 
