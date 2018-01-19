@@ -59,5 +59,6 @@ Ver https://github.com/keon/deep-q-learning
 
 * [Introduction to Various Reinforcement Learning Algorithms Part 1 (Medium)](https://towardsdatascience.com/introduction-to-various-reinforcement-learning-algorithms-i-q-learning-sarsa-dqn-ddpg-72a5e0cb6287)
 * [Introduction to Various Reinforcement Learning Algorithms Part 2 (Medium)](https://towardsdatascience.com/introduction-to-various-reinforcement-learning-algorithms-part-ii-trpo-ppo-87f2c5919bb9)
-
+* http://www.cse.unsw.edu.au/~cs9417ml/RL1/index.html
+* http://www.cse.unsw.edu.au/~cs9417ml/
 
