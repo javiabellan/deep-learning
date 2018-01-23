@@ -34,6 +34,7 @@
 
 * [Chris Olah](http://colah.github.io/): Este tío es un máquina, te explica cosas del deep larning muy bien explicadas. **RECOMENDADO POR JAVI**
 * [Distill](https://distill.pub/): Esta página es una maravilla, explica conceptos avanzados de forma interactiva. Se necesita un nivel alto.
+* [Blog Nvidia](https://news.developer.nvidia.com)
 * [setosa](http://setosa.io): Explicaciones visuales de cosas matemáticas (No solo deep learning)
 * [Backpropagation en CNNs](http://www.jefkine.com/general/2016/09/05/backpropagation-in-convolutional-neural-networks/)
 * http://kvfrans.com
