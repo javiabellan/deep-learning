@@ -1,13 +1,13 @@
 # Aprender la teoría
 
-## Cursos
-
-#### Solo redes neuronales
+## Introducción: Redes neuronales
+Empieza por aquí para entender que son las redes neuronales, ya que son el fundamento del deep learning.
 * [3Blue1Brown](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi): Videos muy visuales para entender las redes neuronales. **RECOMENDADO POR JAVI**
 * [Welch Labs](https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU): Otro canal de Youtube donde explica las redes neuronales.
 * [Libro de Michael Nielsen](http://neuralnetworksanddeeplearning.com/): Lectura online rápida donde se explica los conceptos fundamentales del deep learning bastante bien y de una forma más visual e intuitiva, no tan matemática. **RECOMENDADO POR JAVI**
 
-#### Deep learning
+## Cursos Deep learning
+Cursos completos de deep learning
 * [Udacity](https://www.udacity.com/courses/deep-learning) **RECOMENDADO POR JAVI**
 * [Fast.ai](http://course.fast.ai/)
 * [Curso de Andrew Ng](https://www.deeplearning.ai/)
@@ -30,7 +30,7 @@
 #### Metemáticas
 * [Nonlinear dynamics and chaos](https://www.youtube.com/playlist?list=PLbN57C5Zdl6j_qJA-pARJnKsmROzPnO9V)
 
-#### Tutoriales alatorios
+### Tutoriales alatorios
 * [Chris Olah](http://colah.github.io/): Este tío es un máquina, te explica cosas del deep larning muy bien explicadas. **RECOMENDADO POR JAVI**
 * [Distill](https://distill.pub/): Esta página es una maravilla, explica conceptos avanzados de forma interactiva. Se necesita un nivel alto.
 * [setosa](http://setosa.io): Explicaciones visuales de cosas matemáticas (No solo deep learning)
