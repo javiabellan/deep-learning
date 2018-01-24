@@ -54,6 +54,7 @@ Cursos completos de deep learning
 * [Medium: becominghuman](https://becominghuman.ai)
 * [Google research](https://research.googleblog.com/)
 * [Nvidia](https://news.developer.nvidia.com)
+* [WildML](http://www.wildml.com/)
 * https://jaan.io/blog/
 * http://kvfrans.com
 
