@@ -28,8 +28,9 @@ Cursos completos de deep learning
   * [youtube](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)
 
 #### Reinforcement learning
-* http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html
-* http://rll.berkeley.edu/deeprlcourse/
+* [CS 294: Deep Reinforcement Learning, Fall 2017](http://rll.berkeley.edu/deeprlcourse/)
+* [Dave Silver’s course](http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html) / [videos](http://www.machinelearningtalks.com/tag/rl-course)
+* [Udacity (Georgia tech)](https://eu.udacity.com/course/reinforcement-learning--ud600)
 
 #### Metemáticas
 * [Nonlinear dynamics and chaos](https://www.youtube.com/playlist?list=PLbN57C5Zdl6j_qJA-pARJnKsmROzPnO9V)
