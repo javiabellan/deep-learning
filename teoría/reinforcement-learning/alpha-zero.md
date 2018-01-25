@@ -33,6 +33,10 @@ Usa un red neuronal profunda *f* con parametros *θ*.
   * El vector *p*, representa la probabilidad de seleccionar cada movimiento (incluido pasar). `p = Pr(a|s)`
   * El escalar *v*, estima la probabilidad del jugador actual de ganar desde la posición *s*.
 
+Esta red combina las policy y value networks en una sola red. consiste en muchos bloques residuales de capas convolucionales,
+con batch normalization y rectifier nonlinearities (Ver métodos)
+
+
  
 ## Referencias
 * [Artículo en deep mind](https://deepmind.com/blog/alphago-zero-learning-scratch/)
