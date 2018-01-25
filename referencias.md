@@ -26,7 +26,10 @@ Cursos completos de deep learning
 #### Visión
 * [Curso Stanford](http://cs231n.stanford.edu/): Bastante completo, se explican las NNs y CNNs
   * [youtube](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)
-  
+
+#### Reinforcement learning
+* http://rll.berkeley.edu/deeprlcourse/
+
 #### Metemáticas
 * [Nonlinear dynamics and chaos](https://www.youtube.com/playlist?list=PLbN57C5Zdl6j_qJA-pARJnKsmROzPnO9V)
 
