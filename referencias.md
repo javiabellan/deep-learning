@@ -28,6 +28,7 @@ Cursos completos de deep learning
   * [youtube](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)
 
 #### Reinforcement learning
+* http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html
 * http://rll.berkeley.edu/deeprlcourse/
 
 #### Metemáticas
