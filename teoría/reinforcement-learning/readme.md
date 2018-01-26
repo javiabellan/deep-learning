@@ -43,6 +43,9 @@ Ver https://github.com/keon/deep-q-learning
 
 ## DDPG
 
+## Deep Neuroevolution
+Uber has released [a suite of papers](http://eng.uber.com/deep-neuroevolution/) detailing the use of neuroevolution for training deep neural networks on reinforcement learning tasks. Neuroevolution uses genetic algorithms to train networks, seeing better results than common models like deep Q-learning and A3C.
+
 ## Comparación
 
 | Algorítmo      | Modelo     | Política   | Acciones  | Observaciones | Operador |
@@ -61,4 +64,5 @@ Ver https://github.com/keon/deep-q-learning
 * [Introduction to Various Reinforcement Learning Algorithms Part 2 (Medium)](https://towardsdatascience.com/introduction-to-various-reinforcement-learning-algorithms-part-ii-trpo-ppo-87f2c5919bb9)
 * http://www.cse.unsw.edu.au/~cs9417ml/RL1/index.html
 * http://www.cse.unsw.edu.au/~cs9417ml/
+* [Curso medium de Arthur Juliani](https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-0-q-learning-with-tables-and-neural-networks-d195264329d0)
 
