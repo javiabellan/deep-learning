@@ -62,7 +62,5 @@ Esta es la teoría necesaria para aprender el deep learning desde cero hasta el 
 ## Aprendizaje por refuerzo
 * Q-learning
 
-#### Matemáticas
-
-* [Álgebra lineal](https://www.khanacademy.org/math/linear-algebra)
-* [Calculus multivariable](https://www.khanacademy.org/math/multivariable-calculus)
+## Neuroevolution
+Son redes neuronales entredas con algoritmos genéticos en lugar de descenso por gradiente. [Link](http://eng.uber.com/deep-neuroevolution/)
