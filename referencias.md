@@ -33,6 +33,8 @@ Cursos completos de deep learning
 * [Udacity (Georgia tech)](https://eu.udacity.com/course/reinforcement-learning--ud600)
 
 #### Metemáticas
+* [Álgebra lineal](https://www.khanacademy.org/math/linear-algebra)
+* [Calculus multivariable](https://www.khanacademy.org/math/multivariable-calculus)
 * [Nonlinear dynamics and chaos](https://www.youtube.com/playlist?list=PLbN57C5Zdl6j_qJA-pARJnKsmROzPnO9V)
 
 ### Tutoriales alatorios
