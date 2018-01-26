@@ -61,6 +61,11 @@ Esta es la teoría necesaria para aprender el deep learning desde cero hasta el 
 
 ## Aprendizaje por refuerzo
 * Q-learning
+  * DQN
+* Policy gradients
+  * A3C
+* Evolutionary Strategy
+* Genetic Algorithms
 
 ## Neuroevolution
 Son redes neuronales entredas con algoritmos genéticos en lugar de descenso por gradiente. [Link](http://eng.uber.com/deep-neuroevolution/)
