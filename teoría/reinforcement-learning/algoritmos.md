@@ -19,3 +19,8 @@ Unifying Count-Based Exploration and Intrinsic Motivation
 ## CEM
 Cross Entropy method for Fast Policy Search
 * [Paper](http://www.aaai.org/Papers/ICML/2003/ICML03-068.pdf)
+
+## ES
+Evolution Strategies as a Scalable Alternative to Reinforcement Learning (OpenAI)
+* [Blog](https://blog.openai.com/evolution-strategies/)
+* [Paper](https://arxiv.org/abs/1703.03864)
