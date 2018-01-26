@@ -29,7 +29,9 @@ Esta es la teoría necesaria para aprender el deep learning desde cero hasta el 
 19. Approximate Inference ([libro](http://www.deeplearningbook.org/contents/inference.html))
 20. Deep Generative Models ([libro](http://www.deeplearningbook.org/contents/generative_models.html))
 
-## Referencia
+---
+
+## Aprendizaje supervisado
 
 #### Visión
 * [Redes neuronales convolucionales](/teoría/modelos/cnn.md)
@@ -48,14 +50,16 @@ Esta es la teoría necesaria para aprender el deep learning desde cero hasta el 
 #### Generación
 * Generative advesarial network
 
-#### Herramientas (Aprendizaje no supervisado)
-
+## Aprendizaje no supervisado
 * [Autoencoder](/teoría/modelos/autoencoder.md): Para comprimir información
 * Restricted boltzmann machine: Como el autoencoder pero va y vuelve
 * PCA: Reduce el numero de dimensiones
 * T-SNE: Reduce el numero de dimensiones
+* competitive learning
+* Hebbian learning
+* Self Organizing Map
 
-#### Aprendizaje por refuerzo
+## Aprendizaje por refuerzo
 * Q-learning
 
 #### Matemáticas
