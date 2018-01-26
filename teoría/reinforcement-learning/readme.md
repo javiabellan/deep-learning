@@ -35,7 +35,6 @@ An on-policy agent learns the value based on its current action a, whereas its o
 ## Q-Learning
 Es un algorítmo sin política y sin modelo, basado en en la ecuación de Bellman
 
-
 ## SARSA
 
 ## DQN
@@ -60,9 +59,11 @@ Uber has released [a suite of papers](http://eng.uber.com/deep-neuroevolution/) 
 
 ## Referencias
 
+* [Demystifying deep reinforcement learning](http://neuro.cs.ut.ee/demystifying-deep-reinforcement-learning/)
+* [Curso medium de Arthur Juliani](https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-0-q-learning-with-tables-and-neural-networks-d195264329d0)
 * [Introduction to Various Reinforcement Learning Algorithms Part 1 (Medium)](https://towardsdatascience.com/introduction-to-various-reinforcement-learning-algorithms-i-q-learning-sarsa-dqn-ddpg-72a5e0cb6287)
 * [Introduction to Various Reinforcement Learning Algorithms Part 2 (Medium)](https://towardsdatascience.com/introduction-to-various-reinforcement-learning-algorithms-part-ii-trpo-ppo-87f2c5919bb9)
 * http://www.cse.unsw.edu.au/~cs9417ml/RL1/index.html
 * http://www.cse.unsw.edu.au/~cs9417ml/
-* [Curso medium de Arthur Juliani](https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-0-q-learning-with-tables-and-neural-networks-d195264329d0)
+
 
