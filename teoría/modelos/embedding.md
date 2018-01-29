@@ -56,6 +56,7 @@ Las palabras poco comunes no se aprenden muy bien porque son poco frecuentes. Ra
 
 ## Fuentes
 
- * [tensorflow](https://www.tensorflow.org/tutorials/word2vec)
- * [blog](https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors)
- * [otro blog](https://medium.com/deeper-learning/glossary-of-deep-learning-word-embedding-f90c3cec34ca)
+* [Playing with word vectors](https://medium.com/swlh/playing-with-word-vectors-308ab2faa519)
+* [tensorflow](https://www.tensorflow.org/tutorials/word2vec)
+* [blog](https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors)
+* [otro blog](https://medium.com/deeper-learning/glossary-of-deep-learning-word-embedding-f90c3cec34ca)
