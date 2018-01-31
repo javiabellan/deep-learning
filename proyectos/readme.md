@@ -111,6 +111,7 @@ Los proyectos se dividen en categorías segun la naturaleza de los datos: texto,
 #### Medium
  * [TensorFlow for Hackers](https://medium.com/@curiousily)
  * [Machine learning is fun](https://medium.com/@ageitgey)
+ * [30 proyectos de 2017](https://medium.mybridge.co/30-amazing-machine-learning-projects-for-the-past-year-v-2018-b853b8621ac7)
 
 #### Otros
 * https://github.com/sachinruk/deepschool.io
