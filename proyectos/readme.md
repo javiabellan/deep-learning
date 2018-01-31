@@ -66,6 +66,7 @@ Los proyectos se dividen en categorías segun la naturaleza de los datos: texto,
 * [Clasificar sonidos urbanos](https://github.com/aqibsaeed/Urban-Sound-Classification)
 
 ## Vídeo
+* [Recomendación de pelis](https://hackernoon.com/introduction-to-recommender-system-part-1-collaborative-filtering-singular-value-decomposition-44c9659c5e75)
 * Reconocimiento de actividades
 * [Leer labios](https://github.com/astorfi/lip-reading-deeplearning)
 * Suplantar la cara de otro (face2face)
