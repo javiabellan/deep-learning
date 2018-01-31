@@ -31,3 +31,10 @@ Es conveniente usar una penalización diferente, modeificando `α`, en cada capa
 ### Regularización L2
 
 Aquí el parametro de penalización se conoce como **weight decay**. Este técnica lleva a los pesos cerca de su origen ¿?¿?¿?
+
+
+
+## Referencias
+
+* [Deeplearningbook: Regularization](http://www.deeplearningbook.org/contents/regularization.html)
+* [Regularization Notes](https://towardsdatascience.com/deep-learning-regularization-notes-29df9cb90779)
