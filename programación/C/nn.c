@@ -59,11 +59,12 @@ double output[NumOutput];
 double* target; // dataOutput pointer to one sample
 
 
+// pointer to functions
+double (*funcError)(double output, double target);
+double (*derivadaFuncError)(double output, double target);
 
-// TODO
-double (*activation)(double); // pointer to function
-double (*cost)(double);       // pointer to function
-
+double (*funcAcivacion)(double);
+double (*derivadaFuncAcivacion)(double);
 
 ////////////////////////////////////////////  METHODS DECLARATION
 
@@ -71,14 +72,22 @@ void   test();
 void   train();
 void   forwardExample(int);
 void   backPropagation(int);
+void   backPropagationANTIGUO(int);
 void   initializeWeights(double, double);
 void   readCSV(char*, int);
 void   readMNIST(char*, int);
 void   printData();
 void   printWeights();
 int    outputNumber(double output[]);
-double sigmoid();
-double sigmoidPrime();
+
+double sigmoid(double);
+double sigmoidPrime(double);
+double relu(double);
+double reluPrime(double);
+
+double squaredError(double, double);
+double squaredErrorPrime(double, double);
+
 double randomInRange(double, double);
 
 
@@ -86,6 +95,13 @@ double randomInRange(double, double);
 
 int main()
 {
+	funcError         = squaredError;
+	derivadaFuncError = squaredErrorPrime;
+
+	funcAcivacion         = sigmoid;
+	derivadaFuncAcivacion = sigmoidPrime;
+
+
 	system("clear");
 
 	printf("Reading data...\n");
@@ -114,7 +130,7 @@ void train()
 	{
 		correctClassified = 0;
 		percentage = 0;
-		printWeights();
+		//printWeights();
 
 		// Iterate examples
 		for(int e=0; e<NumExamples; e++)
@@ -124,9 +140,13 @@ void train()
 
 			if(outputNumber(output) == outputNumber(target))
 				correctClassified++;
+
+			int progress = 100*e/NumExamples;
+			float accuracy = 100*correctClassified/NumExamples;
+			printf("\rEpoch %d:\tProgress: %d%%\tAccuracy %.1f%%",i,progress,accuracy);
 		}
 		percentage = (double)correctClassified/NumExamples*100;
-		printf("Epoch %d:\tCorrect classified %d of %d\t(%.1f%%).\n",
+		printf("\rEpoch %d:\tCorrect classified %d of %d\t(%.1f%%).\n",
 				i, correctClassified, NumExamples, percentage);
 	}
 }
@@ -171,7 +191,7 @@ void forwardExample(int sample)
 		}
 		net += weightIH[NumInput][j]; // Bias = 1 * another extra weight
 
-		hidden[j] = sigmoid(net);
+		hidden[j] = funcAcivacion(net);
 	}
 
 	// Output layer computation
@@ -184,11 +204,11 @@ void forwardExample(int sample)
 		}
 		net += weightHO[NumHidden][k]; // Bias = 1 * another extra weight
 
-		output[k] = sigmoid(net);
+		output[k] = funcAcivacion(net);
 	}
 }
 
-void backPropagation(int e)
+void backPropagationANTIGUO(int e)
 {
 	//double Error = 0.0;
 	double DeltaH[NumHidden];
@@ -206,7 +226,7 @@ void backPropagation(int e)
 	for(int k=0; k<NumOutput; k++)
 	{
 		//Error += 0.5 * pow(target[k]-output[k], 2);
-		DeltaO[k] = (target[k] - output[k]) *
+		DeltaO[k] = (output[k] - target[k]) * // ANTES: target[k] - output[k]
 					output[k] * (1.0 - output[k]);
 	}
 
@@ -230,9 +250,9 @@ void backPropagation(int e)
 	{
 		for(int j=0; j<NumHidden; j++)
 		{
-			weightHO[j][k] += learnigRate * hidden[j] * DeltaO[k];
+			weightHO[j][k] -= learnigRate * hidden[j] * DeltaO[k]; // ANTES: +=
 		}
-		weightHO[NumHidden][k] += learnigRate * DeltaO[k]; // Bias
+		weightHO[NumHidden][k] -= learnigRate * DeltaO[k]; // Bias // ANTES: +=
 	}
 
 	// Update weights WeightIH
@@ -240,17 +260,25 @@ void backPropagation(int e)
 	{		
 		for(int i=0; i<NumInput; i++)
 		{
-			weightIH[i][j] += learnigRate * input[i] * DeltaH[j];
+			weightIH[i][j] -= learnigRate * input[i] * DeltaH[j]; // ANTES: +=
 		}
-		weightIH[NumInput][j] += learnigRate * DeltaH[j]; // Bias
+		weightIH[NumInput][j] -= learnigRate * DeltaH[j]; // Bias // ANTES: +=
 	}
 }
 
 
 /////////////////////////////////////////////////////// NEW BACKPROPAGATION
 
-void backPropagation()
+void backPropagation(int e)
 {
+	double DeltaH[NumHidden];
+	double DeltaO[NumOutput];
+
+
+	// Compute example and save its output
+	forwardExample(e);
+
+
 	//////////// CHAIN RULE (computation graph)
 	//
 	//                capa oculta                        capa salida                  función de error
@@ -263,44 +291,37 @@ void backPropagation()
 	//  => con la derivada de la función de error
 	for(int i=0; i<NumOutput; ++i)
 	{
-		d1 = derivadaFuncError(output, tareget) // d1 = output[i] - target[i]  //MSE'
+		// CHAIN RULE (obtain gradients)
+		double d1 = derivadaFuncError(output[i], target[i]);
+		double d2 = derivadaFuncAcivacion(output[i]) * d1;
+		DeltaO[i] = d2;
+
+		// UPDATE WEIGHTS (GRADIENT DESCENT)
+		for(int j=0; j<NumHidden; j++)
+		{
+			weightHO[j][i] -= learnigRate * hidden[j] * DeltaO[i];
+		}
+		weightHO[NumHidden][i] -= learnigRate * DeltaO[i]; // Bias
 	}
 
-	=============
-
-	// (2) como cambia el output respecto z2
-	//  => con la derivada de la función de activacion
-	for(int i=0; i<NumOutput; ++i)
+	for(int i=0; i<NumHidden; i++)
 	{
-		d2 = derivadaFuncAcivacion(z2) * d1 // = output[i] * (1.0 - output[i])    * d1  //sigmoid'
+		// CHAIN RULE (obtain gradients)
+		double d3 = 0.0;
+		for(int j=0; j<NumOutput; j++)
+		{
+			d3 += weightHO[i][j] * DeltaO[j];
+		}
+		double d4 = derivadaFuncAcivacion(hidden[i]) * d3;
+		DeltaH[i] = d4;
+
+		// UPDATE WEIGHTS (GRADIENT DESCENT)
+		for(int j=0; j<NumInput; j++)
+		{
+			weightIH[j][i] -= learnigRate * input[j] * DeltaH[i];
+		}
+		weightIH[NumInput][i] -= learnigRate * DeltaH[i]; // Bias
 	}
-
-	// (3) como cambia z2 respecto h1
-	//  => multiplicandolo por los pesos w2
-	for(int i=0; i<NumOutput; ++i)
-	{
-		d3 = w * d2
-		w_nuevo -= learnigRate * d3
-	}
-
-	==========
-
-	// (4) como cambia h1 respecto z1
-	//  => con la derivada de la función de activacion
-	for(int i=0; i<NumHidden; ++i)
-	{
-		d4 = derivadaFuncAcivacion(z1) * d3 // hidden[i] * (1.0 - hidden[i])   * d3  //sigmoid'
-	}
-
-	// (5) como cambia z1 respecto x
-	//  => multiplicandolo por los pesos w1
-	for(int i=0; i<NumHidden; ++i)
-	{
-		d5 = w * d4
-		w_nuevo -= learnigRate * d5
-	}
-
-	==========
 }
 
 ///////////////////////////////////////////////////////  COST FUNCTION
@@ -316,12 +337,12 @@ y vaya siendo similar al target para que el error sea mínimo
 
 double J(output, target)
 {
-	sum = 0;
+	double sum = 0;
 	for (int i=0; i<NumExamples; ++i)
 	{
-		sum += error(output[i], target[i]);
+		sum += funcError(output, target);
 	}
-	return  sum/NumExamples;
+	return sum/NumExamples;
 }
 
 
@@ -340,46 +361,42 @@ El 0.5 creo que es para que la derivada sea fácil.
 No se usa en regresión logística porque es una función de error no-convexa,
 y GD se puede quedar atascado en un mínimo local
 */
-double squaredError(output, target)
+double squaredError(double output, double target)
 {
-	return sum += 0.5 * (output - target)^2;
+	return 0.5 * exp2(output - target);
 }
 
-double derivative_squaredError(output, target)
+double squaredErrorPrime(double output, double target)
 {
 	return output - target;
 }
 
 /*
 Cross-entropy cost = Bernoulli negative log-likelihood = Binary Cross-Entropy
-*/
 crossEntropy()
 
 
-/*
 output entre [0, 1]
-*/
 otra()
 {
 	-( target*log(output) + (1-target)*log(1-output) );
 }
 
 
-/*
 appropriate when working with logistic or softmax output layers
-*/
 latter()
+*/
 
 ///////////////////////////////////////////////////////  ACTIVATION FUNCTIONS
 
-double sigmoid(double net)
+double sigmoid(double x)
 {
-	return 1.0/(1.0 + exp(-net));
+	return 1.0/(1.0 + exp(-x));
 }
 
-double sigmoidPrime(double output)
+double sigmoidPrime(double outputSigmoid)
 {
-	return output * (1.0 - output);
+	return outputSigmoid * (1.0 - outputSigmoid);
 }
 
 double relu(double x)
