@@ -15,6 +15,8 @@ Código para deep learning
 | Scikit learn | Machine learning       | `pip3 install scikit-learn` |
 | Tensorflow   | Deep learning          | `pip3 install tensorflow`   |
 
+## [Only numpy](https://medium.com/@SeoJaeDuk)
+Lista de implenetaciones de redes y entrenamiento desde 0 en python (y numpy). Escrito por [Jae Duck](https://jaedukseo.me/)
 
 ## Cuadernos
 
