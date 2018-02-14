@@ -15,8 +15,13 @@ Código para deep learning
 | Scikit learn | Machine learning       | `pip3 install scikit-learn` |
 | Tensorflow   | Deep learning          | `pip3 install tensorflow`   |
 
-## [Only numpy](https://medium.com/@SeoJaeDuk)
-Lista de implenetaciones de redes y entrenamiento desde 0 en python (y numpy). Escrito por [Jae Duck](https://jaedukseo.me/)
+## Only numpy
+Implementaciones de redes neuronales en python con numpy.
+
+* [Medium](https://medium.com/@SeoJaeDuk)
+* [Code (Gitlab)](https://gitlab.com/jae.duk.seo/Only_Numpy)
+* [Webpage](https://jaedukseo.me/)
+* [Youtube](https://www.youtube.com/c/JaeDukSeo)
 
 ## Cuadernos
 
