@@ -1,5 +1,6 @@
 import numpy as np
 np.random.seed(1)
+from functions import *
 
 
 # ------ NETWORK ARCH ------
@@ -43,7 +44,7 @@ for epoch in range(numer_of_epoch):
     layer_1_act = sigmoid(layer_1)
     loss        = halfMSE(layer_1_act, y)
 
-    print "Current Epoch : ", epoch, " current loss :", loss.sum()
+    print("Current Epoch : ", epoch, " current loss :", loss.sum())
 
     # Backward (SGD - BATCH)
     grad_1_part_1 = d_halfMSE(layer_1_act, y)
@@ -58,44 +59,10 @@ for epoch in range(numer_of_epoch):
 layer_1 = x.dot(w1)
 layer_1_act = sigmoid(layer_1)
 
-print "\n\nFinal : " ,layer_1_act[:,-1]
-print "Final Round: " ,np.round(layer_1_act[:,-1])
-print "Ground Truth : ",y[:,-1]
-print "W1 : ",w1[:,-1]
-
-
-
-
-# Activation function: Sigmoid
-def sigmoid(x):
-    return 1 / (1 + np.exp( -1 * x))
-
-def d_sigmoid(x):
-    return sigmoid(x) * (1- sigmoid(x))
-
-# Activation function: tanh
-def tanh(x):
-    return np.tanh(x)
-
-def d_tanh(x):
-    return 1 - tanh(x) ** 2
-
-
-# Loss function: Mean Squared Error
-def MSE(pred, y):
-    # return np.square(pred - y) / (len(pred))
-    return np.square(pred - y).sum() / len(x)
-
-def d_MSE(pred, y):
-    # return (pred - y) / (len(pred) * 2)
-    return (2/len(x)) * (pred - y)
-
-# Loss function: One Half Mean Squared Error
-def halfMSE(pred, y):
-    return np.square(pred - y) / (len(pred) * 2)
-
-def d_halfMSE(pred, y):
-    return (pred - y) / len(pred)
+print("\n\nFinal : " ,layer_1_act[:,-1])
+print("Final Round: " ,np.round(layer_1_act[:,-1]))
+print("Ground Truth : ",y[:,-1])
+print("W1 : ",w1[:,-1])
 
 
 
