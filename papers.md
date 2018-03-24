@@ -10,6 +10,16 @@ Para cada categoría los papers están ordenados de más antiguos a más recient
 * [Batch normalization](https://arxiv.org/pdf/1502.03167.pdf)
 * [Group normalization](https://arxiv.org/pdf/1803.08494.pdf)
 
+## Data augmentation
+* (data whitening, rotation, translation, and scaling)
+
+## Class imbalance problems
+* Patch based approaches
+
+## Loss
+* Cross-entropy
+* Dice similarity
+
 ## Object detection
 * [RCNN](https://arxiv.org/pdf/1311.2524.pdf)
 * [Fast RCNN](https://arxiv.org/pdf/1504.08083.pdf)
@@ -20,7 +30,8 @@ Para cada categoría los papers están ordenados de más antiguos a más recient
 * [SSD](https://arxiv.org/pdf/1512.02325.pdf)
 
 ## Semantic segmentation
-* [Fully Convolutional Networks](https://arxiv.org/pdf/1605.06211.pdf)
+* [Fully Convolutional Networks (FCN)](https://arxiv.org/pdf/1605.06211.pdf)
+* [Segnet](https://arxiv.org/pdf/1511.00561.pdf)
 
 
 ## Instance segmentation
