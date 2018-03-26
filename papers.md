@@ -1,5 +1,8 @@
 # Deep learning papers
 
+## Genéricos
+* [Efficient BackProp (Yann LeCun)](yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf)
+
 Para cada categoría los papers están ordenados de más antiguos a más recientes.
 
 * [Densenet]()
@@ -42,9 +45,11 @@ Para cada categoría los papers están ordenados de más antiguos a más recient
 
 
 ## GANs
-
 * [Generating and designing DNA with deep generative models](https://arxiv.org/pdf/1712.06148.pdf)
 
+
+## Otros
+* [The consciousness prior](https://arxiv.org/pdf/1709.08568.pdf)
 
 ## Refernencias
 
