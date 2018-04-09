@@ -2,7 +2,7 @@
 
 ## Genéricos
 * [Efficient BackProp (Yann LeCun)](yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf)
-
+* [DON’T DECAY THE LEARNING RATE, INCREASE THE BATCH SIZE](https://arxiv.org/pdf/1711.00489.pdf)
 Para cada categoría los papers están ordenados de más antiguos a más recientes.
 
 * [Densenet]()
