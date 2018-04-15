@@ -8,6 +8,9 @@ Para cada categoría los papers están ordenados de más antiguos a más recient
 * [Densenet]()
 * [Tiramisu]()
 
+## Machine learning
+* [Introduction](https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf)
+
 ## Batch normalization
 
 * [Batch normalization](https://arxiv.org/pdf/1502.03167.pdf)
