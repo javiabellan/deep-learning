@@ -11,6 +11,7 @@ Empieza por aquí para entender que son las redes neuronales, ya que son el fund
 Cursos completos de deep learning
 * [Udacity](https://www.udacity.com/courses/deep-learning) **RECOMENDADO POR JAVI**
 * [ML Refined](https://jermwatt.github.io/mlrefined)
+* [Chris Albon](https://chrisalbon.com/)
 * [Fast.ai](http://course.fast.ai/)
 * Andrew Ng: [deeplearning.ai](https://www.deeplearning.ai/), ([Coursera](https://www.coursera.org/specializations/deep-learning))
 * [Libro de Ian Goodfellow](http://www.deeplearningbook.org): Mejor libro de referencia sobre el deep learning. Es largo, pero porque lo explica todo y bien con mucho detalle. Es bastante matemático.
