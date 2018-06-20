@@ -4,7 +4,16 @@
 
 Estas son mis notas para aprender [**deep learning**](https://es.wikipedia.org/wiki/Aprendizaje_profundo). Si quieres aprender de los mejores, consulta mis [**referencias**](/referencias.md)
 
-## Aprendizaje supervisado
+## Start training
+Find learning rate
+
+## Fight Overfitting
+Dropout
+Data augmentation
+Weight decay
+Weight inilatization
+
+## Domain specific
 
 #### Visión
 * [Redes neuronales convolucionales](/teoría/modelos/cnn.md)
