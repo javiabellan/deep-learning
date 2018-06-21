@@ -18,7 +18,9 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Kaggle](/posts/kaggle.md)
 
 ## Know the basiscs
-* [Gradient descent](/posts/gradient_descent.md)
+* [Gradient descent](/posts/gradient_descent.md) (training loop)
+  * Choose waight initalization (random,...)
+  * Choose learining rate (constant, )
 * [Activation functions](/posts/activation_functions.md)
 * [Loss functions](/posts/loss_functions.md)
 
@@ -29,12 +31,17 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Weight initialization](/posts/weight_initialization.md)
 * [Set a good validation set](/posts/validation_set.md)
 
-## Fight Overfitting
+## Train faster (Optimization)
+* SGD with momentun
+* Adam
+
+## Fight Overfitting (Generalization)
 * [Dropout](/posts/dropout.md)
 * [Data augmentation](/posts/data_augmentation.md)
 * [Test time augmentation](/posts/TTA.md)
 * [Weight decay](/posts/weight_decay.md)
 * [Weight inilatization](/posts/weight_inilatization.md)
+
 
 ## Computer vision
 * [Redes neuronales convolucionales](/teoría/modelos/cnn.md)
