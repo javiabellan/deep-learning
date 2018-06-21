@@ -10,46 +10,46 @@ I've write this articles for kepping track my learning path,
 but you can use it as a guide for learning (or improving) your DL knowledge.
 
 
-## Setting up
+## 0. Setting up
 * [Hardware and Operating System](/posts/hardware_and_os.md)
 * [Python](/posts/python.md)
 * [Jupyter notebooks](/posts/jupyter.md)
 * [Pytorch](/posts/pytorch.md)
 * [Kaggle](/posts/kaggle.md)
 
-## Know the basiscs
+## 1. Know the basiscs
 * [Gradient descent](/posts/gradient_descent.md) (training loop)
   * Choose waight initalization (random,...)
   * Choose learining rate (constant, )
 * [Activation functions](/posts/activation_functions.md)
 * [Loss functions](/posts/loss_functions.md)
 
-## Start training
+## 2. Start training
 * [Find learning rate](/posts/learning_rate.md)
 * [Set batch size](/posts/batch_size.md)
 * [Normalize inputs](/posts/input_normalization.md)
 * [Weight initialization](/posts/weight_initialization.md)
 * [Set a good validation set](/posts/validation_set.md)
 
-## Train faster (Optimization)
-* SGD with momentun
-* Adam
-
-## Fight Overfitting (Generalization)
+## 3. Fight Overfitting and generalice better (Regularization)
 * [Dropout](/posts/dropout.md)
 * [Data augmentation](/posts/data_augmentation.md)
 * [Test time augmentation](/posts/TTA.md)
 * [Weight decay](/posts/weight_decay.md)
 * [Weight inilatization](/posts/weight_inilatization.md)
 
+## 4. Train faster (Optimization)
+* Pretrainded models (transfer learning)
+* SGD with momentun
+* Adam
 
-## Computer vision
+## 5. Computer vision
 * [Redes neuronales convolucionales](/teoría/modelos/cnn.md)
 * [Localización de objetos](/teoría/modelos/cnn.md)
 * [Inceptionism](/teoría/modelos/Inceptionism.md)
 * [Capsule net](/teoría/modelos/capsule.md)
 
-## Natural Language Processing
+## 6. Natural Language Processing
 * [Word embedding](/teoría/modelos/embedding.md)
 * [Red neuronal recurrente](/teoría/modelos/rnn.md)
 * [Sequence to sequence](/teoría/modelos/seq2seq.md)
