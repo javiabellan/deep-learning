@@ -22,3 +22,9 @@ new_w = w - ( (lr)(derivative) + (p)(grad_anterior) )
             __________________grad_actual_________________
 new_w = w - ( (lr)(1-p)(derivative) + (p)(grad_anterior) )
 ```
+
+
+
+### References
+
+http://ruder.io/optimizing-gradient-descent/index.html#momentum
