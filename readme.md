@@ -18,20 +18,27 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Kaggle](/posts/kaggle.md)
 
 ## 1. Know the basiscs
+* Chain rule
 * [Gradient descent](/posts/gradient_descent.md) (training loop)
   * Choose waight initalization (random,...)
   * Choose learining rate (constant, )
 * [Activation functions](/posts/activation_functions.md)
+  * **ReLU**: Non-linearity compontent of the net (hidden layers)
+  * **Softmax**: Sigle-label classification (last layer)
+  * **Sigmoid**: Milti-label classification (last layer)
 * [Loss functions](/posts/loss_functions.md)
 
 ## 2. Start training
 * [Find learning rate](/posts/learning_rate.md)
 * [Set batch size](/posts/batch_size.md)
+  * Batch gradient descent
+  * Stochastic gradient descent
+  * Mini-batch gradient descent
 * [Normalize inputs](/posts/input_normalization.md)
 * [Weight initialization](/posts/weight_initialization.md)
 * [Set a good validation set](/posts/validation_set.md)
 
-## 3. Fight Overfitting and generalice better (Regularization)
+## 3. Fight overfitting (Regularization)
 * [Dropout](/posts/dropout.md)
 * [Data augmentation](/posts/data_augmentation.md)
 * [Test time augmentation](/posts/TTA.md)
@@ -39,9 +46,16 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Weight inilatization](/posts/weight_inilatization.md)
 
 ## 4. Train faster (Optimization)
+* [Gradient Descent Optimization](http://ruder.io/optimizing-gradient-descent)
+  * SGD with momentun
+  * Nesterov Momentum
+  * AdaGrad
+  * RMSProp
+  * Adam
+* [SGD with restarts](http://ruder.io/deep-learning-optimization-2017)
 * Pretrainded models (transfer learning)
-* SGD with momentun
-* Adam
+* [Weight inilatization](/posts/weight_inilatization.md)
+* Batch Normalization
 
 ## 5. Computer vision
 * [Redes neuronales convolucionales](/teoría/modelos/cnn.md)
@@ -53,6 +67,8 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Word embedding](/teoría/modelos/embedding.md)
 * [Red neuronal recurrente](/teoría/modelos/rnn.md)
 * [Sequence to sequence](/teoría/modelos/seq2seq.md)
+
+## 7. Sturctured data
 
 ## Audio
 * Procesar audio
