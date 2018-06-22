@@ -27,3 +27,6 @@ En este capítulo veremos como podemos hacer el proceso de **entrenamiento más 
 
 
 * ReLU
+
+# References
+* http://ruder.io/deep-learning-optimization-2017/
