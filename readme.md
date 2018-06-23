@@ -46,16 +46,15 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Weight inilatization](/posts/weight_inilatization.md)
 
 ## 4. Train faster (Optimization)
-* [Gradient Descent Optimization](http://ruder.io/optimizing-gradient-descent)
-  * SGD with momentun
-  * Nesterov Momentum
-  * AdaGrad
-  * RMSProp
-  * Adam
 * [SGD with restarts](http://ruder.io/deep-learning-optimization-2017)
-* Pretrainded models (transfer learning)
-* [Weight inilatization](/posts/weight_inilatization.md)
+* [Gradient Descent Optimization](http://ruder.io/optimizing-gradient-descent)
+  * Momentum
+  * AdaGrad (Adaptative lr)
+  * RMSProp (Adaptative lr)
+  * Adam (Momentun + RMSProp) The best and most used.
+* [Weight inilatization](/posts/weight_inilatization.md) (better than random)
 * Batch Normalization
+* Pretrainded models (transfer learning)
 
 ## 5. Computer vision
 * [Redes neuronales convolucionales](/teoría/modelos/cnn.md)
