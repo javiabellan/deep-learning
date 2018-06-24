@@ -33,22 +33,23 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Set batch size](/posts/batch_size.md)
   * Batch gradient descent
   * Stochastic gradient descent
-  * Mini-batch gradient descent
+  * Mini-batch gradient descent. The biggger the better (but slower). Usually `64` or `128`
 * [Normalize inputs](/posts/input_normalization.md)
 * [Weight initialization](/posts/weight_initialization.md)
 * [Set a good validation set](/posts/validation_set.md)
 
 ## 3. Fight overfitting (Regularization)
-* [Dropout](/posts/dropout.md)
+* [Dropout](/posts/dropout.md). Usually `0.5`
 * [Data augmentation](/posts/data_augmentation.md)
 * [Test time augmentation](/posts/TTA.md)
-* [Weight decay](/posts/weight_decay.md)
-* [Weight inilatization](/posts/weight_inilatization.md)
+* [Weight decay](/posts/weight_decay.md) (Regularization in loss function) (penalice high weights)
+  * L1 regularization: add the sum of the absolute wights. `l1_loss = loss + 0.0005(sum(abs(w)))`
+  * L2 regularization: add the sum of the squared wights. `l2_loss = loss + 0.0005(sum(sqrt(w)))`
 
 ## 4. Train faster (Optimization)
 * [SGD with restarts](http://ruder.io/deep-learning-optimization-2017)
 * [Gradient Descent Optimization](http://ruder.io/optimizing-gradient-descent)
-  * Momentum
+  * Momentum. Usually `0.9`
   * AdaGrad (Adaptative lr)
   * RMSProp (Adaptative lr)
   * Adam (Momentun + RMSProp) The best and most used.
