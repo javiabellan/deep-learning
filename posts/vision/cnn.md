@@ -4,9 +4,9 @@
 
 ```python
 class ConvLayer(nn.Module):
-    def __init__(self, ni, nf):
+    def __init__(self, input_chnls, output_chnls):
         super().__init__()
-        self.conv = nn.Conv2d(ni, nf, kernel_size=3, stride=2, padding=1)
+        self.conv = nn.Conv2d(input_chnls, output_chnls, kernel_size=3, stride=2, padding=1)
         
     def forward(self, x):
     	return F.relu(self.conv(x))
