@@ -1,5 +1,16 @@
 # Convolution Neural Network (CNN)
 
+
+### State of the art
+
+Convolutions:
+* **Before**: Stride 1 convolution with pooling
+* **Now**: Stride 2 convolution without pooling (much faster)
+
+Final layer:
+* **Before**: Fully connected
+* **Now**: Adaptative max pooling
+
 ### Pytorch
 
 ```python
@@ -14,16 +25,16 @@ class ConvLayer(nn.Module):
 class ConvNet(nn.Module):
     def __init__(self, layer_chns, classes):
         super().__init__()
-        self.layers = nn.ModuleList([ConvLayer(layer_chns[i], layer_chns[i+1])
+        self.conv_layers = nn.ModuleList([ConvLayer(layer_chns[i], layer_chns[i+1])
             for i in range(len(layer_chns)-1)])
         self.fc = nn.Linear(layer_chns[-1], classes)
         
     def forward(self, x):
-        for l in self.layers: x = l(x)    # Conv layers
-        x = F.adaptive_max_pool2d(x, 1)   # Final pooling to 1 item
-        x = x.view(x.size(0), -1)         # Flatten
-        x = self.fc(x)                    # Fully connected
-        return F.log_softmax(x, dim=-1)   # Softmax
+        for l in self.conv_layers: x = l(x) # Conv layers
+        x = F.adaptive_max_pool2d(x, 1)     # Final pooling to 1 item
+        x = x.view(x.size(0), -1)           # Flatten
+        x = self.fc(x)                      # Fully connected
+        return F.log_softmax(x, dim=-1)     # Softmax
 
 model = ConvNet2([3, 20, 40, 80], 10)
 ```
