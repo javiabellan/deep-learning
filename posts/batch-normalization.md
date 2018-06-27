@@ -30,11 +30,11 @@ and not scale and shift every single activation
 class bachnorm(nn.Module):
     def __init__(self):
         super().__init__()
-        self.m = nn.Parameter(torch.ones(size_output))
-        self.a = nn.Parameter(torch.zeros(size_output))
+        self.scale = nn.Parameter(torch.ones(size_output))
+        self.shift = nn.Parameter(torch.zeros(size_output))
         
     def forward(self, x):
-        return ((x-x.mean()) / x.std()) * self.m + self.a
+        return ((x-x.mean()) / x.std()) * self.scale + self.shift
 ```
 
 ## References
