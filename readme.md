@@ -34,7 +34,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * Batch gradient descent
   * Stochastic gradient descent
   * Mini-batch gradient descent. The biggger the better (but slower). Usually `64` or `128`
-* [Normalize inputs](/posts/input_normalization.md)
+* [Normalize inputs](/posts/input_normalization.md) Mean and standar desviation
 * [Weight initialization](/posts/weight_initialization.md)
 * [Set a good validation set](/posts/validation_set.md)
 
@@ -58,10 +58,12 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * Pretrainded models (transfer learning)
 
 ## 5. Computer vision
-* [Redes neuronales convolucionales](/teoría/modelos/cnn.md)
-* [Localización de objetos](/teoría/modelos/cnn.md)
-* [Inceptionism](/teoría/modelos/Inceptionism.md)
-* [Capsule net](/teoría/modelos/capsule.md)
+* [Convolutional Neural Network (CNN)](/posts/vision/cnn.md)
+* [Residual Network (ResNet)](/posts/vision/resnet.md)
+* [siamese network](/posts/vision/siamese.md)
+* [Localización de objetos](/posts/vision/detection.md)
+* [Inceptionism](/posts/modelos/inceptionism.md)
+* [Capsule net](/posts/modelos/capsule.md)
 
 ## 6. Natural Language Processing
 * [Word embedding](/teoría/modelos/embedding.md)
