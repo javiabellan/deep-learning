@@ -35,6 +35,9 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * Stochastic gradient descent
   * Mini-batch gradient descent. The biggger the better (but slower). Usually `64` or `128`
 * [Normalize inputs](/posts/input_normalization.md): Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/whitening/pca helps a lot.
+  * `(x-x.min()) / (x.max()-x.min())`: Values from 0 to 1
+  * `2*(x-x.min()) / (x.max()-x.min()) - 1`: Values from -1 to 1
+  * `(x-x.mean()) / x.std()`: Values from ? to ?, but mean at 0 (most used)
 * [Weight initialization](/posts/weight_initialization.md)
 * [Set a good validation set](/posts/validation_set.md)
 
