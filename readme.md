@@ -41,13 +41,17 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Weight initialization](/posts/weight_initialization.md)
 * [Set a good validation set](/posts/validation_set.md)
 
-## 3. Fight overfitting (Regularization)
-* [Dropout](/posts/dropout.md). Usually `0.5`
-* [Data augmentation](/posts/data_augmentation.md)
-* [Test time augmentation](/posts/TTA.md)
-* [Weight decay](/posts/weight_decay.md) (Regularization in loss function) (penalice high weights)
-  * L1 regularization: add the sum of the absolute wights. `l1_loss = loss + 0.0005(sum(abs(w)))`
-  * L2 regularization: add the sum of the squared wights. `l2_loss = loss + 0.0005(sum(sqrt(w)))`
+## 3. Avoid overfitting (try in that order)
+1. Get more data
+2. [Data augmentation](/posts/data_augmentation.md)
+   * [Test time augmentation?](/posts/TTA.md)
+3. Generalizable architectures?: add more bachnorm layers, more densenets...
+4. Regularization
+   * [Dropout](/posts/dropout.md). Usually `0.5`
+   * [Weight decay](/posts/weight_decay.md) (Regularization in loss function) (penalice high weights)
+     * L1 regularization: add the sum of the absolute wights. `l1_loss = loss + 0.0005(sum(abs(w)))`
+     * L2 regularization: add the sum of the squared wights. `l2_loss = loss + 0.0005(sum(sqrt(w)))`
+5. Reduce model complexity
 
 ## 4. Train faster (Optimization)
 * [SGD with restarts](http://ruder.io/deep-learning-optimization-2017)
@@ -66,7 +70,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Batch Normalization](/posts/batch-normalization.md)
 
 ## 5. Computer vision
-* [Convolutional Neural Network (CNN)](/posts/vision/cnn.md)
+* [Convolutional Neural Network (CNN)](/posts/vision/cnn.md) For fixed size oredered data, like images
 * [Residual Network (ResNet)](/posts/vision/resnet.md)
 * [siamese network](/posts/vision/siamese.md)
 * [object detection](/posts/vision/detection.md)
@@ -75,16 +79,24 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 
 ## 6. Natural Language Processing
 * [Word embedding](/teoría/modelos/embedding.md)
-* [Red neuronal recurrente](/teoría/modelos/rnn.md)
+* [Recurrent Neural network (RNN)](/teoría/modelos/rnn.md) For sequences that need keeping the state, like text
 * [Sequence to sequence](/teoría/modelos/seq2seq.md)
 
 ## 7. Sturctured data
+* Continuous variables: Feed them directly to the network
+* Categorical variable: Use embeddings
 
-## Audio
+## 8. Audio
 * Procesar audio
 
-#### Generative models
+## 9. Generative models
 * Generative advesarial network (GAN)
+
+## 10. Advices
+* Start with a terrible model that overfit a lot
+
+
+---
 
 ## Unsupervised learning
 * [Autoencoder](/teoría/modelos/autoencoder.md): Para comprimir información
