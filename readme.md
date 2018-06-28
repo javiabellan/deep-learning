@@ -11,11 +11,12 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 
 
 ## 0. Setting up
-* [Hardware and Operating System](/posts/hardware_and_os.md)
-* [Python](/posts/python.md)
-* [Jupyter notebooks](/posts/jupyter.md)
-* [Pytorch](/posts/pytorch.md)
-* [Kaggle](/posts/kaggle.md)
+* [Hardware](/posts/0-setup/hardware.md)
+* [Software](/posts/0-setup/software.md)
+* [Python](/posts/p0-setup/ython.md)
+* [Jupyter notebooks](/posts/0-setup/upyter.md)
+* [Pytorch](/posts/0-setup/pytorch.md)
+* [Kaggle](/posts/0-setup/kaggle.md)
 
 ## 1. Know the basiscs
 * Chain rule
