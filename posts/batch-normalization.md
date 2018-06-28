@@ -8,14 +8,13 @@ Sugerencia mia: (because you are using ReLU, not the sigmoid)
 
 ## Naive Solution
 
-**Normalize activations for every layer**. But this literally does nothing 
+**Normalize activations**. But this literally does nothing 
 because SGD will undo it in the next minibatch repeatedly.
 
 ```python
 def naive_batchnorm(x):
     return (x-x.mean()) / x.std()
 ```
-
 
 ## Solution
 
@@ -36,6 +35,18 @@ class bachnorm(nn.Module):
     def forward(self, x):
         return ((x-x.mean()) / x.std()) * self.scale + self.shift
 ```
+
+
+> ### Before or after ReLU?
+> Original paper they put it before ReLU, but it works a bit better **after ReLU**.
+
+## Why is a regularizer?
+
+Each minibatch is going to have a different mean() and a different std() to the previous minibath.
+So they add noise, and when you add noise, in any kind, it regularizes your model
+
+
+
 
 ## References
 
