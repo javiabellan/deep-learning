@@ -40,7 +40,7 @@ class bachnorm(nn.Module):
 > ### Before or after ReLU?
 > Original paper they put it before ReLU, but it works a bit better **after ReLU**.
 
-## Why is a regularizer?
+## Why is also a regularizer?
 
 Each minibatch is going to have a different mean() and a different std() to the previous minibath.
 So they add noise, and when you add noise, in any kind, it regularizes your model
