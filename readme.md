@@ -55,16 +55,21 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * Momentum. Usually `0.9`
   * AdaGrad (Adaptative lr)
   * RMSProp (Adaptative lr)
-  * Adam (Momentun + RMSProp) The best and most used.
-* [Weight inilatization](/posts/weight_inilatization.md) (better than random)
-* Batch Normalization
-* Pretrainded models (transfer learning)
+  * Adam (Momentun + RMSProp) The **best** and most used.
+* [Weight initialization](/posts/weight_inilatization.md)
+  * Random
+  * Other better than random?
+  * Pretrainded models (transfer learning) **best**
+    1. Replace last layer
+    2. Fine-tune new layers
+    3. Fine-tune more layers (optional)
+* [Batch Normalization](/posts/batch-normalization.md)
 
 ## 5. Computer vision
 * [Convolutional Neural Network (CNN)](/posts/vision/cnn.md)
 * [Residual Network (ResNet)](/posts/vision/resnet.md)
 * [siamese network](/posts/vision/siamese.md)
-* [Localización de objetos](/posts/vision/detection.md)
+* [object detection](/posts/vision/detection.md)
 * [Inceptionism](/posts/modelos/inceptionism.md)
 * [Capsule net](/posts/modelos/capsule.md)
 
