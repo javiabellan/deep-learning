@@ -73,15 +73,23 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 ## 5. Computer vision
 * [Convolutional Neural Network (CNN)](/posts/vision/cnn.md) For fixed size oredered data, like images
 * [Residual Network (ResNet)](/posts/vision/resnet.md)
-* [siamese network](/posts/vision/siamese.md)
-* [object detection](/posts/vision/detection.md)
-* [Inceptionism](/posts/modelos/inceptionism.md)
-* [Capsule net](/posts/modelos/capsule.md)
+* [Siamese network](/posts/vision/siamese.md)
+* [Object detection](/posts/vision/detection.md)
+* Enhacement:
+  * Colorization
+  * Super-resolution
+  * Artistic style
+* [Generative advesarial network (GAN)](/posts/vision/gan.md)
+* [Inceptionism](/posts/vision/inceptionism.md)
+* [Capsule net](/posts/vision/capsule.md)
 
 ## 6. Natural Language Processing
 * [Word embedding](/teoría/modelos/embedding.md)
 * [Recurrent Neural network (RNN)](/teoría/modelos/rnn.md) For sequences that need keeping the state, like text
-* [Sequence to sequence](/teoría/modelos/seq2seq.md)
+* [Translation](/teoría/nlp/Translation.md)
+* [Sequence to sequence](/teoría/nlp/seq2seq.md)
+* [Attention](/teoría/nlp/attention.md)
+* [Large vocabularies](/teoría/nlp/large-vocabs.md)
 
 ## 7. Sturctured data
 * Continuous variables: Feed them directly to the network
@@ -90,12 +98,18 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 ## 8. Audio
 * Procesar audio
 
-## 9. Generative models
-* Generative advesarial network (GAN)
+## 9. Large datasets
+* Large images
+* Lots of data points
+* Large outputs
 
 ## 10. Advices
-* Start with a terrible model that overfit a lot
-
+* How to face a DL problem
+  1. Start with a terrible model that overfit a lot
+* Experiment a lot, especially in your aera of expertise.
+* Get known to the world!
+  * Don't wait to be perfect before you start communicating.
+  * If you don't have a blog, try [Medium](https://medium.com/)
 
 ---
 
