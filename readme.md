@@ -16,7 +16,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Jupyter Notebooks](/posts/0-setup/jupyter.md)
 * [Kaggle](/posts/0-setup/kaggle.md)
 
-## 1. Know the basiscs
+## 1. Know the basics
 * Chain rule
 * [Gradient descent](/posts/gradient_descent.md) (training loop)
   * Choose waight initalization (random,...)
