@@ -1,5 +1,5 @@
 <p align="center">
-<img width="50%" src="https://cdn-images-1.medium.com/max/1200/1*VcdHE40-TqZ3anN-YHk5uQ.png" />
+<img width="50%" src="/img/title.png" />
 </p>
 
 Here are my personal notes of the  [**deeplearning.ai**](https://www.deeplearning.ai)
