@@ -1,11 +1,11 @@
 # Hardware
 
 ### GPU
-Plenty of RAM and good single precision. Choose Nvidia. Used cards are fine is you can find them.
+Plenty of RAM and good single precision. Choose Nvidia.
  * GTX 1080ti (12GB RAM) is the price performance sweet spot today
  * GTX 1070 (8GB RAM) is also fine.
- * Dual GPU let you continue to prototype (jupyter) whilst running an experiment (training)
-
+ * Dual GPU let you continue to prototype (jupyter) whilst running an experiment (training).
+ 
 ### CPU
  * i5 or i7 CPU is fine
  * **Number of cores**: The rule of thumb is to have two or more threads (or cores) per GPU in your system.
