@@ -24,7 +24,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Activation functions](/posts/activation_functions.md)
   * **ReLU**: Non-linearity compontent of the net (hidden layers)
   * **Softmax**: Sigle-label classification (last layer)
-  * **Sigmoid**: Milti-label classification (last layer)
+  * **Sigmoid**: Multi-label classification (last layer)
 * [Loss functions](/posts/loss_functions.md)
   * Classification
     * **Cross Entropy**:
