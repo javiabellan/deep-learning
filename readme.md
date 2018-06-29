@@ -25,12 +25,13 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * **ReLU**: Non-linearity compontent of the net (hidden layers)
   * **Softmax**: Sigle-label classification (last layer)
   * **Sigmoid**: Multi-label classification (last layer)
-* [Loss functions](/posts/loss_functions.md)
+* [Loss functions](/posts/loss_functions.md) (Criterium)
   * Classification
     * **Cross Entropy**:
     * **Binary Cross Entropy**:
     * **Negative Log Likelihood**:
   * Regression
+    * **Mean Absolute Error**: `torch.nn.L1Loss`
     * **Mean Squared Error**: `torch.nn.MSELoss()`
 
 ## 2. Start training
@@ -61,10 +62,10 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 ## 4. Train faster (Optimization)
 * [SGD with restarts](http://ruder.io/deep-learning-optimization-2017)
 * [Gradient Descent Optimization](http://ruder.io/optimizing-gradient-descent)
-  * Momentum. Usually `0.9`
-  * AdaGrad (Adaptative lr)
-  * RMSProp (Adaptative lr)
-  * Adam (Momentun + RMSProp) The **best** and most used.
+  * **Momentum**. Usually `0.9` `torch.optim.SGD( momentum=0.9)` The second most used. 
+  * **AdaGrad** (Adaptative lr) `torch.optim.Adagrad()`
+  * **RMSProp** (Adaptative lr) `torch.optim.RMSprop()`
+  * **Adam** (Momentun + RMSProp) `torch.optim.Adam()` The **best** and most used. 
 * [Weight initialization](/posts/weight_inilatization.md)
   * Random
   * Other better than random?
