@@ -31,8 +31,8 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
     * **Binary Cross Entropy**:
     * **Negative Log Likelihood**:
   * Regression
-    * **Mean Absolute Error**: `torch.nn.L1Loss`
-    * **Mean Squared Error**: `torch.nn.MSELoss()`
+    * **Mean Absolute Error**: `torch.nn.L1Loss` (for bounding boxes?)
+    * **Mean Squared Error**: `torch.nn.MSELoss()` Penalice bad misses by too much (for single continuous value?)
 
 ## 2. Start training
 * [Find learning rate](/posts/learning_rate.md)
@@ -44,7 +44,6 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * `(x-x.min()) / (x.max()-x.min())`: Values from 0 to 1
   * `2*(x-x.min()) / (x.max()-x.min()) - 1`: Values from -1 to 1
   * `(x-x.mean()) / x.std()`: Values from ? to ?, but mean at 0 (most used)
-* [Weight initialization](/posts/weight_initialization.md)
 * [Set a good validation set](/posts/validation_set.md)
 
 ## 3. Avoid overfitting (try in that order)
