@@ -13,9 +13,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 ## 0. Setting up
 * [Hardware](/posts/0-setup/hardware.md)
 * [Software](/posts/0-setup/software.md)
-* [Python](/posts/p0-setup/ython.md)
-* [Jupyter notebooks](/posts/0-setup/upyter.md)
-* [Pytorch](/posts/0-setup/pytorch.md)
+* [Jupyter Notebooks](/posts/0-setup/jupyter.md)
 * [Kaggle](/posts/0-setup/kaggle.md)
 
 ## 1. Know the basiscs
@@ -28,6 +26,12 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * **Softmax**: Sigle-label classification (last layer)
   * **Sigmoid**: Milti-label classification (last layer)
 * [Loss functions](/posts/loss_functions.md)
+  * Classification
+    * **Cross Entropy**:
+    * **Binary Cross Entropy**:
+    * **Negative Log Likelihood**:
+  * Regression
+    * **Mean Squared Error**: `torch.nn.MSELoss()`
 
 ## 2. Start training
 * [Find learning rate](/posts/learning_rate.md)
