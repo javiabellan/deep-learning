@@ -1,0 +1,35 @@
+# Python
+
+### Pathlib
+
+```python
+from pathlib import Path
+
+PATH = Path('data/pascal')
+FILE = PATH / some_file
+```
+
+* PATH.iterdir()
+* file object
+
+### JSON
+
+```python
+import json
+
+train_json = json.load(FILE.open()) # FILE is a path obj, and open() returns a file obj
+train_json.keys()
+```
+
+### List and Dict comprehensions
+
+```python
+train_ids   = [o["id"]                 for o in train_json["images"]]      # list comprehension
+train_files = {o["id"]: o["file_name"] for o in train_json["images"]}      # dict comprehension
+categories  = {o["id"]: o["name"]      for o in train_json["categories"]}  # dict comprehension
+```
+
+### defaultdict
+
+```python
+```
