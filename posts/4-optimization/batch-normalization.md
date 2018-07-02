@@ -37,8 +37,10 @@ class bachnorm(nn.Module):
 ```
 
 
-> ### Before or after ReLU?
-> Original paper they put it before ReLU, but it works a bit better **after ReLU**.
+> ### Bachnorm before or after ReLU?
+> Original paper put bachnorm and then ReLU, but it works a bit better **ReLU and then bachnorm**.
+>
+> Because if you put bachnorm and then ReLU, you are truncating normalization at zero, loosing information.
 
 ## Why is also a regularizer?
 
