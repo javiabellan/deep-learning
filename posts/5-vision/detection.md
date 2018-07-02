@@ -12,13 +12,29 @@ See the last conv layer ativations
 
 ## Multi-object detection [fast.ai lesson 9](https://youtu.be/0frKXR-2PBY)
 
-
 ### Bad solution: Brute force and R-CNN
 
 1. Coge un clasificador CNN ya entrenado
 2. Pasa ese clasificador a lo largo de distitas regiones de tu imagen
 
-### Good solution: Look only once at your image
+### History (papers)
+
+1. (2013) Scalable object detection using deep neural networks (Multibox)
+   * Loss function with mathing process
+2. Faster R-CNN: Towards real-time object detection with region proposal networks
+   * Add a CNN for region proposal (new idea)
+   * Use that regions for clasification with a standar CNN
+3. You Only Look Once: unified, real-time object detection
+   * Same peroformace as Faster R-CNN but in one step
+4. [SSD single shot multibox detector](https://arxiv.org/pdf/1512.02325.pdf)
+   * Same peroformace as Faster R-CNN but in one step
+5. [Focal loss for dense object detection](https://arxiv.org/pdf/1708.02002.pdf) (RetinaNet)
+   * Improve the detections by simply customize the loss funcion
+   * Focal loss: Make the loss slower for uncertain predictions (0.6 fro example)
+
+We are going to use SSD and we also try it with the focal loss
+
+## Backbone architecture: ResNet
 
 The final layer of the resnet is 512 channles of 7x7 (7x7x512)
 
@@ -26,7 +42,6 @@ If we want to predict up to 16 bounding boxes with its categories we have to opt
 
  * A `nn.linear()` layer with a 1D output of size of 16*(4+clases). ([YOLO](https://pjreddie.com/darknet/yolo/))
  * A `nn.conv2d(stride=2)` layer with a 3D output of size of 4x4x(4+clases). (SSD) (a bit better)
-
 
 ### Anchor boxes
 
@@ -49,21 +64,15 @@ Process (for every image):
 0. Get **prediction** and **target**:
    * Ground truth: 2D tensor `num_objs*(4+classes)`
    * Prediction: 2D tensor `16*(4+classes)`
-1. **Matching part**: Determine which ground truth box is closest to wich anchor box (grid cell) (remeber we have several bboxes per grid cell)
-2. **Compute loss**: Then is trivial, is the same as single object setection `detection_loss()` (L1 for bbox regression and CE for classification)
+1. **Matching part**: Determine which ground truth box is closest to wich anchor box (grid cell) (remeber we have several bboxes per grid cell) Jaccard overlap
+2. **Compute loss**: Then is trivial, is the same as single object setection `detection_loss()` (L1 for bbox regression and CE for classification). Use Focal loss for improvement
+   * `SSD_loss = 1/N (class_loss() + weight_factor*location_loss())` weight_factor is around 20 to make both loss similar
+   * Focal_loss for improve things
 
-### History (papers)
-1. (2013) Scalable object detection using deep neural networks (Multibox)
-   * Loss function with mathing process
-2. Faster R-CNN: Towards real-time object detection with region proposal networks
-   * Add a CNN for region proposal (new idea)
-   * Use that regions for clasification with a standar CNN
-3. You Only Look Once: unified, real-time object detection
-   * Same peroformace as Faster R-CNN but in one step
-4. SSD single shot multibox detector
-   * Same peroformace as Faster R-CNN but in one step
-5. [Focal loss for dense object detection](https://arxiv.org/pdf/1708.02002.pdf) (RetinaNet)
-   * Avoid the multiple messy bbox predictions
+### Post-processing
+
+**Non-Maximum Suppression (NMS)**: Get rid of overlapping predictions of the same class
+
 
 ---
 
