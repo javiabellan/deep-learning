@@ -42,4 +42,14 @@ for o in train_j["annotations"]:
     train_anno[o["id"]].append((bb, o["categories"]))
 ```
 
+
+### Matplotlib
+```python
+def show_img(im, figsize=None, ax=None):
+  if not ax: fig,ax = plt.subplots(figsize=figsize)
+  ax.get_xaxis().set_visible(False)
+  ax.get_yaxis().set_visible(False)
+  return ax
+```
+
 TODO: https://medium.com/@pierre_guillou/fastai-how-to-start-663927d4db63
