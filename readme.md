@@ -74,17 +74,17 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Batch Normalization](/posts/batch-normalization.md)
 
 ## 5. Computer vision
-* [Convolutional Neural Network (CNN)](/posts/vision/cnn.md) For fixed size oredered data, like images
-* [Residual Network (ResNet)](/posts/vision/resnet.md)
-* [Siamese network](/posts/vision/siamese.md)
-* [Object detection](/posts/vision/detection.md)
+* [Convolutional Neural Network (CNN)](/posts/5-vision/cnn.md) For fixed size oredered data, like images
+* [Residual Network (ResNet)](/posts/5-vision/resnet.md)
+* [Object detection](/posts/5-vision/detection.md)
 * Enhacement:
   * Colorization
   * Super-resolution
   * Artistic style
-* [Generative advesarial network (GAN)](/posts/vision/gan.md)
-* [Inceptionism](/posts/vision/inceptionism.md)
-* [Capsule net](/posts/vision/capsule.md)
+* [Generative advesarial network (GAN)](/posts/5-vision/gan.md)
+* [Siamese network](/posts/5-vision/siamese.md)
+* [Inceptionism](/posts/5-vision/inceptionism.md)
+* [Capsule net](/posts/5-vision/capsule.md)
 
 ## 6. Natural Language Processing
 * [Word embedding](/teoría/modelos/embedding.md)
