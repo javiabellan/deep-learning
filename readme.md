@@ -26,13 +26,12 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * **Softmax**: Sigle-label classification (last layer)
   * **Sigmoid**: Multi-label classification (last layer)
 * [Loss functions](/posts/loss_functions.md) (Criterium)
-  * Classification
-    * **Cross Entropy**:
-    * **Binary Cross Entropy**:
-    * **Negative Log Likelihood**:
+  * Multiclass classification
+    * **Cross Entropy** (Negative Log Likelihood): Sigle-label classification. Usually with **softmax**. See [this](https://jamesmccaffrey.wordpress.com/2016/09/25/log-loss-and-cross-entropy-are-almost-the-same/)
+    * **Binary Cross Entropy**:  Multi-label classification. Usually with **sigmoid**.
   * Regression
-    * **Mean Absolute Error**: `torch.nn.L1Loss` (for bounding boxes?)
-    * **Mean Squared Error**: `torch.nn.MSELoss()` Penalice bad misses by too much (for single continuous value?)
+    * **Mean Absolute Error** (L1 loss): (for bounding boxes?)
+    * **Mean Squared Error** (L2 loss): Penalice bad misses by too much (for single continuous value?)
 
 ## 2. Start training
 * [Find learning rate](/posts/learning_rate.md)
