@@ -32,4 +32,14 @@ categories  = {o["id"]: o["name"]      for o in train_json["categories"]}  # dic
 ### defaultdict
 
 ```python
+import collections
+
+train_anno = collections.defaultdict(lambda:[])
+
+for o in train_j["annotations"]:
+  if not o["ignore"]:
+    bb o["bbox"]
+    train_anno[o["id"]].append((bb, o["categories"]))
 ```
+
+TODO: https://medium.com/@pierre_guillou/fastai-how-to-start-663927d4db63
