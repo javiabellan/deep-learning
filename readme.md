@@ -17,16 +17,16 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Kaggle](/posts/0-setup/kaggle.md)
 
 ## 1. Know the basics
-* Chain rule
-* [Gradient descent](/posts/gradient_descent.md) (training loop)
+* [Chain rule](/posts/1-basics/chain_rule.md)
+* [Gradient descent](/posts/1-basics/gradient_descent.md) (training loop)
   * Choose waight initalization (random,...)
   * Choose learining rate (constant, )
-* [Activation functions](/posts/activation_functions.md)
+* [Activation functions](/posts/1-basics/activations.md)
   * **ReLU**: Non-linearity compontent of the net (hidden layers)
   * **Softmax**: Sigle-label classification (last layer)
   * **Sigmoid**: Multi-label classification (last layer)
   * **Hyperbolic tangent**:
-* [Loss functions](/posts/loss_functions.md) (Criterium)
+* [Loss functions](/posts/1-basics/loss.md) (Criterium)
   * **Mean Absolute Error** (L1 loss): Regression (for bounding boxes?).
   * **Mean Squared Error** (L2 loss): Regression. Penalice bad misses by too much (for single continuous value?).
   * **Cross Entropy**: Sigle-label classification. Usually with **softmax**.
