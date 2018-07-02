@@ -25,13 +25,13 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * **ReLU**: Non-linearity compontent of the net (hidden layers)
   * **Softmax**: Sigle-label classification (last layer)
   * **Sigmoid**: Multi-label classification (last layer)
+  * **Hyperbolic tangent**:
 * [Loss functions](/posts/loss_functions.md) (Criterium)
-  * Multiclass classification
-    * **Cross Entropy** (Negative Log Likelihood): Sigle-label classification. Usually with **softmax**. See [this](https://jamesmccaffrey.wordpress.com/2016/09/25/log-loss-and-cross-entropy-are-almost-the-same/)
-    * **Binary Cross Entropy**:  Multi-label classification. Usually with **sigmoid**.
-  * Regression
-    * **Mean Absolute Error** (L1 loss): (for bounding boxes?)
-    * **Mean Squared Error** (L2 loss): Penalice bad misses by too much (for single continuous value?)
+  * **Mean Absolute Error** (L1 loss): Regression (for bounding boxes?).
+  * **Mean Squared Error** (L2 loss): Regression. Penalice bad misses by too much (for single continuous value?).
+  * **Cross Entropy**: Sigle-label classification. Usually with **softmax**.
+    * **Negative Log Likelihood** is the one-hot simplified version, see [this](https://jamesmccaffrey.wordpress.com/2016/09/25/log-loss-and-cross-entropy-are-almost-the-same/)
+  * **Binary Cross Entropy**:  Multi-label classification. Usually with **sigmoid**.
 
 ## 2. Start training
 * [Find learning rate](/posts/learning_rate.md)
@@ -98,17 +98,20 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * Continuous variables: Feed them directly to the network
 * Categorical variable: Use embeddings
 
-## 8. Audio
-* Procesar audio
 
-## 9. Large datasets
+## 8. Large datasets
 * Large images
 * Lots of data points
 * Large outputs
 
+## 9. How to face a DL problem
+1. Think what is your best
+   * Data
+   * Architecture
+   * Loss function
+2. Start with a terrible model that overfit a lot
+
 ## 10. Advices
-* How to face a DL problem
-  1. Start with a terrible model that overfit a lot
 * Experiment a lot, especially in your aera of expertise.
 * Get known to the world!
   * Don't wait to be perfect before you start communicating.
