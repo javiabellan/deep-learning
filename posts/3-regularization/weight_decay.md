@@ -10,6 +10,11 @@ There are to types of weight dacay: L1 regularization and L2 regularization.
 
 A type of regularization that penalizes weights in proportion to the sum of the absolute values of the weights. In models relying on sparse features, L1 regularization helps drive the weights of irrelevant or barely relevant features to exactly 0, which removes those features from the model.
 
+* Sometimes it works better to penalize the absolute values of the weights. 
+  * This can make many weights  exactly equal to zero which helps interpretation a lot.
+* Sometimes it works better to use a weight penalty that has negligible effect on large weights.
+  *This allows a few large weights
+
 L1 regularization consists in adding to the loss function **the sum of the absolute value of all the weights** of the model,
 multiplied by a `wd` hyper-parameter (usually 0.0005):
 
@@ -20,6 +25,9 @@ l1_loss = loss + wd * all_weights.abs().sum() / 2   # / 2 is for simplify deriva
 ## L2 regularization
 
 A type of regularization that penalizes weights in proportion to the sum of the squares of the weights. L2 regularization helps drive outlier weights (those with high positive or low negative values) closer to 0 but not quite to 0. L2 regularization always improves generalization in linear models.
+
+* This keeps the weights small unless they have big error derivatives.
+* It prevents the network from using weights that it does not need.
 
 L2 regularization consists in adding to the loss function **the sum of the squares of all the weights** of the model,
 multiplied by a `wd` hyper-parameter (usually 0.0005):
@@ -96,3 +104,4 @@ Clearly those are two different approaches. And after experimenting with this, I
 
 ## References
 * http://www.fast.ai/2018/07/02/adam-weight-decay/
+* https://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec9.pdf
