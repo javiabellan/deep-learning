@@ -17,6 +17,10 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Kaggle](/posts/0-setup/kaggle.md)
 
 ## 1. Know the basics
+* Data
+  * Training: used for learning the parameters of the model. 
+  * Validation: used for evaluating model while training
+  * Test data: used to get a final estimate of how well the network works.
 * [Chain rule](/posts/1-basics/chain_rule.md)
 * [Gradient descent](/posts/1-basics/gradient_descent.md) (training loop)
   * Choose waight initalization (random,...)
@@ -44,6 +48,8 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * `2*(x-x.min()) / (x.max()-x.min()) - 1`: Values from -1 to 1
   * `(x-x.mean()) / x.std()`: Values from ? to ?, but mean at 0 (most used)
 * [Set a good validation set](/posts/validation_set.md)
+  * N-fold cross-validation. Usually `10`
+* Train until start overffiting (early stopping)
 
 ## 3. Improve generalization and avoid overfitting (try in that order)
 1. Get more data
@@ -53,14 +59,13 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 4. Regularization
    * [Dropout](/posts/3-generalization/dropout.md). Usually `0.5`
    * [Weight penalty](/posts/3-generalization/weight_decay.md): Regularization in loss function (penalice high weights). Usually `0.0005`
-     * L1 regularization: add to the loss the sum of the absolute weights.
-     * L2 regularization: penalizes the squared weights (weight decay)
+     * L1 regularization: penalizes the sum of absolute weights.
+     * L2 regularization: penalizes the sum of squared weights (weight decay).
 5. Reduce model complexity: Limit the number of hidden layers and the number of units per layer.
-
-Other approaches
-* **Ensemble**: Average many different models with different forms.
-* **Bagging**: Train the model on different subsets of the training data.
-* **Bayesian**: Use a single architecture, but average the predictions made by many different weight vectors.  
+6. Other approaches
+   * **Ensemble**: Average many different models with different forms.
+   * **Bagging**: Train the model on different subsets of the training data.
+   * **Bayesian**: Use a single architecture, but average the predictions made by many different weight vectors.  
 
 ## 4. Train faster (Optimization)
 * [SGD with restarts](/posts/4-optimization/sgd-with-restarts.md)
