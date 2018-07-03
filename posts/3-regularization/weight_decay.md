@@ -8,6 +8,8 @@ There are to types of weight dacay: L1 regularization and L2 regularization.
 
 ## L1 regularization
 
+A type of regularization that penalizes weights in proportion to the sum of the absolute values of the weights. In models relying on sparse features, L1 regularization helps drive the weights of irrelevant or barely relevant features to exactly 0, which removes those features from the model.
+
 L1 regularization consists in adding to the loss function **the sum of the absolute value of all the weights** of the model,
 multiplied by a `wd` hyper-parameter (usually 0.0005):
 
@@ -16,6 +18,8 @@ l1_loss = loss + wd * all_weights.abs().sum() / 2   # / 2 is for simplify deriva
 ```
 
 ## L2 regularization
+
+A type of regularization that penalizes weights in proportion to the sum of the squares of the weights. L2 regularization helps drive outlier weights (those with high positive or low negative values) closer to 0 but not quite to 0. L2 regularization always improves generalization in linear models.
 
 L2 regularization consists in adding to the loss function **the sum of the squares of all the weights** of the model,
 multiplied by a `wd` hyper-parameter (usually 0.0005):
@@ -85,7 +89,7 @@ We can see that the part subtracted from w linked to regularization isn’t the 
 When using the Adam optimizer, it gets even more different:
 in the case of L2 regularization we add this wd*w to the gradients then compute a moving average of the gradients and their squares before using both of them for the update. Whereas the weight decay method simply consists in doing the update, then subtract to each weight.
 
-
+Clearly those are two different approaches. And after experimenting with this, Ilya Loshchilov and Frank Hutter suggest in their article we should use weight decay with Adam, and not the L2 regularization that classic deep learning libraries implement.
 
 
 
