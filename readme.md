@@ -47,36 +47,40 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 
 ## 3. Avoid overfitting (try in that order)
 1. Get more data
-2. [Data augmentation](/posts/data_augmentation.md)
-   * [Test time augmentation?](/posts/TTA.md)
+2. [Data augmentation](/posts/3-regularization/data_augmentation.md)
+   * [Test time augmentation (TTA)?](/posts/3-regularization/TTA.md)
 3. Generalizable architectures?: add more bachnorm layers, more densenets...
 4. Regularization
-   * [Dropout](/posts/dropout.md). Usually `0.5`
-   * [Weight decay](/posts/weight_decay.md) (Regularization in loss function) (penalice high weights)
+   * [Dropout](/posts/3-regularization/dropout.md). Usually `0.5`
+   * [Weight decay](/posts/3-regularization/weight_decay.md) (Regularization in loss function) (penalice high weights)
      * L1 regularization: add the sum of the absolute wights. `l1_loss = loss + 0.0005(sum(abs(w)))`
      * L2 regularization: add the sum of the squared wights. `l2_loss = loss + 0.0005(sum(sqrt(w)))`
 5. Reduce model complexity
 
 ## 4. Train faster (Optimization)
-* [SGD with restarts](http://ruder.io/deep-learning-optimization-2017)
-* [Gradient Descent Optimization](http://ruder.io/optimizing-gradient-descent)
-  * **Momentum**. Usually `0.9` `torch.optim.SGD( momentum=0.9)` The second most used. 
-  * **AdaGrad** (Adaptative lr) `torch.optim.Adagrad()`
-  * **RMSProp** (Adaptative lr) `torch.optim.RMSprop()`
-  * **Adam** (Momentun + RMSProp) `torch.optim.Adam()` The **best** and most used. 
-* [Weight initialization](/posts/weight_inilatization.md)
+* [SGD with restarts](/posts/4-optimization/sgd-with-restarts.md)
+* [Gradient Descent Optimization](/posts/4-optimization/sgd-optimization.md)
+  * **Momentum**. Usually `0.9` The second most used. 
+  * **AdaGrad** (Adaptative lr)
+  * **RMSProp** (Adaptative lr)
+  * **Adam** (Momentun + RMSProp) The **best** and most used. 
+* [Weight initialization](/posts/4-optimization/weight_inilatization.md)
   * Random
   * Other better than random?
   * Pretrainded models (transfer learning) **best**
     1. Replace last layer
     2. Fine-tune new layers
     3. Fine-tune more layers (optional)
-* [Batch Normalization](/posts/batch-normalization.md)
+* [Batch Normalization](/posts/4-optimization/batch-normalization.md)
+* [2nd order optimization](/posts/4-optimization/2nd-order.md)
 
 ## 5. Computer vision
 * [Convolutional Neural Network (CNN)](/posts/5-vision/cnn.md) For fixed size oredered data, like images
 * [Residual Network (ResNet)](/posts/5-vision/resnet.md)
 * [Object detection](/posts/5-vision/detection.md)
+  * Class Activation Maps (CAM)
+  * Single-object detection
+  * Multi-object detection (SSD)
 * Enhacement:
   * Colorization
   * Super-resolution
