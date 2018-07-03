@@ -45,17 +45,22 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * `(x-x.mean()) / x.std()`: Values from ? to ?, but mean at 0 (most used)
 * [Set a good validation set](/posts/validation_set.md)
 
-## 3. Avoid overfitting (try in that order)
+## 3. Improve generalization and avoid overfitting (try in that order)
 1. Get more data
-2. [Data augmentation](/posts/3-regularization/data_augmentation.md)
-   * [Test time augmentation (TTA)?](/posts/3-regularization/TTA.md)
+2. [Data augmentation](/posts/3-generalization/data_augmentation.md)
+   * [Test time augmentation (TTA)?](/posts/3-generalization/TTA.md)
 3. Generalizable architectures?: add more bachnorm layers, more densenets...
 4. Regularization
-   * [Dropout](/posts/3-regularization/dropout.md). Usually `0.5`
-   * [Weight decay](/posts/3-regularization/weight_decay.md): Regularization in loss function (penalice high weights). Usually `0.0005`
+   * [Dropout](/posts/3-generalization/dropout.md). Usually `0.5`
+   * [Weight penalty](/posts/3-generalization/weight_decay.md): Regularization in loss function (penalice high weights). Usually `0.0005`
      * L1 regularization: add to the loss the sum of the absolute weights.
-     * L2 regularization: add to the loss the sum of the squared weights.
-5. Reduce model complexity
+     * L2 regularization: penalizes the squared weights (weight decay)
+5. Reduce model complexity: Limit the number of hidden layers and the number of units per layer.
+
+Other approaches
+* **Ensemble**: Average many different models with different forms.
+* **Bagging**: Train the model on different subsets of the training data.
+* **Bayesian**: Use a single architecture, but average the predictions made by many different weight vectors.  
 
 ## 4. Train faster (Optimization)
 * [SGD with restarts](/posts/4-optimization/sgd-with-restarts.md)
