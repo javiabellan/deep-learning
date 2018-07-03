@@ -8,23 +8,28 @@ To make it easier for our model to learn, there are a few ways we can improve it
 
 Just to remember what we are talking about,
 the basic algorithm consists in changing each of our parameter where:
-* `p` represents one of our parameters (weights and bias)
-* `p.grad` is the gradient of the loss with respect to p
-* `lr` is an hyperparameter called learning rate
+* `w` represents one of our **parameters** (weights or bias)
+* `w.grad` is the **gradient** of the loss with respect to `w`
+* `lr` is an hyperparameter called **learning rate**
 
-```
-new_p = p - lr * p.grad
+```python
+new_w = w - lr * w.grad
 ```
 
 ### Gradient Descent with Momentum
-To accelerate thigs up, one improvement is to use mumentum that sum to the actual step, a little bit of the previous step.
 
+To accelerate thigs up, one improvement is to use mumentum that sum to the actual step, a little bit of the previous step.
+*  `p` is a new hyperparameter called **momentum** often equals to 0.9 (other common values are .5, .7, .9 and .99).
 ```
              _______________grad_actual_______________
 new_w = w + ( - (lr)(derivative) + (p)(grad_anterior) )
 ```
 
-Momentum `p` is usually `.9`. Other common values are `.5`, `.7`, `.9` and `.99`.
+```python
+new_v = lr * w.grad + p * v
+new_w = w - new_v
+```
+
 
 In Pytorch: `torch.optim.SGD(momentum=0.9)`
 
@@ -37,7 +42,16 @@ In Pytorch: `torch.optim.SGD(momentum=0.9)`
 > ```
 
 
-##### Nesterov Momentum
+### Nesterov Momentum
+
+```python
+for p in parameters:
+    p1 = p - beta v[p]
+model.reevaluate_grads()
+for p in parameters
+    v[p] = beta * v[p] + lr * p.grad
+    p = p - v[p]
+```
 
 ### AdaGrad
 
