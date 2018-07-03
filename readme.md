@@ -52,9 +52,9 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 3. Generalizable architectures?: add more bachnorm layers, more densenets...
 4. Regularization
    * [Dropout](/posts/3-regularization/dropout.md). Usually `0.5`
-   * [Weight decay](/posts/3-regularization/weight_decay.md) (Regularization in loss function) (penalice high weights)
-     * L1 regularization: add the sum of the absolute wights. `l1_loss = loss + 0.0005(sum(abs(w)))`
-     * L2 regularization: add the sum of the squared wights. `l2_loss = loss + 0.0005(sum(sqrt(w)))`
+   * [Weight decay](/posts/3-regularization/weight_decay.md): Regularization in loss function (penalice high weights). Usually `0.0005`
+     * L1 regularization: add to the loss the sum of the absolute weights.
+     * L2 regularization: add to the loss the sum of the squared weights.
 5. Reduce model complexity
 
 ## 4. Train faster (Optimization)
