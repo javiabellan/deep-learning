@@ -207,17 +207,17 @@ cudnn.benchmark = True
 
 ###################################### TRAIN NEW
 
-def train(train_loader, model, criterion, optimizer, epoch):
+def fit(train_loader, model, criterion, optimizer, epoch):
     for epoch in range(args.start_epoch, args.epochs):
         if args.distributed:
             train_sampler.set_epoch(epoch)
         adjust_learning_rate(optimizer, epoch)
 
         # train for one epoch
-        train_epoch(train_loader, model, criterion, optimizer, epoch)
+        train(train_loader, model, criterion, optimizer, epoch)
 
         # evaluate on validation set
-        prec1 = validate_epoch(val_loader, model, criterion)
+        prec1 = validate(val_loader, model, criterion)
 
         # remember best prec@1 and save checkpoint
         is_best = prec1 > best_prec1
@@ -231,7 +231,8 @@ def train(train_loader, model, criterion, optimizer, epoch):
         }, is_best)
 
 
-def train_epoch(train_loader, model, criterion, optimizer, epoch):
+# train one epoch
+def train(train_loader, model, criterion, optimizer, epoch):
     batch_time = AverageMeter()
     data_time  = AverageMeter()
     losses     = AverageMeter()
@@ -277,8 +278,8 @@ def train_epoch(train_loader, model, criterion, optimizer, epoch):
                    epoch, i, len(train_loader), batch_time=batch_time,
                    data_time=data_time, loss=losses, top1=top1, top5=top5))
 
-
-def validate_epoch(val_loader, model, criterion):
+# validate one epoch
+def validate(val_loader, model, criterion):
     batch_time = AverageMeter()
     losses     = AverageMeter()
     top1       = AverageMeter()
