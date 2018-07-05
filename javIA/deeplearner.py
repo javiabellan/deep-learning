@@ -1,15 +1,23 @@
-###################################### IMPORTS
+
+########################################################## DeepLearner
+"""
+
+Welcome to the deeplearner framework
+
+TODO:
+Change lr (sgdr)
+https://github.com/fastai/fastai/blob/master/courses/dl2/training_phase.ipynb
+
+
+"""
+########################################################## IMPORTS
+
+from utils import * 
 
 # Basic
-import os
-import shutil
 import time
 import sys
-import math
-import numpy as np
 import pathlib
-import cv2
-import multiprocessing
 
 # Pytorch
 import torch
@@ -20,13 +28,9 @@ import torch.distributed as dist
 import torch.optim
 import torch.utils.data
 import torch.utils.data.distributed
+import torchvision
 #import torch.nn.functional as F
 #from torch.utils.data import DataLoader
-
-# Torchvision
-import torchvision.transforms as transforms
-import torchvision.datasets as datasets
-import torchvision.models as models
 
 
 
@@ -34,18 +38,17 @@ class DeepLearner():
 
     ########################################################## CONSTRUCTOR
 
-    def __init__(self, data="data", model, loss=None, pretrained=True, augmentation=None):
+    def __init__(self, data_dir="data", model, loss=None, pretrained=True, augmentation=None):
 
         # Hardware
-        self.cpu_cores     = multiprocessing.cpu_count()
+        self.cpu_cores     = num_cpus()
         self.gpu           = torch.cuda.is_available() # check for better performance: torch.backends.cudnn.enabled
         self.gpus          = torch.cuda.device_count() > 1
 
         # Data
+        self.get_data(data_dir)
         self.train_dataset = self.get_dataset(train_dir, transforms)
         self.test_dataset  = self.get_dataset(train_dir, transforms)
-        self.val_percent   = 0.2
-        self.num_workers   = self.cpu_cores
 
         # Model
         self.model         = self.get_torchvision_model(model, pretrained)
@@ -53,7 +56,6 @@ class DeepLearner():
 
         # Training
         self.epochs        = 1
-        self.batch_size    = 64
         self.learning_rate = 0.01
         self.momentum      = 0.9
         self.weight_decay  = 0.0005
@@ -66,39 +68,45 @@ class DeepLearner():
 
     ########################################################## DATA
 
-    def get_dataset(data):
+    def get_transforms(type):
+        normalize = torchvision.transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+
+        if type=="train":
+            transforms = torchvision.transforms.Compose([
+                torchvision.transforms.RandomResizedCrop(224),
+                torchvision.transforms.RandomHorizontalFlip(),
+                torchvision.transforms.ToTensor(),
+                normalize
+            ])
+        elif type=="valid":
+            transforms = torchvision.transforms.Compose([
+                torchvision.transforms.Resize(256),
+                torchvision.transforms.CenterCrop(224),
+                torchvision.transforms.ToTensor(),
+                normalize
+            ])
+
+        return transforms
+
+    def get_data(data, drop_last_batch=False):
 
         data_dir  = pathlib.Path(data)
         train_dir = data_dir / "train"
         valid_dir = data_dir / "valid"
-        test_dir  = data_dir / "test"
+        # test_dir  = data_dir / "test"
 
 
-        normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+        self.val_percent   = 0.2
+        self.train_dataset = torchvision.datasets.ImageFolder(train_dir, get_transforms("train")) # Or custom dataset
+        self.valid_dataset = torchvision.datasets.ImageFolder(valid_dir, get_transforms("valid")) # Or custom dataset
 
-        train_transforms = transforms.Compose([
-            transforms.RandomResizedCrop(224),
-            transforms.RandomHorizontalFlip(),
-            transforms.ToTensor(),
-            normalize
-        ])
+        self.batch_size    = 64
+        self.num_workers   = self.cpu_cores
+        self.train_loader  = torch.utils.data.DataLoader(train_dataset, batch_size=self.batch_size, shuffle=True,  num_workers=self.num_workers, pin_memory=True, drop_last=drop_last_batch)
+        self.valid_loader  = torch.utils.data.DataLoader(valid_dataset, batch_size=self.batch_size, shuffle=False, num_workers=self.num_workers, pin_memory=True, drop_last=drop_last_batch)
 
-        valid_transforms = transforms.Compose([
-            transforms.Resize(256),
-            transforms.CenterCrop(224),
-            transforms.ToTensor(),
-            normalize
-        ])
-
-        train_dataset = datasets.ImageFolder(train_dir, train_transforms) # Or custom dataset
-        valid_dataset = datasets.ImageFolder(valid_dir, valid_transforms) # Or custom dataset
-
-        train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True,  num_workers=num_workers, pin_memory=True)
-        valid_loader = torch.utils.data.DataLoader(valid_dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers, pin_memory=True)
-
-        train_size = len(train_dataset)
-        if drop_last_batch: number_of_batches = math.floor(train_size/batch_size)
-        else:               number_of_batches = math.ceil(train_size/batch_size)
+        self.train_size    = len(self.train_dataset)
+        self.num_batches   = math.ceil(train_size/batch_size) if not drop_last_batch else math.floor(train_size/batch_size)
 
 
     ########################################################## MODEL
@@ -118,11 +126,39 @@ class DeepLearner():
             print(model_name+" model don't exists in torchvision")
 
 
+    def change_last_layer(num_outputs):
+        self.freeze()
+        num_features  = self.model.fc.in_features
+        self.model.fc = nn.Linear(num_features, num_outputs) # New last layer is unfreezed
+
+
+    def freeze():
+        for param in self.model.parameters():
+            param.requires_grad = False
+
+    def unfreeze():
+        for param in self.model.parameters():
+            param.requires_grad = True
+
+
 
 
     ########################################################## LOSS
-    def get_loss(self):
-        return nn.CrossEntropyLoss().cuda()
+
+    def get_loss(self, classification=True, single_label=True):
+
+        if classification and single_label:
+            loss =  torch.nn.CrossEntropyLoss() # CE  = Softmax + NLLLoss
+
+        elif classification and not single_label:
+            loss = torch.nn.BCEWithLogitsLoss() # BCE = Sigmoid + BCELoss
+
+        else: # regression
+            loss = torch.nn.MSELoss()
+
+        # if self.gpu: loss.cuda()
+
+        return loss
 
 
 
