@@ -38,7 +38,7 @@ class DeepLearner():
 
     ########################################################## CONSTRUCTOR
 
-    def __init__(self, data_dir="data", model, loss=None, pretrained=True, augmentation=None):
+    def __init__(self, dataset, model, loss=None, pretrained=True, augmentation=None):
 
         # Hardware
         self.cpu_cores     = num_cpus()
@@ -67,26 +67,6 @@ class DeepLearner():
 
 
     ########################################################## DATA
-
-    def get_transforms(type):
-        normalize = torchvision.transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-
-        if type=="train":
-            transforms = torchvision.transforms.Compose([
-                torchvision.transforms.RandomResizedCrop(224),
-                torchvision.transforms.RandomHorizontalFlip(),
-                torchvision.transforms.ToTensor(),
-                normalize
-            ])
-        elif type=="valid":
-            transforms = torchvision.transforms.Compose([
-                torchvision.transforms.Resize(256),
-                torchvision.transforms.CenterCrop(224),
-                torchvision.transforms.ToTensor(),
-                normalize
-            ])
-
-        return transforms
 
     def get_data(data, drop_last_batch=False):
 

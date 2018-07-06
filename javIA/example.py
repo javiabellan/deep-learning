@@ -1,4 +1,12 @@
-import javia.deeplearner
+from datasets import *
+from transforms import *
+from deeplearner import *
+
+train_dir = "/home/javi/DL/fastai/courses/dl1/data/dogscats/train"
+valid_dir = "/home/javi/DL/fastai/courses/dl1/data/dogscats/valid"
+
+train_dataset = ImageFolderDataset(train_dir, train_tfms)
+valid_dataset = ImageFolderDataset(valid_dir, valid_tfms)
 
 
 dl = deeplearner(model="resnet34", data="/home/javi/DL/fastai/courses/dl1/data/dogscats")
