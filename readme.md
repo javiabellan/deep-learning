@@ -51,6 +51,12 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * N-fold cross-validation. Usually `10`
 * Train until start overffiting (early stopping)
 
+> TODO: Read:
+> * [Efficient BackProp](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf) (1998, Yann LeCun)
+> * [A disciplined approach to neural network hyper-parameters](https://arxiv.org/pdf/1803.09820.pdf) (2018, Leslie Smith)
+
+
+
 ## 3. Improve generalization and avoid overfitting (try in that order)
 1. Get more data
 2. [Data augmentation](/posts/3-generalization/data_augmentation.md)
