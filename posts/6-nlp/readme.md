@@ -22,7 +22,11 @@ Using word embeddings is like initializing a computer vision model with pretrain
 they will be helpful for many tasks, but they fail to capture higher-level information that might be even more useful.
 A model initialized with word embeddings needs to learn from scratch not only to disambiguate words,
 but also to derive meaning from a sequence of words.
- 
+
+> https://blog.openai.com/language-unsupervised/
+>
+> There’s been a recent push to try to further language capabilities by using unsupervised learning to augment systems with large amounts of unlabeled data; representations of words trained via unsupervised techniques can use large datasets consisting of terabytes of information and, when integrated with supervised learning, improve performance on a wide range of NLP tasks. Until recently, these unsupervised techniques for NLP (for example, GLoVe and word2vec) used simple models (word vectors) and training signals (the local co-occurence of words). Skip-Thought Vectors is a notable early demonstration of the potential improvements more complex approaches can realize. But new techniques are now being used which are further boosting performance. These include the use of pre-trained sentence representation models, contextualized word vectors (notably ELMo and CoVE), and approaches which use customized architectures to fuse unsupervised pre-training with supervised fine-tuning, like our own.
+
 ## NLP models
  
 At the core of the recent advances of ULMFiT, ELMo, and the OpenAI transformer is one key paradigm shift:
@@ -38,7 +42,7 @@ similarly to how ImageNet has enabled training of CV models that learn general-p
 * [ELMo](https://arxiv.org/pdf/1802.05365.pdf)
 * [OpenAI transformer](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf)
 
-## NLP applications & datasets
+## NLP tasks & datasets
 * **Supervised**
   * **Text classification**:
     * **Sentiment analysis**: Binary movie review on IMDb dataset
