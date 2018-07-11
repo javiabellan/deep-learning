@@ -43,21 +43,25 @@ similarly to how ImageNet has enabled training of CV models that learn general-p
 * [OpenAI transformer](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf)
 
 ## NLP tasks & datasets
-* **Supervised**
-  * **Text classification**:
-    * **Sentiment analysis**: Binary movie review on IMDb dataset
-    * **Question Classification**
-    * **Topic classification**
-  * **Question answering (QA)**: Reading comprehension. Texts with its question-answer pairs. [SQuAD](https://rajpurkar.github.io/SQuAD-explorer/)
+
+* **Language modeling**: Predict the next word given its previous (or after) word. Unlabeled texts (Unsupervised).
+* **Text classification**:
+  * **Sentiment analysis**: Binary movie review on IMDb dataset
+  * **Question classification**
+  * **Topic classification**
+* **Seq2seq**: BiLSTMs(+Attn)
   * **Machine Translation (MT)**: Same texts in 2 or more languages.
-  * **Syntax and grammar**: Syntactic structure of sentences in the form of parse trees.
+  * **Text summarization**: From large text to small text
+  * **Question answering (QA)**: Question into answers.
+  * **Reading comprehension**: Texts with its question-answer pairs. [SQuAD](https://rajpurkar.github.io/SQuAD-explorer/)
+  * **Syntactic parsing**: Syntactic structure of sentences in the form of parse trees.
+    * Constituency
+    * Dependency
+  * **Part-of-speech tagging (POS tagging)**: Speech into text.
+  * **Named Entity Recognition**: Text into categories such as the names of persons, locations, etc. [Stanford NER](https://nlp.stanford.edu/software/CRF-NER.html)
+  * **Images/videos into description** Medical image into medical report
+* Others
   * **Natural language inference**: Sentence pairs with the labels *entailment*, *contradiction*, and *neutral*. [SNLI](https://nlp.stanford.edu/projects/snli/)
-
-* **Unsupervised**
-  * **Language modeling**: Predict the next word given its previous word. Unlabeled texts.
-  * **Named Entity Recognizer (NER)**: Sotware that label  labels sequences of words [Stanford NER](https://nlp.stanford.edu/software/CRF-NER.html)
-
-* **TODO: superv or unsper?**
   * **Coreference Resolution**: [coref](https://nlp.stanford.edu/projects/coref.shtml)
   * **Constituency parsing**:
   * **Skip-thoughts**:
