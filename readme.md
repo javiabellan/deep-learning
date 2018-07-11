@@ -54,6 +54,8 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 > TODO: Read:
 > * [Efficient BackProp](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf) (1998, Yann LeCun)
 > * [A disciplined approach to neural network hyper-parameters](https://arxiv.org/pdf/1803.09820.pdf) (2018, Leslie Smith)
+> * [The 1cycle policy](https://sgugger.github.io/the-1cycle-policy.html)
+
 
 
 
