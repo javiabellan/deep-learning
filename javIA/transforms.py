@@ -1,3 +1,12 @@
+"""
+TODO:
+
+Augmentations in openCV:
+https://github.com/albu/albumentations
+https://github.com/aleju/imgaug
+
+"""
+
 from torchvision.transforms import *
 
 
