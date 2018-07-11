@@ -104,6 +104,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * Super-resolution
   * Artistic style
 * [Generative advesarial network (GAN)](/posts/5-vision/gan.md)
+  * [infoGAN](http://www.depthfirstlearning.com/2018/InfoGAN)
 * [Siamese network](/posts/5-vision/siamese.md)
 * [Inceptionism](/posts/5-vision/inceptionism.md)
 * [Capsule net](/posts/5-vision/capsule.md)
@@ -157,3 +158,10 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * A3C
 * Evolutionary Strategy
 * Genetic Algorithms
+
+> TODO: Read:
+> * [RL’s foundational flaw](https://thegradient.pub/why-rl-is-flawed/)
+> * [How to fix reinforcement learning](https://thegradient.pub/how-to-fix-rl/)
+> * [AlphaGoZero](http://www.depthfirstlearning.com/2018/AlphaGoZero)
+> * [Trust Region Policy Optimization](http://www.depthfirstlearning.com/2018/TRPO)
+
