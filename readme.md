@@ -112,6 +112,10 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 ## 6. Natural Language Processing
 * [Word embedding](/teoría/modelos/embedding.md)
 * [Recurrent Neural network (RNN)](/teoría/modelos/rnn.md) For sequences that need keeping the state, like text
+  * LSTM
+  * Neural Turing machine
+    * [paper](https://arxiv.org/abs/1807.08518)
+    * [code](https://github.com/MarkPKCollier/NeuralTuringMachine/blob/master/README.md)
 * [Translation](/teoría/nlp/Translation.md)
 * [Sequence to sequence](/teoría/nlp/seq2seq.md)
 * [Attention](/teoría/nlp/attention.md)
