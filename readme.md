@@ -109,6 +109,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * Artistic style
 * [Generative advesarial network (GAN)](/posts/5-vision/gan.md)
   * [infoGAN](http://www.depthfirstlearning.com/2018/InfoGAN)
+  * [10 types of GANs](https://amp.reddit.com/r/MachineLearning/comments/8z97mx/r_math_insights_from_10_gan_papers_infogans)
 * [Siamese network](/posts/5-vision/siamese.md)
 * [Inceptionism](/posts/5-vision/inceptionism.md)
 * [Capsule net](/posts/5-vision/capsule.md)
