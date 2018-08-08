@@ -9,6 +9,9 @@ which gave me a strong understanding of cutting edge deep learning.
 I've write this articles for kepping track my learning path,
 but you can use it as a guide for learning (or improving) your DL knowledge.
 
+> TODO:
+> [check this pytorch DL course](https://fleuret.org/ee559/)
+
 
 ## 0. Setting up
 * [Hardware](/posts/0-setup/hardware.md)
@@ -173,4 +176,4 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 > * [How to fix reinforcement learning](https://thegradient.pub/how-to-fix-rl/)
 > * [AlphaGoZero](http://www.depthfirstlearning.com/2018/AlphaGoZero)
 > * [Trust Region Policy Optimization](http://www.depthfirstlearning.com/2018/TRPO)
-
+> * [Udacity repo](https://github.com/udacity/deep-reinforcement-learning)
