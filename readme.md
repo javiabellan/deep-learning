@@ -179,4 +179,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 > * [Udacity repo](https://github.com/udacity/deep-reinforcement-learning)
 > * [Introduction to RL Algorithms. Part I](https://towardsdatascience.com/introduction-to-various-reinforcement-learning-algorithms-i-q-learning-sarsa-dqn-ddpg-72a5e0cb6287)
 > * [Introduction to RL Algorithms. Part II](https://towardsdatascience.com/introduction-to-various-reinforcement-learning-algorithms-part-ii-trpo-ppo-87f2c5919bb9)
-
+> * [pytorch tutorial](https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html)
+> * [RL Adventure](https://github.com/higgsfield/RL-Adventure)
+> * [RL Adventure 2](https://github.com/higgsfield/RL-Adventure-2)
+> * [DeepRL](https://github.com/ShangtongZhang/DeepRL)
