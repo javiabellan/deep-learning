@@ -177,3 +177,6 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 > * [AlphaGoZero](http://www.depthfirstlearning.com/2018/AlphaGoZero)
 > * [Trust Region Policy Optimization](http://www.depthfirstlearning.com/2018/TRPO)
 > * [Udacity repo](https://github.com/udacity/deep-reinforcement-learning)
+> * [Introduction to RL Algorithms. Part I](https://towardsdatascience.com/introduction-to-various-reinforcement-learning-algorithms-i-q-learning-sarsa-dqn-ddpg-72a5e0cb6287)
+> * [Introduction to RL Algorithms. Part II](https://towardsdatascience.com/introduction-to-various-reinforcement-learning-algorithms-part-ii-trpo-ppo-87f2c5919bb9)
+
