@@ -11,7 +11,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 
 > TODO:
 > [check this pytorch DL course](https://fleuret.org/ee559/)
-
+> [trask book](https://github.com/iamtrask/Grokking-Deep-Learning)
 
 ## 0. Setting up
 * [Hardware](/posts/0-setup/hardware.md)
