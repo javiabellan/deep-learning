@@ -20,6 +20,8 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 * [Kaggle](/posts/0-setup/kaggle.md)
 
 ## 1. Know the basics
+> Remember the math: [Matrix calculus](http://explained.ai/matrix-calculus/index.html)
+
 * Data
   * Training: used for learning the parameters of the model. 
   * Validation: used for evaluating model while training
@@ -186,3 +188,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 > * [RL Adventure](https://github.com/higgsfield/RL-Adventure)
 > * [RL Adventure 2](https://github.com/higgsfield/RL-Adventure-2)
 > * [DeepRL](https://github.com/ShangtongZhang/DeepRL)
+
+## Machine learning
+* [Gradient boosting](http://explained.ai/gradient-boosting/index.html)
+* Random forest
