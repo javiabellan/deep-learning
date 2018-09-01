@@ -165,9 +165,12 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 
 ## Reinforcement learning
 * Q-learning
-  * DQN
+  * [DQN](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
 * Policy gradients
   * A3C
+* [C51](https://arxiv.org/abs/1707.06887)
+* [Rainbow](https://arxiv.org/abs/1710.02298)
+* [Implicit Quantile](https://arxiv.org/abs/1806.06923)
 * Evolutionary Strategy
 * Genetic Algorithms
 
