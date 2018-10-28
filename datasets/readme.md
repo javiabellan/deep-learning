@@ -19,6 +19,8 @@ Ultrasound, Mammographs, X-Ray, CT, MRI, fMRI, etc.)
 
 | Dataset | Images | Classes | Size | Notes |
 |---------|--------|---------|------|-------|
+| [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia) | 5863 | 2 | 1200MB | |
+| [CT Medical Images](https://www.kaggle.com/kmader/siim-medical-images) | | | 249MB | |
 | [Pulmonary Chest X-Ray Abnormalities](https://www.kaggle.com/kmader/pulmonary-chest-xray-abnormalities) | | | | |
 | [NIH DeepLesion Subset](https://www.kaggle.com/kmader/nih-deeplesion-subse) | | | | |
 
@@ -31,6 +33,7 @@ Skin lesions and skin cancer. Lunares...
 | [**HAM10000**](https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000) | 10015 | 7 | | |
 
 ## Resources
-- [Kaggle](https://www.kaggle.com/datasets)
+- [Kaggle datasets](https://www.kaggle.com/datasets)
 - [UCI](https://archive.ics.uci.edu/ml/datasets.html)
 - https://github.com/sfikas/medical-imaging-datasets
+- [The Cancer Imaging Archive (TCIA)](https://public.cancerimagingarchive.net)
