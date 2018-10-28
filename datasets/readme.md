@@ -1,38 +1,36 @@
 # Datasets
 
-## Medical image
+## Histology
 
-Datasets of skin lesions and skin cancer.
+![img](http://www.ucdenver.edu/academics/colleges/medicalschool/centers/cancercenter/Research/sharedresources/TissueBiobanking/histology/PublishingImages/histologypic.jpg)
 
-- [**ISIC2017**](https://challenge.kitware.com/#phase/5840f53ccad3a51cc66c8dab)  2000 images, format: JPG
-  - 374 of **malignant** skin tumors: *Melanoma*
-  - 1626 of **benign** skin tumors:
-    - 254 of *Seborrheic Keratosis*
-    - 1372 of *Nevus*
-- [**HAM10000**](https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000):  10015 images of:
-  - 'nv': 'Melanocytic nevi',
-  - 'mel': 'dermatofibroma',
-  - 'bkl': 'Benign keratosis-like lesions ',
-  - 'bcc': 'Basal cell carcinoma',
-  - 'akiec': 'Actinic keratoses',
-  - 'vasc': 'Vascular lesions',
-  - 'df': 'Dermatofibroma'
+Imágenes de tejidos orgánicos. Biopsias..
 
-Datasets of hystology microscopic images.
+| Dataset | Images | Classes | Size | Notes |
+|---------|--------|---------|------|-------|
+| [**HIS2828**](http://online.unillanos.edu.co:8084/histologyDS/) | 2828 | 4 | 252MB | 720x480px |
+| [**Colorectal Histology MNIST**](https://www.kaggle.com/kmader/colorectal-histology-mnist) | 5000 | 8 | 991MB | 150x150px |
 
-- [**HIS2828**](http://online.unillanos.edu.co:8084/histologyDS/): 4 classes of tissue. 2828 images of 720x480
-  - 1026 nervous tissue images
-  - 484 connective tissue images
-  - 804 epithelial tissue images
-  - 514 muscular tissue images
-- [**Colorectal Histology MNIST**](https://www.kaggle.com/kmader/colorectal-histology-mnist) 8 classes of tissue. 5000 images of 150x150
+## Radiology
 
+![img](https://lukeoakdenrayner.files.wordpress.com/2018/04/xray.jpg?w=800&h=200&crop=1)
 
+Ultrasound, Mammographs, X-Ray, CT, MRI, fMRI, etc.)
 
-X-ray 2D
+| Dataset | Images | Classes | Size | Notes |
+|---------|--------|---------|------|-------|
+| [Pulmonary Chest X-Ray Abnormalities](https://www.kaggle.com/kmader/pulmonary-chest-xray-abnormalities) | | | | |
+| [NIH DeepLesion Subset](https://www.kaggle.com/kmader/nih-deeplesion-subse) | | | | |
 
-- [Pulmonary Chest X-Ray Abnormalities](https://www.kaggle.com/kmader/pulmonary-chest-xray-abnormalities)
+## Skin
+Skin lesions and skin cancer. Lunares...
 
-X-ray 3D (Tomografías)
+| Dataset | Images | Classes | Size | Notes |
+|---------|--------|---------|------|-------|
+| [**ISIC2017**](https://challenge.kitware.com/#phase/5840f53ccad3a51cc66c8dab) | 2000 | 3 | | |
+| [**HAM10000**](https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000) | 10015 | 7 | | |
 
-- [NIH DeepLesion Subset](https://www.kaggle.com/kmader/nih-deeplesion-subse)
+## Resources
+- [Kaggle](https://www.kaggle.com/datasets)
+- [UCI](https://archive.ics.uci.edu/ml/datasets.html)
+- https://github.com/sfikas/medical-imaging-datasets
