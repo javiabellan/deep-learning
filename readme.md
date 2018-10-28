@@ -1,6 +1,4 @@
-<p align="center">
-<img width="50%" src="/img/title.png" />
-</p>
+<p align="center"><img width="50%" src="posts/img/title.png" /></p>
 
 Here are my personal notes of the  [**deeplearning.ai**](https://www.deeplearning.ai)
 and [**fast.ai**](http://www.fast.ai) courses,
