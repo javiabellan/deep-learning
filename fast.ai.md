@@ -3,6 +3,7 @@
 - [Blog](http://www.fast.ai/)
 - [Course](http://course.fast.ai/)
 - [Docs](http://docs.fast.ai/)
+- [Forums](http://forums.fast.ai/)
 
 ## Course v2 (2018)
 - [Practical Deep Learning For Coders, Part 1](http://course.fast.ai/)
