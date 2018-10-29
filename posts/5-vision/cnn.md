@@ -1,15 +1,31 @@
 # Convolution Neural Network (CNN)
 
 
-### State of the art
+![img](https://cdn-images-1.medium.com/max/800/1*aBdPBGAeta-_AM4aEyqeTQ.jpeg)
 
-Convolutions:
-* **Before**: Stride 1 convolution with pooling
-* **Now**: Stride 2 convolution without pooling (much faster)
+- Inception v1
+  - Different kernel sizes at the same level, to capture information of different sizes
+  - With prior 1x1 convolutions to reduce number of channels (Bottleneck layer)
+- Inception v2
 
-Final layer:
-* **Before**: Fully connected
-* **Now**: Adaptative max pooling
+- State of the art
+  - Convolutions:
+    - **Before**: Stride 1 convolution with pooling
+    - **Now**: Stride 2 convolution without pooling (much faster)
+  - Final layer:
+    - **Before**: Fully connected
+    - **Now**: Adaptative max pooling
+    
+### Bottleneck layer
+ Let’s say you have 256 features coming in, and 256 coming out, and a 3x3 convolution.
+ That is 256x256x3x3 convolutions that have to be performed (589,000s multiply-accumulate, or MAC operations).
+
+Instead of doing this, we decide to reduce the number of features that will have to be convolved, say to 64 or 256/4:
+- 256×64 × 1×1 = 16,000s
+- 64×64 × 3×3 = 36,000s
+- 64×256 × 1×1 = 16,000s
+
+For a total of about 70,000 versus the almost 600,000 we had before. Almost 10x less operations!
 
 ### Pytorch
 
@@ -48,3 +64,7 @@ model = ConvNet2([3, 20, 40, 80], 10)
 
 	- Posible solución: Capsule network
 
+## References
+
+- [History of CNNs](https://towardsdatascience.com/neural-network-architectures-156e5bad51ba)
+- [Versions of inception](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202)
