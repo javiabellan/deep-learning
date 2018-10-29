@@ -15,7 +15,8 @@
   - Final layer:
     - **Before**: Fully connected
     - **Now**: Adaptative max pooling
-    
+
+
 ### Bottleneck layer
  Let’s say you have 256 features coming in, and 256 coming out, and a 3x3 convolution.
  That is 256x256x3x3 convolutions that have to be performed (589,000s multiply-accumulate, or MAC operations).
@@ -26,6 +27,40 @@ Instead of doing this, we decide to reduce the number of features that will have
 - 64×256 × 1×1 = 16,000s
 
 For a total of about 70,000 versus the almost 600,000 we had before. Almost 10x less operations!
+
+
+
+
+
+### Residual Network (ResNet)
+
+If the CNN is to deep (+10 layers) it will hava problems to train.
+
+
+```python
+def ResnetLayer(x):
+    return x + ConvBachnormLayer(x)  # 1 or 2 convolutions
+```
+
+![resnetBlock](https://cdn-images-1.medium.com/max/1600/1*pUyst_ciesOz_LUg0HocYg.png)
+
+
+```
+ResnetLayer =  x + ConvBachnormLayer(x)
+```
+
+is equals to
+
+```
+                        ___residual___ = error
+ConvBachnormLayer(x) =  ResnetLayer - x
+```
+
+So each convolution shows how much error.
+
+Boosting.
+
+
 
 ### Pytorch
 
@@ -68,3 +103,5 @@ model = ConvNet2([3, 20, 40, 80], 10)
 
 - [History of CNNs](https://towardsdatascience.com/neural-network-architectures-156e5bad51ba)
 - [Versions of inception](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202)
+- [Resnet video](https://youtu.be/H3g26EVADgY)
+- [Understand Deep Residual Networks](https://blog.waya.ai/deep-residual-learning-9610bb62c355)
