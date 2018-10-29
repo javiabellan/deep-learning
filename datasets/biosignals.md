@@ -1,75 +1,80 @@
 # Signals
 
+From body parts:
+
 - Cardiology
-  - Electrocardiogram (ECG): Electrical potentials
+  - [**Electrocardiogram** (ECG)](http://biosignalsplux.com/en/ecg-electrocardiogram): Electrical potentials
   - Phonocardiogram (PCG): Sound. Heart valve closures
   - Mechanocardiogram (MCG): Pressure
   - Electromyogram (EEG): Electrical potentials
-  - Photoplethysmography:
+  - Photoplethysmography: Optic
   - Oximetry (SaO2): Infrared light
+  - [Blood Volume Pulse (BVP)](http://biosignalsplux.com/en/bvp-blood-volume-pulse)
 - Nervous system
-  - Electroencephalogram (EEG): Electrical potentials
+  - [**Electroencephalogram** (EEG)](http://biosignalsplux.com/en/eeg-electroencephalography): Electrical potentials
   - Magnetoencephalogram (MEG):
   - Evoked potentials (EPs): Electrical potentials
   - Electroneurogram: Electrical signal
 - Muscle
-  - Electromyogram (EEG): Electrical potentials
-  - Mechanomyogram (MMG): Mechanical
+  - [**Electromyogram** (EMG)](http://biosignalsplux.com/en/emg-electromyography): Electrical potentials
+  - **Mechanomyogram** (MMG): Mechanical
+- Respiration:
+  - [**Elastic belt** (PZT)](http://biosignalsplux.com/en/pzt-respiration): piezoelectric 
 - Eye
   - Electrooculography (EOG)
-- Body ans
-  - Body temperature: Temperature
-  - Electrodermal activity (EDA)
+- Body and skin
+  - [**Temperature** (TMP)](http://biosignalsplux.com/en/tmp-temperature): NTC thermistor
+  - [**Electrodermal activity** (EDA)](http://biosignalsplux.com/en/eda-electrodermal-activity)
+  - [**Accelerometer** (ACC)](http://biosignalsplux.com/en/acc-accelerometer)
 
-# Image
+By sensor technology:
 
-- Ultrasound (ecografía) bebés. Donde no halla hueso. Nada invasivo
-- MRI (Magnetic Resonance Imaging)
-- X-ray
-- CT (Computer Tomography) TAC son rayos X 3d
-
-
-# Sensors
-
-
-- Electric signals (sensor is an electorde)
+- Electric
+  - Electrocardiogram
+  - Electroencephalogram, which reflects electrical activity of neurons in the brain
+  - Electromyogram, which reflects electrical activation of muscles
   - Electrical potentials. registers the difference between two electrodes attached to the skin
-- Non-electric signals (sensor is a transduder)
-  - Thermal
-    - Thermometry
-  - Sound
-    - Heart sound
+- Magnetic
+  - Magnetocardiogram: reading of magnetic fields emitted by currents during electrical heart excitation
+- Mechanic
+  - Mechanorespirogram, showing a respiratory cycle from abdominal circumference changes
+- Optic
+  - optoplethysmogram: cardiac pulsations
+- Acustic
+    - Heart sound (phonocardiogram)
     - Lung sound (breathing)
     - Snoring sound
-  - Mechanic
-    - mechanic waves
-      - ultrasound
-  - Photo
-    - Photoresistive
-  - Radiation
-    - Ionising
-      - nuclear: SPECT, PET
-      - X-rays: scintigrafy, sciascopy, sciasgraphy, CT
-    - Non-ionising
-      - Light: endoscopy
-  - Electromagnetic field
-    - MRI
-
-
-
-### Types
-
-- Electro: 
+    - Swallowing sounds
+- Chemical
+  - Cortisol (stress hormone)
+- Thermal
+  - Body temperature
+- ultrasound
 - Resistive: electrical resistance
-- Magnets: the magnetic field induced by electrical currents
 - Inductive
 - Capacitive
 - Piezoelectric
 - Photoresistive
 - Elastic
-- Thermal
 
-### Attributes
+# Image
+
+- Ultrasound (ecografía) bebés. Donde no halla hueso. Nada invasivo
+- Electromagnetic field
+  - MRI (Magnetic Resonance Imaging)
+- X-ray
+  - scintigrafy
+  - sciascopy
+  - sciasgraphy
+  - CT (Computer Tomography) TAC son rayos X 3D
+- Nuclear: involves the administration of a radiolabelled chemical called a radiopharmaceutical.
+  - SPECT: single photon emission computed tomography. 3D image
+  - PET: positron emission tomography. 3D image
+- Camera
+  - Endoscopy
+
+
+### Sensor attributes
 
 - **Range**
 - **Resolution**
@@ -80,5 +85,8 @@
 - **Sensitivity**: the change produced at the output for a given change
 in the quantity being measured (slope)
 
+
+## References
+- [Biosignals in DL](https://biomedical-engineering-online.biomedcentral.com/track/pdf/10.1186/s12938-017-0405-0)
 
 
