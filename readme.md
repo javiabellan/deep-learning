@@ -71,7 +71,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 
 ## 3. Improve generalization and avoid overfitting (try in that order)
 1. Get more data
-2. [Data augmentation](/posts/3-generalization/data_augmentation.md)
+2. [Data augmentation](/posts/3-generalization/data_augmentation.md) ([albumentations](https://github.com/albu/albumentations) for faster aug. using the GPU)
    - [Test time augmentation (TTA)?](/posts/3-generalization/TTA.md)
 3. Generalizable architectures?: add more bachnorm layers, more densenets...
 4. Regularization
@@ -118,6 +118,8 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 - [Siamese network](/posts/5-vision/siamese.md)
 - [Inceptionism](/posts/5-vision/inceptionism.md)
 - [Capsule net](/posts/5-vision/capsule.md)
+
+> To speed up jpeg image I/O from the disk one should not use PIL, skimage and even OpenCV but look for libjpeg-turbo or PyVips.
 
 ## 6. Natural Language Processing
 - [Word embedding](/teoría/modelos/embedding.md)
