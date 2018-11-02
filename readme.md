@@ -38,6 +38,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 
 ## Prepare de data
 - **Balance** the data
+  - **Fix it in the dataloader** [`WeightedRandomSampler`](https://pytorch.org/docs/stable/data.html#torch.utils.data.WeightedRandomSampler)
   - **Subsample majority class**. But you can lose important data.
   - **Oversample minority class**. But you can overfit.
   - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
