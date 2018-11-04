@@ -6,8 +6,9 @@
 - [Forums](http://forums.fast.ai/)
 
 ## Course v2 (2018)
-- [Practical Deep Learning For Coders, Part 1](http://course.fast.ai/)
-- [Cutting Edge Deep Learning For Coders, Part 2](http://course.fast.ai/part2.html)
+- [**Part 1**](http://course.fast.ai/): Practical Deep Learning For Coders
+- [**Part 2**](http://course.fast.ai/part2.html): Cutting Edge Deep Learning For Coders
+- [**Course notes**](https://medium.com/@hiromi_suenaga/deep-learning-2-part-1-lesson-1-602f73869197) by a student.
 
 ## Course v3 (2019)
 - [page](http://course-v3.fast.ai)
