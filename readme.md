@@ -84,6 +84,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 6. Ensambles
    - **Bagging** (ensembling): Combine few models and average the predicction.
    - **Stacking** (meta ensembling): Same but use a new model to produce the final output.
+   - **Snapshot Ensembling**: M models for the cost of 1. Thanks to SGD with restarts you have several local minimum that you can average. [paper](https://arxiv.org/abs/1704.00109).
 
 ## 4. Train faster (Optimization)
 - [SGD with restarts](/posts/4-optimization/sgd-with-restarts.md)
@@ -99,6 +100,11 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
     1. Replace last layer
     2. Fine-tune new layers
     3. Fine-tune more layers (optional)
+- **Precomputation**
+  1. Freeze the layers you don’t want to modify
+  2. Calculate the activations the last layer from the frozen layers(for your entire dataset)
+  3. Save those activations to disk
+  4. Use those activations as the input of your trainable layers
 - [Batch Normalization](/posts/4-optimization/batch-normalization.md)
 - [2nd order optimization](/posts/4-optimization/2nd-order.md)
 
