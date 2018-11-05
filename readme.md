@@ -105,8 +105,10 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   2. Calculate the activations the last layer from the frozen layers(for your entire dataset)
   3. Save those activations to disk
   4. Use those activations as the input of your trainable layers
-- [Batch Normalization](/posts/4-optimization/batch-normalization.md)
-- [2nd order optimization](/posts/4-optimization/2nd-order.md)
+- [**Half precision**](https://forums.fast.ai/t/mixed-precision-training/20720) (fp16)
+- **Multiple GPUs**
+- [Batch Normalization**](/posts/4-optimization/batch-normalization.md)
+- [**2nd order optimization**](/posts/4-optimization/2nd-order.md)
 
 ## 5. Computer vision
 > TODO: Read [inception nets](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202)
