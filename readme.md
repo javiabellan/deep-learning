@@ -47,10 +47,20 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   - **Validation** set: used for evaluating model while training. Very important!
     - N-fold cross-validation. Usually `10`
   - **Test** set: used to get a final estimate of how well the network works.
-- [**Normalize**](/posts/input_normalization.md): Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/whitening/pca helps a lot.
-  - `(x-x.min()) / (x.max()-x.min())`: Values from 0 to 1
-  - `2*(x-x.min()) / (x.max()-x.min()) - 1`: Values from -1 to 1
-  - `(x-x.mean()) / x.std()`: Values from ? to ?, but mean at 0 (most used)
+- [**Preprocess**](http://cs231n.github.io/neural-networks-2/#datapre): Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/whitening/pca helps a lot.
+  - Option 1: **Normalization** `x = x-x.mean() / x.std()` *Most used*
+     1. **Mean subtraction**: Center the data to zero. `x = x - x.mean()` fights vanishing and exploding gradients
+     2. **Standardize**: Put the data on the same scale. `x = x / x.std()` improves convergence speed and accuracy
+  - Option 2: **PCA Whitening**
+    1. **Mean subtraction**: Center the data in zero. `x = x - x.mean()`
+    2. **Decorrelation** or **PCA**: Rotate the data until there is no correlation anymore.
+    3. **Whitening**: Put the data on the same scale. `whitened = decorrelated / np.sqrt(eigVals + 1e-5)`
+  - Option 3: **ZCA whitening** Zero component analysis (ZCA).
+  - Other options not used:
+    - `(x-x.min()) / (x.max()-x.min())`: Values from 0 to 1
+    - `2*(x-x.min()) / (x.max()-x.min()) - 1`: Values from -1 to 1
+  
+>  In case of images, the scale is from 0 to 255, so it is not strictly necessary normalize.
   
 ## 2. Start training
 - [Find learning rate](/posts/learning_rate.md)
