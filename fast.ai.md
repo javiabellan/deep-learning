@@ -20,3 +20,4 @@
 - lesson 5 19 nov
 - lesson 6 27 nov
 - lesson 7 12 dec
+- [Leslie Smith interview](https://www.youtube.com/watch?v=6N-WUQwG1Lw) (1h 30min)
