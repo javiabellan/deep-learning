@@ -123,6 +123,9 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 ## 5. Computer vision
 > TODO: Read [inception nets](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202)
 - [Convolutional Neural Network (CNN)](/posts/5-vision/cnn.md) For fixed size oredered data, like images
+  - Variable input size: use **adaptative pooling**, final layers then:
+    - Option 1: `AdaptiveAvgPool2d((1, 1))` -> `Linear(num_features, num_classes)` (less computation)
+    - Option 2: `Conv2d(num_features, num_classes, 3, padding=1)` -> `AdaptiveAvgPool2d((1, 1))`
 - [Object detection](/posts/5-vision/detection.md)
   - Class Activation Maps (CAM)
   - Single-object detection
