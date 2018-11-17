@@ -35,6 +35,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   - **Cross Entropy**: Sigle-label classification. Usually with **softmax**.
     - **Negative Log Likelihood** is the one-hot simplified version, see [this](https://jamesmccaffrey.wordpress.com/2016/09/25/log-loss-and-cross-entropy-are-almost-the-same/)
   - **Binary Cross Entropy**:  Multi-label classification. Usually with **sigmoid**.
+- **Metrics**: Dataset with 5 disease images and 20 normal images. If the model predicts all images to be normal, its accuracy is 80%, and F1-score of such a model is 0.88
 
 ## Prepare de data
 - **Balance** the data
