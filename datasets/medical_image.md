@@ -36,7 +36,15 @@ Disposición
 Se puede además usar el efcto doppler para detectar el movimiento
 
 Además si hacen varias tomas se puede tener una ecografía en 3D
-  
+
+
+## Microscopía
+
+Extracción de tejidos (biopsia)
+
+Se suelen usar tintes pq sino se vería todo tranparente (para pared, nucleo de la célula...)
+
+
 # Antiguo
 
 - Ultrasound (ecografía) bebés. Donde no halla hueso. Nada invasivo
