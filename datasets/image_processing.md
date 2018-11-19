@@ -26,7 +26,7 @@ Procesar pixeles individualmente. New_mage(x,y):= f(Image(x,y))
 - Restar: Oscurecer (hay saturación)
 - Muliplicar: Aumetar el contraste (hay saturación)
 - Dividir: Disminuir contrarte (hay perdida de color)
-
+- Gama: Oscurece y aclara sin saturar
 
 Histograma: Vemos si:
 - Es muy oscura/clara la imagen
