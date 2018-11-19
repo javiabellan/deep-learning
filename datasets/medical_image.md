@@ -5,6 +5,12 @@ Suelen tener 1 canal (en vez de 3, RGB) y este puede tener un rango mayor de 8 b
   - Perspetiva
   - Integral
   
+Espectro de ondas
+- Rango visible
+- Infrarojos
+- Radio
+- Rayos X
+
 ## Clasification
 Ordenados de menor a mayor intrusividad
 
@@ -38,12 +44,32 @@ Se puede además usar el efcto doppler para detectar el movimiento
 Además si hacen varias tomas se puede tener una ecografía en 3D
 
 
-## Microscopía
+### Microscopía
 
-Extracción de tejidos (biopsia)
+- Extracción de tejidos (biopsia)
+- Se suelen usar tintes pq sino se vería todo tranparente (para pared, nucleo de la célula...)
+- Poco angulo (distancia foacle grande)
 
-Se suelen usar tintes pq sino se vería todo tranparente (para pared, nucleo de la célula...)
+### Endoscopia
+- Mucho angulo (distancia foacle pequeña)
+- Hay que acompañar de luz pq el cuerpo está oscuro
 
+### Termografía
+- Infrarojos medios lejanos del rango visible
+- Mayor raciación infraroja -> mayor temp
+- 1 canal de 14 bits por pixel
+- Usos
+  - Se usa para saber si no llega la circulación
+  - Si hay mucha temp. puede haber algún trompo
+  - Se puede usar para saber si hay cancer de mama
+
+### Radiografía
+- Emisor delante del cuerpo, y receptor detrás
+- Es igual si el sujeto se da la vuelta
+- Invenientes: Con los rayos x que se quedan, impacatan contra molecuals y saltan electrones, Si es una molecula de ADN pued eproducirse una mutación genética.
+- Equivale a 2 o 3 días bajo el sol(tomografía 4 años bajo el sol)
+- 1 canal de 12-14 bits por pixel
+- Bastante resolución (3000x5000 pixeles)
 
 # Antiguo
 
