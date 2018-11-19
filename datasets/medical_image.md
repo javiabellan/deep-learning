@@ -1,4 +1,33 @@
 # Image
+Suelen tener 1 canal (en vez de 3, RGB) y este puede tener un rango mayor de 8 bits.
+
+- Proyection
+  - Perspetiva
+  - Integral
+  
+## Clasification
+Ordenados de menor a mayor intrusividad
+
+- Ultrasonidos
+  - Ecografía
+- Luz visible e infrarojos
+  - Microscopía (Luz visible)
+  - Endoscopia (Luz visible)
+  - Termografía (infrarojos)
+- Rayos X
+  - Radiografía convencional.
+  - Radiografía digital (CR).
+  - Tomografía axial computerizada (TAC) (3D)
+- Medicina nuclear
+  - Resonancia magnética nuclear (RMN) (3D)
+  - Tomografía por emisión de positrones (PET)
+  - Gammagrafía
+  - SPECT (single photon emission computed tomography)
+
+
+
+  
+# Antiguo
 
 - Ultrasound (ecografía) bebés. Donde no halla hueso. Nada invasivo
 - Electromagnetic field
