@@ -32,7 +32,7 @@ Ordenados de menor a mayor intrusividad
   - SPECT (single photon emission computed tomography)
 
 
-## Ecografía
+### Ecografía
 Matriz de pares emisores/receptores de sonido y su eco
 
 Disposición
@@ -70,6 +70,44 @@ Además si hacen varias tomas se puede tener una ecografía en 3D
 - Equivale a 2 o 3 días bajo el sol(tomografía 4 años bajo el sol)
 - 1 canal de 12-14 bits por pixel
 - Bastante resolución (3000x5000 pixeles)
+- Vemos las densidades (uds. Hausfield)
+  - Huesos (lo más denso)
+  - Agua: 1ud Hausfield
+
+### Tomografía axial computerizada (TAC)
+- Varias radiografías en distintos águlos
+- Axial: Rotando alrededor de un eje
+- Orden del ciento y pico radiografías
+- Principio de radon: Varias tranformadas de Fourier (espacio de fourier es en 2D)
+- Usos
+  - Un tumor en la cabeza
+  - Calcificación en la arteria aorta
+  
+### Resonancia magnética nuclear
+- Vemos el tipo de estructura molecuar (distinto de densidades)
+- Nueclos de los atomos son como imanes
+- Si aplicamos un acamplo elecmagentico, los nucleos se alinean.
+- Frecuencia de resonsancia: como vibra el atomo al alinearse, esa vibración es lo que se caputra.
+- Gradiente de magnetización, de más a menos. Asi sabemos la zona del cuerpo.
+- No se rompen enlaces atómicos (solo vibran)
+- Además, se pueden aplicar tintes en las venas
+
+### Gamagrafía
+- Tiene poca resolución
+- Se aplica una sustancia radiocativa
+- Uso: funcionamiento de órganos
+
+### SPECT
+El TAC de las gammagrafías
+
+### PET
+El más nuevo y complejo de entender.
+
+## TODO: Tabla comparativa
+
+US: Ultra Sonido
+MN: Medicina mnuclear (Gamagrafía y SPECT)
+
 
 # Antiguo
 
