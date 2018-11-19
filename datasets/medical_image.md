@@ -20,12 +20,22 @@ Ordenados de menor a mayor intrusividad
   - Tomografía axial computerizada (TAC) (3D)
 - Medicina nuclear
   - Resonancia magnética nuclear (RMN) (3D)
+- Medicina nuclear (rayos gamma)
   - Tomografía por emisión de positrones (PET)
   - Gammagrafía
   - SPECT (single photon emission computed tomography)
 
 
+## Ecografía
+Matriz de pares emisores/receptores de sonido y su eco
 
+Disposición
+- En paralelo
+- Radial
+
+Se puede además usar el efcto doppler para detectar el movimiento
+
+Además si hacen varias tomas se puede tener una ecografía en 3D
   
 # Antiguo
 
