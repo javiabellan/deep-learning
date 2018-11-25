@@ -24,6 +24,10 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 - [Gradient descent](/posts/1-basics/gradient_descent.md) (training loop)
   - Choose waight initalization (random,...)
   - Choose learining rate (constant, )
+- Batch size: Number of samples to learn simultaneously. Usually a power of 2. `32` or `64` are good values.
+  - Too low: like `4`: Lot of updates. Very noisy random updates in the net (bad).
+  - Too high: like `512` Few updates. Very general common updates (bad).
+    - Faster computation. Takes advantage of GPU mem. But sometimes it can no be fitted (CUDA Out Of Memory)
 - [Activation functions](/posts/1-basics/activations.md)
   - **ReLU**: Non-linearity compontent of the net (hidden layers)
   - **Softmax**: Sigle-label classification (last layer)
