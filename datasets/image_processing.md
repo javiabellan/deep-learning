@@ -1,3 +1,10 @@
+> # TODO
+>
+> - [DLTK](https://github.com/DLTK/DLTK)
+> - [MedicalTorch](https://medicaltorch.readthedocs.io)
+> - [Albumentations](https://github.com/albu/albumentations)
+> - [Imgaug](https://github.com/aleju/imgaug)
+
 - Operaciones globales
   - Mejora del contraste
   - transf. de color
