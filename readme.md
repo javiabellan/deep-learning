@@ -135,6 +135,8 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   - Class Activation Maps (CAM)
   - Single-object detection
   - Multi-object detection (SSD)
+- Segmentation
+  - [Unet](https://github.com/facebookresearch/fastMRI/tree/master/models/unet)
 - Enhacement:
   - Colorization
   - Super-resolution
