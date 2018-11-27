@@ -122,8 +122,15 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   4. Use those activations as the input of your trainable layers
 - [**Half precision**](https://forums.fast.ai/t/mixed-precision-training/20720) (fp16)
 - **Multiple GPUs**
-- [Batch Normalization**](/posts/4-optimization/batch-normalization.md)
+- [**Batch Normalization**](/posts/4-optimization/batch-normalization.md)
 - [**2nd order optimization**](/posts/4-optimization/2nd-order.md)
+
+
+> [Normalization inside network](https://nealjean.com/ml/neural-network-normalization):
+> - Batch Normalization [paper](https://arxiv.org/abs/1502.03167)
+> - Layer Normalization [paper](https://arxiv.org/abs/1607.06450)
+> - Instance Normalization [paper](https://arxiv.org/abs/1607.08022)
+> - Group Normalization [paper](https://arxiv.org/abs/1803.08494)
 
 ## 5. Computer vision
 > TODO: Read [inception nets](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202)
