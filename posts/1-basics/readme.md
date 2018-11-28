@@ -9,7 +9,12 @@
 - [Loss function](#loss-function)
 - [Activation function](#activation-function)
 - [Metrics](#metrics)
-- [Transfer learning](#transfer-learning)
+- Optimization
+  - [Transfer learning](#transfer-learning)
+- Regularization
+  - [Dropout](#dropout)
+  - [Weight regularization](#weight-regularization)
+  - [Early stopping](#early-stopping) or patience
 
 
 ## Introduction
@@ -66,3 +71,12 @@ Medium       	| ![img1](../img/transfer-learning-medium.png) |	Freezes most laye
 Large         | ![img1](../img/transfer-learning-large.png) | Trains on all layers (with pretrained weights).
 
 
+## Dropout
+Dropout is a technique used in neural networks to prevent overfitting the training data by dropping out neurons with probability `p>0`. It forces the model to avoid relying too much on particular sets of features.
+
+<p align="center"><img width="50%" src="/posts/img/dropout.png" /></p>
+
+> Remark: most deep learning frameworks parametrize dropout through the 'keep' parameter `1−p`.
+
+
+## Weight regularization
