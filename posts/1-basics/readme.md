@@ -66,9 +66,9 @@ Training a deep learning model requires a lot of data and more importantly a lot
 
 Training size	| Illustration |	Explanation
 :------------:|--------------|------------
-Small	        | ![img1](/posts/img/transfer-learning-small.png) | 	Freezes all layers, except last one.
-Medium       	| ![img1](../img/transfer-learning-medium.png) |	Freezes most layers, trains weights on last layers.
-Large         | ![img1](../img/transfer-learning-large.png) | Trains on all layers (with pretrained weights).
+Small	        | ![img1](/posts/img/transfer-learning-small.png) | 	Freezes all layers, except last one. Used in first epochs.
+Medium       	| ![img1](../img/transfer-learning-medium.png) |	Freezes most layers, trains weights on last layers. Used in intermediate epochs.
+Large         | ![img1](../img/transfer-learning-large.png) | Trains on all layers (with pretrained weights). Used in last epochs.
 
 
 ## Dropout
@@ -80,3 +80,13 @@ Dropout is a technique used in neural networks to prevent overfitting the traini
 
 
 ## Weight regularization
+Weight penalty: Regularization in loss function (penalice high weights). `Weight decay` hyper-parameter usually `0.0005`.
+
+Visually, the weights only can take a value inside the blue region, and the red circles represent the minimum. Here, there are 2 weight variables.
+
+L1 (LASSO) |	L2 (Ridge)	| Elastic Net
+-----------|--------------|------------
+![wr1](/posts/img/weight-reg-lasso.png) | ![wr2](/posts/img/weight-reg-ridge.png) | ![wr3](/posts/img/weight-reg-elastic-net.png)
+Shrinks coefficients to 0. Good for variable selection | **Most used**. Makes coefficients smaller | Tradeoff between variable selection and small coefficients
+Penalizes the sum of absolute weights | Penalizes the sum of squared weights | Combination of 2 before
+`loss + wd * weights.abs().sum()` | `loss + wd * weights.pow(2).sum()` |
