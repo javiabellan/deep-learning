@@ -51,8 +51,8 @@ Used in final layer:
 Softmax |	Sigmoid	| Tanh
 -----|------------|----
  <img width=200 src="/posts/img/activation/sigmoid.png" /> |  <img width=200 src="/posts/img/activation/sigmoid.png" /> |  <img width=200 src="/posts/img/activation/tanh.png" />
-`e^(x_i) / ∑ e^(x_i)` | `1 / 1 + e^(-x)` | ``e^(x)-e^(-x) / e^(x)+e^(-x)`
-Sigle-label classification | <ul><li>Multi-label classification</li><li>binary classification</li></ul> | Differentiable everywhere
+`e^(x_i) / ∑ e^(x_i)` | `1 / 1 + e^(-x)` | `e^(x)-e^(-x) / e^(x)+e^(-x)`
+Used in final layer:<ul><li>Sigle-label classification</li></ul> | Used in final layer:<ul><li>Multi-label classification</li><li>Binary classification</li></ul> | Differentiable everywhere
 [pytorch](https://pytorch.org/docs/stable/nn.html#torch.nn.Softmax)
 
 
