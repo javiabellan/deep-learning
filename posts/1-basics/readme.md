@@ -1,33 +1,37 @@
-# Modelos y redes neuronales
+# 1. Basics
 
-# Básico
-* Percptrón
-* Red neuronal
+## Updating weights
+In a neural network, weights are updated as follows:
 
-## Imágen
+- **Step 1**: Take a batch of training data and perform forward propagation to compute the loss. 
+- **Step 2**: Backpropagate the loss to get the gradient of the loss with respect to each weight. 
+- **Step 3**: Use the gradients to update the weights of the network.
 
-#### Reconocimiento
-El reconocimieto de imágenes es predecir, dada una imagen, a que clase pertenece.  Las tecnologías que mejor funcionan son las siguientes:
-* Red neuronal convolucional (CNN)
-* Capsule net: Las capsule nets intentan solucionar algunos problemas de las CNNs como la posición y rotación
+![img1](/posts/img/update-weights.png)
 
-#### Localización
-No solo dice lo que ve, sino que también dónde lo ve. Las tecnologías que mejor funcionan son las siguientes:
-* YOLO
-* SSD
+## Backpropagation 
+Backpropagation is a method to update the weights in the neural network by taking into account the actual output and the desired output. The derivative with respect to each weight ***w*** is computed using the chain rule.
 
-#### Generación
-Dibuja nuevas imágenes
-* GAN
-  * [DCGAN](https://github.com/carpedm20/DCGAN-tensorflow)
+<p align="center"><img width="50%" src="/posts/img/backpropagation.png" /></p>
 
-#### Otros
-* [Deepdream](https://github.com/google/deepdream) (junio 2015)
-* [Style Networks](https://arxiv.org/abs/1508.06576) (agosto 2015)
-* [Neural Patches](https://arxiv.org/abs/1601.04589) (enero 2016)
-    * [Semantic Style Transfer](https://arxiv.org/abs/1603.01768) - [Neural doodles](https://nucl.ai/blog/neural-doodles/) (marzo 2016)
+## Epoch
+Is an iteration where the model sees the whole training set to update its weights.
+> #### Rule of thumb!
+> Between `1` and `5` if training with transfer learning. More than `10` when training from scratch.
+
+ 
+## Mini-batch gradient descent
+During the training phase, updating weights is usually not based on the whole training set at once due to computation complexities or one data point due to noise issues. Instead, the update step is done on mini-batches, where the number of data points in a batch is a hyperparameter that we can tune.
 
 
+## Transfer learning
+Training a deep learning model requires a lot of data and more importantly a lot of time. It is often useful to take advantage of pre-trained weights on huge datasets that took days/weeks to train, and leverage it towards our use case. Depending on how much data we have at hand, here are the different ways to leverage this:
+
+Training size	| Illustration |	Explanation
+:------------:|--------------|------------
+Small	        | ![img1](/posts/img/transfer-learning-small.png) | 	Freezes all layers, except last one.
+Medium       	| ![img1](../img/transfer-learning-medium.png) |	Freezes most layers, trains weights on last layers.
+Large         | ![img1](../img/transfer-learning-large.png) | Trains on all layers (with pretrained weights).
 
 
-
+### Learning rate
