@@ -42,18 +42,19 @@ Used in intermediate layers:
 
 ReLU |	Leaky ReLU	| ELU
 -----|------------|----
-![img1](/posts/img/activation/relu.png) | ![img1](/posts/img/activation/leaky-relu.png) | ![img1](/posts/img/activation/elu.png) |
+ <img width=200 src="/posts/img/activation/relu.png" /> | <img width=200 src="/posts/img/activation/leaky-relu.png" /> | <img width=200 src="/posts/img/activation/elu.png" />
 `max(0,z)` | `max(e*z,z)` | TO-DO
-Most used | Addresses dying ReLU issue for negative values | Differentiable everywhere
+Most used | Fix negative values issue | Differentiable everywhere
 
 Used in final layer:
 
 Softmax |	Sigmoid	| Tanh
 -----|------------|----
-![img1](/posts/img/activation/sigmoid.png) | ![img1](/posts/img/activation/sigmoid.png) | ![img1](/posts/img/activation/tanh.png) |
-`e^(x_i) / ∑ e^(x_i)` | `1 / 1 + e^(-x)` | `e^(x) - e^(-x) / e^(x) + e^(-x)`
-Sigle-label classification | Multi-label classification and binary classification | Differentiable everywhere
+ <img width=200 src="/posts/img/activation/sigmoid.png" /> |  <img width=200 src="/posts/img/activation/sigmoid.png" /> |  <img width=200 src="/posts/img/activation/tanh.png" />
+`e^(x_i) / ∑ e^(x_i)` | `1 / 1 + e^(-x)` | ``e^(x)-e^(-x) / e^(x)+e^(-x)`
+Sigle-label classification | <ul><li>Multi-label classification</li><li>binary classification</li></ul> | Differentiable everywhere
 [pytorch](https://pytorch.org/docs/stable/nn.html#torch.nn.Softmax)
+
 
 ## Transfer learning
 Training a deep learning model requires a lot of data and more importantly a lot of time. It is often useful to take advantage of pre-trained weights on huge datasets that took days/weeks to train, and leverage it towards our use case. Depending on how much data we have at hand, here are the different ways to leverage this:
