@@ -1,6 +1,18 @@
 # 1. Basics
 
-## Updating weights
+### Index
+- [Introduction](#introduction)
+- [Backpropagation](#backpropagation)
+- [Epoch](#epoch)
+- [Mini batch gradient descent](#mini-batch-gradient-descent)
+- [Learning rate](#learning-rate)
+- [Loss function](#loss-function)
+- [Activation function](#activation-function)
+- [Metrics](#metrics)
+- [Transfer learning](#transfer-learning)
+
+
+## Introduction
 In a neural network, weights are updated as follows:
 
 - **Step 1**: Take a batch of training data and perform forward propagation to compute the loss. 
@@ -19,8 +31,9 @@ Is an iteration where the model sees the whole training set to update its weight
 > #### Rule of thumb!
 > Between `1` and `5` if training with transfer learning. More than `10` when training from scratch.
 
+### Learning rate
  
-## Mini-batch gradient descent
+## Mini batch gradient descent
 During the training phase, updating weights is usually not based on the whole training set at once due to computation complexities or one data point due to noise issues. Instead, the update step is done on mini-batches, where the number of data points in a batch is a hyperparameter that we can tune.
 
 
@@ -34,4 +47,3 @@ Medium       	| ![img1](../img/transfer-learning-medium.png) |	Freezes most laye
 Large         | ![img1](../img/transfer-learning-large.png) | Trains on all layers (with pretrained weights).
 
 
-### Learning rate
