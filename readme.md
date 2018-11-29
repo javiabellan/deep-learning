@@ -8,8 +8,10 @@ I've write this articles for kepping track my learning path,
 but you can use it as a guide for learning (or improving) your DL knowledge.
 
 > TODO:
-> [check this pytorch DL course](https://fleuret.org/ee559/)
-> [trask book](https://github.com/iamtrask/Grokking-Deep-Learning)
+> - [How to train your resnet](https://www.myrtle.ai/2018/09/24/how_to_train_your_resnet/)
+> - [DL cheatsheets](https://stanford.edu/~shervine/teaching/cs-230.html)
+> - [Pytorch DL course](https://fleuret.org/ee559/)
+> - [Trask book](https://github.com/iamtrask/Grokking-Deep-Learning)
 
 ## 0. Setting up
 - [Hardware](/posts/0-setup/hardware.md)
