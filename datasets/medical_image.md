@@ -27,6 +27,7 @@ Image                                      |  Type              | Possible issue
 <img width=200 src="img/ecografy.jpg" />   | Ecografy           |  ?                   | 
 <img width=200 src="img/dermoscopy.jpg" /> | Dermoscopy (skin)  | Melanoma             |
 <img width=200 src="img/fundoscopy.jpg" /> | Fundoscopy (eye)   | Diabetic retinopathy | [Kaggle competition](https://www.kaggle.com/c/diabetic-retinopathy-detection/data)
+<img width=200 src="img/histology.jpg" />  | Histology (cells)  | Cancer               |
 <img width=200 src="img/chest-xray.jpg" /> | Chest xray         | Pneumonia, pneumotorax | [Kaggle competition](https://www.kaggle.com/c/rsna-pneumonia-detection-challenge), [Kaggle dataset](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia)
 
 ### Ecografía
