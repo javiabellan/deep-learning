@@ -29,8 +29,8 @@ Image                                      |  Type              | Kaggle competi
 <img width=200 src="img/dermoscopy.jpg" /> | Dermoscopy (skin)  | Melanoma detection
 <img width=200 src="img/fundoscopy.jpg" /> | Fundoscopy (eye)   | [Diabetic retinopathy detection](https://www.kaggle.com/c/diabetic-retinopathy-detection)
 <img width=200 src="img/histology.jpg" />  | Histology (cells)  | <ul><li>[Histopathologic cancer detection](https://www.kaggle.com/c/histopathologic-cancer-detection)</li><li>[Nuclei segmentation](https://www.kaggle.com/c/data-science-bowl-2018)</li></ul>
-<img width=200 src="img/chest-xray.jpg" /> | X-ray         | Pneumonia, pneumotorax, tuberculosis, lung cancer | [Pneumonia detection](https://www.kaggle.com/c/rsna-pneumonia-detection-challenge), [pneumonia dataset](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia) [tuberculosis dataset](https://www.kaggle.com/kmader/pulmonary-chest-xray-abnormalities)
-<img width=200 src="img/lung-tac.jpg" /> | CT  | Melanoma             |  [Lung cancer detection](https://www.kaggle.com/c/data-science-bowl-2017)
+<img width=200 src="img/chest-xray.jpg" /> | X-ray              | [Pneumonia detection](https://www.kaggle.com/c/rsna-pneumonia-detection-challenge)
+<img width=200 src="img/lung-tac.jpg" />   | CT                 | [Lung cancer detection](https://www.kaggle.com/c/data-science-bowl-2017)
 
 ### Ecografía
 Matriz de pares emisores/receptores de sonido y su eco
