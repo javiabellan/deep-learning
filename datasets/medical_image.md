@@ -1,19 +1,19 @@
 # Medical image
 
-Ordenados de menor a mayor intrusividad
+Ordenados de menor a mayor intrusividad.
 
 - Ultrasonidos
   - Ecografía
 - Luz visible
-  - Microscopía (tejidos celulares)
   - Fundoscopia (ojo)
+  - Endoscopia (cavidad)
   - Dermatoscopia (lunares)
-  - Endoscopia
+  - Microscopía (tejidos celulares)
 - Infrarojos
   - Termografía
 - Rayos X
-  - Radiografía convencional.
-  - Radiografía digital (CR).
+  - Radiografía convencional
+  - Radiografía digital (CR)
   - Tomografía axial computerizada (TAC) (3D)
 - Medicina nuclear
   - Resonancia magnética nuclear (RMN) (3D)
@@ -22,14 +22,15 @@ Ordenados de menor a mayor intrusividad
   - Gammagrafía
   - SPECT (single photon emission computed tomography)
 
-Image                                      |  Type              | Possible issue       | Database
--------------------------------------------|--------------------|----------------------|----------
-<img width=200 src="img/ecografy.jpg" />   | Ecografy           |  ?                   | 
-<img width=200 src="img/dermoscopy.jpg" /> | Dermoscopy (skin)  | Melanoma             |
-<img width=200 src="img/fundoscopy.jpg" /> | Fundoscopy (eye)   | Diabetic retinopathy | [Kaggle competition](https://www.kaggle.com/c/diabetic-retinopathy-detection/data)
-<img width=200 src="img/histology.jpg" />  | Histology (cells)  | Cancer               | [Kaggle competition](https://www.kaggle.com/c/histopathologic-cancer-detection)
-<img width=200 src="img/chest-xray.jpg" /> | Chest xray         | Pneumonia, pneumotorax, tuberculosis, lung cancer | [Kaggle competition](https://www.kaggle.com/c/rsna-pneumonia-detection-challenge), [pneumonia dataset](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia) [tuberculosis dataset](https://www.kaggle.com/kmader/pulmonary-chest-xray-abnormalities)
-<img width=200 src="img/lung-tac.gif" /> | Dermoscopy (skin)  | Melanoma             |
+Image                                      |  Type              | Kaggle competition
+-------------------------------------------|--------------------|-------------------
+<img width=200 src="img/ecografy.jpg" />   | Ecografy           | [Ultrasound nerve segmentation](https://www.kaggle.com/c/ultrasound-nerve-segmentation)
+<img width=200 src="img/ecografy.jpg" />   | Endoscopy          | [Cervical Cancer](https://www.kaggle.com/c/intel-mobileodt-cervical-cancer-screening)
+<img width=200 src="img/dermoscopy.jpg" /> | Dermoscopy (skin)  | Melanoma detection
+<img width=200 src="img/fundoscopy.jpg" /> | Fundoscopy (eye)   | [Diabetic retinopathy detection](https://www.kaggle.com/c/diabetic-retinopathy-detection)
+<img width=200 src="img/histology.jpg" />  | Histology (cells)  | <ul><li>[Histopathologic cancer detection](https://www.kaggle.com/c/histopathologic-cancer-detection)</li><li>[Nuclei segmentation](https://www.kaggle.com/c/data-science-bowl-2018)</li></ul>
+<img width=200 src="img/chest-xray.jpg" /> | X-ray         | Pneumonia, pneumotorax, tuberculosis, lung cancer | [Pneumonia detection](https://www.kaggle.com/c/rsna-pneumonia-detection-challenge), [pneumonia dataset](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia) [tuberculosis dataset](https://www.kaggle.com/kmader/pulmonary-chest-xray-abnormalities)
+<img width=200 src="img/lung-tac.jpg" /> | CT  | Melanoma             |  [Lung cancer detection](https://www.kaggle.com/c/data-science-bowl-2017)
 
 ### Ecografía
 Matriz de pares emisores/receptores de sonido y su eco
