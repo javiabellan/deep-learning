@@ -16,10 +16,13 @@ Ordenados de menor a mayor intrusividad
 
 - Ultrasonidos
   - Ecografía
-- Luz visible e infrarojos
-  - Microscopía (Luz visible)
-  - Endoscopia (Luz visible)
-  - Termografía (infrarojos)
+- Luz visible
+  - Microscopía (tejidos celulares)
+  - Fundoscopia (ojo)
+  - Dermatoscopia (lunares)
+  - Endoscopia
+- Infrarojos
+  - Termografía
 - Rayos X
   - Radiografía convencional.
   - Radiografía digital (CR).
@@ -49,6 +52,10 @@ Además si hacen varias tomas se puede tener una ecografía en 3D
 - Extracción de tejidos (biopsia)
 - Se suelen usar tintes pq sino se vería todo tranparente (para pared, nucleo de la célula...)
 - Poco angulo (distancia foacle grande)
+
+## D
+
+![img](https://www.researchgate.net/profile/Noel_Codella/publication/282853810/figure/fig1/AS:284608777211907@1444867428631/Example-images-from-the-ISIC-dermoscopy-dataset-according-to-category.png)
 
 ### Endoscopia
 - Mucho angulo (distancia foacle pequeña)
