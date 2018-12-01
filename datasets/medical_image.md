@@ -1,17 +1,5 @@
-# Image
-Suelen tener 1 canal (en vez de 3, RGB) y este puede tener un rango mayor de 8 bits.
+# Medical image
 
-- Proyection
-  - Perspetiva
-  - Integral
-  
-Espectro de ondas
-- Rango visible
-- Infrarojos
-- Radio
-- Rayos X
-
-## Clasification
 Ordenados de menor a mayor intrusividad
 
 - Ultrasonidos
@@ -34,6 +22,12 @@ Ordenados de menor a mayor intrusividad
   - Gammagrafía
   - SPECT (single photon emission computed tomography)
 
+Image                                      |  Type              | Possible issue       | Database
+-------------------------------------------|--------------------|----------------------|-------
+<img width=200 src="img/ecografy.jpg" />   | Ecografy           |  ?                   | 
+<img width=200 src="img/dermoscopy.jpg" /> | Dermoscopy (skin)  | Melanoma             |
+<img width=200 src="img/fundoscopy.jpg" /> | Fundoscopy (eye)   | Diabetic retinopathy | [Kaggle competition](https://www.kaggle.com/c/diabetic-retinopathy-detection/data)
+<img width=200 src="img/chest-xray.jpg" /> | Chest xray         | Pneumonia, pneumotorax | [Kaggle competition](https://www.kaggle.com/c/rsna-pneumonia-detection-challenge), [Kaggle dataset](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia)
 
 ### Ecografía
 Matriz de pares emisores/receptores de sonido y su eco
@@ -52,10 +46,6 @@ Además si hacen varias tomas se puede tener una ecografía en 3D
 - Extracción de tejidos (biopsia)
 - Se suelen usar tintes pq sino se vería todo tranparente (para pared, nucleo de la célula...)
 - Poco angulo (distancia foacle grande)
-
-## D
-
-![img](https://www.researchgate.net/profile/Noel_Codella/publication/282853810/figure/fig1/AS:284608777211907@1444867428631/Example-images-from-the-ISIC-dermoscopy-dataset-according-to-category.png)
 
 ### Endoscopia
 - Mucho angulo (distancia foacle pequeña)
@@ -110,10 +100,25 @@ El TAC de las gammagrafías
 ### PET
 El más nuevo y complejo de entender.
 
+---
+
 ## TODO: Tabla comparativa
 
 US: Ultra Sonido
 MN: Medicina mnuclear (Gamagrafía y SPECT)
+
+## Extra
+Suelen tener 1 canal (en vez de 3, RGB) y este puede tener un rango mayor de 8 bits.
+
+- Proyection
+  - Perspetiva
+  - Integral
+  
+Espectro de ondas
+- Rango visible
+- Infrarojos
+- Radio
+- Rayos X
 
 
 # Antiguo
