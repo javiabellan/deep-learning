@@ -45,11 +45,19 @@ Además si hacen varias tomas se puede tener una ecografía en 3D
 
 > An ultrasound device sends out sound waves that people cannot hear. The waves bounce off tissues inside your body like an echo. A computer uses these echoes to create a picture of areas inside your body. This picture is called a sonogram.
 
-### Microscopía
+### Microscopía (Biopsy)
 
 - Extracción de tejidos (biopsia)
 - Se suelen usar tintes pq sino se vería todo tranparente (para pared, nucleo de la célula...)
 - Poco angulo (distancia foacle grande)
+
+In most cases, doctors need to do a biopsy to make a diagnosis of cancer. A biopsy is a procedure in which the doctor removes a sample of tissue. A pathologist  then looks at the tissue under a microscope to see if it is cancer. The sample may be removed in several ways:
+
+- **With a needle**: The doctor uses a needle to withdraw tissue or fluid. 
+- **With an endoscope**: The doctor looks at areas inside the body using a thin, lighted tube called an endoscope. The scope is inserted through a natural opening, such as the mouth. Then, the doctor uses a special tool to remove tissue or cells through the tube.
+- **With surgery**: Surgery may be excisional or incisional.
+  - In an **excisional** biopsy, the surgeon removes the entire tumor. Often some of the normal tissue around the tumor also is removed. 
+  - In an **incisional** biopsy, the surgeon removes just part of the tumor.
 
 ### Endoscopia
 - Mucho angulo (distancia foacle pequeña)
