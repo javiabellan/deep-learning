@@ -32,7 +32,7 @@ Image                                      |  Type              | Kaggle competi
 <img width=200 src="img/chest-xray.jpg" /> | X-ray              | [Pneumonia detection](https://www.kaggle.com/c/rsna-pneumonia-detection-challenge)
 <img width=200 src="img/lung-tac.jpg" />   | CT                 | [Lung cancer detection](https://www.kaggle.com/c/data-science-bowl-2017)
 
-### Ecografía
+### Ecografía (Ultrasound)
 Matriz de pares emisores/receptores de sonido y su eco
 
 Disposición
@@ -43,6 +43,7 @@ Se puede además usar el efcto doppler para detectar el movimiento
 
 Además si hacen varias tomas se puede tener una ecografía en 3D
 
+> An ultrasound device sends out sound waves that people cannot hear. The waves bounce off tissues inside your body like an echo. A computer uses these echoes to create a picture of areas inside your body. This picture is called a sonogram.
 
 ### Microscopía
 
@@ -73,6 +74,8 @@ Además si hacen varias tomas se puede tener una ecografía en 3D
 - Vemos las densidades (uds. Hausfield)
   - Huesos (lo más denso)
   - Agua: 1ud Hausfield
+  
+> X-rays use low doses of radiation to create pictures of the inside of your body.
 
 ### Tomografía axial computerizada (TAC)
 - Varias radiografías en distintos águlos
@@ -82,8 +85,10 @@ Además si hacen varias tomas se puede tener una ecografía en 3D
 - Usos
   - Un tumor en la cabeza
   - Calcificación en la arteria aorta
+
+> An x-ray machine linked to a computer takes a series of detailed pictures of your organs. You may receive a dye or other contrast material to highlight areas inside the body. Contrast material helps make these pictures easier to read.
   
-### Resonancia magnética nuclear
+### Resonancia magnética nuclear (MRI)
 - Vemos el tipo de estructura molecuar (distinto de densidades)
 - Nueclos de los atomos son como imanes
 - Si aplicamos un acamplo elecmagentico, los nucleos se alinean.
@@ -92,16 +97,30 @@ Además si hacen varias tomas se puede tener una ecografía en 3D
 - No se rompen enlaces atómicos (solo vibran)
 - Además, se pueden aplicar tintes en las venas
 
-### Gamagrafía
+Registra la estructura estática (regiones)(distintas frecuencias-> distintos elementos)(resulucion espacial muy buena, menos de un mm, pero resolución temporal mala, casi 1 segundo
+
+> A strong magnet linked to a computer is used to make detailed pictures of areas in your body. Your doctor can view these pictures on a monitor and print them on film.
+
+##### fMRI
+Registra la estructura funcional (se centra en presencia de oxígeno en sangre)(indicador indirecto de consumo de energía)
+
+##### DTI (difussor tensor imaging)
+detecta flujo de agua
+
+### Gamagrafía (Nuclear scan)
 - Tiene poca resolución
 - Se aplica una sustancia radiocativa
 - Uso: funcionamiento de órganos
+
+> For this scan, you receive an injection of a small amount of radioactive material, which is sometimes called a tracer. It flows through your bloodstream and collects in certain bones or organs. A machine called a scanner detects and measures the radioactivity. The scanner creates pictures of bones or organs on a computer screen or on film. Your body gets rid of the radioactive substance quickly. This type of scan may also be called radionuclide scan.
 
 ### SPECT
 El TAC de las gammagrafías
 
 ### PET
-El más nuevo y complejo de entender.
+El más nuevo y complejo de entender. Consumes azúcar ligeramente radioactivo (sodio 22 en la glucosa)y al desintegrarse, se capta y se ve dónde se ha consumido energía. Max1 al año. Menos resolución que mri
+
+> For this scan, you receive an injection of a tracer. Then, a machine makes 3-D pictures that show where the tracer collects in the body. These scans show how organs and tissues are working.
 
 ---
 
