@@ -140,8 +140,12 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   - Variable input size: use **adaptative pooling**, final layers then:
     - Option 1: `AdaptiveAvgPool2d((1, 1))` -> `Linear(num_features, num_classes)` (less computation)
     - Option 2: `Conv2d(num_features, num_classes, 3, padding=1)` -> `AdaptiveAvgPool2d((1, 1))`
-- [Object detection](/posts/5-vision/detection.md)
+- [CNN Black box explanation (for classification)](https://github.com/utkuozbulak/pytorch-cnn-visualizations)
   - Class Activation Maps (CAM)
+  - SmoothGrad ([paper](https://arxiv.org/abs/1706.03825))
+  - Extra: [Distill: feature visualization](https://distill.pub/2017/feature-visualization/)
+  - Extra: [Distill: building blocks](https://distill.pub/2018/building-blocks/)
+- [Object detection](/posts/5-vision/detection.md)
   - Single-object detection
   - Multi-object detection (SSD)
 - Segmentation
