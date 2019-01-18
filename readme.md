@@ -38,8 +38,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 - [Loss functions](/posts/1-basics/loss.md) (Criterium)
   - **MAE: Mean Absolute Error** (L1 loss): Regression (for bounding boxes?).
   - **MSE: Mean Squared Error** (L2 loss): Regression. Penalice bad misses by too much (for single continuous value?).
-  - **Cross Entropy**: Sigle-label classification. Usually with **softmax**. `nn.CrossEntropyLoss` is a combination of:
-    - LogSoftmax: Applies log(softmax(x)) to a tesor. `nn.LogSoftmax()`
+  - **Cross Entropy**: Sigle-label classification. Usually with **softmax**. `nn.CrossEntropyLoss`.
     - **NLL: Negative Log Likelihood** is the one-hot simplified version, see [this](https://jamesmccaffrey.wordpress.com/2016/09/25/log-loss-and-cross-entropy-are-almost-the-same/) `nn.NLLLoss()`
   - **Binary Cross Entropy**:  Multi-label classification. Usually with **sigmoid**. `nn.BCELoss`
   - **Hinge**: `nn.HingeEmbeddingLoss()`
