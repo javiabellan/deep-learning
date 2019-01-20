@@ -113,10 +113,12 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
      - L1 regularization: penalizes the sum of absolute weights.
      - L2 regularization: penalizes the sum of squared weights (weight decay).
 5. Reduce model complexity: Limit the number of hidden layers and the number of units per layer.
-6. **Ensambles**
-   - **Bagging** (ensembling): Combine few models and average the predicction.
+6. **Ensambles**: Gather a bunch of models to give a final prediction.
+   - **Bagging** (ensembling): Average model preditctions (weighted average, majority vote or normal average)
    - **Stacking** (meta ensembling): Same but use a new model to produce the final output.
    - **Snapshot Ensembling**: M models for the cost of 1. Thanks to SGD with restarts you have several local minimum that you can average. [paper](https://arxiv.org/abs/1704.00109).
+   - **Boosting** is an ensemble technique in which the predictors are not made independently, but sequentially.
+     - [**Gradient Boosting**](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d)
 
 ## 4. Train faster (Optimization)
 - [SGD with restarts](/posts/4-optimization/sgd-with-restarts.md)
