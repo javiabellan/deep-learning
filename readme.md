@@ -150,24 +150,30 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 > - Group Normalization [paper](https://arxiv.org/abs/1803.08494)
 
 ## 5. Computer vision
-> TODO: Read [inception nets](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202)
 - [Convolutional Neural Network (CNN)](/posts/5-vision/cnn.md) For fixed size oredered data, like images
   - Variable input size: use **adaptative pooling**, final layers then:
     - Option 1: `AdaptiveAvgPool2d((1, 1))` -> `Linear(num_features, num_classes)` (less computation)
     - Option 2: `Conv2d(num_features, num_classes, 3, padding=1)` -> `AdaptiveAvgPool2d((1, 1))`
+  - [Inception](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202)
+  - Resent:
+  - Denset:
+  - SENet: Squeeze and Excitation block: network is allowed to adaptively adjust the weighting of each feature map in the convolution block.
 - [CNN Black box explanation (for classification)](https://github.com/utkuozbulak/pytorch-cnn-visualizations)
   - Class Activation Maps (CAM)
   - SmoothGrad ([paper](https://arxiv.org/abs/1706.03825))
   - Extra: [Distill: feature visualization](https://distill.pub/2017/feature-visualization/)
   - Extra: [Distill: building blocks](https://distill.pub/2018/building-blocks/)
-- [Object detection](/posts/5-vision/detection.md)
-  - Single-object detection
-  - Multi-object detection (SSD)
-- Segmentation
-  - [Unet](https://github.com/facebookresearch/fastMRI/tree/master/models/unet)
-- Image-to-image: Useful for data augmentation, B&W colorization, super-resolution, artistic style...
+- [**Object detection** / **Localization**](/posts/5-vision/detection.md): Get bounding boxes
+  - **Faster R-CNN**: Region-based method
+  - **SSD**: Single-shot method
+- **Semantic segmentation**: Get pixels
+  - **FCN** Fully Convolutional Networks (2014)
+  - **SegNet** (2015)
+  - [**Unet**](https://github.com/facebookresearch/fastMRI/tree/master/models/unet)
+  - **DeepLabv3** SotA. Increasing dilatation, increases field-of-view. [paper](https://arxiv.org/abs/1706.05587)
+- **Image-to-image**: Useful for data augmentation, B&W colorization, super-resolution, artistic style...
   - pix2pixHD
-  - COVST
+  - COVST: Naively add temporal consistency.
   - [Video-to-Video Synthesis](https://tcwang0509.github.io/vid2vid/)
 - [Generative advesarial network (GAN)](/posts/5-vision/gan.md)
   - [infoGAN](http://www.depthfirstlearning.com/2018/InfoGAN)
