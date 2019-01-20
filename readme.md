@@ -195,8 +195,8 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 > - [Hardvard NLP](http://nlp.seas.harvard.edu/papers/)
 
 - [**Word embedding**](/teoría/modelos/embedding.md): Give meaningful representation to words.
-  -  **Word2Vec**: Traditional unsupervised process of embedding, where a word is similar to its surrounding words (Skip-gram model).
-  - **Context-aware embedding (ELMo)**: Better representation
+  -  **Word2Vec**, **Glove**: Traditional unsupervised process of embedding, where a word is similar to its surrounding words (Skip-gram model).
+  - **ELMo**: Context-aware embedding = better representation. Useful for synonyms. Made with bidirectional LSTMs [*paper*](https://arxiv.org/abs/1802.05365), [*site*](https://allennlp.org/elmo).
 - [**Recurrent Neural network (RNN)**](/teoría/modelos/rnn.md) For sequences that need keeping the state, like text
   - **GRU**
   - **LSTM**
@@ -204,9 +204,9 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 - [**Sequence to sequence**](/teoría/nlp/seq2seq.md): RNN Encoder-Decoder architecture.
   - **Attention** Allows the network to refer back to the input sequence, instead of forcing it to encode all information into ane fixed-lenght vector. [*paper*](https://arxiv.org/abs/1508.04025), [*blog*](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/), [*attention and memory*](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
   - **Self-Attention**: Attention with the same input sequence, to better encode it.
+  - **ULM-FiT**: Regular LSTM with no attention. [*paper*](https://arxiv.org/abs/1801.06146)
   - **Transformer**: Feedfoward network. Encoder with self-attention, and decoder with attention. [*paper*](https://arxiv.org/abs/1706.03762), [*blog*](https://jalammar.github.io/illustrated-transformer).
-  - **ELMo**: Bidirectional LSTMs
-  - **OpenAI Transformer**: Same as transformer, but first train the decoder for language modelling, and then train other NLP task.
+  - **OpenAI Transformer**: Same as transformer, but with transfer-learning for ther NLP tasks. First train the decoder for language modelling with unsupervised text, and then train other NLP task. [*paper*](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf), [*site*](https://blog.openai.com/language-unsupervised/)
   - **BERT** The best performance. [*paper*](https://arxiv.org/abs/1810.04805), [*blog*](http://jalammar.github.io/illustrated-bert), [*blog2*](http://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/).
   - **Transformer-XL**: Learning long-term dependencies [*paper*](https://arxiv.org/abs/1901.02860), [*blog*](https://medium.com/dair-ai/a-light-introduction-to-transformer-xl-be5737feb13).
 - Metrics
