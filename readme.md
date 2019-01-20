@@ -98,17 +98,22 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 
 
 ## 3. Improve generalization and avoid overfitting (try in that order)
-1. Get more data
-2. [Data augmentation](/posts/3-generalization/data_augmentation.md) ([albumentations](https://github.com/albu/albumentations) for faster aug. using the GPU)
-   - [Test time augmentation (TTA)?](/posts/3-generalization/TTA.md)
+1. **Get more data**
+   - **Similar datasets**: Get a similar dataset for your problem.
+   - **Create your own dataset**
+     - Segmentation annotation with Polygon-RNN++
+   - **Synthetic data**: Virtual objects and scenes instead of real images. Infinite possibilities of lighting, colors, angles...
+2. [**Data augmentation**](/posts/3-generalization/data_augmentation.md) Augment your current data. ([albumentations](https://github.com/albu/albumentations) for faster aug. using the GPU)
+   - [Test time augmentation (TTA)?](/posts/3-generalization/TTA.md): Augment for validation and test set.
+   - **AutoAugment**: RL for data augmentation. Trasfer learning NOT THE WEIGHTS but the policies of how to do data augmentation.
 3. Generalizable architectures?: add more bachnorm layers, more densenets...
-4. Regularization
+4. **Regularization**
    - [Dropout](/posts/3-generalization/dropout.md). Usually `0.5`
    - [Weight penalty](/posts/3-generalization/weight_decay.md): Regularization in loss function (penalice high weights). Usually `0.0005`
      - L1 regularization: penalizes the sum of absolute weights.
      - L2 regularization: penalizes the sum of squared weights (weight decay).
 5. Reduce model complexity: Limit the number of hidden layers and the number of units per layer.
-6. Ensambles
+6. **Ensambles**
    - **Bagging** (ensembling): Combine few models and average the predicction.
    - **Stacking** (meta ensembling): Same but use a new model to produce the final output.
    - **Snapshot Ensembling**: M models for the cost of 1. Thanks to SGD with restarts you have several local minimum that you can average. [paper](https://arxiv.org/abs/1704.00109).
@@ -160,12 +165,13 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   - Multi-object detection (SSD)
 - Segmentation
   - [Unet](https://github.com/facebookresearch/fastMRI/tree/master/models/unet)
-- Enhacement:
-  - Colorization
-  - Super-resolution
-  - Artistic style
+- Image-to-image: Useful for data augmentation, B&W colorization, super-resolution, artistic style...
+  - pix2pixHD
+  - COVST
+  - [Video-to-Video Synthesis](https://tcwang0509.github.io/vid2vid/)
 - [Generative advesarial network (GAN)](/posts/5-vision/gan.md)
   - [infoGAN](http://www.depthfirstlearning.com/2018/InfoGAN)
+  - BigGAN: SotA in image synthesis. Same GAN techiques, much larger scale. Increase model capacity + increase batch size.
   - [10 types of GANs](https://amp.reddit.com/r/MachineLearning/comments/8z97mx/r_math_insights_from_10_gan_papers_infogans)
 - [Siamese network](/posts/5-vision/siamese.md)
 - [Inceptionism](/posts/5-vision/inceptionism.md)
