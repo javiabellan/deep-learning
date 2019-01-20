@@ -188,6 +188,8 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 > To speed up jpeg image I/O from the disk one should not use PIL, skimage and even OpenCV but look for libjpeg-turbo or PyVips.
 
 ## 6. Natural Language Processing
+> - [NLP overview](https://nlpoverview.com/)
+> - [Sebastian Ruder webpage](http://ruder.io/)
 
 - [**Word embedding**](/teoría/modelos/embedding.md): Give meaningful representation to words.
   -  **Word2Vec**: Traditional unsupervised process of embedding, where a word is similar to its surrounding words (Skip-gram model).
@@ -198,14 +200,17 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
     - [paper](https://arxiv.org/abs/1807.08518)
     - [code](https://github.com/MarkPKCollier/NeuralTuringMachine/blob/master/README.md)
 - [**Sequence to sequence**](/teoría/nlp/seq2seq.md): RNN Encoder-Decoder architecture.
-  - **Attention** Allows the network to refer back to the input sequence, instead of forcing it to encode all information into ane fixed-lenght vector.
+  - **Attention** Allows the network to refer back to the input sequence, instead of forcing it to encode all information into ane fixed-lenght vector. [*blog*](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
   - **Self-Attention**: Attention with the same input sequence, to better encode it.
   - **Transformer**: Encoder with self-attention, and decoder with attention.
   - **ELMo**: Bidirectional LSTMs
   - **OpenAI Transformer**: Same as transformer, but first train the decoder for language modelling, and then train other NLP task.
-  - **BERT** The best performance.
-- Applications:
-  - [Translation](/teoría/nlp/Translation.md)
+  - **BERT** The best performance. [paper](https://arxiv.org/abs/1810.04805)
+  - **Transformer-XL**: Learning long-term dependencies [*paper*](https://arxiv.org/abs/1901.02860), [*blog*](https://medium.com/dair-ai/a-light-introduction-to-transformer-xl-be5737feb13).
+- Metrics
+  - [**BLEU**](https://medium.com/@rtatman/evaluating-text-output-in-nlp-bleu-at-your-own-risk-e8609665a213)
+- [**Applications**](https://nlpprogress.com):
+  - [Translation](https://nlpprogress.com/english/machine_translation.html)
 
 ## 7. Sturctured data
 - Continuous variables: Feed them directly to the network
