@@ -174,16 +174,24 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 > To speed up jpeg image I/O from the disk one should not use PIL, skimage and even OpenCV but look for libjpeg-turbo or PyVips.
 
 ## 6. Natural Language Processing
-- [Word embedding](/teoría/modelos/embedding.md)
-- [Recurrent Neural network (RNN)](/teoría/modelos/rnn.md) For sequences that need keeping the state, like text
-  - LSTM
+
+- [**Word embedding**](/teoría/modelos/embedding.md): Give meaningful representation to words.
+  -  **Word2Vec**: Traditional unsupervised process of embedding, where a word is similar to its surrounding words (Skip-gram model).
+  - **Context-aware embedding (ELMo)**: Better representation
+- [**Recurrent Neural network (RNN)**](/teoría/modelos/rnn.md) For sequences that need keeping the state, like text
+  - **LSTM**
   - Neural Turing machine
     - [paper](https://arxiv.org/abs/1807.08518)
     - [code](https://github.com/MarkPKCollier/NeuralTuringMachine/blob/master/README.md)
-- [Translation](/teoría/nlp/Translation.md)
-- [Sequence to sequence](/teoría/nlp/seq2seq.md)
-- [Attention](/teoría/nlp/attention.md)
-- [Large vocabularies](/teoría/nlp/large-vocabs.md)
+- [**Sequence to sequence**](/teoría/nlp/seq2seq.md): RNN Encoder-Decoder architecture.
+  - **Attention** Allows the network to refer back to the input sequence, instead of forcing it to encode all information into ane fixed-lenght vector.
+  - **Self-Attention**: Attention with the same input sequence, to better encode it.
+  - **Transformer**: Encoder with self-attention, and decoder with attention.
+  - **ELMo**: Bidirectional LSTMs
+  - **OpenAI Transformer**: Same as transformer, but first train the decoder for language modelling, and then train other NLP task.
+  - **BERT** The best performance.
+- Applications:
+  - [Translation](/teoría/nlp/Translation.md)
 
 ## 7. Sturctured data
 - Continuous variables: Feed them directly to the network
