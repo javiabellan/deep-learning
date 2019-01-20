@@ -201,10 +201,9 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   - **GRU**
   - **LSTM**
   - Neural Turing machine. [*paper*](https://arxiv.org/abs/1807.08518), [*code*](https://github.com/MarkPKCollier/NeuralTuringMachine/blob/master/README.md)
-- [**Sequence to sequence**](/teoría/nlp/seq2seq.md): RNN Encoder-Decoder architecture.
+- [**Sequence to sequence**](/teoría/nlp/seq2seq.md): Encoder-Decoder architecture.
   - **Attention** Allows the network to refer back to the input sequence, instead of forcing it to encode all information into ane fixed-lenght vector. [*paper*](https://arxiv.org/abs/1508.04025), [*blog*](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/), [*attention and memory*](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
-  - **Self-Attention**: Attention with the same input sequence, to better encode it.
-  - **ULM-FiT**: Regular LSTM with no attention. [*paper*](https://arxiv.org/abs/1801.06146)
+  - **ULMFiT**: Regular LSTM with no attention. Introduces the idea of transfer-learning in NLP. [*paper*](https://arxiv.org/abs/1801.06146)
   - **Transformer**: Feedfoward network. Encoder with self-attention, and decoder with attention. [*paper*](https://arxiv.org/abs/1706.03762), [*blog*](https://jalammar.github.io/illustrated-transformer).
   - **OpenAI Transformer**: Same as transformer, but with transfer-learning for ther NLP tasks. First train the decoder for language modelling with unsupervised text, and then train other NLP task. [*paper*](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf), [*site*](https://blog.openai.com/language-unsupervised/)
   - **BERT** The best performance. [*paper*](https://arxiv.org/abs/1810.04805), [*blog*](http://jalammar.github.io/illustrated-bert), [*blog2*](http://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/).
