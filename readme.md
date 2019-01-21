@@ -195,7 +195,8 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 > - [Hardvard NLP](http://nlp.seas.harvard.edu/papers/)
 
 - [**Word embedding**](/teoría/modelos/embedding.md): Give meaningful representation to words.
-  -  **Word2Vec**, **Glove**: Traditional unsupervised process of embedding, where a word is similar to its surrounding words (Skip-gram model).
+  -  **Word2Vec**, **Glove**: Traditional unsupervised process of embedding, where a word is similar to its surrounding words (Skip-gram model)
+  - **CNN-extracted char features**
   - **ELMo**: Context-aware embedding = better representation. Useful for synonyms. Made with bidirectional LSTMs [*paper*](https://arxiv.org/abs/1802.05365), [*site*](https://allennlp.org/elmo).
 - [**Recurrent Neural network (RNN)**](/teoría/modelos/rnn.md) For sequences that need keeping the state, like text
   - **GRU**
