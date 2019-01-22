@@ -104,17 +104,17 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
    - **Create your own dataset**
      - Segmentation annotation with Polygon-RNN++
    - **Synthetic data**: Virtual objects and scenes instead of real images. Infinite possibilities of lighting, colors, angles...
-2. [**Data augmentation**](/posts/3-generalization/data_augmentation.md) Augment your current data. ([albumentations](https://github.com/albu/albumentations) for faster aug. using the GPU)
-   - [Test time augmentation (TTA)?](/posts/3-generalization/TTA.md): Augment for validation and test set.
+2. **Data augmentation**: Augment your current data. ([albumentations](https://github.com/albu/albumentations) for faster aug. using the GPU)
+   - **Test time augmentation (TTA)**: The same augmentations will also be applied when we are predicting (inference). It can improve our results if we run inference multiple times for each sample and average out the predictions.
    - **AutoAugment**: RL for data augmentation. Trasfer learning NOT THE WEIGHTS but the policies of how to do data augmentation.
-3. Generalizable architectures?: add more bachnorm layers, more densenets...
-4. **Regularization**
+3. **Regularization**
    - [Dropout](/posts/3-generalization/dropout.md). Usually `0.5`
    - [Weight penalty](/posts/3-generalization/weight_decay.md): Regularization in loss function (penalice high weights). Usually `0.0005`
      - L1 regularization: penalizes the sum of absolute weights.
      - L2 regularization: penalizes the sum of squared weights (weight decay).
-5. Reduce model complexity: Limit the number of hidden layers and the number of units per layer.
-6. **Ensambles**: Gather a bunch of models to give a final prediction.
+4. **Reduce model complexity**: Limit the number of hidden layers and the number of units per layer.
+   - Generalizable architectures?: Add more bachnorm layers, more densenets...
+5. **Ensambles**: Gather a bunch of models to give a final prediction.
    - **Bagging** (ensembling): Average model preditctions (weighted average, majority vote or normal average)
    - **Stacking** (meta ensembling): Same but use a new model to produce the final output.
    - **Snapshot Ensembling**: M models for the cost of 1. Thanks to SGD with restarts you have several local minimum that you can average. [paper](https://arxiv.org/abs/1704.00109).
