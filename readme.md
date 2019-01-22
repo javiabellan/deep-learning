@@ -61,10 +61,10 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   - **Oversample minority class**. But you can overfit.
   - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
 - **Split** the data
-  - **Training** set: used for learning the parameters of the model. 
-  - **Validation** set: used for evaluating model while training. Very important!
+  - **Training set**: used for learning the parameters of the model. 
+  - **Validation set**: used for evaluating model while training. Don’t create a random validation set! Manually create one so that it matches the distribution of your data. Usaully a `10%` or `20%` of your train set.
     - N-fold cross-validation. Usually `10`
-  - **Test** set: used to get a final estimate of how well the network works.
+  - **Test set**: used to get a final estimate of how well the network works.
 - [**Preprocess**](http://cs231n.github.io/neural-networks-2/#datapre): Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/whitening/pca helps a lot.
   - Option 1: **Normalization** `x = x-x.mean() / x.std()` *Most used*
      1. **Mean subtraction**: Center the data to zero. `x = x - x.mean()` fights vanishing and exploding gradients
