@@ -21,7 +21,9 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 - [Kaggle](/posts/0-setup/kaggle.md)
 
 ## 1. Know the basics
-> Remember the math: [Matrix calculus](http://explained.ai/matrix-calculus/index.html)
+> Remember the math:
+> - [Matrix calculus](http://explained.ai/matrix-calculus/index.html)
+> - **Einsum**: [link 1](https://obilaniu6266h16.wordpress.com/2016/02/04/einstein-summation-in-numpy/), [link 2](https://rockt.github.io/2018/04/30/einsum)
 
 - [Chain rule](/posts/1-basics/chain_rule.md)
 - [Gradient descent](/posts/1-basics/gradient_descent.md) (training loop)
