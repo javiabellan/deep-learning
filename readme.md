@@ -288,3 +288,9 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 > * [DeepRL](https://github.com/ShangtongZhang/DeepRL)
 
 
+## Fast.ai API
+
+- Databunch
+  - If the label is an int by default is a classification problem.
+  - If the label is an float by default is a regression problem.
+
