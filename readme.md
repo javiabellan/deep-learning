@@ -54,7 +54,8 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   - **ROC, AUC**:
   - **Log loss**:
 - **Regression Metrics**
-  - - **RMSE**
+  - **RMSE**
+  - **RMSPE**: Root Mean Square Percentage Error.
 
 ## Prepare de data
 - **Balance** the data
@@ -244,7 +245,9 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   * **K nearest neighbors (KNN)**
   * **Linear regression**: Regrssion
 * **Clustering**: Separate data in groups, useful for labeling a dataset.
-  * 
+  * **K-Means**
+  * **Mean-Shift**
+  * **DBSCAN**: Density-Based Spatial Clustering of Applications with Noise
 * **Dimensionality reduction**: Useful for visualize data and embeddings
   * **PCA**:
   * **T-SNE**:
