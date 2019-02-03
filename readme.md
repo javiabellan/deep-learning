@@ -55,7 +55,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   - **Log loss**:
 - **Regression Metrics**
   - **RMSE**
-  - **RMSPE**: Root Mean Square Percentage Error.
+  - **RMSPE**: Root Mean Square Percentage Error. `log = true` in fastai to get percentages differences.
 
 ## Prepare de data
 - **Balance** the data
