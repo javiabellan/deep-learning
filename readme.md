@@ -116,7 +116,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
    - [Dropout](/posts/3-generalization/dropout.md). Usually `0.5`
    - [Weight penalty](/posts/3-generalization/weight_decay.md): Regularization in loss function (penalice high weights). Usually `0.0005`
      - L1 regularization: penalizes the sum of absolute weights.
-     - L2 regularization: penalizes the sum of squared weights (weight decay).
+     - L2 regularization: penalizes the sum of squared weights by a factor, usually `0.01` or `0.1` (weight decay).
 4. **Reduce model complexity**: Limit the number of hidden layers and the number of units per layer.
    - Generalizable architectures?: Add more bachnorm layers, more densenets...
 5. **Ensambles**: Gather a bunch of models to give a final prediction.
