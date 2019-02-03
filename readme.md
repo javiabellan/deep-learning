@@ -27,9 +27,9 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 
 - [Chain rule](/posts/1-basics/chain_rule.md)
 - [Gradient descent](/posts/1-basics/gradient_descent.md) (training loop)
-  - Batch gradient descent
-  - Stochastic gradient descent
-  - Mini-batch gradient descent
+  - **Batch** gradient descent: The whole dataset at once, as a batch. `Batch size = length(dataset)`
+  - **Online** gradient descent: Every single sample of data is a batch. `Batch size = 1`
+  - **Mini-batch** gradient descent: Disjoint groups of samples as a batch. `Batch size = n` **We will use this**.
 - [Activation functions](/posts/1-basics/activations.md)
   - **ReLU**: Non-linearity compontent of the net (hidden layers)
   - **Softmax**: Sigle-label classification (last layer)
@@ -84,10 +84,10 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   
 ## 2. Choose training hyperparams
 - **Learning rate**
-  - Constant
-  - Decay factor
+  - Constant: Never use.
+  - Reduce it gradually: By steps, by a decay factor, with LR annealing, etc.
   - Warm restarts (SGDWR, AdamWR):
-  - 1 cycle: Most used. Use LRFinder to know your maximum lr.
+  - 1 cycle: The best. Use LRFinder to know your maximum lr.
 - **Batch size**: Number of samples to learn simultaneously. Usually a power of 2. `32` or `64` are good values.
   - Too low: like `4`: Lot of updates. Very noisy random updates in the net (bad).
   - Too high: like `512` Few updates. Very general common updates (bad).
@@ -95,12 +95,16 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 - **Number of epochs**
   - Train until start overffiting (validation loss becomes to increase) (early stopping)
 - [**Gradient descent method**](/posts/4-optimization/sgd-optimization.md)
-  - **SGD**.
-  - **SGD with Momentum**. Usually `0.9` The second most used.
+  - **SGD**. A bit slowly to get to the optimum. `new_w = w - lr[gradient_w]`
+  - **SGD with Momentum**. Speed it up with momentum, usually `mom=0.9`. **The second method most used**.
+    - `mom=0.9`, means a `10%` is the normal derivative and a `90%` is the same direction I went last time.
+    - `new_w = w - lr[(0.1 * gradient_w)  +  (0.9 * w)]`
+    - Other common values are `0.5`, `0.7` and `0.99`.
   - **AdaGrad** (Adaptative lr) From 2011.
-  - **RMSProp** (Adaptative lr) From 2012.
-  - **Adam** (Momentun + RMSProp) From 2014.
-  - **AdamW** Adam with weight deacy. The **best** and most used.
+  - **RMSProp** (Adaptative lr) From 2012. Similar to momentum but with the gradient squared.
+    - `new_w = w - lr * gradient_w / [(0.1 * gradient_w²)  +  (0.9 * w)]`
+    - If the gradient in not so volatile, take grater steps. Otherwise, take smaller steps.
+  - **Adam** Combination of Momentun with RMSProp. From 2014. The **best** and most used.
   - **AMSGrad** From 2018.
 - **Weight initialization**??? random, xavier...
 
@@ -126,8 +130,9 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 3. **Regularization**
    - [Dropout](/posts/3-generalization/dropout.md). Usually `0.5`
    - [Weight penalty](/posts/3-generalization/weight_decay.md): Regularization in loss function (penalice high weights). Usually `0.0005`
-     - L1 regularization: penalizes the sum of absolute weights.
-     - L2 regularization: penalizes the sum of squared weights by a factor, usually `0.01` or `0.1` (weight decay).
+     - **L1 regularization**: penalizes the sum of absolute weights.
+     - **L2 regularization**: penalizes the sum of squared weights by a factor, usually `0.01` or `0.1`.
+     - **Weight decay**: `wd * w`. Sometimes mathematically identical to L2 reg.
 4. **Reduce model complexity**: Limit the number of hidden layers and the number of units per layer.
    - Generalizable architectures?: Add more bachnorm layers, more densenets...
 5. **Ensambles**: Gather a bunch of models to give a final prediction.
