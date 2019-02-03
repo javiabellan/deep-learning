@@ -226,14 +226,32 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 
 ---
 
-## Unsupervised learning
-* [Autoencoder](/teoría/modelos/autoencoder.md): Para comprimir información
-* Restricted boltzmann machine: Como el autoencoder pero va y vuelve
-* PCA: Reduce el numero de dimensiones
-* T-SNE: Reduce el numero de dimensiones
-* competitive learning
-* Hebbian learning
-* Self Organizing Map
+
+## No neural Machine Learning
+
+* **Supervised learning**: Useful for know a non neural baseline or for use them in ensambles along with nueral nets.
+  * [**Gradient boosting**](http://explained.ai/gradient-boosting/index.html)
+    * **Gradient boosting trees**
+  * **Random forest (RF)**
+  * **Support Vector Machines (SVM)**
+  * **K nearest neighbors (KNN)**
+  * **Linear regression**: Regrssion
+* **Clustering**: Separate data in groups, useful for labeling a dataset.
+  * 
+* **Dimensionality reduction**: Useful for visualize data and embeddings
+  * **PCA**:
+  * **T-SNE**:
+* **Others**
+  * [Autoencoder](/teoría/modelos/autoencoder.md): Para comprimir información
+  * Restricted boltzmann machine: Como el autoencoder pero va y vuelve
+  * competitive learning
+  * Hebbian learning
+  * Self Organizing Map
+ 
+ 
+## Traditional feature extraction
+* Color features
+* Texture features
 
 ## Reinforcement learning
 * Q-learning
@@ -259,6 +277,4 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 > * [RL Adventure 2](https://github.com/higgsfield/RL-Adventure-2)
 > * [DeepRL](https://github.com/ShangtongZhang/DeepRL)
 
-## Machine learning
-* [Gradient boosting](http://explained.ai/gradient-boosting/index.html)
-* Random forest
+
