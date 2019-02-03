@@ -27,12 +27,9 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 
 - [Chain rule](/posts/1-basics/chain_rule.md)
 - [Gradient descent](/posts/1-basics/gradient_descent.md) (training loop)
-  - Choose waight initalization (random,...)
-  - Choose learining rate (constant, )
-- Batch size: Number of samples to learn simultaneously. Usually a power of 2. `32` or `64` are good values.
-  - Too low: like `4`: Lot of updates. Very noisy random updates in the net (bad).
-  - Too high: like `512` Few updates. Very general common updates (bad).
-    - Faster computation. Takes advantage of GPU mem. But sometimes it can no be fitted (CUDA Out Of Memory)
+  - Batch gradient descent
+  - Stochastic gradient descent
+  - Mini-batch gradient descent
 - [Activation functions](/posts/1-basics/activations.md)
   - **ReLU**: Non-linearity compontent of the net (hidden layers)
   - **Softmax**: Sigle-label classification (last layer)
@@ -85,13 +82,27 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   
 >  In case of images, the scale is from 0 to 255, so it is not strictly necessary normalize.
   
-## 2. Start training
-- [Find learning rate](/posts/learning_rate.md)
-- [Set batch size](/posts/batch_size.md)
-  - Batch gradient descent
-  - Stochastic gradient descent
-  - Mini-batch gradient descent. The biggger the better (but slower). Usually `64` or `128`
-- Train until start overffiting (early stopping)
+## 2. Choose training hyperparams
+- **Learning rate**
+  - Constant
+  - Decay factor
+  - Warm restarts (SGDWR, AdamWR):
+  - 1 cycle: Most used. Use LRFinder to know your maximum lr.
+- **Batch size**: Number of samples to learn simultaneously. Usually a power of 2. `32` or `64` are good values.
+  - Too low: like `4`: Lot of updates. Very noisy random updates in the net (bad).
+  - Too high: like `512` Few updates. Very general common updates (bad).
+    - Faster computation. Takes advantage of GPU mem. But sometimes it can no be fitted (CUDA Out Of Memory)
+- **Number of epochs**
+  - Train until start overffiting (validation loss becomes to increase) (early stopping)
+- [**Gradient descent method**](/posts/4-optimization/sgd-optimization.md)
+  - **SGD**.
+  - **SGD with Momentum**. Usually `0.9` The second most used.
+  - **AdaGrad** (Adaptative lr) From 2011.
+  - **RMSProp** (Adaptative lr) From 2012.
+  - **Adam** (Momentun + RMSProp) From 2014.
+  - **AdamW** Adam with weight deacy. The **best** and most used.
+  - **AMSGrad** From 2018.
+- **Weight initialization**??? random, xavier...
 
 > TODO: Read:
 > - [Efficient BackProp](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf) (1998, Yann LeCun)
@@ -127,19 +138,11 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
      - [**Gradient Boosting**](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d)
 
 ## 4. Train faster (Optimization)
-- [SGD with restarts](/posts/4-optimization/sgd-with-restarts.md)
-- [Gradient Descent Optimization](/posts/4-optimization/sgd-optimization.md)
-  - **Momentum**. Usually `0.9` The second most used. 
-  - **AdaGrad** (Adaptative lr)
-  - **RMSProp** (Adaptative lr)
-  - **Adam** (Momentun + RMSProp) The **best** and most used. 
-- [Weight initialization](/posts/4-optimization/weight_inilatization.md)
-  - Random
-  - Other better than random?
-  - Pretrainded models (transfer learning) **best**
-    1. Replace last layer
-    2. Fine-tune new layers
-    3. Fine-tune more layers (optional)
+- **Transfer learning**: Use a pretrainded model and retrain with your data.
+  1. Replace last layer
+  2. Fine-tune new layers
+  3. Fine-tune more layers (optional)
+- [**Batch Normalization**](/posts/4-optimization/batch-normalization.md) Add BachNorm layers after your convolutions and linear layers for make things easier to your net and train faster.
 - **Precomputation**
   1. Freeze the layers you don’t want to modify
   2. Calculate the activations the last layer from the frozen layers(for your entire dataset)
@@ -147,7 +150,6 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   4. Use those activations as the input of your trainable layers
 - [**Half precision**](https://forums.fast.ai/t/mixed-precision-training/20720) (fp16)
 - **Multiple GPUs**
-- [**Batch Normalization**](/posts/4-optimization/batch-normalization.md)
 - [**2nd order optimization**](/posts/4-optimization/2nd-order.md)
 
 
