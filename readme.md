@@ -39,7 +39,6 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   - **Regression**
     - **MAE: Mean Absolute Error** (L1 loss): (for bounding boxes?).
     - **MSE: Mean Squared Error** (L2 loss): Penalice large errors more than MAE (for single continuous value?).
-    - **MSEFlat**: For comparing to images in generative models.
     - **RMSE: Root Mean Squared Error**: The square root of the MSE. Penalice large errors more than MAE.
   - **Classification**
     - **Cross Entropy**: Sigle-label classification. Usually with **softmax**. `nn.CrossEntropyLoss`.
@@ -186,13 +185,25 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 - **Semantic segmentation**: Get pixels
   - **FCN** Fully Convolutional Networks (2014)
   - **SegNet** (2015)
-  - [**Unet**](https://github.com/facebookresearch/fastMRI/tree/master/models/unet)
+  - [**Unet**](https://github.com/facebookresearch/fastMRI/tree/master/models/unet): With the left part is a pretrained resnet-34
   - **DeepLabv3** SotA. Increasing dilatation, increases field-of-view. [paper](https://arxiv.org/abs/1706.05587)
-- **Image-to-image**: Useful for data augmentation, B&W colorization, super-resolution, artistic style...
+- **Generative** (Image-to-image): Useful for data augmentation, B&W colorization, super-resolution, artistic style...
+  - **Model**: Pretrained Unet 
+  - **Loss functions**:
+     - **Pixel MSE**: Flat the 2D images and compare them with regular MSE.
+     - **Discriminator/Critic** The loss function is a binary classification pretrained resnet (real/fake).
+     - **Feature losses** or perpetual losses.
   - pix2pixHD
   - COVST: Naively add temporal consistency.
   - [Video-to-Video Synthesis](https://tcwang0509.github.io/vid2vid/)
 - [Generative advesarial network (GAN)](/posts/5-vision/gan.md)
+  - Process
+    1. Train a bit the generator and save generated images. `unet_learner` with pixelMSE loss
+    2. Train bit the discriminator with real vs generated images. `create_critic_learner`
+    3. Ping-pong train both nets `GANLearner` with 2 losses pixelMSE and discriminator.
+  - Discriminative model with Spectral Normalization
+  - Loss with adaptive loss
+  - Metric accuracy is accuracy_thres_expand
   - [infoGAN](http://www.depthfirstlearning.com/2018/InfoGAN)
   - BigGAN: SotA in image synthesis. Same GAN techiques, much larger scale. Increase model capacity + increase batch size.
   - [10 types of GANs](https://amp.reddit.com/r/MachineLearning/comments/8z97mx/r_math_insights_from_10_gan_papers_infogans)
