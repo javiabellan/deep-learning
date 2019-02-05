@@ -106,7 +106,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
     - `new_w = w - lr * gradient_w / [(0.1 * gradient_w²)  +  (0.9 * w)]`
     - If the gradient in not so volatile, take grater steps. Otherwise, take smaller steps.
   - **Adam** Combination of Momentun with RMSProp. From 2014. The **best** and most used.
-  - **AMSGrad** From 2018.
+  - **AMSGrad** From 2018. Worse than Adam in practice.
 - **Weight initialization**??? random, xavier...
 
 > TODO: Read:
@@ -233,7 +233,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   - **Transformer**: Feedfoward network. Encoder with self-attention, and decoder with attention. [*paper*](https://arxiv.org/abs/1706.03762), [*blog*](https://jalammar.github.io/illustrated-transformer).
   - **OpenAI Transformer**: Same as transformer, but with transfer-learning for ther NLP tasks. First train the decoder for language modelling with unsupervised text, and then train other NLP task. [*paper*](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf), [*site*](https://blog.openai.com/language-unsupervised/)
   - **BERT** The best performance. [*paper*](https://arxiv.org/abs/1810.04805), [*blog*](http://jalammar.github.io/illustrated-bert), [*blog2*](http://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/).
-  - **Transformer-XL**: Learning long-term dependencies [*paper*](https://arxiv.org/abs/1901.02860), [*blog*](https://medium.com/dair-ai/a-light-introduction-to-transformer-xl-be5737feb13).
+  - **Transformer-XL**: Learning long-term dependencies [*paper*](https://arxiv.org/abs/1901.02860), [*blog*](https://medium.com/dair-ai/a-light-introduction-to-transformer-xl-be5737feb13), [*google blog*](https://ai.googleblog.com/2019/01/transformer-xl-unleashing-potential-of.html).
 - Metrics
   - [**BLEU**](https://medium.com/@rtatman/evaluating-text-output-in-nlp-bleu-at-your-own-risk-e8609665a213)
 - [**Applications**](https://nlpprogress.com):
