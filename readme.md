@@ -39,6 +39,7 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
   - **Regression**
     - **MAE: Mean Absolute Error** (L1 loss): (for bounding boxes?).
     - **MSE: Mean Squared Error** (L2 loss): Penalice large errors more than MAE (for single continuous value?).
+    - **MSEFlat**: For comparing to images in generative models.
     - **RMSE: Root Mean Squared Error**: The square root of the MSE. Penalice large errors more than MAE.
   - **Classification**
     - **Cross Entropy**: Sigle-label classification. Usually with **softmax**. `nn.CrossEntropyLoss`.
