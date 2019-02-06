@@ -171,12 +171,14 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
     - Option 1: `AdaptiveAvgPool2d((1, 1))` -> `Linear(num_features, num_classes)` (less computation)
     - Option 2: `Conv2d(num_features, num_classes, 3, padding=1)` -> `AdaptiveAvgPool2d((1, 1))`
   - [Inception](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202)
-  - Resent:
-  - Denset:
+  - **Resent**: Every 2 convolutions **sum** the original input.
+  - **Denset**: Every 2 convolutions **concatenate** the original input.
   - SENet: Squeeze and Excitation block: network is allowed to adaptively adjust the weighting of each feature map in the convolution block.
-- [CNN Black box explanation (for classification)](https://github.com/utkuozbulak/pytorch-cnn-visualizations)
-  - Class Activation Maps (CAM)
-  - SmoothGrad ([paper](https://arxiv.org/abs/1706.03825))
+- CNN Black box explanation (for classification) [*link 1*](https://github.com/utkuozbulak/pytorch-cnn-visualizations), [*link 2*](https://ramprs.github.io/2017/01/21/Grad-CAM-Making-Off-the-Shelf-Deep-Models-Transparent-through-Visual-Explanations.html)
+  - **Features**: Average features on the channel axis. This shows all classes detected. `[512, 11, 11]-->[11, 11]`.
+  - **CAM**: Class Activation Map. Final features multiplied by a single class weights and then averaged. `[512, 11, 11]*[512]-->[11, 11]`. [*paper*](https://arxiv.org/abs/1512.04150).
+  - **Grad-CAM**: Final features multiplied by class gradients and the averaged. [*paper*](https://arxiv.org/abs/1610.02391).
+  - **SmoothGrad** [*paper*](https://arxiv.org/abs/1706.03825).
   - Extra: [Distill: feature visualization](https://distill.pub/2017/feature-visualization/)
   - Extra: [Distill: building blocks](https://distill.pub/2018/building-blocks/)
 - [**Object detection** / **Localization**](/posts/5-vision/detection.md): Get bounding boxes
