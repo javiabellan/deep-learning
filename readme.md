@@ -1,18 +1,10 @@
 <p align="center"><img width="50%" src="posts/img/title.png" /></p>
 
-Here are my personal notes of the  [**deeplearning.ai**](https://www.deeplearning.ai)
-and [**fast.ai**](http://www.fast.ai) courses,
-and the [**deep learning book**](http://www.deeplearningbook.org/)
-which gave me a strong understanding of cutting edge deep learning.
-I've write this articles for kepping track my learning path,
-but you can use it as a guide for learning (or improving) your DL knowledge.
+Here are my personal deep learning notes. I've written this cheatsheet for keep track my knowledge
+but you can use it as a guide for learning deep learning aswell.
 
-> TODO:
-> - [How to train your resnet](https://www.myrtle.ai/2018/09/24/how_to_train_your_resnet/)
-> - [DL cheatsheets](https://stanford.edu/~shervine/teaching/cs-230.html)
-> - [Pytorch DL course](https://fleuret.org/ee559/)
-> - [Trask book](https://github.com/iamtrask/Grokking-Deep-Learning)
-> - [mlexplained](http://mlexplained.com/)
+## Index
+
 
 ## 0. Setting up
 - [Hardware](/posts/0-setup/hardware.md)
@@ -245,6 +237,21 @@ but you can use it as a guide for learning (or improving) your DL knowledge.
 - Continuous variables: Feed them directly to the network
 - Categorical variable: Use embeddings
 - Collaborative filtering: How much a user is going to like a certain item
+
+## 8. Audio
+> - [Audio overview](https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89)
+
+## 9. DL resources
+> TODO:
+> - [**fast.ai**](http://www.fast.ai)
+> - [**deeplearning.ai**](https://www.deeplearning.ai)
+> - [**deep learning book**](http://www.deeplearningbook.org/)
+> - [DL cheatsheets](https://stanford.edu/~shervine/teaching/cs-230.html)
+> - [How to train your resnet](https://www.myrtle.ai/2018/09/24/how_to_train_your_resnet/)
+> - [Pytorch DL course](https://fleuret.org/ee559/)
+> - [Trask book](https://github.com/iamtrask/Grokking-Deep-Learning)
+> - [mlexplained](http://mlexplained.com/)
+
 
 ---
 
