@@ -10,7 +10,7 @@ but you can use it as a guide for learning deep learning aswell.
 > #### Part 1: General concepts
 > 
 > 1. [**Know the basics**](#1-know-the-basics)
-> 2. [**Prepare the data**](#prepare-de-data)
+> 2. [**Prepare the data**](#prepare-the-data)
 > 3. [**Train & hyperparams**](#2-choose-training-hyperparams)
 > 4. [**Avoid overfitting**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
 > 5. [**Train faster**](#4-train-faster-optimization)
