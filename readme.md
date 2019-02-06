@@ -3,8 +3,27 @@
 Here are my personal deep learning notes. I've written this cheatsheet for keep track my knowledge
 but you can use it as a guide for learning deep learning aswell.
 
-## Index
+> ## Index
+>
+> 0. [**Setting up**](#0-setting-up): Get your machine ready for deep learning.
+>
+> #### Part 1: General concepts
+> 
+> 1. [**Know the basics**](#1-know-the-basics)
+> 2. [**Prepare the data**](#prepare-de-data)
+> 3. [**Train & hyperparams**](#2-choose-training-hyperparams)
+> 4. [**Avoid overfitting**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
+> 5. [**Train faster**](#4-train-faster-optimization)
+> 
+> #### Part 2: Domain specific concepts
+> 
+> 6. [**Vision**](#5-computer-vision)
+> 7. [**NLP**](#6-natural-language-processing)
+> 8. [**Table data**](#7-sturctured-data)
+> 9. [**Audio**](#8-audio)
+> 10. [**Reinforcement learning**](#reinforcement-learning)
 
+---
 
 ## 0. Setting up
 - [Hardware](/posts/0-setup/hardware.md)
@@ -49,7 +68,7 @@ but you can use it as a guide for learning deep learning aswell.
   - **RMSE**
   - **RMSPE**: Root Mean Square Percentage Error. `log = true` in fastai to get percentages differences.
 
-## Prepare de data
+## Prepare the data
 - **Balance** the data
   - **Fix it in the dataloader** [`WeightedRandomSampler`](https://pytorch.org/docs/stable/data.html#torch.utils.data.WeightedRandomSampler)
   - **Subsample majority class**. But you can lose important data.
