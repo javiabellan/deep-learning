@@ -236,11 +236,13 @@ but you can use it as a guide for learning deep learning aswell.
   -  **Word2Vec**, **Glove**: Traditional unsupervised process of embedding, where a word is similar to its surrounding words (Skip-gram model)
   - **CNN-extracted char features**
   - **ELMo**: Context-aware embedding = better representation. Useful for synonyms. Made with bidirectional LSTMs [*paper*](https://arxiv.org/abs/1802.05365), [*site*](https://allennlp.org/elmo).
-- [**Recurrent Neural network (RNN)**](/teoría/modelos/rnn.md) For sequences that need keeping the state, like text
-  - **GRU**
-  - **LSTM**
-- [**Sequence to sequence**](/teoría/nlp/seq2seq.md): Encoder-Decoder architecture.
+- Approaches 
+  - [**Recurrent Neural network (RNN)**](/teoría/modelos/rnn.md) For sequences that need keeping the state, like text
+    - **GRU**
+    - **LSTM**
   - **Attention** Allows the network to refer back to the input sequence, instead of forcing it to encode all information into ane fixed-lenght vector. [*paper*](https://arxiv.org/abs/1508.04025), [*blog*](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/), [*attention and memory*](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
+  - [**Convolutions**](https://arxiv.org/abs/1901.10430)
+- [**Sequence to sequence**](/teoría/nlp/seq2seq.md): Encoder-Decoder architecture.
   - **ULMFiT**: Regular LSTM with no attention. Introduces the idea of transfer-learning in NLP. [*paper*](https://arxiv.org/abs/1801.06146)
   - **Transformer**: Feedfoward network. Encoder with self-attention, and decoder with attention. [*paper*](https://arxiv.org/abs/1706.03762), [*blog*](https://jalammar.github.io/illustrated-transformer).
   - **OpenAI Transformer**: Same as transformer, but with transfer-learning for ther NLP tasks. First train the decoder for language modelling with unsupervised text, and then train other NLP task. [*paper*](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf), [*site*](https://blog.openai.com/language-unsupervised/)
