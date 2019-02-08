@@ -193,13 +193,13 @@ but you can use it as a guide for learning deep learning aswell.
   - **Mobilenet v2** (2018): `71.800`. [*paper*](https://arxiv.org/abs/1801.04381)
   - **SqueezeNext** (2018): `62.640`. Hardware-Aware Neural network design. [*paper*](https://arxiv.org/abs/1803.10615).
 - **Common nets**:
-  - **Inception v3** (2015): Accuracy like Resnet-101 but a bit faster. [*paper*](https://arxiv.org/abs/1512.00567), [*blog*](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202)
+  - **Inception v3** (2015): `77.294` [*paper*](https://arxiv.org/abs/1512.00567), [*blog*](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202)
   - **Resnet** (2015): Every 2 convolutions (3x3->3x3) **sum** the original input. [*paper*](https://arxiv.org/abs/1512.03385) Wide ResNet?
     - **Resnet-18**: `70.142`
     - **Resnet-34**: `73.554`
-    - **Resnet-50**: `76.002`
-    - **Resnet-101**: `77.438`
-    - **Resnet-152**: `78.428`
+    - **Resnet-50**: `76.002`. **SE-ResNet50**: `77.636`. **SE-ResNeXt50 (32x4d)**: `79.076`
+    - **Resnet-101**: `77.438`. **SE-ResNet101**: `78.396`. **SE-ResNeXt101 (32x4d)**: `80.236`
+    - **Resnet-152**: `78.428`. **SE-ResNet152**: `78.658`
   - **Densenet** (2016): Every 2 convolutions (3x3->1x1) **concatenate** the original input. [*paper*](https://arxiv.org/abs/1608.06993)
     - **DenseNet-121**: `74.646`
     - **DenseNet-169**: `76.026`
@@ -207,6 +207,7 @@ but you can use it as a guide for learning deep learning aswell.
     - **DenseNet-161**: `77.560`
   - **Xception** (2016): `78.888` [*paper*](https://arxiv.org/abs/1610.02357)
   - **ResNext** (2016): [*paper*](https://arxiv.org/abs/1611.05431)
+    - **ResNeXt101 (32x4d)**:	`78.188`
     - **ResNeXt101 (64x4d)**:	`78.956`
   - **Dual Path Network (DPN)**: [*paper*](https://arxiv.org/abs/1707.01629)
     - **DualPathNet98**: `79.224`
@@ -214,6 +215,9 @@ but you can use it as a guide for learning deep learning aswell.
     - **DualPathNet131**: `79.432`
     - **DualPathNet107_5k**: `79.746`
   - **SENet** (2017): Squeeze and Excitation network. Net is allowed to adaptively adjust the weighting of each feature map in the convolution block. [*paper*](https://arxiv.org/abs/1709.01507)
+    - **SE-ResNet50**: `77.636`
+    - **SE-ResNet101**: `78.396`
+    - **SE-ResNet152**: `78.658`
     - **SE-ResNeXt50 (32x4d)**: `79.076` **USE THIS ONE FOR A MEDIUM NET**
     - **SE-ResNeXt101 (32x4d)**: `80.236` **USE THIS ONE FOR A BIG NET**
 - **Giants nets**: Useful for competitions.
