@@ -235,8 +235,19 @@ but you can use it as a guide for learning deep learning aswell.
   - Extra: [Distill: feature visualization](https://distill.pub/2017/feature-visualization/)
   - Extra: [Distill: building blocks](https://distill.pub/2018/building-blocks/)
 - [**Object detection** / **Localization**](/posts/5-vision/detection.md): Get bounding boxes
-  - **Faster R-CNN**: Region-based method
-  - **SSD**: Single-shot method
+  - Region-based methods
+    - **R-CNN**:        [*paper*](https://arxiv.org/abs/1311.2524)
+    - **Fast R-CNN**:   [*paper*](https://arxiv.org/abs/1504.08083)
+    - **Faster R-CNN**: [*paper*](https://arxiv.org/abs/1506.01497)
+    - **Mask R-CNN**: [*paper*](https://arxiv.org/abs/1703.06870)
+  - Single-shot methods
+    - **YOLOv1**: [*paper*](https://arxiv.org/abs/1506.02640)
+    - **SSD**:    [*paper*](https://arxiv.org/abs/1512.02325)
+    - **YOLOv2**: [*paper*](https://arxiv.org/abs/1612.08242)
+    - **YOLOv3**: [*paper*](https://pjreddie.com/media/files/papers/YOLOv3.pdf)
+    - **Feature Pyramid Networks** (2016) [*paper*](https://arxiv.org/abs/1612.03144)
+    - **RetinaNet**: (2017) Focal Loss for Dense Object Detection [*paper*](https://arxiv.org/abs/1708.02002)
+    - **Path Aggregation Network** (2018) [*paper*](https://arxiv.org/abs/1803.01534)
 - **Semantic segmentation**: Get pixels
   - **FCN** Fully Convolutional Networks (2014)
   - **SegNet** (2015)
@@ -262,7 +273,6 @@ but you can use it as a guide for learning deep learning aswell.
   - [infoGAN](http://www.depthfirstlearning.com/2018/InfoGAN)
   - BigGAN: SotA in image synthesis. Same GAN techiques, much larger scale. Increase model capacity + increase batch size.
   - [10 types of GANs](https://amp.reddit.com/r/MachineLearning/comments/8z97mx/r_math_insights_from_10_gan_papers_infogans)
-- [Siamese network](/posts/5-vision/siamese.md)
 - [Inceptionism](/posts/5-vision/inceptionism.md)
 - [Capsule net](/posts/5-vision/capsule.md)
 
