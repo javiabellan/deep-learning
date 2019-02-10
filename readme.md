@@ -373,22 +373,25 @@ but you can use it as a guide for learning deep learning aswell.
 ---
 
 ## Reinforcement learning
-* Q-learning
-  * [DQN](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
-* Policy gradients
-  * A3C
-* [C51](https://arxiv.org/abs/1707.06887)
-* [Rainbow](https://arxiv.org/abs/1710.02298)
-* [Implicit Quantile](https://arxiv.org/abs/1806.06923)
-* Evolutionary Strategy
-* Genetic Algorithms
+- Best resources:
+  - [Openai spinning up](https://spinningup.openai.com): Probably the best one.
+  - [Udacity repo](https://github.com/udacity/deep-reinforcement-learning): Good free repo for the paid course.
+  - [theschool.ai move 37](https://www.theschool.ai/courses/move-37-course/)
+- Q-learning
+  - [DQN](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
+- Policy gradients
+  - A3C
+- [C51](https://arxiv.org/abs/1707.06887)
+- [Rainbow](https://arxiv.org/abs/1710.02298)
+- [Implicit Quantile](https://arxiv.org/abs/1806.06923)
+- Evolutionary Strategy
+- Genetic Algorithms
 
 > TODO: Read:
 > * [RL’s foundational flaw](https://thegradient.pub/why-rl-is-flawed/)
 > * [How to fix reinforcement learning](https://thegradient.pub/how-to-fix-rl/)
 > * [AlphaGoZero](http://www.depthfirstlearning.com/2018/AlphaGoZero)
 > * [Trust Region Policy Optimization](http://www.depthfirstlearning.com/2018/TRPO)
-> * [Udacity repo](https://github.com/udacity/deep-reinforcement-learning)
 > * [Introduction to RL Algorithms. Part I](https://towardsdatascience.com/introduction-to-various-reinforcement-learning-algorithms-i-q-learning-sarsa-dqn-ddpg-72a5e0cb6287)
 > * [Introduction to RL Algorithms. Part II](https://towardsdatascience.com/introduction-to-various-reinforcement-learning-algorithms-part-ii-trpo-ppo-87f2c5919bb9)
 > * [pytorch tutorial](https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html)
