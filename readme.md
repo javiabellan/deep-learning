@@ -374,9 +374,10 @@ but you can use it as a guide for learning deep learning aswell.
 
 ## Reinforcement learning
 - Best resources:
-  - [Openai spinning up](https://spinningup.openai.com): Probably the best one.
-  - [Udacity repo](https://github.com/udacity/deep-reinforcement-learning): Good free repo for the paid course.
-  - [theschool.ai move 37](https://www.theschool.ai/courses/move-37-course/)
+  - [**Openai spinning up**](https://spinningup.openai.com): Probably the best one.
+  - [**Udacity repo**](https://github.com/udacity/deep-reinforcement-learning): Good free repo for the paid course.
+  - [**theschool.ai move 37**](https://www.theschool.ai/courses/move-37-course/)
+  - [**Reinforcement Learning: An Introduction**](http://incompleteideas.net/book/the-book.html): Best book
 - Q-learning
   - [DQN](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
 - Policy gradients
