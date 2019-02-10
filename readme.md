@@ -21,7 +21,11 @@ but you can use it as a guide for learning deep learning aswell.
 > 7. [**NLP**](#6-natural-language-processing)
 > 8. [**Table data**](#7-sturctured-data)
 > 9. [**Audio**](#8-audio)
-> 10. [**Reinforcement learning**](#reinforcement-learning)
+>
+> #### Part 3: Appendix
+> 
+> - [**Machine learning**](#machine-learning)
+> - [**Reinforcement learning**](#reinforcement-learning)
 
 ---
 
@@ -334,33 +338,39 @@ but you can use it as a guide for learning deep learning aswell.
 ---
 
 
-## No neural Machine Learning
+## Machine Learning
 
-* **Supervised learning**: Useful for know a non neural baseline or for use them in ensambles along with nueral nets.
-  * [**Gradient boosting**](http://explained.ai/gradient-boosting/index.html)
-    * **Gradient boosting trees**
-  * **Random forest (RF)**
-  * **Support Vector Machines (SVM)**
-  * **K nearest neighbors (KNN)**
-  * **Linear regression**: Regrssion
-* **Clustering**: Separate data in groups, useful for labeling a dataset.
-  * **K-Means**
-  * **Mean-Shift**
-  * **DBSCAN**: Density-Based Spatial Clustering of Applications with Noise
-* **Dimensionality reduction**: Useful for visualize data and embeddings
-  * **PCA**:
-  * **T-SNE**:
-* **Others**
-  * [Autoencoder](/teoría/modelos/autoencoder.md): Para comprimir información
-  * Restricted boltzmann machine: Como el autoencoder pero va y vuelve
-  * competitive learning
-  * Hebbian learning
-  * Self Organizing Map
+- **Supervised learning**: Useful for know a non neural baseline or for use them in ensambles along with nueral nets.
+  - [**Gradient boosting**](http://explained.ai/gradient-boosting/index.html)
+    - **Gradient boosting trees**
+  - **Random forest (RF)**
+  - **Support Vector Machines (SVM) with RBF kernel**
+  - Others not so good
+    - **Logistic regression**: classification
+    - **Linear regression**: Regrssion
+    - **Decision tree**
+    - **Naive bayes**
+    - **K nearest neighbors (KNN)**
+- **Clustering**: Separate data in groups, useful for labeling a dataset.
+  - Knowing K
+    - **K-Means**
+    - **Mean-Shift**
+  - Without knowing K
+    - **DBSCAN**: Density-Based Spatial Clustering of Applications with Noise. 
+- **Dimensionality reduction**: Useful for visualize data and embeddings
+  - **PCA**:
+  - **T-SNE**:
+  - **Self Organizing Map**
+- **Traditional feature extraction**
+  - Color features
+  - Texture features
+- **Others**
+  - [Autoencoder](/teoría/modelos/autoencoder.md): Para comprimir información
+  - Restricted boltzmann machine: Como el autoencoder pero va y vuelve
+  - competitive learning
+  - Hebbian learning
  
- 
-## Traditional feature extraction
-* Color features
-* Texture features
+---
 
 ## Reinforcement learning
 * Q-learning
@@ -385,11 +395,4 @@ but you can use it as a guide for learning deep learning aswell.
 > * [RL Adventure](https://github.com/higgsfield/RL-Adventure)
 > * [RL Adventure 2](https://github.com/higgsfield/RL-Adventure-2)
 > * [DeepRL](https://github.com/ShangtongZhang/DeepRL)
-
-
-## Fast.ai API
-
-- Databunch
-  - If the label is an int by default is a classification problem.
-  - If the label is an float by default is a regression problem.
 
