@@ -298,11 +298,11 @@ but you can use it as a guide for learning deep learning aswell.
     - **LSTM**
   - **Attention** Allows the network to refer back to the input sequence, instead of forcing it to encode all information into ane fixed-lenght vector. [*paper*](https://arxiv.org/abs/1508.04025), [*blog*](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/), [*attention and memory*](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
   - [**Convolutions**](https://arxiv.org/abs/1901.10430)
-- [**Sequence to sequence**](/teoría/nlp/seq2seq.md): Encoder-Decoder architecture.
+- [**Sequence to sequence**](/teoría/nlp/seq2seq.md): Encoder-Decoder architecture. [pytorch pretrained models](https://github.com/huggingface/pytorch-pretrained-BERT).
   - **ULMFiT**: Regular LSTM with no attention. Introduces the idea of transfer-learning in NLP. [*paper*](https://arxiv.org/abs/1801.06146)
   - **Transformer**: Feedfoward network. Encoder with self-attention, and decoder with attention. [*paper*](https://arxiv.org/abs/1706.03762), [*blog*](https://jalammar.github.io/illustrated-transformer).
   - **OpenAI Transformer**: Same as transformer, but with transfer-learning for ther NLP tasks. First train the decoder for language modelling with unsupervised text, and then train other NLP task. [*paper*](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf), [*site*](https://blog.openai.com/language-unsupervised/)
-  - **BERT**: The best performance. [*paper*](https://arxiv.org/abs/1810.04805), [*blog*](http://jalammar.github.io/illustrated-bert), [*fastai alumn blog*](https://medium.com/huggingface/multi-label-text-classification-using-bert-the-mighty-transformer-69714fa3fb3d), [*blog3*](http://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/).
+  - **BERT**: The best performance. [*paper*](https://arxiv.org/abs/1810.04805), [*blog*](http://jalammar.github.io/illustrated-bert), [*fastai alumn blog*](https://medium.com/huggingface/multi-label-text-classification-using-bert-the-mighty-transformer-69714fa3fb3d), [*blog3*](http://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/) [slides](https://nlp.stanford.edu/seminar/details/jdevlin.pdf)
   - **Transformer-XL**: Learning long-term dependencies [*paper*](https://arxiv.org/abs/1901.02860), [*blog*](https://medium.com/dair-ai/a-light-introduction-to-transformer-xl-be5737feb13), [*google blog*](https://ai.googleblog.com/2019/01/transformer-xl-unleashing-potential-of.html).
 - Metrics
   - [**BLEU**](https://medium.com/@rtatman/evaluating-text-output-in-nlp-bleu-at-your-own-risk-e8609665a213)
@@ -339,6 +339,8 @@ but you can use it as a guide for learning deep learning aswell.
 
 
 ## Machine Learning
+
+> Check out [**mlcourse.ai**](https://mlcourse.ai/)
 
 - **Supervised learning**: Useful for know a non neural baseline or for use them in ensambles along with nueral nets.
   - [**Gradient boosting**](http://explained.ai/gradient-boosting/index.html)
