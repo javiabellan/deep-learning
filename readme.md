@@ -60,8 +60,11 @@ but you can use it as a guide for learning deep learning aswell.
     - **NLL: Negative Log Likelihood** is the one-hot simplified version, see [this](https://jamesmccaffrey.wordpress.com/2016/09/25/log-loss-and-cross-entropy-are-almost-the-same/) `nn.NLLLoss()`
     - **Binary Cross Entropy**:  Multi-label classification. Usually with **sigmoid**. `nn.BCELoss`
   - **Segmentation**
+    - **Pixel-wise cross entropy**
     - **IoU** (F0): `(Pred ∩ GT)/(Pred ∪ GT)` = `TP / TP + FP * FN`
-    - **Dice** (F1): `2 * (Pred ∩ GT)/(Pred + GT)?????` = `2·TP / 2·TP + FP * FN`
+    - **Dice** (F1): `2 * (Pred ∩ GT)/(Pred + GT)` = `2·TP / 2·TP + FP * FN`
+      - Range from `0` (worst) to `1` (best)
+      - In order to formulate a loss function which can be minimized, we'll simply use `1 − Dice`
     - **Focal**:
   - **Hinge**: `nn.HingeEmbeddingLoss()`
 - **Classification Metrics**: Dataset with 5 disease images and 20 normal images. If the model predicts all images to be normal, its accuracy is 80%, and F1-score of such a model is 0.88
