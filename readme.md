@@ -52,21 +52,26 @@ but you can use it as a guide for learning deep learning aswell.
   - **Hyperbolic tangent**:
 - [Loss functions](/posts/1-basics/loss.md) (Criterium)
   - **Regression**
-    - **MAE: Mean Absolute Error** (L1 loss): (for bounding boxes?).
-    - **MSE: Mean Squared Error** (L2 loss): Penalice large errors more than MAE (for single continuous value?).
-    - **RMSE: Root Mean Squared Error**: The square root of the MSE. Penalice large errors more than MAE.
+    - **MBE: Mean Bias Error**: `mean(GT - pred)` It could determine if the model has positive bias or negative bias.
+    - **MAE: Mean Absolute Error (L1 loss)**: `mean(|GT - pred|)` The most simple.
+    - **MSE: Mean Squared Error (L2 loss)**: `mean((GT-pred)²)` Penalice large errors more than MAE. **Most used**
+    - **RMSE: Root Mean Squared Error**: `sqrt(MSE)` Proportional to MSE. Value closer to MAE.
+    - Percentage errors:
+      - **MAPE: Mean Absolute Percentage Error**
+      - **MSPE: Mean Squared Percentage Error**
+      - **RMSPE: Root Mean Squared Percentage Error**
   - **Classification**
     - **Cross Entropy**: Sigle-label classification. Usually with **softmax**. `nn.CrossEntropyLoss`.
-    - **NLL: Negative Log Likelihood** is the one-hot simplified version, see [this](https://jamesmccaffrey.wordpress.com/2016/09/25/log-loss-and-cross-entropy-are-almost-the-same/) `nn.NLLLoss()`
+      - **NLL: Negative Log Likelihood** is the one-hot encoded target simplified version, see [this](https://jamesmccaffrey.wordpress.com/2016/09/25/log-loss-and-cross-entropy-are-almost-the-same/) `nn.NLLLoss()`
     - **Binary Cross Entropy**:  Multi-label classification. Usually with **sigmoid**. `nn.BCELoss`
+    - **Hinge**: Multi class SVM Loss `nn.HingeEmbeddingLoss()`
+    - **Focal loss**: Similar to BCE but scaled down, so the network focuses more on incorrect and low confidence labels than on increasing its confidence in the already correct labels. `-(1-p)^gamma * log(p)` [paper](https://arxiv.org/abs/1708.02002)
   - **Segmentation**
     - **[Pixel-wise cross entropy](posts/img/Pixel-wise-CE.png)**
     - **IoU** (F0): `(Pred ∩ GT)/(Pred ∪ GT)` = `TP / TP + FP * FN`
     - **[Dice](posts/img/Dice.png)** (F1): `2 * (Pred ∩ GT)/(Pred + GT)` = `2·TP / 2·TP + FP * FN`
       - Range from `0` (worst) to `1` (best)
       - In order to formulate a loss function which can be minimized, we'll simply use `1 − Dice`
-    - **Focal**:
-  - **Hinge**: `nn.HingeEmbeddingLoss()`
 - **Classification Metrics**: Dataset with 5 disease images and 20 normal images. If the model predicts all images to be normal, its accuracy is 80%, and F1-score of such a model is 0.88
   - **Accuracy**: `TP + TN / TP + TN + FP + FN`
   - **F1 Score**: `2 * (Prec*Rec)/(Prec+Rec)`
@@ -75,9 +80,6 @@ but you can use it as a guide for learning deep learning aswell.
   - **Dice Score**: `2 * (Pred ∩ GT)/(Pred + GT)`
   - **ROC, AUC**:
   - **Log loss**:
-- **Regression Metrics**
-  - **RMSE**
-  - **RMSPE**: Root Mean Square Percentage Error. `log = true` in fastai to get percentages differences.
 
 ## Prepare the data
 - **Balance** the data
