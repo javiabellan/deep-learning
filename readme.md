@@ -359,9 +359,10 @@ but you can use it as a guide for learning deep learning aswell.
   - Others not so good
     - **Logistic regression**: classification
     - **Linear regression**: Regrssion
-    - **Decision tree**
+    - **Decision tree**: J48, C4.5
     - **Naive bayes**
     - **K nearest neighbors (KNN)**
+    - **Rule based**: PART, JRip, FURIA (fuzzy)
 - **Clustering**: Separate data in groups, useful for labeling a dataset.
   - Knowing K
     - **K-Means**
