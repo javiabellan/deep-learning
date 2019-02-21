@@ -373,15 +373,22 @@ but you can use it as a guide for learning deep learning aswell.
   - **PCA**:
   - **T-SNE**:
   - **Self Organizing Map**
-- **Traditional feature extraction**
+- **Feature extraction**
   - Color features
   - Texture features
+- [**Feature selection**](https://scikit-learn.org/stable/modules/feature_selection.html): Reduce number of attributes.
+  - Wrapper: Su usa un classificador
+    - MultiObjectiveEvolutionarySearch: Mejor para muchas generaciones.
+    - PSO: Particule Search optimization: Mejor para pocas generaciones.
+    - RFE: Recursive feature elimination
+  - Filters:
+    - InfoGAIN: Cantidad de informacion
+    - Correlation Featue Selection
 - **Others**
   - [Autoencoder](/teoría/modelos/autoencoder.md): Para comprimir información
   - Restricted boltzmann machine: Como el autoencoder pero va y vuelve
   - competitive learning
   - Hebbian learning
- 
 ---
 
 ## Reinforcement learning
