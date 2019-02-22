@@ -352,7 +352,7 @@ but you can use it as a guide for learning deep learning aswell.
 > Check out [**mlcourse.ai**](https://mlcourse.ai/)
 
 - **Supervised learning**: Useful for know a non neural baseline or for use them in ensambles along with nueral nets.
-  - [**Gradient boosting**](http://explained.ai/gradient-boosting/index.html)
+  - [**Gradient boosting**](http://explained.ai/gradient-boosting/index.html): xgboost, lightgbm, catboost
     - **Gradient boosting trees**
   - **Random forest (RF)**
   - **Support Vector Machines (SVM) with RBF kernel**
