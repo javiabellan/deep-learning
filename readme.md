@@ -165,7 +165,11 @@ but you can use it as a guide for learning deep learning aswell.
    - **Stacking** (meta ensembling): Same but use a new model to produce the final output.
    - **Snapshot Ensembling**: M models for the cost of 1. Thanks to SGD with restarts you have several local minimum that you can average. [paper](https://arxiv.org/abs/1704.00109).
    - **Boosting** is an ensemble technique in which the predictors are not made independently, but sequentially.
-     - [**Gradient Boosting**](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d)
+
+> #### Other tricks:
+> - **Label Smoothing**: Smooth the one-hot target label
+> - **Knowledge Distillation**: A bigger trained net (teacher) helps the network [*paper*](https://arxiv.org/abs/1503.02531)
+> - **Mixup**: Merge 2 samples in 1: `x_mixed = λxᵢ + (1−λ)xⱼ`
 
 ## 4. Train faster (Optimization)
 - **Transfer learning**: Use a pretrainded model and retrain with your data.
@@ -193,6 +197,7 @@ but you can use it as a guide for learning deep learning aswell.
 > - [Pretrained models in pytorch](https://github.com/Cadene/pretrained-models.pytorch)
 > - [Ranking](https://openreview.net/pdf?id=Hyzq4ZKa97),
 > - [comparison paper](https://arxiv.org/pdf/1810.00736.pdf)
+> - [Little tricks paper](https://arxiv.org/abs/1812.01187)
 > - [GPipe](https://arxiv.org/pdf/1811.06965v4.pdf)
 - [Convolutional Neural Network (CNN)](/posts/5-vision/cnn.md) For fixed size oredered data, like images
   - Variable input size: use **adaptative pooling**, final layers then:
@@ -247,7 +252,7 @@ but you can use it as a guide for learning deep learning aswell.
   - **SmoothGrad** [*paper*](https://arxiv.org/abs/1706.03825).
   - Extra: [Distill: feature visualization](https://distill.pub/2017/feature-visualization/)
   - Extra: [Distill: building blocks](https://distill.pub/2018/building-blocks/)
-- [**Object detection** / **Localization**](/posts/5-vision/detection.md): Get bounding boxes
+- [**Object detection** / **Localization**](/posts/5-vision/detection.md): Get bounding boxes. Check [**detectron**](https://github.com/facebookresearch/detectron).
   - Region-based methods
     - **R-CNN**:        [*paper*](https://arxiv.org/abs/1311.2524)
     - **Fast R-CNN**:   [*paper*](https://arxiv.org/abs/1504.08083)
@@ -351,10 +356,12 @@ but you can use it as a guide for learning deep learning aswell.
 
 > Check out [**mlcourse.ai**](https://mlcourse.ai/)
 
-- **Supervised learning**: Useful for know a non neural baseline or for use them in ensambles along with nueral nets.
-  - [**Gradient boosting**](http://explained.ai/gradient-boosting/index.html): xgboost, lightgbm, catboost
-    - **Gradient boosting trees**
-  - **Random forest (RF)**
+- **Supervised learning**: Classification and regression.
+  - **Gradient boosting**: Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
+    - [**XGBoost**](https://github.com/dmlc/xgboost), [**LightGBM**](https://github.com/Microsoft/LightGBM), [**CatBoost**](https://github.com/catboost/catboost) 💪
+    - **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
+  - **Random forest** [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
+  - **Extra trees**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html)
   - **Support Vector Machines (SVM) with RBF kernel**
   - Others not so good
     - **Logistic regression**: classification
