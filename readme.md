@@ -162,7 +162,7 @@ but you can use it as a guide for learning deep learning aswell.
    - Generalizable architectures?: Add more bachnorm layers, more densenets...
 5. **Ensambles**: Gather a bunch of models to give a final prediction.
    - **Bagging** (ensembling): Average model preditctions (weighted average, majority vote or normal average)
-   - **Stacking** (meta ensembling): Same but use a new model to produce the final output.
+   - **Stacking** (meta ensembling): Same but use a new model to produce the final output. (also called blending)
    - **Snapshot Ensembling**: M models for the cost of 1. Thanks to SGD with restarts you have several local minimum that you can average. [paper](https://arxiv.org/abs/1704.00109).
    - **Boosting** is an ensemble technique in which the predictors are not made independently, but sequentially.
 
@@ -356,22 +356,28 @@ but you can use it as a guide for learning deep learning aswell.
 
 > Check out [**mlcourse.ai**](https://mlcourse.ai/)
 
-- **Supervised learning**: Classification and regression.
-  - **Gradient boosting**: Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
-    - Tree depth from 3 to 6
-    - [**XGBoost**](https://github.com/dmlc/xgboost), [**LightGBM**](https://github.com/Microsoft/LightGBM), [**CatBoost**](https://github.com/catboost/catboost) 💪
-    - **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
+### **Supervised learning**: Classification and regression.
+  - **Simple models**: Good for starting point (baseline), meta-features (input to other models), stacking (final output).
+    - **Logistic regression**: For classification
+    - **Linear regression**: For regrssion
+    - **K nearest neighbors (KNN)**: Used in recommendation systems.
+    - **Decision tree**: J48, C4.5 No need to normalize data.
+    - **Support Vector Machines (SVM)**
+      - with liear kernel
+      - with RBF kernel: Very good one
+    - **Naive bayes**
+    - **Rule based**: PART, JRip, FURIA (fuzzy)
+- **Ensamble models**: Stronger models.
   - **Random forest** [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
     - Deeper trees
   - **Extra trees**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html)
-  - **Support Vector Machines (SVM) with RBF kernel**
-  - Others not so good
-    - **Logistic regression**: classification
-    - **Linear regression**: Regrssion
-    - **Decision tree**: J48, C4.5
-    - **Naive bayes**
-    - **K nearest neighbors (KNN)**
-    - **Rule based**: PART, JRip, FURIA (fuzzy)
+  - **Adaboost**
+  - **Gradient boosting**: Works great with heterogeneous data and small datasets (unlike neural nets). [link1](http://explained.ai/gradient-boosting/index.html), [link2](https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d), [link3](http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/)
+    - Tree depth from 3 to 6
+    - [**XGBoost**](https://github.com/dmlc/xgboost), [**LightGBM**](https://github.com/Microsoft/LightGBM), [**CatBoost**](https://github.com/catboost/catboost) 💪 **Scikit-learn**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
+
+### **Unupervised learning**
+
 - **Clustering**: Separate data in groups, useful for labeling a dataset.
   - Knowing K
     - **K-Means**
