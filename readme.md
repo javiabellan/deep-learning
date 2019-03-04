@@ -165,10 +165,10 @@ but you can use it as a guide for learning deep learning aswell.
      - **Ensembling**: Merge final output (average, weighted average, majority vote, weighted majority vote).
      - **Meta ensembling**: Same but use a new model to produce the final output. (also called **stacking** or blending)
    - Models generation techniques:
-     - **Stacking**:             Just use different classifiers algorithms.
-     - **Bagging, boostraping**: Each model trained with a subset of the training data. Out Of Bag (OOB) is the validation set.
-     - **Boosting**:             The predictors are not made independently, but sequentially.
-     - **Snapshot Ensembling** (NNs): M models for the cost of 1. Thanks to SGD with restarts you have several local minimum that you can average. [paper](https://arxiv.org/abs/1704.00109).
+     - **Stacking**: Just use different classifiers algorithms.
+     - **Bagging** (Bootstrap aggregating): Each model trained with a subset of the training data. Used in random forests. Prob of sample being selected: `0.632` Prob of sample in Out Of Bag `0.368`
+     - **Boosting**: The predictors are not made independently, but sequentially. Used in gradient boosting.
+     - **Snapshot Ensembling**: Only for neural nets. M models for the cost of 1. Thanks to SGD with restarts you have several local minimum that you can average. [*paper*](https://arxiv.org/abs/1704.00109). 
 
 > #### Other tricks:
 > - **Label Smoothing**: Smooth the one-hot target label
@@ -372,7 +372,7 @@ but you can use it as a guide for learning deep learning aswell.
     - **Naive bayes**
     - **Rule based**: PART, JRip, FURIA (fuzzy)
 - **Ensamble models**: Stronger models.
-  - **Random forest** [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
+  - **Random forest**: Rows & atribs bagging + Decision tress [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
     - Deeper trees
   - **Extra trees**: [classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html), [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html)
   - **Adaboost**
