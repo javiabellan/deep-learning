@@ -161,10 +161,16 @@ but you can use it as a guide for learning deep learning aswell.
 4. **Reduce model complexity**: Limit the number of hidden layers and the number of units per layer.
    - Generalizable architectures?: Add more bachnorm layers, more densenets...
 5. **Ensambles**: Gather a bunch of models to give a final prediction.
-   - **Bagging** (ensembling): Average model preditctions (weighted average, majority vote or normal average)
-   - **Stacking** (meta ensembling): Same but use a new model to produce the final output. (also called blending)
+
+   - Combination methods 
+   - **Ensembling**: Merge final output (average, weighted average, majority vote, weighted majority vote).
+   - **Meta ensembling**: Same but use a new model to produce the final output. (also called **stacking** or blending)
    - **Snapshot Ensembling**: M models for the cost of 1. Thanks to SGD with restarts you have several local minimum that you can average. [paper](https://arxiv.org/abs/1704.00109).
+   
+   Models generation techniques
    - **Boosting** is an ensemble technique in which the predictors are not made independently, but sequentially.
+   - **Bagging, boostraping**: Each model trained with a subset of the training data. Then combine them as you want.
+     - Out Of Bag (OOB) is the validation set.
 
 > #### Other tricks:
 > - **Label Smoothing**: Smooth the one-hot target label
