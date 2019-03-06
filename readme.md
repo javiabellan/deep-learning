@@ -249,33 +249,51 @@ but you can use it as a guide for learning deep learning aswell.
   - **NASNet-A-Large**: `82.566` Crated with AutoML. [*paper*](https://arxiv.org/abs/1707.07012)
   - **PNASNet-5-Large**: `82.736`
   - **AmoebaNet**: `83.000` [*paper*](https://arxiv.org/abs/1802.01548)
-- CNN Black box explanation (for classification) [*link 1*](https://github.com/utkuozbulak/pytorch-cnn-visualizations), [*link 2*](https://ramprs.github.io/2017/01/21/Grad-CAM-Making-Off-the-Shelf-Deep-Models-Transparent-through-Visual-Explanations.html)
-  - **Features**: Average features on the channel axis. This shows all classes detected. `[512, 11, 11]-->[11, 11]`.
-  - **CAM**: Class Activation Map. Final features multiplied by a single class weights and then averaged. `[512, 11, 11]*[512]-->[11, 11]`. [*paper*](https://arxiv.org/abs/1512.04150).
-  - **Grad-CAM**: Final features multiplied by class gradients and the averaged. [*paper*](https://arxiv.org/abs/1610.02391).
-  - **SmoothGrad** [*paper*](https://arxiv.org/abs/1706.03825).
-  - Extra: [Distill: feature visualization](https://distill.pub/2017/feature-visualization/)
-  - Extra: [Distill: building blocks](https://distill.pub/2018/building-blocks/)
-- [**Object detection** / **Localization**](/posts/5-vision/detection.md): Get bounding boxes. Check [**detectron**](https://github.com/facebookresearch/detectron).
-  - Region-based methods
-    - **R-CNN**:        [*paper*](https://arxiv.org/abs/1311.2524)
-    - **Fast R-CNN**:   [*paper*](https://arxiv.org/abs/1504.08083)
-    - **Faster R-CNN**: [*paper*](https://arxiv.org/abs/1506.01497)
-    - **Mask R-CNN**: [*paper*](https://arxiv.org/abs/1703.06870)
-  - Single-shot methods
-    - **YOLOv1**: [*paper*](https://arxiv.org/abs/1506.02640)
-    - **SSD**:    [*paper*](https://arxiv.org/abs/1512.02325)
-    - **YOLOv2**: [*paper*](https://arxiv.org/abs/1612.08242)
-    - **YOLOv3**: [*paper*](https://pjreddie.com/media/files/papers/YOLOv3.pdf)
-    - **Feature Pyramid Networks** (2016) [*paper*](https://arxiv.org/abs/1612.03144)
-    - **RetinaNet**: (2017) Focal Loss for Dense Object Detection [*paper*](https://arxiv.org/abs/1708.02002)
-    - **Path Aggregation Network** (2018) [*paper*](https://arxiv.org/abs/1803.01534)
-- **Semantic segmentation**: Get pixels
+
+
+### [5.2 CNN Black box explanation](/posts/5-vision/explanation.md)
+[*link 1*](https://github.com/utkuozbulak/pytorch-cnn-visualizations), [*link 2*](https://ramprs.github.io/2017/01/21/Grad-CAM-Making-Off-the-Shelf-Deep-Models-Transparent-through-Visual-Explanations.html)
+- **Features**: Average features on the channel axis. This shows all classes detected. `[512, 11, 11]-->[11, 11]`.
+- **CAM**: Class Activation Map. Final features multiplied by a single class weights and then averaged. `[512, 11, 11]*[512]-->[11, 11]`. [*paper*](https://arxiv.org/abs/1512.04150).
+- **Grad-CAM**: Final features multiplied by class gradients and the averaged. [*paper*](https://arxiv.org/abs/1610.02391).
+- **SmoothGrad** [*paper*](https://arxiv.org/abs/1706.03825).
+- Extra: [Distill: feature visualization](https://distill.pub/2017/feature-visualization/)
+- Extra: [Distill: building blocks](https://distill.pub/2018/building-blocks/)
+
+### [5.3 Object detection](/posts/5-vision/detection.md)
+Get bounding boxes. Check [**detectron**](https://github.com/facebookresearch/detectron).
+- Region-based methods
+  - **R-CNN**:        [*paper*](https://arxiv.org/abs/1311.2524)
+  - **Fast R-CNN**:   [*paper*](https://arxiv.org/abs/1504.08083)
+  - **Faster R-CNN**: [*paper*](https://arxiv.org/abs/1506.01497)
+  - **Mask R-CNN**: [*paper*](https://arxiv.org/abs/1703.06870)
+- Single-shot methods
+  - **YOLOv1**: [*paper*](https://arxiv.org/abs/1506.02640)
+  - **SSD**:    [*paper*](https://arxiv.org/abs/1512.02325)
+  - **YOLOv2**: [*paper*](https://arxiv.org/abs/1612.08242)
+  - **YOLOv3**: [*paper*](https://pjreddie.com/media/files/papers/YOLOv3.pdf)
+  - **Feature Pyramid Networks (FPN)** (2016) [*paper*](https://arxiv.org/abs/1612.03144), [*slides*](http://presentations.cocodataset.org/COCO17-Stuff-FAIR.pdf)
+  - **RetinaNet**: (2017) Focal Loss for Dense Object Detection [*paper*](https://arxiv.org/abs/1708.02002)
+  - **Path Aggregation Network** (2018) [*paper*](https://arxiv.org/abs/1803.01534)
+
+### [5.4 Segmentation](/posts/5-vision/segmentation.md)
+Get pixel-level classes. Note that the model backbone can be a resnet, densenet, inception... Check [this repo](https://github.com/qubvel/segmentation_models)
+
+- Semantic segmentation
   - **FCN** Fully Convolutional Networks (2014)
   - **SegNet** (2015)
-  - [**Unet**](https://github.com/facebookresearch/fastMRI/tree/master/models/unet): With the left part is a pretrained resnet-34
+  - **Unet**: Concatenate like a densenet [facebook](https://github.com/facebookresearch/fastMRI/tree/master/models/unet).
+  - **LinkNet**: Adds like a resnet [*paper*](https://arxiv.org/abs/1707.03718)
+  - **Pyramid Scene Parsing Net (PSPNet)** [*paper*](https://arxiv.org/abs/1612.01105)
   - **DeepLabv3** SotA. Increasing dilatation, increases field-of-view. [paper](https://arxiv.org/abs/1706.05587)
-- **Generative** (Image-to-image): Useful for data augmentation, B&W colorization, super-resolution, artistic style...
+- Instance segmentation
+  - **Feature Pyramid Networks (FPN)** (2016) [*paper*](https://arxiv.org/abs/1612.03144), [*slides*](http://presentations.cocodataset.org/COCO17-Stuff-FAIR.pdf)
+  - **Path Aggregation Network** (2018) [*paper*](https://arxiv.org/abs/1803.01534)
+  
+### [5.5 Generative](/posts/5-vision/generative.md)
+Useful for data augmentation, B&W colorization, super-resolution, artistic style...
+
+- **No GANs** (Image-to-image):
   - **Model**: Pretrained Unet 
   - **Loss functions**:
      - **Pixel MSE**: Flat the 2D images and compare them with regular MSE.
@@ -336,10 +354,33 @@ but you can use it as a guide for learning deep learning aswell.
 > - [Audio overview](https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89)
 
 ## 9. Other DL staff
+- Standard autoencoders: Made for reconstruct the input. No continuous latant space.
+  - **Simple Autoencoder**: Same input and output net with a smaller middle hidden layer (botleneck layer, latent vector).
+  - **Denoising Autoencoder (DAE)**: Adds noise to the input to learn how to remove noise.
+  - Only have a recontruction loss (pixel mean squared error for example)
+- **Variational Autoencoder (VAE)**: Initially trained as a reconstruction problem, but later we can play with the latent vector to generate new outputs. Latant space need to be continuous.
+  - **Latent vector**: Is modified by adding gaussian noise (normal distribution, mean and std vectors) during training.
+  - **Loss**: `loss = recontruction loss + latent loss`
+    - Recontruction loss: Keeps the output similar to the input  (mean squared error)
+    - Latent loss: Keeps the latent space continuous (KL divergence)
+  - **Disentangled Variational Autoencoder (β-VAE)**: Improved version. Each parameter of the latent vector is devotod to tweak 1 characteristic. [*paper*](https://arxiv.org/abs/1709.05047).
+    - **β** to small: Overfitting. Learn to reconstruct your training data, but i won't generalize
+    - **β** to big: Loose high definition details. Worse performance.
 - Neural Turing machine. [*paper*](https://arxiv.org/abs/1807.08518), [*code*](https://github.com/MarkPKCollier/NeuralTuringMachine/blob/master/README.md)
 - Neural Arithmetic Logic Units (NALU) [*paper*](https://arxiv.org/abs/1808.00508)
 - Graph data nn
 - Siamese nn
+
+## 10. Semi-supervised DL
+
+Check [this kaggle discussion](https://www.kaggle.com/c/santander-customer-transaction-prediction/discussion/81012)
+
+- [Ladder Networks](https://www.youtube.com/watch?v=ZlyqNiPFu2s)
+- [GANs](https://towardsdatascience.com/semi-supervised-learning-and-gans-f23bbf4ac683)
+- Clustering like KMeans
+- [Variational Autoencoder (VAE)](http://pyro.ai/examples/ss-vae.html)
+- Pseudolabeling: Retrain with predicted test data as new labels.
+- label propagation and label spreading [tutorial](https://nbviewer.jupyter.org/github/Yorko/mlcourse.ai/blob/master/jupyter_english/tutorials/basic_semi-supervised_learning_models_altprof.ipynb)
 
 ## 9. DL resources
 > TODO:
