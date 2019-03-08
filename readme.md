@@ -345,15 +345,18 @@ Useful for data augmentation, B&W colorization, super-resolution, artistic style
 - [**Applications**](https://nlpprogress.com):
   - [Translation](https://nlpprogress.com/english/machine_translation.html)
 
-## 7. Sturctured data
+## 7. Tabular data
 - Continuous variables: Feed them directly to the network
 - Categorical variable: Use embeddings
-- Collaborative filtering: How much a user is going to like a certain item
 
-## 8. Audio
-> - [Audio overview](https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89)
+## 8. Collaborative filtering
+When you have users and items. Useful for recommendation systems.
+- Singular Value Decomposition (SVD)
+- Metrics:
+  - [Mean Average Precision (MAP)](http://sdsawtelle.github.io/blog/output/mean-average-precision-MAP-for-recommender-systems.html)
 
 ## 9. Other DL staff
+- [Audio overview](https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89)
 - Standard autoencoders: Made for reconstruct the input. No continuous latant space.
   - **Simple Autoencoder**: Same input and output net with a smaller middle hidden layer (botleneck layer, latent vector).
   - **Denoising Autoencoder (DAE)**: Adds noise to the input to learn how to remove noise.
