@@ -19,8 +19,8 @@ but you can use it as a guide for learning deep learning aswell.
 > 
 > 6. [**Vision**](#5-computer-vision)
 > 7. [**NLP**](#6-natural-language-processing)
-> 8. [**Table data**](#7-sturctured-data)
-> 9. [**Audio**](#8-audio)
+> 8. [**Tabular data**](#7-tabular-data)
+> 9. [**Collaborative filtering**](#8-collaborative-filtering)
 >
 > #### Part 3: Appendix
 > 
