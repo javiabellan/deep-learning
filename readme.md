@@ -408,7 +408,13 @@ Check [this kaggle discussion](https://www.kaggle.com/c/santander-customer-trans
   - **Simple models**: Good for starting point (baseline), meta-features (input to other models), stacking (final output).
     - **Logistic regression**: For classification
     - **Linear regression**: For regrssion
-    - **K nearest neighbors (KNN)**: Used in recommendation systems.
+    - Instance and distances based:
+      - **K nearest neighbors (KNN)**: Used in recommendation systems. k = 5, 10 or sqrt(Num samples).
+      - **Weighted KNN**: Closer samples are more imortant. Better than KNN.
+      - **Fuzzy KNN**: Sample pionts class labels are multiclass vetor (distance to class centroids).
+      - **Parzen**: Define a window size (with gaussian shape for ex.) and select those samples. (k would be variable).
+      - Utilidad: Conjunto multieditado y condensado: Para reducir el dataset y limparlo.
+      - Utilidad 2 : Para pedecir atributos missing
     - **Decision tree**: J48, C4.5 No need to normalize data.
     - **Support Vector Machines (SVM)**
       - with liear kernel
