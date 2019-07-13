@@ -321,7 +321,10 @@ Useful for data augmentation, B&W colorization, super-resolution, artistic style
 > - [Hardvard NLP](http://nlp.seas.harvard.edu/papers/)
 
 - [**Word embedding**](/teoría/modelos/embedding.md): Give meaningful representation to words.
-  -  **Word2Vec**, **Glove**: Traditional unsupervised process of embedding, where a word is similar to its surrounding words (Skip-gram model)
+  - **Traditional unsupervised process**: A a word is similar to its surrounding words (Skip-gram model)
+    - **Word2Vec**: By Google
+    - **GloVe**: By Standford
+    - **FastText** By Facebook
   - **CNN-extracted char features**
   - **ELMo**: Context-aware embedding = better representation. Useful for synonyms. Made with bidirectional LSTMs [*paper*](https://arxiv.org/abs/1802.05365), [*site*](https://allennlp.org/elmo).
 - Approaches 
