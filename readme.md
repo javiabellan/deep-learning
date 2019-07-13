@@ -327,7 +327,11 @@ Useful for data augmentation, B&W colorization, super-resolution, artistic style
     - **FastText** By Facebook
   - **CNN-extracted char features**
   - **ELMo**: Context-aware embedding = better representation. Useful for synonyms. Made with bidirectional LSTMs [*paper*](https://arxiv.org/abs/1802.05365), [*site*](https://allennlp.org/elmo).
-- Approaches 
+- How to transfer learning:
+  1. Take a trained tanguge model: Predict wich word comes next. Trained with Wikipedia corpus for example (Wikitext 103).
+  2. Retrain it with your corpus data
+  3. Train your task (classification, etc.)
+- Approaches
   - [**Recurrent Neural network (RNN)**](/teoría/modelos/rnn.md) For sequences that need keeping the state, like text
     - **GRU**
     - **LSTM**
