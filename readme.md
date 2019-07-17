@@ -326,23 +326,25 @@ Useful for data augmentation, B&W colorization, super-resolution, artistic style
     - **GloVe**: By Standford
     - **FastText** By Facebook
   - **CNN-extracted char features**
-  - **ELMo**: Context-aware embedding = better representation. Useful for synonyms. Made with bidirectional LSTMs [*paper*](https://arxiv.org/abs/1802.05365), [*site*](https://allennlp.org/elmo).
-- How to transfer learning:
-  1. Take a trained tanguge model: Predict wich word comes next. Trained with Wikipedia corpus for example (Wikitext 103).
-  2. Retrain it with your corpus data
-  3. Train your task (classification, etc.)
-- Approaches
+  - **ELMo**: Context-awa**re embedding = better representation. Useful for synonyms. Made with bidirectional LSTMs [*paper*](https://arxiv.org/abs/1802.05365), [*site*](https://allennlp.org/elmo).
+- **Recurrent Approaches**
   - [**Recurrent Neural network (RNN)**](/teoría/modelos/rnn.md) For sequences that need keeping the state, like text
     - **GRU**
     - **LSTM**
-  - **Attention** Allows the network to refer back to the input sequence, instead of forcing it to encode all information into ane fixed-lenght vector. [*paper*](https://arxiv.org/abs/1508.04025), [*blog*](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/), [*attention and memory*](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
+  - **ULMFiT**: (By Fast.ai, Jan. 2018) Regular LSTM Encoder-Decoder architecture with no attention. Introduces the idea of transfer-learning in NLP. [*paper*](https://arxiv.org/abs/1801.06146). How to transfer learning:
+    1. Take a trained tanguge model: Predict wich word comes next. Trained with Wikipedia corpus for example (Wikitext 103).
+    2. Retrain it with your corpus data
+    3. Train your task (classification, etc.)
   - [**Convolutions**](https://arxiv.org/abs/1901.10430)
-- [**Sequence to sequence**](/teoría/nlp/seq2seq.md): Encoder-Decoder architecture. [pytorch pretrained models](https://github.com/huggingface/pytorch-pretrained-BERT).
-  - **ULMFiT**: Regular LSTM with no attention. Introduces the idea of transfer-learning in NLP. [*paper*](https://arxiv.org/abs/1801.06146)
-  - **Transformer**: Feedfoward network. Encoder with self-attention, and decoder with attention. [*paper*](https://arxiv.org/abs/1706.03762), [*blog*](https://jalammar.github.io/illustrated-transformer).
-  - **OpenAI Transformer**: Same as transformer, but with transfer-learning for ther NLP tasks. First train the decoder for language modelling with unsupervised text, and then train other NLP task. [*paper*](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf), [*site*](https://blog.openai.com/language-unsupervised/)
-  - **BERT**: The best performance. [*paper*](https://arxiv.org/abs/1810.04805), [*blog*](http://jalammar.github.io/illustrated-bert), [*fastai alumn blog*](https://medium.com/huggingface/multi-label-text-classification-using-bert-the-mighty-transformer-69714fa3fb3d), [*blog3*](http://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/) [slides](https://nlp.stanford.edu/seminar/details/jdevlin.pdf)
-  - **Transformer-XL**: Learning long-term dependencies [*paper*](https://arxiv.org/abs/1901.02860), [*blog*](https://medium.com/dair-ai/a-light-introduction-to-transformer-xl-be5737feb13), [*google blog*](https://ai.googleblog.com/2019/01/transformer-xl-unleashing-potential-of.html).
+- **Attention approaches (transformers)**: Feedfoward Encoder-Decoder architectures. [Pytorch pretrained transformers](https://github.com/huggingface/pytorch-transformers).
+  - **Attention**: (2016) Allows the network to refer back to the input sequence, instead of forcing it to encode all information into ane fixed-lenght vector. [*paper*](https://arxiv.org/abs/1508.04025), [*blog*](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/), [*attention and memory*](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
+  - **Transformer**: (from Google, jun. 2017) Encoder with self-attention, and decoder with attention. [*paper*](https://arxiv.org/abs/1706.03762), [*blog*](https://jalammar.github.io/illustrated-transformer).
+  - **GPT**: (from OpenAI, jun. 2018) Same as transformer, but with transfer-learning for ther NLP tasks. First train the decoder for language modelling with unsupervised text, and then train other NLP task. [*paper*](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf), [*site*](https://blog.openai.com/language-unsupervised/), [*code*](https://github.com/openai/finetune-transformer-lm).
+  - **BERT**: (from Google, oct. 2018) The best performance. [*paper*](https://arxiv.org/abs/1810.04805), [*code*](https://github.com/google-research/bert), [*blog*](http://jalammar.github.io/illustrated-bert), [*fastai alumn blog*](https://medium.com/huggingface/multi-label-text-classification-using-bert-the-mighty-transformer-69714fa3fb3d), [*blog3*](http://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/) [slides](https://nlp.stanford.edu/seminar/details/jdevlin.pdf)
+  - **Transformer-XL**: (from Google/CMU, jan. 2019) Learning long-term dependencies [*paper*](https://arxiv.org/abs/1901.02860), [*blog*](https://medium.com/dair-ai/a-light-introduction-to-transformer-xl-be5737feb13), [*google blog*](https://ai.googleblog.com/2019/01/transformer-xl-unleashing-potential-of.html), [*code*](https://github.com/kimiyoung/transformer-xl).
+  - **XLM**: (from Facebook, jan. 2019) [*paper*](https://arxiv.org/abs/1901.07291), [*code*](https://github.com/facebookresearch/XLM/)
+  - **GPT-2**: (from OpenAI, feb. 2019) [*site*](https://blog.openai.com/better-language-models/)
+  - **XLNet**: (from Google/CMU, jun. 2019) [​*paper*](https://arxiv.org/abs/1906.08237), [*code*](https://github.com/zihangdai/xlnet/).
 - Metrics
   - [**BLEU**](https://medium.com/@rtatman/evaluating-text-output-in-nlp-bleu-at-your-own-risk-e8609665a213)
 - [**Applications**](https://nlpprogress.com):
