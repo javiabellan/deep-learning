@@ -127,7 +127,19 @@ but you can use it as a guide for learning deep learning aswell.
     - If the gradient in not so volatile, take grater steps. Otherwise, take smaller steps.
   - **Adam** Combination of Momentun with RMSProp. From 2014. The **best** and most used.
   - **AMSGrad** From 2018. Worse than Adam in practice.
-- **Weight initialization**??? random, xavier...
+  - **AdamW** From 2018.
+  - **RAdam** From 2019. The **best**.
+- **Weight initialization**: Depends on the models architecture. Try to avoid vanishing or exploding outputs.
+  - **Constant value**: Very bad
+  - **Random**:
+    - Uniform: From 0 to 1. Or from -1 to 1. Bad
+    - Normal: Mean 0, std=1. Better
+  - **Xavier initialization**:  Good for MLPs with tanh activation func.
+    - Uniform: 
+    - Normal: 
+  - **Kaiming Initialization**: Good for MLPs with ReLU activation func. (a.k.a. He initialization)
+    - Uniform
+    - Normal
 
 > TODO: Read:
 > - [Efficient BackProp](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf) (1998, Yann LeCun)
