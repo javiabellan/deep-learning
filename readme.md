@@ -25,6 +25,11 @@ but you can use it as a guide for learning deep learning aswell.
 
 ---
 
+> #### TODO
+> - [Knowledge Distillation](https://arxiv.org/abs/1909.11723): a Teacher models teach a smaller student model
+
+---
+
 ## 0. Setting up
 - [Hardware](/posts/0-setup/hardware.md)
 - [Software](/posts/0-setup/software.md)
