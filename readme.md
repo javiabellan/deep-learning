@@ -27,7 +27,11 @@ but you can use it as a guide for learning deep learning aswell.
 
 > #### TODO
 > - [Knowledge Distillation](https://arxiv.org/abs/1909.11723): a Teacher models teach a smaller student model
-> - [One-shot learning](https://youtu.be/H4MPIWX6ftE) and few-shot learning
+> - [N-Shot Learning](https://blog.floydhub.com/n-shot-learning)
+>   - Zero-shot
+>   - [One-shot](https://youtu.be/H4MPIWX6ftE)
+>   - Few-shot
+> - Siamese Neural Network: Knows if to inputs are the same or not. (2 Feature extraction shares wights)
 ---
 
 ## 0. Setting up
