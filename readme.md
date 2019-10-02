@@ -28,10 +28,15 @@ but you can use it as a guide for learning deep learning aswell.
 > #### TODO
 > - [Knowledge Distillation](https://arxiv.org/abs/1909.11723): a Teacher models teach a smaller student model
 > - [N-Shot Learning](https://blog.floydhub.com/n-shot-learning)
->   - Zero-shot
->   - [One-shot](https://youtu.be/H4MPIWX6ftE)
->   - Few-shot
-> - Siamese Neural Network: Knows if to inputs are the same or not. (2 Feature extraction shares wights)
+>   - **Zero-shot**: 0 trainning examples of that class.
+>   - **One-shot**: 1 trainning example of that class.
+>     - [Siamese Networks](https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf) (2015)
+>     - [Matching Networks](https://arxiv.org/abs/1606.04080) (2016)
+>   - **Few-shot**: 2...5 trainning examples of that class.
+>     - [Prototypical Networks](https://arxiv.org/abs/1703.05175) (2017)
+>     - [Meta-Learning for Semi-Supervised classification](https://arxiv.org/abs/1803.00676) (2018)
+>     - [Meta-Transfer Learning (MTL)](https://arxiv.org/abs/1812.02391) (2018)
+> - Siamese Network: Knows if to inputs are the same or not. (2 Feature extraction shares wights)
 ---
 
 ## 0. Setting up
@@ -51,10 +56,15 @@ but you can use it as a guide for learning deep learning aswell.
   - **Online** gradient descent: Every single sample of data is a batch. `Batch size = 1`
   - **Mini-batch** gradient descent: Disjoint groups of samples as a batch. `Batch size = n` **We will use this**.
 - [Activation functions](/posts/1-basics/activations.md)
-  - **ReLU**: Non-linearity compontent of the net (hidden layers)
   - **Softmax**: Sigle-label classification (last layer)
   - **Sigmoid**: Multi-label classification (last layer)
   - **Hyperbolic tangent**:
+  - **ReLU**: Non-linearity compontent of the net (hidden layers) check [this paper](https://arxiv.org/pdf/1710.05941.pdf)
+    - **ELU**: Exponential Linear Unit
+    - **SELU**: Scaled Exponential Linear Unit
+    - **PReLU** or **Leaky ReLU**:
+    - **SERLU**:
+    - **GeLU** or **Swish**: Used in transformers
 - [Loss functions](/posts/1-basics/loss.md) (Criterium)
   - **Regression**
     - **MBE: Mean Bias Error**: `mean(GT - pred)` It could determine if the model has positive bias or negative bias.
