@@ -55,16 +55,16 @@ but you can use it as a guide for learning deep learning aswell.
   - **Batch** gradient descent: The whole dataset at once, as a batch. `Batch size = length(dataset)`
   - **Online** gradient descent: Every single sample of data is a batch. `Batch size = 1`
   - **Mini-batch** gradient descent: Disjoint groups of samples as a batch. `Batch size = n` **We will use this**.
-- [Activation functions](/posts/1-basics/activations.md)
+- Activation functions [reference](https://mlfromscratch.com/activation-functions-explained)
   - **Softmax**: Sigle-label classification (last layer)
   - **Sigmoid**: Multi-label classification (last layer)
   - **Hyperbolic tangent**:
   - **ReLU**: Non-linearity compontent of the net (hidden layers) check [this paper](https://arxiv.org/pdf/1710.05941.pdf)
-    - **ELU**: Exponential Linear Unit
-    - **SELU**: Scaled Exponential Linear Unit
+    - **ELU**: Exponential Linear Unit. [paper](https://arxiv.org/abs/1511.07289)
+    - **SELU**: Scaled Exponential Linear Unit. [paper](https://arxiv.org/abs/1706.02515)
     - **PReLU** or **Leaky ReLU**:
     - **SERLU**:
-    - **GeLU** or **Swish**: Used in transformers
+    - **GeLU** or **Swish**: Gaussian Error Linear Units. Used in transformers. [paper](https://arxiv.org/abs/1606.08415)
 - [Loss functions](/posts/1-basics/loss.md) (Criterium)
   - **Regression**
     - **MBE: Mean Bias Error**: `mean(GT - pred)` It could determine if the model has positive bias or negative bias.
