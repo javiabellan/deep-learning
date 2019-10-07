@@ -27,20 +27,27 @@ but you can use it as a guide for learning deep learning aswell.
 
 > #### TODO
 > - [Knowledge Distillation](https://arxiv.org/abs/1909.11723): a Teacher models teach a smaller student model
-> - [N-Shot Learning](https://blog.floydhub.com/n-shot-learning)
->   - **Zero-shot**: 0 trainning examples of that class.
->   - **One-shot**: 1 trainning example of that class.
->     - [Siamese Networks](https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf) (2015)
->     - [Matching Networks](https://arxiv.org/abs/1606.04080) (2016)
->   - **Few-shot**: 2...5 trainning examples of that class.
->     - [Prototypical Networks](https://arxiv.org/abs/1703.05175) (2017)
->     - [Meta-Learning for Semi-Supervised classification](https://arxiv.org/abs/1803.00676) (2018)
->     - [Meta-Transfer Learning (MTL)](https://arxiv.org/abs/1812.02391) (2018)
-> - Siamese Network: Knows if to inputs are the same or not. (2 Feature extraction shares wights)
+> - **Multi-Task Learning**: Train a model on a variety of learning tasks
+> - **Meta-learning**:  Learn new tasks with minimal data using prior knowledge.
+>   - [N-Shot Learning](https://blog.floydhub.com/n-shot-learning)
+>     - **Zero-shot**: 0 trainning examples of that class.
+>     - **One-shot**: 1 trainning example of that class.
+>     - **Few-shot**: 2...5 trainning examples of that class.
+> - Models
+>   - Naive approach: re-training the model on the new data, would severely overfit.
+>   - [Siamese Networks](https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf) (2015) Knows if to inputs are the same or not. (2 Feature extraction shares wights)
+>   - [Matching Networks](https://arxiv.org/abs/1606.04080) (2016) Weighted nearest-neighbor classifier applied within an
+embedding space.
+>   - [Model-Agnostic Meta-Learning (MAML)](https://arxiv.org/abs/1703.03400) (2017)
+>   - [Prototypical Networks](https://arxiv.org/abs/1703.05175) (2017): Better nearest-neighbor classifier of embeddings.
+>   - [Meta-Learning for Semi-Supervised classification](https://arxiv.org/abs/1803.00676) (2018) Extensions of Prototypical Networks. SotA.
+>   - [Meta-Transfer Learning (MTL)](https://arxiv.org/abs/1812.02391) (2018)
+>   - [Online Meta-Learning](https://arxiv.org/abs/1902.08438) (2019)
 ---
 
 ## 0. Setting up
 - [Hardware](/posts/0-setup/hardware.md)
+  - `nvidia-smi daemon`: Check that **sm%** is near to 100% for a good GPU usage.
 - [Software](/posts/0-setup/software.md)
 - [Jupyter Notebooks](/posts/0-setup/jupyter.md)
 - [Kaggle](/posts/0-setup/kaggle.md)
