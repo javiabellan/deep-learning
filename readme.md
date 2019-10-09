@@ -71,7 +71,7 @@ embedding space.
     - **SELU**: Scaled Exponential Linear Unit. [paper](https://arxiv.org/abs/1706.02515)
     - **PReLU** or **Leaky ReLU**:
     - **SERLU**:
-    - **GeLU** or **Swish**: Gaussian Error Linear Units. Used in transformers. [paper](https://arxiv.org/abs/1606.08415)
+    - **GeLU** or **Swish** or **Mish**: Gaussian Error Linear Units. Smoother ReLU. Used in transformers. [paper](https://arxiv.org/abs/1606.08415) **BEST**.
 - [Loss functions](/posts/1-basics/loss.md) (Criterium)
   - **Regression**
     - **MBE: Mean Bias Error**: `mean(GT - pred)` It could determine if the model has positive bias or negative bias.
@@ -151,10 +151,12 @@ embedding space.
   - **RMSProp** (Adaptative lr) From 2012. Similar to momentum but with the gradient squared.
     - `new_w = w - lr * gradient_w / [(0.1 * gradient_w²)  +  (0.9 * w)]`
     - If the gradient in not so volatile, take grater steps. Otherwise, take smaller steps.
-  - **Adam** Combination of Momentun with RMSProp. From 2014. The **best** and most used.
+  - **Adam** Combination of Momentun with RMSProp. From 2014. The most used.
   - **AMSGrad** From 2018. Worse than Adam in practice.
   - **AdamW** From 2018.
-  - **RAdam** From 2019. The **best**.
+  - **Lookahead**: Is like having a buddy system to explore the loss terrain. By Geoffrey Hinton in 2019. [paper](https://arxiv.org/abs/1907.08610)
+  - **RAdam**: Rectified Adam. Stabilizes training at the start. By Microsoft in 2019. [paper](https://arxiv.org/abs/1908.03265)
+  - **Ranger**: RAdam + Lookahead optimizer. The **best**. ⭐
 - **Weight initialization**: Depends on the models architecture. Try to avoid vanishing or exploding outputs.
   - **Constant value**: Very bad
   - **Random**:
