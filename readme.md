@@ -17,10 +17,11 @@ but you can use it as a guide for learning deep learning aswell.
 > 
 > #### Part 2: Domain specific concepts
 > 
-> 6. [**NLP**](#6-natural-language-processing)
-> 7. [**Tabular data**](#7-tabular-data)
-> 8. [**Collaborative filtering**](#8-collaborative-filtering)
-> 9. [**Reinforcement learning**](#reinforcement-learning)
+> - **Vision**: Check my [**vision repo**](https://github.com/javiabellan/vision)
+> - **NLP**: Check my [**nlp repo**](https://github.com/javiabellan/nlp)
+> - [**Tabular data**](#tabular-data)
+> - [**Collaborative filtering**](#collaborative-filtering)
+> - [**Reinforcement learning**](#reinforcement-learning)
 >
 > [**Resources**](#resources)
 ---
@@ -233,53 +234,24 @@ embedding space.
 > - Instance Normalization [paper](https://arxiv.org/abs/1607.08022)
 > - Group Normalization [paper](https://arxiv.org/abs/1803.08494)
 
-## 6. Natural Language Processing
-> - [NLP overview](https://nlpoverview.com/)
-> - [Sebastian Ruder webpage](http://ruder.io/)
-> - [Jay Alammar webpage](http://jalammar.github.io/)
-> - [Hardvard NLP](http://nlp.seas.harvard.edu/papers/)
 
-- [**Word embedding**](/teoría/modelos/embedding.md): Give meaningful representation to words.
-  - **Traditional unsupervised process**: A a word is similar to its surrounding words (Skip-gram model)
-    - **Word2Vec**: By Google
-    - **GloVe**: By Standford
-    - **FastText** By Facebook
-  - **CNN-extracted char features**
-  - **ELMo**: Context-awa**re embedding = better representation. Useful for synonyms. Made with bidirectional LSTMs [*paper*](https://arxiv.org/abs/1802.05365), [*site*](https://allennlp.org/elmo).
-- **Recurrent Approaches**
-  - [**Recurrent Neural network (RNN)**](/teoría/modelos/rnn.md) For sequences that need keeping the state, like text
-    - **GRU**
-    - **LSTM**
-  - **ULMFiT**: (By Fast.ai, Jan. 2018) Regular LSTM Encoder-Decoder architecture with no attention. Introduces the idea of transfer-learning in NLP. [*paper*](https://arxiv.org/abs/1801.06146). How to transfer learning:
-    1. Take a trained tanguge model: Predict wich word comes next. Trained with Wikipedia corpus for example (Wikitext 103).
-    2. Retrain it with your corpus data
-    3. Train your task (classification, etc.)
-  - [**Convolutions**](https://arxiv.org/abs/1901.10430)
-- **Attention approaches (transformers)**: Feedfoward Encoder-Decoder architectures. [Pytorch pretrained transformers](https://github.com/huggingface/pytorch-transformers).
-  - **Attention**: (2016) Allows the network to refer back to the input sequence, instead of forcing it to encode all information into ane fixed-lenght vector. [*paper*](https://arxiv.org/abs/1508.04025), [*blog*](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/), [*attention and memory*](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
-  - **Transformer**: (from Google, jun. 2017) Encoder with self-attention, and decoder with attention. [*paper*](https://arxiv.org/abs/1706.03762), [*blog*](https://jalammar.github.io/illustrated-transformer).
-  - **GPT**: (from OpenAI, jun. 2018) Same as transformer, but with transfer-learning for ther NLP tasks. First train the decoder for language modelling with unsupervised text, and then train other NLP task. [*paper*](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf), [*site*](https://blog.openai.com/language-unsupervised/), [*code*](https://github.com/openai/finetune-transformer-lm).
-  - **BERT**: (from Google, oct. 2018) The best performance. [*paper*](https://arxiv.org/abs/1810.04805), [*code*](https://github.com/google-research/bert), [*blog*](http://jalammar.github.io/illustrated-bert), [*fastai alumn blog*](https://medium.com/huggingface/multi-label-text-classification-using-bert-the-mighty-transformer-69714fa3fb3d), [*blog3*](http://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/) [slides](https://nlp.stanford.edu/seminar/details/jdevlin.pdf)
-  - **Transformer-XL**: (from Google/CMU, jan. 2019) Learning long-term dependencies [*paper*](https://arxiv.org/abs/1901.02860), [*blog*](https://medium.com/dair-ai/a-light-introduction-to-transformer-xl-be5737feb13), [*google blog*](https://ai.googleblog.com/2019/01/transformer-xl-unleashing-potential-of.html), [*code*](https://github.com/kimiyoung/transformer-xl).
-  - **XLM**: (from Facebook, jan. 2019) [*paper*](https://arxiv.org/abs/1901.07291), [*code*](https://github.com/facebookresearch/XLM/)
-  - **GPT-2**: (from OpenAI, feb. 2019) [*site*](https://blog.openai.com/better-language-models/)
-  - **XLNet**: (from Google/CMU, jun. 2019) [​*paper*](https://arxiv.org/abs/1906.08237), [*code*](https://github.com/zihangdai/xlnet/).
-- Metrics
-  - [**BLEU**](https://medium.com/@rtatman/evaluating-text-output-in-nlp-bleu-at-your-own-risk-e8609665a213)
-- [**Applications**](https://nlpprogress.com):
-  - [Translation](https://nlpprogress.com/english/machine_translation.html)
+# Tabular data
 
-## 7. Tabular data
+> ### Check [Andres solution to ieee-fraud-detection](https://github.com/antorsae/ieee-fraud-detection)
+>
+> - **ODST**: Orbital Drop Shock Troopers, aka Neural Oblivious Decision Ensembles for Deep Learning on Tabular Data [paper](https://arxiv.org/abs/1909.06312)
+
 - Continuous variables: Feed them directly to the network
 - Categorical variable: Use embeddings
 
-## 8. Collaborative filtering
+
+## Collaborative filtering
 When you have users and items. Useful for recommendation systems.
 - Singular Value Decomposition (SVD)
 - Metrics:
   - [Mean Average Precision (MAP)](http://sdsawtelle.github.io/blog/output/mean-average-precision-MAP-for-recommender-systems.html)
 
-## 9. Other DL staff
+## Other DL staff
 - [Audio overview](https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89)
 - Standard autoencoders: Made for reconstruct the input. No continuous latant space.
   - **Simple Autoencoder**: Same input and output net with a smaller middle hidden layer (botleneck layer, latent vector).
@@ -298,7 +270,7 @@ When you have users and items. Useful for recommendation systems.
 - Graph data nn
 - Siamese nn
 
-## 10. Semi-supervised DL
+## Semi-supervised DL
 
 Check [this kaggle discussion](https://www.kaggle.com/c/santander-customer-transaction-prediction/discussion/81012)
 
