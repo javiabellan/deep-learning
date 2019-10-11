@@ -239,7 +239,7 @@ embedding space.
 
 > ### Check [Andres solution to ieee-fraud-detection](https://github.com/antorsae/ieee-fraud-detection)
 >
-> - **ODST**: Orbital Drop Shock Troopers, aka Neural Oblivious Decision Ensembles for Deep Learning on Tabular Data [paper](https://arxiv.org/abs/1909.06312)
+> - **NODE**: Neural Oblivious Decision Ensembles for Deep Learning on Tabular Data [paper](https://arxiv.org/abs/1909.06312)
 
 - Continuous variables: Feed them directly to the network
 - Categorical variable: Use embeddings
