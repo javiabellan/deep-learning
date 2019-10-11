@@ -15,15 +15,15 @@ but you can use it as a guide for learning deep learning aswell.
 > 4. [**Avoid overfitting**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
 > 5. [**Train faster**](#4-train-faster-optimization)
 > 
-> #### Part 2: Domain specific concepts
+> #### Part 2: Domain specific applications
 > 
-> - **Vision**: Check my [**vision repo**](https://github.com/javiabellan/vision)
-> - **NLP**: Check my [**nlp repo**](https://github.com/javiabellan/nlp)
+> - [**Vision**](https://github.com/javiabellan/vision) (external link to my vision repo)
+> - [**NLP**](https://github.com/javiabellan/nlp) (external link to my nlp repo)
 > - [**Tabular data**](#tabular-data)
 > - [**Collaborative filtering**](#collaborative-filtering)
 > - [**Reinforcement learning**](#reinforcement-learning)
 >
-> [**Resources**](#resources)
+> #### [Resources](#resources)
 ---
 
 > #### TODO
