@@ -158,6 +158,7 @@ embedding space.
   - **Lookahead**: Is like having a buddy system to explore the loss terrain. By Geoffrey Hinton in 2019. [paper](https://arxiv.org/abs/1907.08610)
   - **RAdam**: Rectified Adam. Stabilizes training at the start. By Microsoft in 2019. [paper](https://arxiv.org/abs/1908.03265)
   - **Ranger**: RAdam + Lookahead optimizer. The **best**. ⭐
+  - **Selective-Backprop**: Faster training by prioritizing examples with high loss [paper](https://arxiv.org/abs/1910.00762)
 - **Weight initialization**: Depends on the models architecture. Try to avoid vanishing or exploding outputs.
   - **Constant value**: Very bad
   - **Random**:
