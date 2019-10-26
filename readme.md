@@ -167,9 +167,10 @@ embedding space.
   - **Xavier initialization**:  Good for MLPs with tanh activation func.
     - Uniform: 
     - Normal: 
-  - **Kaiming Initialization**: Good for MLPs with ReLU activation func. (a.k.a. He initialization)
+  - **Kaiming initialization**: Good for MLPs with ReLU activation func. (a.k.a. He initialization)
     - Uniform
     - Normal
+  - **Delta-Orthogonal initialization**: Good for vanilla CNNs (10000 layers). Read this [paper](https://arxiv.org/abs/1806.05393)
 
 > TODO: Read:
 > - [Efficient BackProp](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf) (1998, Yann LeCun)
