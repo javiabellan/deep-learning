@@ -264,6 +264,7 @@ embedding space.
   - **Audio**: Sound, music, speech. Check [my audio repo](https://github.com/javiabellan/audio). [Audio overview](https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89)
   - **NLP**: Text, Genomics. Check [my NLP repo](https://github.com/javiabellan/nlp)
   - **Knoledge Graph** (KG): Graph Neural Networks (GNN)
+    - [Molecules](https://ai.googleblog.com/2019/10/learning-to-smell-using-deep-learning.html)
   - **Trees**
     - math expresions
     - syntax
