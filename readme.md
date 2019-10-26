@@ -165,10 +165,10 @@ embedding space.
   - **Random**:
     - Uniform: From 0 to 1. Or from -1 to 1. Bad
     - Normal: Mean 0, std=1. Better
-  - **Xavier initialization**:  Good for MLPs with tanh activation func.
+  - **Xavier initialization**:  Good for MLPs with tanh activation func. [paper](http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf)
     - Uniform: 
     - Normal: 
-  - **Kaiming initialization**: Good for MLPs with ReLU activation func. (a.k.a. He initialization)
+  - **Kaiming initialization**: Good for MLPs with ReLU activation func. (a.k.a. He initialization) [paper](https://arxiv.org/abs/1502.01852)
     - Uniform
     - Normal
   - **Delta-Orthogonal initialization**: Good for vanilla CNNs (10000 layers). Read this [paper](https://arxiv.org/abs/1806.05393)
