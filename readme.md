@@ -160,7 +160,7 @@ embedding space.
   - **RAdam**: Rectified Adam. Stabilizes training at the start. By Microsoft in 2019. [paper](https://arxiv.org/abs/1908.03265)
   - **Ranger**: RAdam + Lookahead optimizer. The **best**. ⭐
   - **Selective-Backprop**: Faster training by prioritizing examples with high loss [paper](https://arxiv.org/abs/1910.00762)
-- **Weight initialization**: Depends on the models architecture. Try to avoid vanishing or exploding outputs.
+- **Weight initialization**: Depends on the models architecture. Try to avoid vanishing or exploding outputs. [blog1](https://towardsdatascience.com/weight-initialization-in-neural-networks-a-journey-from-the-basics-to-kaiming-954fb9b47c79), [blog2](https://madaan.github.io/init/)
   - **Constant value**: Very bad
   - **Random**:
     - Uniform: From 0 to 1. Or from -1 to 1. Bad
@@ -171,6 +171,7 @@ embedding space.
   - **Kaiming initialization**: Good for MLPs with ReLU activation func. (a.k.a. He initialization) [paper](https://arxiv.org/abs/1502.01852)
     - Uniform
     - Normal
+    - When you use Kaiming, you ha to fix `ReLU(x)` equals to **`min(x,0) - 0.5`** for a correct mean (0)
   - **Delta-Orthogonal initialization**: Good for vanilla CNNs (10000 layers). Read this [paper](https://arxiv.org/abs/1806.05393)
 
 > TODO: Read:
