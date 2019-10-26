@@ -44,6 +44,8 @@ embedding space.
 >   - [Meta-Learning for Semi-Supervised classification](https://arxiv.org/abs/1803.00676) (2018) Extensions of Prototypical Networks. SotA.
 >   - [Meta-Transfer Learning (MTL)](https://arxiv.org/abs/1812.02391) (2018)
 >   - [Online Meta-Learning](https://arxiv.org/abs/1902.08438) (2019)
+> - Neural Turing machine. [*paper*](https://arxiv.org/abs/1807.08518), [*code*](https://github.com/MarkPKCollier/NeuralTuringMachine/blob/master/README.md)
+> - Neural Arithmetic Logic Units (NALU) [*paper*](https://arxiv.org/abs/1808.00508)
 ---
 
 ## 0. Setting up
@@ -239,24 +241,36 @@ embedding space.
 > - Group Normalization [paper](https://arxiv.org/abs/1803.08494)
 
 
-# Tabular data
+---
 
-> ### Check [Andres solution to ieee-fraud-detection](https://github.com/antorsae/ieee-fraud-detection)
->
-> - **NODE**: Neural Oblivious Decision Ensembles for Deep Learning on Tabular Data [paper](https://arxiv.org/abs/1909.06312)
+# Applications
 
-- Continuous variables: Feed them directly to the network
-- Categorical variable: Use embeddings
+- Structured
+  - **Tabular**
+    - [Andres solution to ieee-fraud-detection](https://github.com/antorsae/ieee-fraud-detection)
+    - NODE: Neural Oblivious Decision Ensembles for Deep Learning on Tabular Data [paper](https://arxiv.org/abs/1909.06312)
+    - Continuous variables: Feed them directly to the network
+    - Categorical variable: Use embeddings
+  - **Collaborative filtering**: When you have users and items. Useful for recommendation systems.
+    - Singular Value Decomposition (SVD)
+    - Metrics: [Mean Average Precision (MAP)](http://sdsawtelle.github.io/blog/output/mean-average-precision-MAP-for-recommender-systems.html)
+  - **Time series**
+    - Arimax
+    - IoT sensors
+  - **Geospatial**: Do [Kaggle course](https://www.kaggle.com/learn/geospatial-analysis)
+- Unstructured
+  - **Vision**: Image, Video. Check [my vision repo](https://github.com/javiabellan/vision)
+  - **Audio**: Sound, music, speech. Check [my audio repo](https://github.com/javiabellan/audio). [Audio overview](https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89)
+  - **NLP**: Text, Genomics. Check [my NLP repo](https://github.com/javiabellan/nlp)
+  - **Knoledge Graph** (KG)
+  - **Trees**
+    - math expresions
+    - syntax
+    - Models: Tree-LSTM, RNNGrammar (RNNG). 
+    - Tree2seq by Polish notation. Duda: only for binary trees?
 
 
-## Collaborative filtering
-When you have users and items. Useful for recommendation systems.
-- Singular Value Decomposition (SVD)
-- Metrics:
-  - [Mean Average Precision (MAP)](http://sdsawtelle.github.io/blog/output/mean-average-precision-MAP-for-recommender-systems.html)
-
-## Other DL staff
-- [Audio overview](https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89)
+## Autoencoder
 - Standard autoencoders: Made for reconstruct the input. No continuous latant space.
   - **Simple Autoencoder**: Same input and output net with a smaller middle hidden layer (botleneck layer, latent vector).
   - **Denoising Autoencoder (DAE)**: Adds noise to the input to learn how to remove noise.
@@ -269,10 +283,7 @@ When you have users and items. Useful for recommendation systems.
   - **Disentangled Variational Autoencoder (β-VAE)**: Improved version. Each parameter of the latent vector is devotod to tweak 1 characteristic. [*paper*](https://arxiv.org/abs/1709.05047).
     - **β** to small: Overfitting. Learn to reconstruct your training data, but i won't generalize
     - **β** to big: Loose high definition details. Worse performance.
-- Neural Turing machine. [*paper*](https://arxiv.org/abs/1807.08518), [*code*](https://github.com/MarkPKCollier/NeuralTuringMachine/blob/master/README.md)
-- Neural Arithmetic Logic Units (NALU) [*paper*](https://arxiv.org/abs/1808.00508)
-- Graph data nn
-- Siamese nn
+
 
 ## Semi-supervised DL
 
