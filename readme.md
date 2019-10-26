@@ -143,7 +143,7 @@ embedding space.
     - Faster computation. Takes advantage of GPU mem. But sometimes it can no be fitted (CUDA Out Of Memory)
 - **Number of epochs**
   - Train until start overffiting (validation loss becomes to increase) (early stopping)
-- [**Gradient descent method**](/posts/4-optimization/sgd-optimization.md)
+- [**Optimizers**](/posts/4-optimization/sgd-optimization.md): Gradient Descent methods. Read [this](https://mlfromscratch.com/optimizers-explained)
   - **SGD**. A bit slowly to get to the optimum. `new_w = w - lr[gradient_w]`
   - **SGD with Momentum**. Speed it up with momentum, usually `mom=0.9`. **The second method most used**.
     - `mom=0.9`, means a `10%` is the normal derivative and a `90%` is the same direction I went last time.
