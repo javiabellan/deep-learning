@@ -7,7 +7,7 @@ but you can use it as a guide for learning deep learning aswell.
 >
 > 0. [**Setting up**](#0-setting-up): Get your machine ready for deep learning.
 >
-> #### Part 1: General concepts
+> #### Part 1: Theory
 > 
 > 1. [**Know the basics**](#1-know-the-basics)
 > 2. [**Prepare the data**](#prepare-the-data)
@@ -15,15 +15,16 @@ but you can use it as a guide for learning deep learning aswell.
 > 4. [**Avoid overfitting**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
 > 5. [**Train faster**](#4-train-faster-optimization)
 > 
-> #### Part 2: Domain specific applications
-> 
+> #### Part 2: Applications
+>
 > - [**Vision**](https://github.com/javiabellan/vision) (external link to my vision repo)
 > - [**NLP**](https://github.com/javiabellan/nlp) (external link to my nlp repo)
-> - [**Tabular data**](#tabular-data)
-> - [**Collaborative filtering**](#collaborative-filtering)
+> - [**Supervised DL**](#supervised-dl)
+> - [**Autoencoder**](#autoencoder)
+> - [**Semi-supervised DL**](#semi-supervised-dl)
 > - [**Reinforcement learning**](#reinforcement-learning)
 >
-> #### [Resources](#resources)
+> #### [**Resources**](#resources)
 ---
 
 > #### TODO
@@ -243,7 +244,7 @@ embedding space.
 
 ---
 
-# Applications
+## Supervised DL
 
 - Structured
   - **Tabular**
@@ -262,7 +263,7 @@ embedding space.
   - **Vision**: Image, Video. Check [my vision repo](https://github.com/javiabellan/vision)
   - **Audio**: Sound, music, speech. Check [my audio repo](https://github.com/javiabellan/audio). [Audio overview](https://towardsdatascience.com/audio-classification-using-fastai-and-on-the-fly-frequency-transforms-4dbe1b540f89)
   - **NLP**: Text, Genomics. Check [my NLP repo](https://github.com/javiabellan/nlp)
-  - **Knoledge Graph** (KG)
+  - **Knoledge Graph** (KG): Graph Neural Networks (GNN)
   - **Trees**
     - math expresions
     - syntax
@@ -297,21 +298,7 @@ Check [this kaggle discussion](https://www.kaggle.com/c/santander-customer-trans
 - label propagation and label spreading [tutorial](https://nbviewer.jupyter.org/github/Yorko/mlcourse.ai/blob/master/jupyter_english/tutorials/basic_semi-supervised_learning_models_altprof.ipynb)
 
 
-## Resources
-- [**fast.ai**](http://www.fast.ai)
-- [**deeplearning.ai**](https://www.deeplearning.ai)
-- [**deep learning book**](http://www.deeplearningbook.org/)
-- [Weights & Biases](https://www.wandb.com/tutorials) by OpenAI
-- [DL cheatsheets](https://stanford.edu/~shervine/teaching/cs-230.html)
-- [How to train your resnet](https://www.myrtle.ai/2018/09/24/how_to_train_your_resnet/)
-- [Pytorch DL course](https://fleuret.org/ee559/)
-- [Trask book](https://github.com/iamtrask/Grokking-Deep-Learning)
-- [mlexplained](http://mlexplained.com/)
-
-
----
-
-## Reinforcement learning
+## Reinforcement Learning
 - Best resources:
   - [**Openai spinning up**](https://spinningup.openai.com): Probably the best one.
   - [**Udacity repo**](https://github.com/udacity/deep-reinforcement-learning): Good free repo for the paid course.
@@ -327,7 +314,7 @@ Check [this kaggle discussion](https://www.kaggle.com/c/santander-customer-trans
 - Evolutionary Strategy
 - Genetic Algorithms
 
-> TODO: Read:
+> Reinforcement learning reference
 > * [RL’s foundational flaw](https://thegradient.pub/why-rl-is-flawed/)
 > * [How to fix reinforcement learning](https://thegradient.pub/how-to-fix-rl/)
 > * [AlphaGoZero](http://www.depthfirstlearning.com/2018/AlphaGoZero)
@@ -338,4 +325,23 @@ Check [this kaggle discussion](https://www.kaggle.com/c/santander-customer-trans
 > * [RL Adventure](https://github.com/higgsfield/RL-Adventure)
 > * [RL Adventure 2](https://github.com/higgsfield/RL-Adventure-2)
 > * [DeepRL](https://github.com/ShangtongZhang/DeepRL)
+
+---
+
+
+## Resources
+- [**fast.ai**](http://www.fast.ai)
+- [**deeplearning.ai**](https://www.deeplearning.ai)
+- [**deep learning book**](http://www.deeplearningbook.org/)
+- [Weights & Biases](https://www.wandb.com/tutorials) by OpenAI
+- [DL cheatsheets](https://stanford.edu/~shervine/teaching/cs-230.html)
+- [How to train your resnet](https://www.myrtle.ai/2018/09/24/how_to_train_your_resnet/)
+- [Pytorch DL course](https://fleuret.org/ee559/)
+- [Trask book](https://github.com/iamtrask/Grokking-Deep-Learning)
+- [mlexplained](http://mlexplained.com/)
+
+
+
+
+
 
