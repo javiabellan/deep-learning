@@ -115,8 +115,8 @@ embedding space.
   - **Validation set**: used for evaluating model while training. Don’t create a random validation set! Manually create one so that it matches the distribution of your data. Usaully a `10%` or `20%` of your train set.
     - N-fold cross-validation. Usually `10`
   - **Test set**: used to get a final estimate of how well the network works.
-- [**Preprocess**](http://cs231n.github.io/neural-networks-2/#datapre): Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/whitening/pca helps a lot.
-  - Option 1: **Normalization** `x = x-x.mean() / x.std()` *Most used*
+- **Normalization**: Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/whitening/pca helps a lot. Normalization parameters are obtained only **from train set**, and then applied to both train and valid sets.
+  - Option 1: **Standarization** `x = x-x.mean() / x.std()` *Most used*
      1. **Mean subtraction**: Center the data to zero. `x = x - x.mean()` fights vanishing and exploding gradients
      2. **Standardize**: Put the data on the same scale. `x = x / x.std()` improves convergence speed and accuracy
   - Option 2: **PCA Whitening**
@@ -128,8 +128,9 @@ embedding space.
     - `(x-x.min()) / (x.max()-x.min())`: Values from 0 to 1
     - `2*(x-x.min()) / (x.max()-x.min()) - 1`: Values from -1 to 1
   
->  In case of images, the scale is from 0 to 255, so it is not strictly necessary normalize.
-  
+> - In case of images, the scale is from 0 to 255, so it is not strictly necessary normalize.
+> - [**neural networks data preparation**](http://cs231n.github.io/neural-networks-2/#datapre)
+
 ## 2. Choose training hyperparams
 - **Learning rate**
   - Constant: Never use.
