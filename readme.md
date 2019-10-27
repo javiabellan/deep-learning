@@ -287,6 +287,29 @@ embedding space.
     - **β** to big: Loose high definition details. Worse performance.
 
 
+# Graph Neural Networks
+
+- Type of graph data
+  - Graph Databases
+  - Knowledge Graphs (KG): Describes real-world entities and their interrelations
+  - Social Networks
+  - Transport Graphs
+  - Molecules (including proteins): Make predictions about their properties and reactions.
+- Models
+  - [GNN](https://persagen.com/files/misc/scarselli2009graph.pdf) Graph Neural Network, 2009
+  - [DeepWalk](https://arxiv.org/abs/1403.6652): Online Learning of Social Representations, 2014
+  - [GraphSage](https://cs.stanford.edu/people/jure/pubs/graphsage-nips17.pdf), 2017
+  - [Relational inductive biases, DL, and graph networks](https://arxiv.org/abs/1806.01261), 2018
+  - [KGCN](https://arxiv.org/abs/1904.12575): Knowledge Graph Convolutional Network, 2019
+- Survey papers
+  - [A Gentle Introduction to GNN](https://towardsdatascience.com/a-gentle-introduction-to-graph-neural-network-basics-deepwalk-and-graphsage-db5d540d50b3) Medium, Feb 2019 
+  - [GNN: A Review of Methods and Applications](https://arxiv.org/abs/1812.08434): Dic 2018, last revised Jul 2019
+  - [A Comprehensive Survey on GNN](https://arxiv.org/abs/1901.00596): Jan 2019, last revised Aug 2019
+- Application examples:
+  - [Smell molecules](https://ai.googleblog.com/2019/10/learning-to-smell-using-deep-learning.html)
+  - [Newton vs the machine: Solving the 3-body problem using DL](https://arxiv.org/abs/1910.07291) (Not using graphs)
+
+
 ## Semi-supervised DL
 
 Check [this kaggle discussion](https://www.kaggle.com/c/santander-customer-transaction-prediction/discussion/81012)
