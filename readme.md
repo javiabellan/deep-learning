@@ -27,6 +27,48 @@ but you can use it as a guide for learning deep learning aswell.
 > #### [**Resources**](#resources)
 ---
 
+## Antor TODO
+#### Automatic featuring engeniring
+- Fast.ai tabular: Not really works well
+- Problems:
+  - DL can not see frequency of an item
+  - Items that does not appear in the train set
+- Manually align 2 distributions:
+  - Microsoft Malware Prediction
+  - CPMP Solution: https://www.kaggle.com/c/microsoft-malware-prediction/discussion/84069
+
+#### How start a competition/ML project
+1. Data exploaration , haw is the data that we are going to work with
+2. Think about input representation
+   - Is redundant?
+   - Need to be converted to somthing else?
+   - The most entropy that you can reconstruct the raw data
+3. Look at the metric
+   - Makes sense?
+   - Is it differentiable
+   - Can i buid good enough metric equivalent
+4. Build a toy model an overfit it with 1 or few samples
+   - To make sure that nothing is really broken
+
+#### JPEG: 2 levels of comprehension:
+- Entropy
+- Choram
+
+#### LIDAR
+  Projections (BAD REPRESENTATION) (complicated things with voxels)
+  Dense matrix (antor)
+    - Its a depth map i think
+    - Not projections
+    - NAtive output of the sensor but condensed in a dense matrix
+
+#### Unordered set (point cloud, molecules)
+  - Point net
+  - transformer without positional encoding
+    - AtomTransformer (by antor)
+    - MoleculeTransformer (by antor)
+    
+ 
+
 > #### TODO
 > - [Knowledge Distillation](https://arxiv.org/abs/1909.11723): a Teacher models teach a smaller student model
 > - **Multi-Task Learning**: Train a model on a variety of learning tasks
