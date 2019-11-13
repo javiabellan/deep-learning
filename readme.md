@@ -300,8 +300,9 @@ A **teacher** model teach a **student** model.
   - **2.** With the extra on unlabeled dataset, generate pseudo labels (soft or hard labels)
   - **3.** Train a student model on both labeled and pseudo-labeled datasets.
   - **4.** Student becomes teacher and repeat -> **2.**
-  - [paper](https://arxiv.org/abs/1911.04252)
-  - [video](https://youtu.be/Y8YaU9mv_us)
+  - [Paper: When Does Label Smoothing Help?](https://arxiv.org/abs/1906.02629)
+  - [Paper: Noisy Student](https://arxiv.org/abs/1911.04252)
+  - [Video: Noisy Student](https://youtu.be/Y8YaU9mv_us)
 
 
 ## Supervised DL
