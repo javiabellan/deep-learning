@@ -70,7 +70,6 @@ but you can use it as a guide for learning deep learning aswell.
  
 
 > #### TODO
-> - [Knowledge Distillation](https://arxiv.org/abs/1909.11723): a Teacher models teach a smaller student model
 > - **Multi-Task Learning**: Train a model on a variety of learning tasks
 > - **Meta-learning**:  Learn new tasks with minimal data using prior knowledge.
 >   - [N-Shot Learning](https://blog.floydhub.com/n-shot-learning)
@@ -285,6 +284,25 @@ embedding space.
 
 
 ---
+
+## Trick: Knowledge Distillation
+
+A **teacher** model teach a **student** model.
+
+- **Smaller** student model → **faster** model.
+  - Model compresion: Less memory and computation
+  - To generalize and avoid outliers.
+  - Used in NLP transformers.
+  - [paper](https://arxiv.org/abs/1909.11723)
+- **Bigger** student model is → **more accurate** model.
+  - Useful when you have extra unlabeled data (kaggle competitions)
+  - **1.** Train the teacher model with labeled dataset.
+  - **2.** With the extra on unlabeled dataset, generate pseudo labels (soft or hard labels)
+  - **3.** Train a student model on both labeled and pseudo-labeled datasets.
+  - **4.** Student becomes teacher and repeat -> **2.**
+  - [paper](https://arxiv.org/abs/1911.04252)
+  - [video](https://youtu.be/Y8YaU9mv_us)
+
 
 ## Supervised DL
 
