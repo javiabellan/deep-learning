@@ -116,7 +116,11 @@ embedding space.
     - **SELU**: Scaled Exponential Linear Unit. [paper](https://arxiv.org/abs/1706.02515)
     - **PReLU** or **Leaky ReLU**:
     - **SERLU**:
-    - **GeLU** or **Swish** or **Mish**: Gaussian Error Linear Units. Smoother ReLU. Used in transformers. [paper](https://arxiv.org/abs/1606.08415) **BEST**.
+    - Smoother ReLU. Differienzable. **BEST**
+      - **GeLU**: Gaussian Error Linear Units. Used in transformers. [paper](https://arxiv.org/abs/1606.08415). (2016)
+      - **Swish**: `x * sigmoid(x)` [paper](https://arxiv.org/abs/1710.05941) (2018)
+      - **Mish**: `x * tanh( ln(1 + e^x) )` [paper](https://arxiv.org/abs/1908.08681) (2019)
+      - **myActFunc** = `0.5 * x * ( tanh(x) + 1 )`
 - [Loss functions](/posts/1-basics/loss.md) (Criterium)
   - **Regression**
     - **MBE: Mean Bias Error**: `mean(GT - pred)` It could determine if the model has positive bias or negative bias.
