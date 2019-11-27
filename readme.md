@@ -65,14 +65,12 @@ but you can use it as a guide for learning deep learning aswell.
 
 <!------------------------ Applications ------------------------>
 <table>
-  <tr>
-    <th rowspan="5" width="150"><h3>🤖</br>Applications</h3></th>
-    <th><a href="https://github.com/javiabellan/vision">Vision</a></th> <td>External link to my vision repo</td>
-  </tr>
-  <tr> <th><a href="https://github.com/javiabellan/nlp">NLP</a></th> <td>External link to my nlp repo</td> </tr>
-  <tr> <th><a href="https://github.com/javiabellan/audio">Audio</a></th>  </tr>
-  <tr> <th><a href="https://github.com/javiabellan/tabular">Tabular</a></th>  </tr>
-  <tr> <th><a href="https://github.com/javiabellan/rl">Reinforcement Learning</a></th>  </tr>
+  <tr> <th rowspan="5" width="150"><h3>🤖</br>Applications</h3><h5>(External repos)</h5></th>
+       <th><a href="https://github.com/javiabellan/vision"> Vision                 </a></th> </tr>
+  <tr> <th><a href="https://github.com/javiabellan/nlp">    NLP                    </a></th> </tr>
+  <tr> <th><a href="https://github.com/javiabellan/audio">  Audio                  </a></th> </tr>
+  <tr> <th><a href="https://github.com/javiabellan/tabular">Tabular                </a></th> </tr>
+  <tr> <th><a href="https://github.com/javiabellan/rl">     Reinforcement Learning </a></th> </tr>
 </table>
 
 
@@ -138,17 +136,8 @@ Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/w
 
 
 
+
 <h1 align="center">🧠 Model</h1>
-
-
-|                                                   | Description                                          |
-|:-------------------------------------------------:|:-----------------------------------------------------|
-| [**Architecture**](#architecture)                 | Choose a model (pretraned if possible)               |
-| [**Activation function**](#activation-function)   | ReLU, Swish, Mish, ...                               |
-| [**Weight initalization**](#weight-initalization) | Pretrained, randNormal, Xavier, Kaiming, ...         |
-| [**Dropout**](#dropout)                           | (yes/no) Regularization                              |
-| [**Batch normalization**](#batch-normalization)   | (yes/no)                                             |
-|              | (yes/no) and Symmetry for self-attention             |
 
 ## Activation function
 > [reference](https://mlfromscratch.com/activation-functions-explained)
@@ -189,8 +178,8 @@ Depends on the models architecture. Try to avoid vanishing or exploding outputs.
 
 
 
-<h1 align="center">📉 Loss</h1>
 
+<h1 align="center">📉 Loss</h1>
 
 ## Loss function
 - **Regression**
@@ -230,15 +219,8 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
 
 <h1 align="center">🔥 Train</h1>
 
-|                                     | Description                                                                 |
-|:-----------------------------------:|-----------------------------------------------------------------------------|
-| [**Learning Rate**](#learning-rate) | How big the steps are during training.                                      |
-| [**Batch size**](#batch-size)       | Number of samples to learn simultaneously.                                  |
-| [**Num epochs**](#number-of-epochs) | Times to learn the whole dataset.                                           |
-| [**Optimizer**](#optimizer)         | Gradient Descent method.                                                    |
-| [**Mixup**](#mixup)                 | (yes/no) Combines pairs of examples and their labels.                       |
-
 ## Learning Rate
+> How big the steps are during training.
 - **Max LR**: Compute it with LR Finder (`lr_find()`)
 - **LR schedule**:
   - Constant: Never use.
@@ -248,7 +230,7 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
   - OneCycle: Use LRFinder to know your maximum lr. Good for Adam.
 
 ## Batch size
-
+> Number of samples to learn simultaneously.
 - **`Batch size = 1`**: Train each sample individually. (Online gradient descent) ❌
 - **`Batch size = length(dataset)`**: Train the whole dataset at once, as a batch. (Batch gradient descent) ❌
 - **`Batch size = number`**: Train disjoint groups of samples (Mini-batch gradient descent). ✅
@@ -258,31 +240,37 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
     - Faster computation. Takes advantage of GPU mem. But sometimes it can no be fitted (CUDA Out Of Memory)
   
 ## Number of epochs
+> Times to learn the whole dataset.
 - Train until start overffiting (validation loss becomes to increase) (early stopping)
 
 ## Optimizer
-  
-> [reference](https://mlfromscratch.com/optimizers-explained):
-- **SGD**. A bit slowly to get to the optimum. `new_w = w - lr[gradient_w]`
-- **SGD with Momentum**. Speed it up with momentum, usually `mom=0.9`. **The second method most used**.
+> Gradient Descent methods. [reference](https://mlfromscratch.com/optimizers-explained):
+
+|                        | Description                                        | Paper | Score |
+|:-----------------------|:---------------------------------------------------|-------|-------|
+| **SGD**                | Basic method. A bit slowly to get to the optimum.  |       |       |
+| **SGD with Momentum**  | Speed it up with momentum, usually `mom=0.9`       |       |       |
+| **AdaGrad**            | Adaptative lr                                      | 2011  |       |
+| **RMSProp**            | Similar to momentum but with the gradient squared. | 2012  |       |
+| **Adam**               | Combination of Momentum with RMSProp.              | 2014  | ⭐     |
+| **AMSGrad**            | Worse than Adam in practice.                       | 2018  |       |
+| **AdamW**              |  .                                                 | 2018  |       |
+| **NovoGrad**           |  .                                                 | [2019](https://arxiv.org/abs/1905.11286) ||
+| **Lookahead**          | Is like having a buddy system to explore the loss. | [2019](https://arxiv.org/abs/1907.08610) ||
+| **RAdam**              | Rectified Adam. Stabilizes training at the start.  | [2019](https://arxiv.org/abs/1908.03265) ||
+| **Ranger**             | RAdam + Lookahead optimizer. The **best**.         | 2019  | ⭐⭐⭐  |
+| **RangerLars**         | RAdam + Lookahead + LARS.                          | 2019  |       |
+| **Ralamb**             | RAdam + LARS.                                      | 2019  |       |
+| **Selective-Backprop** | Faster training by focusing on the biggest losers. | [2019](https://arxiv.org/abs/1910.00762) ||
+
+- **SGD**: `new_w = w - lr[gradient_w]`
+- **SGD with Momentum**: Usually `mom=0.9`.
   - `mom=0.9`, means a `10%` is the normal derivative and a `90%` is the same direction I went last time.
   - `new_w = w - lr[(0.1 * gradient_w)  +  (0.9 * w)]`
   - Other common values are `0.5`, `0.7` and `0.99`.
-- **AdaGrad** (Adaptative lr) From 2011.
 - **RMSProp** (Adaptative lr) From 2012. Similar to momentum but with the gradient squared.
   - `new_w = w - lr * gradient_w / [(0.1 * gradient_w²)  +  (0.9 * w)]`
   - If the gradient in not so volatile, take grater steps. Otherwise, take smaller steps.
-- **Adam** Combination of Momentum with RMSProp. 2014.
-- **AMSGrad** From 2018. Worse than Adam in practice.
-- **AdamW** From 2018.
-- **NovoGrad**: 2019 [paper](https://arxiv.org/abs/1905.11286) 
-- **Lookahead**: Is like having a buddy system to explore the loss terrain. By Geoffrey Hinton in 2019. [paper](https://arxiv.org/abs/1907.08610)
-- **RAdam**: Rectified Adam. Stabilizes training at the start. By Microsoft in 2019. [paper](https://arxiv.org/abs/1908.03265)
-- **Ranger**: RAdam + Lookahead optimizer. The **best**. ⭐
-- **RangerLars**: RAdam + Lookahead + LARS
-- **Ralamb**: RAdam + LARS
-- **Selective-Backprop**: Faster training by prioritizing examples with high loss [paper](https://arxiv.org/abs/1910.00762)
-
 
 > TODO: Read:
 > - [Efficient BackProp](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf) (1998, Yann LeCun)
