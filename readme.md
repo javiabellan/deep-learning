@@ -83,18 +83,18 @@ but you can use it as a guide for learning deep learning aswell.
 - **Sigmoid**: Multi-label classification (last layer)
 - **Hyperbolic tangent**:
 - **ReLU**: Non-linearity compontent of the net (hidden layers) check [this paper](https://arxiv.org/pdf/1710.05941.pdf)
-  - **ELU**: Exponential Linear Unit. [paper](https://arxiv.org/abs/1511.07289)
-  - **SELU**: Scaled Exponential Linear Unit. [paper](https://arxiv.org/abs/1706.02515)
-  - **PReLU** or **Leaky ReLU**:
-  - **SERLU**:
-  - Smoother ReLU. Differienzable. **BEST**
-    - **GeLU**: Gaussian Error Linear Units. Used in transformers. [paper](https://arxiv.org/abs/1606.08415). (2016)
-    - **Swish**: `x * sigmoid(x)` [paper](https://arxiv.org/abs/1710.05941) (2017)
-    - **Elish**: `xxxx` [paper](https://arxiv.org/abs/1808.00783) (2018)
-    - **Mish**: `x * tanh( ln(1 + e^x) )` [paper](https://arxiv.org/abs/1908.08681) (2019)
-    - **myActFunc 1** = `0.5 * x * ( tanh(x) + 1 )`
-    - **myActFunc 2** = `0.5 * x * ( tanh (x+1) + 1)`
-    - **myActFunc 3** = `x * ((x+x+1)/(abs(x+1) + abs(x)) * 0.5 + 0.5)`
+- **ELU**: Exponential Linear Unit. [paper](https://arxiv.org/abs/1511.07289)
+- **SELU**: Scaled Exponential Linear Unit. [paper](https://arxiv.org/abs/1706.02515)
+- **PReLU** or **Leaky ReLU**:
+- **SERLU**:
+- Smoother ReLU. Differienzable. **BEST**
+  - **GeLU**: Gaussian Error Linear Units. Used in transformers. [paper](https://arxiv.org/abs/1606.08415). (2016)
+  - **Swish**: `x * sigmoid(x)` [paper](https://arxiv.org/abs/1710.05941) (2017)
+  - **Elish**: `xxxx` [paper](https://arxiv.org/abs/1808.00783) (2018)
+  - **Mish**: `x * tanh( ln(1 + e^x) )` [paper](https://arxiv.org/abs/1908.08681) (2019)
+  - **myActFunc 1** = `0.5 * x * ( tanh(x) + 1 )`
+  - **myActFunc 2** = `0.5 * x * ( tanh (x+1) + 1)`
+  - **myActFunc 3** = `x * ((x+x+1)/(abs(x+1) + abs(x)) * 0.5 + 0.5)`
 
 ### Loss function
 - **Regression**
@@ -166,39 +166,40 @@ Depends on the models architecture. Try to avoid vanishing or exploding outputs.
   - OneCycle: Use LRFinder to know your maximum lr. Good for Adam.
 
 ### Batch size
-- Usually a power of 2. `32` or `64` are good values.
-- Too low: like `4`: Lot of updates. Very noisy random updates in the net (bad).
-- Too high: like `512` Few updates. Very general common updates (bad).
-  - Faster computation. Takes advantage of GPU mem. But sometimes it can no be fitted (CUDA Out Of Memory)
 
+- **`Batch size = 1`**: Train each sample individually. (Online gradient descent) ❌
+- **`Batch size = length(dataset)`**: Train the whole dataset at once, as a batch. (Batch gradient descent) ❌
+- **`Batch size = number`**: Train disjoint groups of samples (Mini-batch gradient descent). ✅
+  - Usually a power of 2. **`32`** or **`64`** are good values.
+  - Too low: like `4`: Lot of updates. Very noisy random updates in the net (bad).
+  - Too high: like `512` Few updates. Very general common updates (bad).
+    - Faster computation. Takes advantage of GPU mem. But sometimes it can no be fitted (CUDA Out Of Memory)
+  
 ### Number of epochs
 - Train until start overffiting (validation loss becomes to increase) (early stopping)
 
 ### Optimizer
-Gradient Descent methods. Read [this](https://mlfromscratch.com/optimizers-explained)
-  - [Gradient descent](/posts/1-basics/gradient_descent.md) (training loop)
-    - **Batch** gradient descent: The whole dataset at once, as a batch. `Batch size = length(dataset)`
-    - **Online** gradient descent: Every single sample of data is a batch. `Batch size = 1`
-    - **Mini-batch** gradient descent: Disjoint groups of samples as a batch. `Batch size = n` **We will use this**.
-    - **SGD**. A bit slowly to get to the optimum. `new_w = w - lr[gradient_w]`
-  - **SGD with Momentum**. Speed it up with momentum, usually `mom=0.9`. **The second method most used**.
-    - `mom=0.9`, means a `10%` is the normal derivative and a `90%` is the same direction I went last time.
-    - `new_w = w - lr[(0.1 * gradient_w)  +  (0.9 * w)]`
-    - Other common values are `0.5`, `0.7` and `0.99`.
-  - **AdaGrad** (Adaptative lr) From 2011.
-  - **RMSProp** (Adaptative lr) From 2012. Similar to momentum but with the gradient squared.
-    - `new_w = w - lr * gradient_w / [(0.1 * gradient_w²)  +  (0.9 * w)]`
-    - If the gradient in not so volatile, take grater steps. Otherwise, take smaller steps.
-  - **Adam** Combination of Momentum with RMSProp. 2014.
-  - **AMSGrad** From 2018. Worse than Adam in practice.
-  - **AdamW** From 2018.
-  - **NovoGrad**: 2019 [paper](https://arxiv.org/abs/1905.11286) 
-  - **Lookahead**: Is like having a buddy system to explore the loss terrain. By Geoffrey Hinton in 2019. [paper](https://arxiv.org/abs/1907.08610)
-  - **RAdam**: Rectified Adam. Stabilizes training at the start. By Microsoft in 2019. [paper](https://arxiv.org/abs/1908.03265)
-  - **Ranger**: RAdam + Lookahead optimizer. The **best**. ⭐
-  - **RangerLars**: RAdam + Lookahead + LARS
-  - **Ralamb**: RAdam + LARS
-  - **Selective-Backprop**: Faster training by prioritizing examples with high loss [paper](https://arxiv.org/abs/1910.00762)
+  
+> [reference](https://mlfromscratch.com/optimizers-explained):
+- **SGD**. A bit slowly to get to the optimum. `new_w = w - lr[gradient_w]`
+- **SGD with Momentum**. Speed it up with momentum, usually `mom=0.9`. **The second method most used**.
+  - `mom=0.9`, means a `10%` is the normal derivative and a `90%` is the same direction I went last time.
+  - `new_w = w - lr[(0.1 * gradient_w)  +  (0.9 * w)]`
+  - Other common values are `0.5`, `0.7` and `0.99`.
+- **AdaGrad** (Adaptative lr) From 2011.
+- **RMSProp** (Adaptative lr) From 2012. Similar to momentum but with the gradient squared.
+  - `new_w = w - lr * gradient_w / [(0.1 * gradient_w²)  +  (0.9 * w)]`
+  - If the gradient in not so volatile, take grater steps. Otherwise, take smaller steps.
+- **Adam** Combination of Momentum with RMSProp. 2014.
+- **AMSGrad** From 2018. Worse than Adam in practice.
+- **AdamW** From 2018.
+- **NovoGrad**: 2019 [paper](https://arxiv.org/abs/1905.11286) 
+- **Lookahead**: Is like having a buddy system to explore the loss terrain. By Geoffrey Hinton in 2019. [paper](https://arxiv.org/abs/1907.08610)
+- **RAdam**: Rectified Adam. Stabilizes training at the start. By Microsoft in 2019. [paper](https://arxiv.org/abs/1908.03265)
+- **Ranger**: RAdam + Lookahead optimizer. The **best**. ⭐
+- **RangerLars**: RAdam + Lookahead + LARS
+- **Ralamb**: RAdam + LARS
+- **Selective-Backprop**: Faster training by prioritizing examples with high loss [paper](https://arxiv.org/abs/1910.00762)
 
 
 > TODO: Read:
