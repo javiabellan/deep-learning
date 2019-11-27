@@ -258,7 +258,7 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
 | **NovoGrad**           |  .                                                 | [2019](https://arxiv.org/abs/1905.11286) ||
 | **Lookahead**          | Is like having a buddy system to explore the loss. | [2019](https://arxiv.org/abs/1907.08610) ||
 | **RAdam**              | Rectified Adam. Stabilizes training at the start.  | [2019](https://arxiv.org/abs/1908.03265) ||
-| **Ranger**             | RAdam + Lookahead optimizer. The **best**.         | 2019  | ⭐⭐⭐  |
+| **Ranger**             | RAdam + Lookahead.                                 | 2019  | ⭐⭐⭐  |
 | **RangerLars**         | RAdam + Lookahead + LARS.                          | 2019  |       |
 | **Ralamb**             | RAdam + LARS.                                      | 2019  |       |
 | **Selective-Backprop** | Faster training by focusing on the biggest losers. | [2019](https://arxiv.org/abs/1910.00762) ||
