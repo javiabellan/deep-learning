@@ -7,63 +7,54 @@ but you can use it as a guide for learning deep learning aswell.
 <!------------------------ Dataset ------------------------>
 <table>
   <tr>
-    <th rowspan="3" width="150"><h3>Dataset</h3></th>
+    <th rowspan="4" width="150"><h3>🗂</br>Dataset</h3></th>
         <th align="left"><a href="#balance-the-data">             Balance the data </b>         </a></th> </tr>
   <tr>  <th align="left"><a href="#split-in-train-and-validation">Split in train and validation </a></th> </tr>
   <tr>  <th align="left"><a href="#normalization">                Normalization                 </a></th> </tr>
+  <tr>  <th align="left"><a href="#data-augmentation">            Data augmentation             </a></th> </tr>
 </table>
   
 <!------------------------ Layers ------------------------>
 <table>
-  <tr>
-    <th rowspan="5" width="150"><h3>🧠</br>Model</h3></th>
-    <th align="left"><a href="#activation-function">Activation function</a></th>  <td>sdfsdfsdfsf</td>
-  </tr>
-  <tr>   <th align="left">Weight initalization</th> <td>[REGULARIZATION]</td></tr>
-  <tr>   <th align="left">Dropout</th>              <td>[REGULARIZATION]</td></tr>
-  <tr>   <th align="left">Batch normalization</th>  <td>[FASTER TRAINING]</td></tr>
-  <tr>   <th align="left"><a href="#self-attention">Self-attention</a></th>       <td>[MORE PRECISE]</td></tr>
+  <tr>   <th rowspan="5" width="150"><h3>🧠</br>Model</h3></th>
+         <th align="left"><a href="#activation-function">  Activation function  </a></th></tr>
+  <tr>   <th align="left"><a href="#weight-initalization"> Weight initalization </a></th></tr>
+  <tr>   <th align="left"><a href="#dropout">              Dropout              </a></th></tr>
+  <tr>   <th align="left"><a href="#batch-normalization">  Batch normalization  </a></th></tr>
+  <tr>   <th align="left"><a href="#self-attention">       Self-attention       </a></th></tr>
 </table>
   
 <!------------------------ Loss ------------------------>
 <table>
-  <tr>
-    <th rowspan="2" width="150"><h3>📉</br>Loss</h3></th>
-    <th align="left">Loss Function</th>  <td> Choose a loss depending of your problem.</td>
-  </tr>
-  <tr>
-    <th align="left">Weight penalty</th>  <td>[REGULARIZATION]</td>
-  </tr>
+  <tr>  <th rowspan="2" width="150"><h3>📉</br>Loss</h3></th>
+        <th align="left"><a href="#loss-function">  Loss Function  </a></th></tr>
+  <tr>  <th align="left"><a href="#weight-penalty"> Weight penalty </a></th></tr>
 </table>
   
 <!------------------------ Train ------------------------>
 <table>
-  <tr>
-    <th rowspan="5" width="150"><h3>🔥</br>Train</h3></th>
-    <th align="left">Overview</th>  <td></td>
-  </tr>
-  <tr>   <th align="left">Learning Rate</th>              <td>How big the steps are during training.</td></tr>
-  <tr>   <th align="left">Batch size</th>              <td>[REGULARIZATION]</td></tr>
-  <tr>   <th align="left">Num epochs</th>  <td>[FASTER TRAINING]</td></tr>
-  <tr>   <th align="left"><a href="#self-attention">Optimizer</a></th>       <td>[MORE PRECISE]</td></tr>
+  <tr> <th rowspan="4" width="150"><h3>🔥</br>Train</h3></th>
+       <th align="left"><a href="#optimizer">      Optimizer     </a></th></tr>
+  <tr> <th align="left"><a href="#learning-rate">  Learning Rate </a></th></tr>
+  <tr> <th align="left"><a href="#batch-size">     Batch size    </a></th></tr>
+  <tr> <th align="left"><a href="#num-epochs">     Num epochs    </a></th></tr>
 </table>
 
 <!------------------------ Avoid overfitting ------------------------>
 <table>
   <tr>
-    <th rowspan="5" width="150"><h3>Avoid</br>overfitting</h3><h5>(Try in that order)</h5></th>
-    <td>1. Get more data</td>  <td>How big the steps are during training.</td>
-  </tr>
-  <tr>   <td>2. Data augmentation</td>              <td>[REGULARIZATION]</td></tr>
-  <tr>   <td>3. Regularization</td>  <td>[FASTER TRAINING]</td></tr>
-  <tr>   <td><a href="#self-attention">4. Reduce model complexity</a></td>       <td>[MORE PRECISE]</td></tr>
-  <tr>   <td><a href="#self-attention">5. Ensemble</a></td>       <td>[MORE PRECISE]</td></tr>
+    <th rowspan="5" width="150"><h3>🧐</br>Avoid</br>overfitting</h3><h5>(Try in that order)</h5></th>
+         <td><a href="#get-more-data">          1. Get more data            </a></td></tr>
+  <tr>   <td><a href="#data-augmentation">      2. Data augmentation        </a></td></tr>
+  <tr>   <td><a href="#regularization">         3. Regularization           </a></td></tr>
+  <tr>   <td><a href="#reduce-model-complexity">4. Reduce Reduce complexity </a></td></tr>
+  <tr>   <td><a href="#ensemble">               5. Ensemble                 </a></td></tr>
 </table>
 
 <!------------------------ Train faster ------------------------>
 <table>
   <tr>
-    <th rowspan="5" width="150"><h3>Train</br>faster</h3></th>
+    <th rowspan="5" width="150"><h3>🕓</br>Train</br>faster</h3></th>
          <td><a href="#transfer-learning">  Transfer learning   </a></td> </tr>
   <tr>   <td><a href="#batch-normalization">Batch Normalization </a></td> </tr>
   <tr>   <td><a href="#precomputation">     Precomputation      </a></td> </tr>
@@ -75,7 +66,7 @@ but you can use it as a guide for learning deep learning aswell.
 <!------------------------ Applications ------------------------>
 <table>
   <tr>
-    <th rowspan="5" width="150"><h3>Applications</h3></th>
+    <th rowspan="5" width="150"><h3>🤖</br>Applications</h3></th>
     <th><a href="https://github.com/javiabellan/vision">Vision</a></th> <td>External link to my vision repo</td>
   </tr>
   <tr> <th><a href="https://github.com/javiabellan/nlp">NLP</a></th> <td>External link to my nlp repo</td> </tr>
