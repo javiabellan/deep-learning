@@ -123,7 +123,7 @@ embedding space.
       - **Mish**: `x * tanh( ln(1 + e^x) )` [paper](https://arxiv.org/abs/1908.08681) (2019)
       - **myActFunc 1** = `0.5 * x * ( tanh(x) + 1 )`
       - **myActFunc 2** = `0.5 * x * ( tanh (x+1) + 1)`
-      - **myActFunc 3** = `x * ((x+x+1)/(abs(x+1) + abs(x)) * 0.5 + 0.5)
+      - **myActFunc 3** = `x * ((x+x+1)/(abs(x+1) + abs(x)) * 0.5 + 0.5)`
 - [Loss functions](/posts/1-basics/loss.md) (Criterium)
   - **Regression**
     - **MBE: Mean Bias Error**: `mean(GT - pred)` It could determine if the model has positive bias or negative bias.
