@@ -9,9 +9,9 @@ but you can use it as a guide for learning deep learning aswell.
 >
 > #### Part 1: Theory
 > 
-> 1. [**Know the basics**](#1-know-the-basics)
-> 2. [**Prepare the data**](#prepare-the-data)
-> 3. [**Train & hyperparams**](#2-choose-training-hyperparams)
+> 1. [**Prepare the data**](#1-prepare-the-data)
+> 2. [**Choose the model**](#2-choose-the-model)
+> 3. [**Training hyperparameters**](#2-training-hyperparameters)
 > 4. [**Avoid overfitting**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
 > 5. [**Train faster**](#4-train-faster-optimization)
 > 
@@ -131,10 +131,10 @@ embedding space.
 
 
 
-## 2. Choose a model
+## 2. Choose the model
 
-| Hyperparams              | Description                                                                 |
-|--------------------------|-----------------------------------------------------------------------------|
+|                          | Description                                                                 |
+|:------------------------:|:----------------------------------------------------------------------------|
 | **Architecture**         | Choose a the pretraned model (if possible) with x layers, residuals, ets    |
 | **Loss function**        |                                                                             |
 | **Activation function**  | ReLU, Swish, Mish, ...                                                      |
@@ -192,32 +192,36 @@ embedding space.
   - **ROC, AUC**:
   - **Log loss**:
 
-## 2. Training hyperparams
+## 2. Training hyperparameters
 
-| Hyperparams              | Description                                                                 |
-|--------------------------|-----------------------------------------------------------------------------|
-| **Max LR**               | Compute it with LR Finder                                                   |
-| **LR schedule**          |                                                                             |
-| **Batch size**           |                                                                             |
-| **Num epochs**           |                                                                             |
-| **Optimizer**            |                                                                             |
-| **Mixup**                | (yes/no) Combines pairs of examples and their labels.                       |
+| Hyperparameter                      | Description                                                                 |
+|:-----------------------------------:|-----------------------------------------------------------------------------|
+| [**Learning Rate**](#learning-rate) | (number) How big the steps are during training.                             |
+| [**Batch size**](#batch-size)       | Number of samples to learn simultaneously. Usually a power of 2.            |
+| [**Num epochs**](#number-of-epochs) |                                                                             |
+| [**Optimizer**](#optimizer)         |                                                                             |
+| [**Mixup**](#mixup)                 | (yes/no) Combines pairs of examples and their labels.                       |
 
-- **Learning Rate**
-  - **Max LR**: Compute it with LR Finder (`lr_find()`)
-  - **LR schedule**:
-    - Constant: Never use.
-    - Reduce it gradually: By steps, by a decay factor, with LR annealing, etc.
-      - Flat + Cosine annealing: Flat start, and then at 50%-75%, start dropping the lr based on a cosine anneal.
-    - Warm restarts (SGDWR, AdamWR):
-    - OneCycle: Use LRFinder to know your maximum lr. Good for Adam.
-- **Batch size**: Number of samples to learn simultaneously. Usually a power of 2. `32` or `64` are good values.
-  - Too low: like `4`: Lot of updates. Very noisy random updates in the net (bad).
-  - Too high: like `512` Few updates. Very general common updates (bad).
-    - Faster computation. Takes advantage of GPU mem. But sometimes it can no be fitted (CUDA Out Of Memory)
-- **Number of epochs**
-  - Train until start overffiting (validation loss becomes to increase) (early stopping)
-- [**Optimizers**](/posts/4-optimization/sgd-optimization.md): Gradient Descent methods. Read [this](https://mlfromscratch.com/optimizers-explained)
+#### Learning Rate
+- **Max LR**: Compute it with LR Finder (`lr_find()`)
+- **LR schedule**:
+  - Constant: Never use.
+  - Reduce it gradually: By steps, by a decay factor, with LR annealing, etc.
+    - Flat + Cosine annealing: Flat start, and then at 50%-75%, start dropping the lr based on a cosine anneal.
+  - Warm restarts (SGDWR, AdamWR):
+  - OneCycle: Use LRFinder to know your maximum lr. Good for Adam.
+
+#### Batch size
+- `32` or `64` are good values.
+- Too low: like `4`: Lot of updates. Very noisy random updates in the net (bad).
+- Too high: like `512` Few updates. Very general common updates (bad).
+  - Faster computation. Takes advantage of GPU mem. But sometimes it can no be fitted (CUDA Out Of Memory)
+
+#### Number of epochs
+- Train until start overffiting (validation loss becomes to increase) (early stopping)
+
+#### Optimizer
+Gradient Descent methods. Read [this](https://mlfromscratch.com/optimizers-explained)
   - [Gradient descent](/posts/1-basics/gradient_descent.md) (training loop)
     - **Batch** gradient descent: The whole dataset at once, as a batch. `Batch size = length(dataset)`
     - **Online** gradient descent: Every single sample of data is a batch. `Batch size = 1`
