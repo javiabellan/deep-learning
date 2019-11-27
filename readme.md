@@ -16,7 +16,7 @@ but you can use it as a guide for learning deep learning aswell.
 <!------------------------ Layers ------------------------>
 <table>
   <tr>
-    <th rowspan="5" width="150"><h3>Model</h3></th>
+    <th rowspan="5" width="150"><h3>🧠</br>Model</h3></th>
     <th align="left"><a href="#activation-function">Activation function</a></th>  <td>sdfsdfsdfsf</td>
   </tr>
   <tr>   <th align="left">Weight initalization</th> <td>[REGULARIZATION]</td></tr>
@@ -28,7 +28,7 @@ but you can use it as a guide for learning deep learning aswell.
 <!------------------------ Loss ------------------------>
 <table>
   <tr>
-    <th rowspan="2" width="150"><h3>Loss</h3></th>
+    <th rowspan="2" width="150"><h3>📉</br>Loss</h3></th>
     <th align="left">Loss Function</th>  <td> Choose a loss depending of your problem.</td>
   </tr>
   <tr>
@@ -39,7 +39,7 @@ but you can use it as a guide for learning deep learning aswell.
 <!------------------------ Train ------------------------>
 <table>
   <tr>
-    <th rowspan="5" width="150"><h3>Train</h3></th>
+    <th rowspan="5" width="150"><h3>🔥</br>Train</h3></th>
     <th align="left">Overview</th>  <td></td>
   </tr>
   <tr>   <th align="left">Learning Rate</th>              <td>How big the steps are during training.</td></tr>
