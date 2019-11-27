@@ -17,11 +17,11 @@ but you can use it as a guide for learning deep learning aswell.
 <!------------------------ Layers ------------------------>
 <table>
   <tr>   <th rowspan="5" width="150"><h3>🧠</br>Model</h3></th>
-         <th align="left"><a href="#activation-function">  Activation function  </a></th></tr>
-  <tr>   <th align="left"><a href="#weight-initalization"> Weight initalization </a></th></tr>
-  <tr>   <th align="left"><a href="#dropout">              Dropout              </a></th></tr>
-  <tr>   <th align="left"><a href="#batch-normalization">  Batch normalization  </a></th></tr>
-  <tr>   <th align="left"><a href="#self-attention">       Self-attention       </a></th></tr>
+         <th align="left"><a href="#activation-function">   Activation function  </a></th></tr>
+  <tr>   <th align="left"><a href="#weight-initialization"> Weight initialization </a></th></tr>
+  <tr>   <th align="left"><a href="#dropout">               Dropout              </a></th></tr>
+  <tr>   <th align="left"><a href="#batch-normalization">   Batch normalization  </a></th></tr>
+  <tr>   <th align="left"><a href="#self-attention">        Self-attention       </a></th></tr>
 </table>
   
 <!------------------------ Loss ------------------------>
@@ -34,10 +34,10 @@ but you can use it as a guide for learning deep learning aswell.
 <!------------------------ Train ------------------------>
 <table>
   <tr> <th rowspan="4" width="150"><h3>🔥</br>Train</h3></th>
-       <th align="left"><a href="#optimizer">      Optimizer     </a></th></tr>
-  <tr> <th align="left"><a href="#learning-rate">  Learning Rate </a></th></tr>
-  <tr> <th align="left"><a href="#batch-size">     Batch size    </a></th></tr>
-  <tr> <th align="left"><a href="#num-epochs">     Num epochs    </a></th></tr>
+       <th align="left"><a href="#optimizer">        Optimizer     </a></th></tr>
+  <tr> <th align="left"><a href="#learning-rate">    Learning Rate </a></th></tr>
+  <tr> <th align="left"><a href="#batch-size">       Batch size    </a></th></tr>
+  <tr> <th align="left"><a href="#number-of-epochs"> Num epochs    </a></th></tr>
 </table>
 
 <!------------------------ Avoid overfitting ------------------------>
@@ -55,11 +55,11 @@ but you can use it as a guide for learning deep learning aswell.
 <table>
   <tr>
     <th rowspan="5" width="150"><h3>🕓</br>Train</br>faster</h3></th>
-         <td><a href="#transfer-learning">  Transfer learning   </a></td> </tr>
-  <tr>   <td><a href="#batch-normalization">Batch Normalization </a></td> </tr>
-  <tr>   <td><a href="#precomputation">     Precomputation      </a></td> </tr>
-  <tr>   <td><a href="#half-precision">     Half precision      </a></td> </tr>
-  <tr>   <td><a href="#multiple-gpus">      Multiple GPUs       </a></td> </tr>
+         <td><a href="#transfer-learning">  Transfer learning   </a></td></tr>
+  <tr>   <td><a href="#batch-normalization">Batch Normalization </a></td></tr>
+  <tr>   <td><a href="#precomputation">     Precomputation      </a></td></tr>
+  <tr>   <td><a href="#half-precision">     Half precision      </a></td></tr>
+  <tr>   <td><a href="#multiple-gpus">      Multiple GPUs       </a></td></tr>
 </table>
 
 
@@ -75,6 +75,17 @@ but you can use it as a guide for learning deep learning aswell.
   <tr> <th><a href="https://github.com/javiabellan/rl">Reinforcement Learning</a></th>  </tr>
 </table>
 
+
+<!------------------------ Computer ------------------------>
+<table>
+  <tr> <th rowspan="4" width="150"><h3>🖥️</br>Computer</h3></th>
+       <th align="left"><a href="/posts/0-setup/hardware.md"> Hardware </a></th></tr>
+  <tr> <th align="left"><a href="/posts/0-setup/software.md"> Software </a></th></tr>
+  <tr> <th align="left"><a href="/posts/0-setup/jupyter.md">  Jupyter  </a></th></tr>
+  <tr> <th align="left"><a href="/posts/0-setup/kaggle.md">   Kaggle   </a></th></tr>
+</table>
+  
+
 <!------------------------ Resources ------------------------>
 <table>
   <tr>
@@ -88,27 +99,21 @@ but you can use it as a guide for learning deep learning aswell.
 
 ---
 
-# 0. Set up your machine
-- [Hardware](/posts/0-setup/hardware.md)
-  - `nvidia-smi daemon`: Check that **sm%** is near to 100% for a good GPU usage.
-- [Software](/posts/0-setup/software.md)
-- [Jupyter Notebooks](/posts/0-setup/jupyter.md)
-- [Kaggle](/posts/0-setup/kaggle.md)
+<h1 align="center">🗂 Dataset</h1>
 
-
-# Balance the data
+## Balance the data
 - **Fix it in the dataloader** [`WeightedRandomSampler`](https://pytorch.org/docs/stable/data.html#torch.utils.data.WeightedRandomSampler)
 - **Subsample majority class**. But you can lose important data.
 - **Oversample minority class**. But you can overfit.
 - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
  
-# Split in train and validation
+## Split in train and validation
 - **Training set**: used for learning the parameters of the model. 
 - **Validation set**: used for evaluating model while training. Don’t create a random validation set! Manually create one so that it matches the distribution of your data. Usaully a `10%` or `20%` of your train set.
   - N-fold cross-validation. Usually `10`
 - **Test set**: used to get a final estimate of how well the network works.
 
-# Normalization
+## Normalization
 Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/whitening/pca helps a lot. Normalization parameters are obtained only **from train set**, and then applied to both train and valid sets.
 - Option 1: **Standarization** `x = x-x.mean() / x.std()` *Most used*
    1. **Mean subtraction**: Center the data to zero. `x = x - x.mean()` fights vanishing and exploding gradients
@@ -126,8 +131,14 @@ Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/w
 > - [**neural networks data preparation**](http://cs231n.github.io/neural-networks-2/#datapre)
 
 
+## Data augmentation
 
-# 2. Choose the model
+- **Mixup**: Combines pairs of examples and their labels.
+  - Merge 2 samples in 1: `x_mixed = λxᵢ + (1−λ)xⱼ`
+
+
+
+<h1 align="center">🧠 Model</h1>
 
 
 |                                                   | Description                                          |
@@ -139,7 +150,7 @@ Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/w
 | [**Batch normalization**](#batch-normalization)   | (yes/no)                                             |
 |              | (yes/no) and Symmetry for self-attention             |
 
-### Activation function
+## Activation function
 > [reference](https://mlfromscratch.com/activation-functions-explained)
 - **Softmax**: Sigle-label classification (last layer)
 - **Sigmoid**: Multi-label classification (last layer)
@@ -158,7 +169,30 @@ Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/w
   - **myActFunc 2** = `0.5 * x * ( tanh (x+1) + 1)`
   - **myActFunc 3** = `x * ((x+x+1)/(abs(x+1) + abs(x)) * 0.5 + 0.5)`
 
-### Loss function
+## Weight initialization
+Depends on the models architecture. Try to avoid vanishing or exploding outputs. [blog1](https://towardsdatascience.com/weight-initialization-in-neural-networks-a-journey-from-the-basics-to-kaiming-954fb9b47c79), [blog2](https://madaan.github.io/init/).
+- **Constant value**: Very bad
+- **Random**:
+  - Uniform: From 0 to 1. Or from -1 to 1. Bad
+  - Normal: Mean 0, std=1. Better
+- **Xavier initialization**:  Good for MLPs with tanh activation func. [paper](http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf)
+  - Uniform: 
+  - Normal: 
+- **Kaiming initialization**: Good for MLPs with ReLU activation func. (a.k.a. He initialization) [paper](https://arxiv.org/abs/1502.01852)
+  - Uniform
+  - Normal
+  - When you use Kaiming, you ha to fix `ReLU(x)` equals to **`min(x,0) - 0.5`** for a correct mean (0)
+- **Delta-Orthogonal initialization**: Good for vanilla CNNs (10000 layers). Read this [paper](https://arxiv.org/abs/1806.05393)
+  
+## Dropout
+<p align="center"><img width="50%" src="/posts/img/dropout.png" /></p>
+
+
+
+<h1 align="center">📉 Loss</h1>
+
+
+## Loss function
 - **Regression**
   - **MBE: Mean Bias Error**: `mean(GT - pred)` It could determine if the model has positive bias or negative bias.
   - **MAE: Mean Absolute Error (L1 loss)**: `mean(|GT - pred|)` The most simple.
@@ -181,7 +215,7 @@ Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/w
     - Range from `0` (worst) to `1` (best)
     - In order to formulate a loss function which can be minimized, we'll simply use `1 − Dice`
 
-### Classification Metrics
+## Classification Metrics
 Dataset with 5 disease images and 20 normal images. If the model predicts all images to be normal, its accuracy is 80%, and F1-score of such a model is 0.88
   - **Accuracy**: `TP + TN / TP + TN + FP + FN`
   - **F1 Score**: `2 * (Prec*Rec)/(Prec+Rec)`
@@ -192,26 +226,9 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
   - **Log loss**:
 
 
-### Weight initialization
-Depends on the models architecture. Try to avoid vanishing or exploding outputs. [blog1](https://towardsdatascience.com/weight-initialization-in-neural-networks-a-journey-from-the-basics-to-kaiming-954fb9b47c79), [blog2](https://madaan.github.io/init/).
-- **Constant value**: Very bad
-- **Random**:
-  - Uniform: From 0 to 1. Or from -1 to 1. Bad
-  - Normal: Mean 0, std=1. Better
-- **Xavier initialization**:  Good for MLPs with tanh activation func. [paper](http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf)
-  - Uniform: 
-  - Normal: 
-- **Kaiming initialization**: Good for MLPs with ReLU activation func. (a.k.a. He initialization) [paper](https://arxiv.org/abs/1502.01852)
-  - Uniform
-  - Normal
-  - When you use Kaiming, you ha to fix `ReLU(x)` equals to **`min(x,0) - 0.5`** for a correct mean (0)
-- **Delta-Orthogonal initialization**: Good for vanilla CNNs (10000 layers). Read this [paper](https://arxiv.org/abs/1806.05393)
-  
-### Dropout
-<p align="center"><img width="50%" src="/posts/img/dropout.png" /></p>
 
 
-# 2. Training hyperparameters
+<h1 align="center">🔥 Train</h1>
 
 |                                     | Description                                                                 |
 |:-----------------------------------:|-----------------------------------------------------------------------------|
@@ -221,7 +238,7 @@ Depends on the models architecture. Try to avoid vanishing or exploding outputs.
 | [**Optimizer**](#optimizer)         | Gradient Descent method.                                                    |
 | [**Mixup**](#mixup)                 | (yes/no) Combines pairs of examples and their labels.                       |
 
-### Learning Rate
+## Learning Rate
 - **Max LR**: Compute it with LR Finder (`lr_find()`)
 - **LR schedule**:
   - Constant: Never use.
@@ -230,7 +247,7 @@ Depends on the models architecture. Try to avoid vanishing or exploding outputs.
   - Warm restarts (SGDWR, AdamWR):
   - OneCycle: Use LRFinder to know your maximum lr. Good for Adam.
 
-### Batch size
+## Batch size
 
 - **`Batch size = 1`**: Train each sample individually. (Online gradient descent) ❌
 - **`Batch size = length(dataset)`**: Train the whole dataset at once, as a batch. (Batch gradient descent) ❌
@@ -240,10 +257,10 @@ Depends on the models architecture. Try to avoid vanishing or exploding outputs.
   - Too high: like `512` Few updates. Very general common updates (bad).
     - Faster computation. Takes advantage of GPU mem. But sometimes it can no be fitted (CUDA Out Of Memory)
   
-### Number of epochs
+## Number of epochs
 - Train until start overffiting (validation loss becomes to increase) (early stopping)
 
-### Optimizer
+## Optimizer
   
 > [reference](https://mlfromscratch.com/optimizers-explained):
 - **SGD**. A bit slowly to get to the optimum. `new_w = w - lr[gradient_w]`
@@ -277,7 +294,9 @@ Depends on the models architecture. Try to avoid vanishing or exploding outputs.
 > - [The 1cycle policy](https://sgugger.github.io/the-1cycle-policy.html)
 
 
-## 3. Improve generalization and avoid overfitting (try in that order)
+
+<h1 align="center">🧐 Improve generalization</br>and avoid overfitting</h1><h3 align="center">(try in that order)</h3>
+
 1. **Get more data**
    - **Similar datasets**: Get a similar dataset for your problem.
    - **Create your own dataset**
@@ -307,9 +326,10 @@ Depends on the models architecture. Try to avoid vanishing or exploding outputs.
 > #### Other tricks:
 > - **Label Smoothing**: Smooth the one-hot target label
 > - **Knowledge Distillation**: A bigger trained net (teacher) helps the network [*paper*](https://arxiv.org/abs/1503.02531)
-> - **Mixup**: Merge 2 samples in 1: `x_mixed = λxᵢ + (1−λ)xⱼ`
 
-## 4. Train faster (Optimization)
+
+<h1 align="center">🕓 Train faster</h1>
+ 
 - **Transfer learning**: Use a pretrainded model and retrain with your data.
   1. Replace last layer
   2. Fine-tune new layers
@@ -541,7 +561,7 @@ embedding space.
 > - Remember the math:
 >   - [Matrix calculus](http://explained.ai/matrix-calculus/index.html)
 >   - **Einsum**: [link 1](https://obilaniu6266h16.wordpress.com/2016/02/04/einstein-summation-in-numpy/), [link 2](https://rockt.github.io/2018/04/30/einsum)
-
+> - `nvidia-smi daemon`: Check that **sm%** is near to 100% for a good GPU usage.
 
 
 
