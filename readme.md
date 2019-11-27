@@ -5,10 +5,9 @@ but you can use it as a guide for learning deep learning aswell.
 
 > ## Index
 >
-> 0. [**Setting up**](#0-setting-up): Get your machine ready for deep learning.
->
 > #### Part 1: Theory
-> 
+>
+> 0. [**Set up your machine**](#0-set-up-your-machine)
 > 1. [**Prepare the data**](#1-prepare-the-data)
 > 2. [**Choose the model**](#2-choose-the-model)
 > 3. [**Training hyperparameters**](#2-training-hyperparameters)
@@ -25,82 +24,16 @@ but you can use it as a guide for learning deep learning aswell.
 > - [**Reinforcement learning**](#reinforcement-learning)
 >
 > #### [**Resources**](#resources)
+
 ---
 
-## Antor TODO
-#### Automatic featuring engeniring
-- Fast.ai tabular: Not really works well
-- Problems:
-  - DL can not see frequency of an item
-  - Items that does not appear in the train set
-- Manually align 2 distributions:
-  - Microsoft Malware Prediction
-  - CPMP Solution: https://www.kaggle.com/c/microsoft-malware-prediction/discussion/84069
-
-#### How start a competition/ML project
-1. Data exploaration , haw is the data that we are going to work with
-2. Think about input representation
-   - Is redundant?
-   - Need to be converted to somthing else?
-   - The most entropy that you can reconstruct the raw data
-3. Look at the metric
-   - Makes sense?
-   - Is it differentiable
-   - Can i buid good enough metric equivalent
-4. Build a toy model an overfit it with 1 or few samples
-   - To make sure that nothing is really broken
-
-#### JPEG: 2 levels of comprehension:
-- Entropy
-- Choram
-
-#### LIDAR
-  Projections (BAD REPRESENTATION) (complicated things with voxels)
-  Dense matrix (antor)
-    - Its a depth map i think
-    - Not projections
-    - NAtive output of the sensor but condensed in a dense matrix
-
-#### Unordered set (point cloud, molecules)
-  - Point net
-  - transformer without positional encoding
-    - AtomTransformer (by antor)
-    - MoleculeTransformer (by antor)
-    
- 
-
-> #### TODO
-> - **Multi-Task Learning**: Train a model on a variety of learning tasks
-> - **Meta-learning**:  Learn new tasks with minimal data using prior knowledge.
->   - [N-Shot Learning](https://blog.floydhub.com/n-shot-learning)
->     - **Zero-shot**: 0 trainning examples of that class.
->     - **One-shot**: 1 trainning example of that class.
->     - **Few-shot**: 2...5 trainning examples of that class.
-> - Models
->   - Naive approach: re-training the model on the new data, would severely overfit.
->   - [Siamese Networks](https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf) (2015) Knows if to inputs are the same or not. (2 Feature extraction shares wights)
->   - [Matching Networks](https://arxiv.org/abs/1606.04080) (2016) Weighted nearest-neighbor classifier applied within an
-embedding space.
->   - [Model-Agnostic Meta-Learning (MAML)](https://arxiv.org/abs/1703.03400) (2017)
->   - [Prototypical Networks](https://arxiv.org/abs/1703.05175) (2017): Better nearest-neighbor classifier of embeddings.
->   - [Meta-Learning for Semi-Supervised classification](https://arxiv.org/abs/1803.00676) (2018) Extensions of Prototypical Networks. SotA.
->   - [Meta-Transfer Learning (MTL)](https://arxiv.org/abs/1812.02391) (2018)
->   - [Online Meta-Learning](https://arxiv.org/abs/1902.08438) (2019)
-> - Neural Turing machine. [*paper*](https://arxiv.org/abs/1807.08518), [*code*](https://github.com/MarkPKCollier/NeuralTuringMachine/blob/master/README.md)
-> - Neural Arithmetic Logic Units (NALU) [*paper*](https://arxiv.org/abs/1808.00508)
----
-
-## 0. Setting up
+## 0. Set up your machine
 - [Hardware](/posts/0-setup/hardware.md)
   - `nvidia-smi daemon`: Check that **sm%** is near to 100% for a good GPU usage.
 - [Software](/posts/0-setup/software.md)
 - [Jupyter Notebooks](/posts/0-setup/jupyter.md)
 - [Kaggle](/posts/0-setup/kaggle.md)
 
-## 0. Know the basics
-> Remember the math:
-> - [Matrix calculus](http://explained.ai/matrix-calculus/index.html)
-> - **Einsum**: [link 1](https://obilaniu6266h16.wordpress.com/2016/02/04/einstein-summation-in-numpy/), [link 2](https://rockt.github.io/2018/04/30/einsum)
 
 ## 1. Prepare the data
 - **Balance** the data
@@ -467,6 +400,72 @@ Check [this kaggle discussion](https://www.kaggle.com/c/santander-customer-trans
 - [mlexplained](http://mlexplained.com/)
 
 
+---
+
+## Antor TODO
+#### Automatic featuring engeniring
+- Fast.ai tabular: Not really works well
+- Problems:
+  - DL can not see frequency of an item
+  - Items that does not appear in the train set
+- Manually align 2 distributions:
+  - Microsoft Malware Prediction
+  - CPMP Solution: https://www.kaggle.com/c/microsoft-malware-prediction/discussion/84069
+
+#### How start a competition/ML project
+1. Data exploaration , haw is the data that we are going to work with
+2. Think about input representation
+   - Is redundant?
+   - Need to be converted to somthing else?
+   - The most entropy that you can reconstruct the raw data
+3. Look at the metric
+   - Makes sense?
+   - Is it differentiable
+   - Can i buid good enough metric equivalent
+4. Build a toy model an overfit it with 1 or few samples
+   - To make sure that nothing is really broken
+
+#### JPEG: 2 levels of comprehension:
+- Entropy
+- Choram
+
+#### LIDAR
+  Projections (BAD REPRESENTATION) (complicated things with voxels)
+  Dense matrix (antor)
+    - Its a depth map i think
+    - Not projections
+    - NAtive output of the sensor but condensed in a dense matrix
+
+#### Unordered set (point cloud, molecules)
+  - Point net
+  - transformer without positional encoding
+    - AtomTransformer (by antor)
+    - MoleculeTransformer (by antor)
+    
+ 
+
+> #### TODO
+> - **Multi-Task Learning**: Train a model on a variety of learning tasks
+> - **Meta-learning**:  Learn new tasks with minimal data using prior knowledge.
+>   - [N-Shot Learning](https://blog.floydhub.com/n-shot-learning)
+>     - **Zero-shot**: 0 trainning examples of that class.
+>     - **One-shot**: 1 trainning example of that class.
+>     - **Few-shot**: 2...5 trainning examples of that class.
+> - Models
+>   - Naive approach: re-training the model on the new data, would severely overfit.
+>   - [Siamese Networks](https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf) (2015) Knows if to inputs are the same or not. (2 Feature extraction shares wights)
+>   - [Matching Networks](https://arxiv.org/abs/1606.04080) (2016) Weighted nearest-neighbor classifier applied within an
+embedding space.
+>   - [Model-Agnostic Meta-Learning (MAML)](https://arxiv.org/abs/1703.03400) (2017)
+>   - [Prototypical Networks](https://arxiv.org/abs/1703.05175) (2017): Better nearest-neighbor classifier of embeddings.
+>   - [Meta-Learning for Semi-Supervised classification](https://arxiv.org/abs/1803.00676) (2018) Extensions of Prototypical Networks. SotA.
+>   - [Meta-Transfer Learning (MTL)](https://arxiv.org/abs/1812.02391) (2018)
+>   - [Online Meta-Learning](https://arxiv.org/abs/1902.08438) (2019)
+> - Neural Turing machine. [*paper*](https://arxiv.org/abs/1807.08518), [*code*](https://github.com/MarkPKCollier/NeuralTuringMachine/blob/master/README.md)
+> - Neural Arithmetic Logic Units (NALU) [*paper*](https://arxiv.org/abs/1808.00508)
+> - Remember the math:
+>   - [Matrix calculus](http://explained.ai/matrix-calculus/index.html)
+>   - **Einsum**: [link 1](https://obilaniu6266h16.wordpress.com/2016/02/04/einstein-summation-in-numpy/), [link 2](https://rockt.github.io/2018/04/30/einsum)
 
 
 
