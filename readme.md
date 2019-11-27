@@ -253,8 +253,10 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
 | **AdaGrad**            | Adaptative lr                                      | 2011  |       |
 | **RMSProp**            | Similar to momentum but with the gradient squared. | 2012  |       |
 | **Adam**               | Combination of Momentum with RMSProp.              | 2014  | ⭐     |
-| **AMSGrad**            | Worse than Adam in practice.                       | 2018  |       |
+| **LARS**               | Layer-wise Adaptive Rate Scaling.                  | [2017](https://arxiv.org/abs/1708.03888) ||
+| **AMSGrad**            | Worse than Adam in practice. (AdamX: new verion)   | 2018  |       |
 | **AdamW**              |  .                                                 | 2018  |       |
+| **LAMB**               | LARS improvement.                                  | [2019](https://arxiv.org/abs/1904.00962) ||
 | **NovoGrad**           |  .                                                 | [2019](https://arxiv.org/abs/1905.11286) ||
 | **Lookahead**          | Is like having a buddy system to explore the loss. | [2019](https://arxiv.org/abs/1907.08610) ||
 | **RAdam**              | Rectified Adam. Stabilizes training at the start.  | [2019](https://arxiv.org/abs/1908.03265) ||
