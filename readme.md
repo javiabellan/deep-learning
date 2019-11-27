@@ -27,7 +27,7 @@ but you can use it as a guide for learning deep learning aswell.
 
 ---
 
-## 0. Set up your machine
+# 0. Set up your machine
 - [Hardware](/posts/0-setup/hardware.md)
   - `nvidia-smi daemon`: Check that **sm%** is near to 100% for a good GPU usage.
 - [Software](/posts/0-setup/software.md)
@@ -35,7 +35,7 @@ but you can use it as a guide for learning deep learning aswell.
 - [Kaggle](/posts/0-setup/kaggle.md)
 
 
-## 1. Prepare the data
+# 1. Prepare the data
 - **Balance** the data
   - **Fix it in the dataloader** [`WeightedRandomSampler`](https://pytorch.org/docs/stable/data.html#torch.utils.data.WeightedRandomSampler)
   - **Subsample majority class**. But you can lose important data.
@@ -64,59 +64,63 @@ but you can use it as a guide for learning deep learning aswell.
 
 
 
-## 2. Choose the model
+# 2. Choose the model
 
-|                          | Description                                                                 |
-|:------------------------:|:----------------------------------------------------------------------------|
-| **Architecture**         | Choose a the pretraned model (if possible) with x layers, residuals, ets    |
-| **Loss function**        |                                                                             |
-| **Activation function**  | ReLU, Swish, Mish, ...                                                      |
-| **Weight initalization** | Pretrained, randNormal, Xavier, Kaiming, ...                                |
-| **Dropout**              | (yes/no) Regularization                                                     |
-| **Batch normalization**  | (yes/no)                                                                    |
-| **Self-attention**       | (yes/no) and Symmetry for self-attention                                    |
+|                                                   | Description                                          |
+|:-------------------------------------------------:|:-----------------------------------------------------|
+| [**Architecture**](#architecture)                 | Choose a model (pretraned if possible)               |
+| [**Loss function**](#loss-function)               | Choose a loss depending of your problem              |
+| [**Activation function**](#activation-function)   | ReLU, Swish, Mish, ...                               |
+| [**Weight initalization**](#weight-initalization) | Pretrained, randNormal, Xavier, Kaiming, ...         |
+| [**Dropout**](#dropout)                           | (yes/no) Regularization                              |
+| [**Batch normalization**](#batch-normalization)   | (yes/no)                                             |
+| [**Self-attention**](#self-attention)             | (yes/no) and Symmetry for self-attention             |
 
 
-- Activation functions [reference](https://mlfromscratch.com/activation-functions-explained)
-  - **Softmax**: Sigle-label classification (last layer)
-  - **Sigmoid**: Multi-label classification (last layer)
-  - **Hyperbolic tangent**:
-  - **ReLU**: Non-linearity compontent of the net (hidden layers) check [this paper](https://arxiv.org/pdf/1710.05941.pdf)
-    - **ELU**: Exponential Linear Unit. [paper](https://arxiv.org/abs/1511.07289)
-    - **SELU**: Scaled Exponential Linear Unit. [paper](https://arxiv.org/abs/1706.02515)
-    - **PReLU** or **Leaky ReLU**:
-    - **SERLU**:
-    - Smoother ReLU. Differienzable. **BEST**
-      - **GeLU**: Gaussian Error Linear Units. Used in transformers. [paper](https://arxiv.org/abs/1606.08415). (2016)
-      - **Swish**: `x * sigmoid(x)` [paper](https://arxiv.org/abs/1710.05941) (2017)
-      - **Elish**: `xxxx` [paper](https://arxiv.org/abs/1808.00783) (2018)
-      - **Mish**: `x * tanh( ln(1 + e^x) )` [paper](https://arxiv.org/abs/1908.08681) (2019)
-      - **myActFunc 1** = `0.5 * x * ( tanh(x) + 1 )`
-      - **myActFunc 2** = `0.5 * x * ( tanh (x+1) + 1)`
-      - **myActFunc 3** = `x * ((x+x+1)/(abs(x+1) + abs(x)) * 0.5 + 0.5)`
-- [Loss functions](/posts/1-basics/loss.md) (Criterium)
-  - **Regression**
-    - **MBE: Mean Bias Error**: `mean(GT - pred)` It could determine if the model has positive bias or negative bias.
-    - **MAE: Mean Absolute Error (L1 loss)**: `mean(|GT - pred|)` The most simple.
-    - **MSE: Mean Squared Error (L2 loss)**: `mean((GT-pred)²)` Penalice large errors more than MAE. **Most used**
-    - **RMSE: Root Mean Squared Error**: `sqrt(MSE)` Proportional to MSE. Value closer to MAE.
-    - Percentage errors:
-      - **MAPE: Mean Absolute Percentage Error**
-      - **MSPE: Mean Squared Percentage Error**
-      - **RMSPE: Root Mean Squared Percentage Error**
-  - **Classification**
-    - **Cross Entropy**: Sigle-label classification. Usually with **softmax**. `nn.CrossEntropyLoss`.
-      - **NLL: Negative Log Likelihood** is the one-hot encoded target simplified version, see [this](https://jamesmccaffrey.wordpress.com/2016/09/25/log-loss-and-cross-entropy-are-almost-the-same/) `nn.NLLLoss()`
-    - **Binary Cross Entropy**:  Multi-label classification. Usually with **sigmoid**. `nn.BCELoss`
-    - **Hinge**: Multi class SVM Loss `nn.HingeEmbeddingLoss()`
-    - **Focal loss**: Similar to BCE but scaled down, so the network focuses more on incorrect and low confidence labels than on increasing its confidence in the already correct labels. `-(1-p)^gamma * log(p)` [paper](https://arxiv.org/abs/1708.02002)
-  - **Segmentation**
-    - **[Pixel-wise cross entropy](posts/img/Pixel-wise-CE.png)**
-    - **IoU** (F0): `(Pred ∩ GT)/(Pred ∪ GT)` = `TP / TP + FP * FN`
-    - **[Dice](posts/img/Dice.png)** (F1): `2 * (Pred ∩ GT)/(Pred + GT)` = `2·TP / 2·TP + FP * FN`
-      - Range from `0` (worst) to `1` (best)
-      - In order to formulate a loss function which can be minimized, we'll simply use `1 − Dice`
-- **Classification Metrics**: Dataset with 5 disease images and 20 normal images. If the model predicts all images to be normal, its accuracy is 80%, and F1-score of such a model is 0.88
+### Activation function
+> [reference](https://mlfromscratch.com/activation-functions-explained)
+- **Softmax**: Sigle-label classification (last layer)
+- **Sigmoid**: Multi-label classification (last layer)
+- **Hyperbolic tangent**:
+- **ReLU**: Non-linearity compontent of the net (hidden layers) check [this paper](https://arxiv.org/pdf/1710.05941.pdf)
+  - **ELU**: Exponential Linear Unit. [paper](https://arxiv.org/abs/1511.07289)
+  - **SELU**: Scaled Exponential Linear Unit. [paper](https://arxiv.org/abs/1706.02515)
+  - **PReLU** or **Leaky ReLU**:
+  - **SERLU**:
+  - Smoother ReLU. Differienzable. **BEST**
+    - **GeLU**: Gaussian Error Linear Units. Used in transformers. [paper](https://arxiv.org/abs/1606.08415). (2016)
+    - **Swish**: `x * sigmoid(x)` [paper](https://arxiv.org/abs/1710.05941) (2017)
+    - **Elish**: `xxxx` [paper](https://arxiv.org/abs/1808.00783) (2018)
+    - **Mish**: `x * tanh( ln(1 + e^x) )` [paper](https://arxiv.org/abs/1908.08681) (2019)
+    - **myActFunc 1** = `0.5 * x * ( tanh(x) + 1 )`
+    - **myActFunc 2** = `0.5 * x * ( tanh (x+1) + 1)`
+    - **myActFunc 3** = `x * ((x+x+1)/(abs(x+1) + abs(x)) * 0.5 + 0.5)`
+
+### Loss function
+- **Regression**
+  - **MBE: Mean Bias Error**: `mean(GT - pred)` It could determine if the model has positive bias or negative bias.
+  - **MAE: Mean Absolute Error (L1 loss)**: `mean(|GT - pred|)` The most simple.
+  - **MSE: Mean Squared Error (L2 loss)**: `mean((GT-pred)²)` Penalice large errors more than MAE. **Most used**
+  - **RMSE: Root Mean Squared Error**: `sqrt(MSE)` Proportional to MSE. Value closer to MAE.
+  - Percentage errors:
+    - **MAPE: Mean Absolute Percentage Error**
+    - **MSPE: Mean Squared Percentage Error**
+    - **RMSPE: Root Mean Squared Percentage Error**
+- **Classification**
+  - **Cross Entropy**: Sigle-label classification. Usually with **softmax**. `nn.CrossEntropyLoss`.
+    - **NLL: Negative Log Likelihood** is the one-hot encoded target simplified version, see [this](https://jamesmccaffrey.wordpress.com/2016/09/25/log-loss-and-cross-entropy-are-almost-the-same/) `nn.NLLLoss()`
+  - **Binary Cross Entropy**:  Multi-label classification. Usually with **sigmoid**. `nn.BCELoss`
+  - **Hinge**: Multi class SVM Loss `nn.HingeEmbeddingLoss()`
+  - **Focal loss**: Similar to BCE but scaled down, so the network focuses more on incorrect and low confidence labels than on increasing its confidence in the already correct labels. `-(1-p)^gamma * log(p)` [paper](https://arxiv.org/abs/1708.02002)
+- **Segmentation**
+  - **[Pixel-wise cross entropy](posts/img/Pixel-wise-CE.png)**
+  - **IoU** (F0): `(Pred ∩ GT)/(Pred ∪ GT)` = `TP / TP + FP * FN`
+  - **[Dice](posts/img/Dice.png)** (F1): `2 * (Pred ∩ GT)/(Pred + GT)` = `2·TP / 2·TP + FP * FN`
+    - Range from `0` (worst) to `1` (best)
+    - In order to formulate a loss function which can be minimized, we'll simply use `1 − Dice`
+
+### Classification Metrics
+Dataset with 5 disease images and 20 normal images. If the model predicts all images to be normal, its accuracy is 80%, and F1-score of such a model is 0.88
   - **Accuracy**: `TP + TN / TP + TN + FP + FN`
   - **F1 Score**: `2 * (Prec*Rec)/(Prec+Rec)`
     - **Precision**: `TP / TP + FP` = `TP / predicted possitives`
@@ -125,17 +129,34 @@ but you can use it as a guide for learning deep learning aswell.
   - **ROC, AUC**:
   - **Log loss**:
 
-## 2. Training hyperparameters
 
-| Hyperparameter                      | Description                                                                 |
+### Weight initialization
+Depends on the models architecture. Try to avoid vanishing or exploding outputs. [blog1](https://towardsdatascience.com/weight-initialization-in-neural-networks-a-journey-from-the-basics-to-kaiming-954fb9b47c79), [blog2](https://madaan.github.io/init/).
+- **Constant value**: Very bad
+- **Random**:
+  - Uniform: From 0 to 1. Or from -1 to 1. Bad
+  - Normal: Mean 0, std=1. Better
+- **Xavier initialization**:  Good for MLPs with tanh activation func. [paper](http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf)
+  - Uniform: 
+  - Normal: 
+- **Kaiming initialization**: Good for MLPs with ReLU activation func. (a.k.a. He initialization) [paper](https://arxiv.org/abs/1502.01852)
+  - Uniform
+  - Normal
+  - When you use Kaiming, you ha to fix `ReLU(x)` equals to **`min(x,0) - 0.5`** for a correct mean (0)
+- **Delta-Orthogonal initialization**: Good for vanilla CNNs (10000 layers). Read this [paper](https://arxiv.org/abs/1806.05393)
+  
+  
+# 2. Training hyperparameters
+
+|                                     | Description                                                                 |
 |:-----------------------------------:|-----------------------------------------------------------------------------|
-| [**Learning Rate**](#learning-rate) | (number) How big the steps are during training.                             |
-| [**Batch size**](#batch-size)       | Number of samples to learn simultaneously. Usually a power of 2.            |
-| [**Num epochs**](#number-of-epochs) |                                                                             |
-| [**Optimizer**](#optimizer)         |                                                                             |
+| [**Learning Rate**](#learning-rate) | How big the steps are during training.                                      |
+| [**Batch size**](#batch-size)       | Number of samples to learn simultaneously.                                  |
+| [**Num epochs**](#number-of-epochs) | Times to learn the whole dataset.                                           |
+| [**Optimizer**](#optimizer)         | Gradient Descent method.                                                    |
 | [**Mixup**](#mixup)                 | (yes/no) Combines pairs of examples and their labels.                       |
 
-#### Learning Rate
+### Learning Rate
 - **Max LR**: Compute it with LR Finder (`lr_find()`)
 - **LR schedule**:
   - Constant: Never use.
@@ -144,16 +165,16 @@ but you can use it as a guide for learning deep learning aswell.
   - Warm restarts (SGDWR, AdamWR):
   - OneCycle: Use LRFinder to know your maximum lr. Good for Adam.
 
-#### Batch size
-- `32` or `64` are good values.
+### Batch size
+- Usually a power of 2. `32` or `64` are good values.
 - Too low: like `4`: Lot of updates. Very noisy random updates in the net (bad).
 - Too high: like `512` Few updates. Very general common updates (bad).
   - Faster computation. Takes advantage of GPU mem. But sometimes it can no be fitted (CUDA Out Of Memory)
 
-#### Number of epochs
+### Number of epochs
 - Train until start overffiting (validation loss becomes to increase) (early stopping)
 
-#### Optimizer
+### Optimizer
 Gradient Descent methods. Read [this](https://mlfromscratch.com/optimizers-explained)
   - [Gradient descent](/posts/1-basics/gradient_descent.md) (training loop)
     - **Batch** gradient descent: The whole dataset at once, as a batch. `Batch size = length(dataset)`
@@ -178,19 +199,7 @@ Gradient Descent methods. Read [this](https://mlfromscratch.com/optimizers-expla
   - **RangerLars**: RAdam + Lookahead + LARS
   - **Ralamb**: RAdam + LARS
   - **Selective-Backprop**: Faster training by prioritizing examples with high loss [paper](https://arxiv.org/abs/1910.00762)
-- **Weight initialization**: Depends on the models architecture. Try to avoid vanishing or exploding outputs. [blog1](https://towardsdatascience.com/weight-initialization-in-neural-networks-a-journey-from-the-basics-to-kaiming-954fb9b47c79), [blog2](https://madaan.github.io/init/)
-  - **Constant value**: Very bad
-  - **Random**:
-    - Uniform: From 0 to 1. Or from -1 to 1. Bad
-    - Normal: Mean 0, std=1. Better
-  - **Xavier initialization**:  Good for MLPs with tanh activation func. [paper](http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf)
-    - Uniform: 
-    - Normal: 
-  - **Kaiming initialization**: Good for MLPs with ReLU activation func. (a.k.a. He initialization) [paper](https://arxiv.org/abs/1502.01852)
-    - Uniform
-    - Normal
-    - When you use Kaiming, you ha to fix `ReLU(x)` equals to **`min(x,0) - 0.5`** for a correct mean (0)
-  - **Delta-Orthogonal initialization**: Good for vanilla CNNs (10000 layers). Read this [paper](https://arxiv.org/abs/1806.05393)
+
 
 > TODO: Read:
 > - [Efficient BackProp](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf) (1998, Yann LeCun)
