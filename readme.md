@@ -97,16 +97,53 @@ embedding space.
 - [Jupyter Notebooks](/posts/0-setup/jupyter.md)
 - [Kaggle](/posts/0-setup/kaggle.md)
 
-## 1. Know the basics
+## 0. Know the basics
 > Remember the math:
 > - [Matrix calculus](http://explained.ai/matrix-calculus/index.html)
 > - **Einsum**: [link 1](https://obilaniu6266h16.wordpress.com/2016/02/04/einstein-summation-in-numpy/), [link 2](https://rockt.github.io/2018/04/30/einsum)
 
-- [Chain rule](/posts/1-basics/chain_rule.md)
-- [Gradient descent](/posts/1-basics/gradient_descent.md) (training loop)
-  - **Batch** gradient descent: The whole dataset at once, as a batch. `Batch size = length(dataset)`
-  - **Online** gradient descent: Every single sample of data is a batch. `Batch size = 1`
-  - **Mini-batch** gradient descent: Disjoint groups of samples as a batch. `Batch size = n` **We will use this**.
+## 1. Prepare the data
+- **Balance** the data
+  - **Fix it in the dataloader** [`WeightedRandomSampler`](https://pytorch.org/docs/stable/data.html#torch.utils.data.WeightedRandomSampler)
+  - **Subsample majority class**. But you can lose important data.
+  - **Oversample minority class**. But you can overfit.
+  - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
+- **Split** the data
+  - **Training set**: used for learning the parameters of the model. 
+  - **Validation set**: used for evaluating model while training. Don’t create a random validation set! Manually create one so that it matches the distribution of your data. Usaully a `10%` or `20%` of your train set.
+    - N-fold cross-validation. Usually `10`
+  - **Test set**: used to get a final estimate of how well the network works.
+- **Normalization**: Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/whitening/pca helps a lot. Normalization parameters are obtained only **from train set**, and then applied to both train and valid sets.
+  - Option 1: **Standarization** `x = x-x.mean() / x.std()` *Most used*
+     1. **Mean subtraction**: Center the data to zero. `x = x - x.mean()` fights vanishing and exploding gradients
+     2. **Standardize**: Put the data on the same scale. `x = x / x.std()` improves convergence speed and accuracy
+  - Option 2: **PCA Whitening**
+    1. **Mean subtraction**: Center the data in zero. `x = x - x.mean()`
+    2. **Decorrelation** or **PCA**: Rotate the data until there is no correlation anymore.
+    3. **Whitening**: Put the data on the same scale. `whitened = decorrelated / np.sqrt(eigVals + 1e-5)`
+  - Option 3: **ZCA whitening** Zero component analysis (ZCA).
+  - Other options not used:
+    - `(x-x.min()) / (x.max()-x.min())`: Values from 0 to 1
+    - `2*(x-x.min()) / (x.max()-x.min()) - 1`: Values from -1 to 1
+  
+> - In case of images, the scale is from 0 to 255, so it is not strictly necessary normalize.
+> - [**neural networks data preparation**](http://cs231n.github.io/neural-networks-2/#datapre)
+
+
+
+## 2. Choose a model
+
+| Hyperparams              | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| **Architecture**         | Choose a the pretraned model (if possible) with x layers, residuals, ets    |
+| **Loss function**        |                                                                             |
+| **Activation function**  | ReLU, Swish, Mish, ...                                                      |
+| **Weight initalization** | Pretrained, randNormal, Xavier, Kaiming, ...                                |
+| **Dropout**              | (yes/no) Regularization                                                     |
+| **Batch normalization**  | (yes/no)                                                                    |
+| **Self-attention**       | (yes/no) and Symmetry for self-attention                                    |
+
+
 - Activation functions [reference](https://mlfromscratch.com/activation-functions-explained)
   - **Softmax**: Sigle-label classification (last layer)
   - **Sigmoid**: Multi-label classification (last layer)
@@ -155,40 +192,25 @@ embedding space.
   - **ROC, AUC**:
   - **Log loss**:
 
-## Prepare the data
-- **Balance** the data
-  - **Fix it in the dataloader** [`WeightedRandomSampler`](https://pytorch.org/docs/stable/data.html#torch.utils.data.WeightedRandomSampler)
-  - **Subsample majority class**. But you can lose important data.
-  - **Oversample minority class**. But you can overfit.
-  - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
-- **Split** the data
-  - **Training set**: used for learning the parameters of the model. 
-  - **Validation set**: used for evaluating model while training. Don’t create a random validation set! Manually create one so that it matches the distribution of your data. Usaully a `10%` or `20%` of your train set.
-    - N-fold cross-validation. Usually `10`
-  - **Test set**: used to get a final estimate of how well the network works.
-- **Normalization**: Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/whitening/pca helps a lot. Normalization parameters are obtained only **from train set**, and then applied to both train and valid sets.
-  - Option 1: **Standarization** `x = x-x.mean() / x.std()` *Most used*
-     1. **Mean subtraction**: Center the data to zero. `x = x - x.mean()` fights vanishing and exploding gradients
-     2. **Standardize**: Put the data on the same scale. `x = x / x.std()` improves convergence speed and accuracy
-  - Option 2: **PCA Whitening**
-    1. **Mean subtraction**: Center the data in zero. `x = x - x.mean()`
-    2. **Decorrelation** or **PCA**: Rotate the data until there is no correlation anymore.
-    3. **Whitening**: Put the data on the same scale. `whitened = decorrelated / np.sqrt(eigVals + 1e-5)`
-  - Option 3: **ZCA whitening** Zero component analysis (ZCA).
-  - Other options not used:
-    - `(x-x.min()) / (x.max()-x.min())`: Values from 0 to 1
-    - `2*(x-x.min()) / (x.max()-x.min()) - 1`: Values from -1 to 1
-  
-> - In case of images, the scale is from 0 to 255, so it is not strictly necessary normalize.
-> - [**neural networks data preparation**](http://cs231n.github.io/neural-networks-2/#datapre)
+## 2. Training hyperparams
 
-## 2. Choose training hyperparams
-- **Learning rate**
-  - Constant: Never use.
-  - Reduce it gradually: By steps, by a decay factor, with LR annealing, etc.
-    - Flat + Cosine annealing: Flat start, and then at 50%-75%, start dropping the lr based on a cosine anneal.
-  - Warm restarts (SGDWR, AdamWR):
-  - OneCycle: Use LRFinder to know your maximum lr. Good for Adam.
+| Hyperparams              | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| **Max LR**               | Compute it with LR Finder                                                   |
+| **LR schedule**          |                                                                             |
+| **Batch size**           |                                                                             |
+| **Num epochs**           |                                                                             |
+| **Optimizer**            |                                                                             |
+| **Mixup**                | (yes/no) Combines pairs of examples and their labels.                       |
+
+- **Learning Rate**
+  - **Max LR**: Compute it with LR Finder (`lr_find()`)
+  - **LR schedule**:
+    - Constant: Never use.
+    - Reduce it gradually: By steps, by a decay factor, with LR annealing, etc.
+      - Flat + Cosine annealing: Flat start, and then at 50%-75%, start dropping the lr based on a cosine anneal.
+    - Warm restarts (SGDWR, AdamWR):
+    - OneCycle: Use LRFinder to know your maximum lr. Good for Adam.
 - **Batch size**: Number of samples to learn simultaneously. Usually a power of 2. `32` or `64` are good values.
   - Too low: like `4`: Lot of updates. Very noisy random updates in the net (bad).
   - Too high: like `512` Few updates. Very general common updates (bad).
@@ -196,7 +218,11 @@ embedding space.
 - **Number of epochs**
   - Train until start overffiting (validation loss becomes to increase) (early stopping)
 - [**Optimizers**](/posts/4-optimization/sgd-optimization.md): Gradient Descent methods. Read [this](https://mlfromscratch.com/optimizers-explained)
-  - **SGD**. A bit slowly to get to the optimum. `new_w = w - lr[gradient_w]`
+  - [Gradient descent](/posts/1-basics/gradient_descent.md) (training loop)
+    - **Batch** gradient descent: The whole dataset at once, as a batch. `Batch size = length(dataset)`
+    - **Online** gradient descent: Every single sample of data is a batch. `Batch size = 1`
+    - **Mini-batch** gradient descent: Disjoint groups of samples as a batch. `Batch size = n` **We will use this**.
+    - **SGD**. A bit slowly to get to the optimum. `new_w = w - lr[gradient_w]`
   - **SGD with Momentum**. Speed it up with momentum, usually `mom=0.9`. **The second method most used**.
     - `mom=0.9`, means a `10%` is the normal derivative and a `90%` is the same direction I went last time.
     - `new_w = w - lr[(0.1 * gradient_w)  +  (0.9 * w)]`
@@ -213,8 +239,7 @@ embedding space.
   - **RAdam**: Rectified Adam. Stabilizes training at the start. By Microsoft in 2019. [paper](https://arxiv.org/abs/1908.03265)
   - **Ranger**: RAdam + Lookahead optimizer. The **best**. ⭐
   - **RangerLars**: RAdam + Lookahead + LARS
-  
-Ralamb (RAdam + LARS)
+  - **Ralamb**: RAdam + LARS
   - **Selective-Backprop**: Faster training by prioritizing examples with high loss [paper](https://arxiv.org/abs/1910.00762)
 - **Weight initialization**: Depends on the models architecture. Try to avoid vanishing or exploding outputs. [blog1](https://towardsdatascience.com/weight-initialization-in-neural-networks-a-journey-from-the-basics-to-kaiming-954fb9b47c79), [blog2](https://madaan.github.io/init/)
   - **Constant value**: Very bad
