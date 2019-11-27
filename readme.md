@@ -118,9 +118,12 @@ embedding space.
     - **SERLU**:
     - Smoother ReLU. Differienzable. **BEST**
       - **GeLU**: Gaussian Error Linear Units. Used in transformers. [paper](https://arxiv.org/abs/1606.08415). (2016)
-      - **Swish**: `x * sigmoid(x)` [paper](https://arxiv.org/abs/1710.05941) (2018)
+      - **Swish**: `x * sigmoid(x)` [paper](https://arxiv.org/abs/1710.05941) (2017)
+      - **Elish**: `xxxx` [paper](https://arxiv.org/abs/1808.00783) (2018)
       - **Mish**: `x * tanh( ln(1 + e^x) )` [paper](https://arxiv.org/abs/1908.08681) (2019)
-      - **myActFunc** = `0.5 * x * ( tanh(x) + 1 )`
+      - **myActFunc 1** = `0.5 * x * ( tanh(x) + 1 )`
+      - **myActFunc 2** = `0.5 * x * ( tanh (x+1) + 1)`
+      - **myActFunc 3** = `x * ((x+x+1)/(abs(x+1) + abs(x)) * 0.5 + 0.5)
 - [Loss functions](/posts/1-basics/loss.md) (Criterium)
   - **Regression**
     - **MBE: Mean Bias Error**: `mean(GT - pred)` It could determine if the model has positive bias or negative bias.
@@ -183,8 +186,9 @@ embedding space.
 - **Learning rate**
   - Constant: Never use.
   - Reduce it gradually: By steps, by a decay factor, with LR annealing, etc.
+    - Flat + Cosine annealing: Flat start, and then at 50%-75%, start dropping the lr based on a cosine anneal.
   - Warm restarts (SGDWR, AdamWR):
-  - 1 cycle: The best. Use LRFinder to know your maximum lr.
+  - OneCycle: Use LRFinder to know your maximum lr. Good for Adam.
 - **Batch size**: Number of samples to learn simultaneously. Usually a power of 2. `32` or `64` are good values.
   - Too low: like `4`: Lot of updates. Very noisy random updates in the net (bad).
   - Too high: like `512` Few updates. Very general common updates (bad).
@@ -207,6 +211,9 @@ embedding space.
   - **Lookahead**: Is like having a buddy system to explore the loss terrain. By Geoffrey Hinton in 2019. [paper](https://arxiv.org/abs/1907.08610)
   - **RAdam**: Rectified Adam. Stabilizes training at the start. By Microsoft in 2019. [paper](https://arxiv.org/abs/1908.03265)
   - **Ranger**: RAdam + Lookahead optimizer. The **best**. ⭐
+  - **RangerLars**: RAdam + Lookahead + LARS
+  
+Ralamb (RAdam + LARS)
   - **Selective-Backprop**: Faster training by prioritizing examples with high loss [paper](https://arxiv.org/abs/1910.00762)
 - **Weight initialization**: Depends on the models architecture. Try to avoid vanishing or exploding outputs. [blog1](https://towardsdatascience.com/weight-initialization-in-neural-networks-a-journey-from-the-basics-to-kaiming-954fb9b47c79), [blog2](https://madaan.github.io/init/)
   - **Constant value**: Very bad
