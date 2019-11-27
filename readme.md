@@ -205,9 +205,10 @@ embedding space.
   - **RMSProp** (Adaptative lr) From 2012. Similar to momentum but with the gradient squared.
     - `new_w = w - lr * gradient_w / [(0.1 * gradient_w²)  +  (0.9 * w)]`
     - If the gradient in not so volatile, take grater steps. Otherwise, take smaller steps.
-  - **Adam** Combination of Momentun with RMSProp. From 2014. The most used.
+  - **Adam** Combination of Momentum with RMSProp. 2014.
   - **AMSGrad** From 2018. Worse than Adam in practice.
   - **AdamW** From 2018.
+  - **NovoGrad**: 2019 [paper](https://arxiv.org/abs/1905.11286) 
   - **Lookahead**: Is like having a buddy system to explore the loss terrain. By Geoffrey Hinton in 2019. [paper](https://arxiv.org/abs/1907.08610)
   - **RAdam**: Rectified Adam. Stabilizes training at the start. By Microsoft in 2019. [paper](https://arxiv.org/abs/1908.03265)
   - **Ranger**: RAdam + Lookahead optimizer. The **best**. ⭐
