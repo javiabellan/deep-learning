@@ -8,31 +8,31 @@ but you can use it as a guide for learning deep learning aswell.
 <table>
   <tr>
     <th rowspan="3" width="150"><h3>Dataset</h3></th>
-         <td><a href="#balance-the-data">             Balance the data              </a></td> </tr>
-  <tr>   <td><a href="#split-in-train-and-validation">Split in train and validation </a></td> </tr>
-  <tr>   <td><a href="#normalization">                Normalization                 </a></td> </tr>
+        <th align="left"><a href="#balance-the-data">             Balance the data </b>         </a></th> </tr>
+  <tr>  <th align="left"><a href="#split-in-train-and-validation">Split in train and validation </a></th> </tr>
+  <tr>  <th align="left"><a href="#normalization">                Normalization                 </a></th> </tr>
 </table>
   
 <!------------------------ Layers ------------------------>
 <table>
   <tr>
     <th rowspan="5" width="150"><h3>Model</h3></th>
-    <th><a href="#activation-function">Activation function</a></th>  <td>sdfsdfsdfsf</td>
+    <th align="left"><a href="#activation-function">Activation function</a></th>  <td>sdfsdfsdfsf</td>
   </tr>
-  <tr>   <th>Weight initalization</th> <td>[REGULARIZATION]</td></tr>
-  <tr>   <th>Dropout</th>              <td>[REGULARIZATION]</td></tr>
-  <tr>   <th>Batch normalization</th>  <td>[FASTER TRAINING]</td></tr>
-  <tr>   <th><a href="#self-attention">Self-attention</a></th>       <td>[MORE PRECISE]</td></tr>
+  <tr>   <th align="left">Weight initalization</th> <td>[REGULARIZATION]</td></tr>
+  <tr>   <th align="left">Dropout</th>              <td>[REGULARIZATION]</td></tr>
+  <tr>   <th align="left">Batch normalization</th>  <td>[FASTER TRAINING]</td></tr>
+  <tr>   <th align="left"><a href="#self-attention">Self-attention</a></th>       <td>[MORE PRECISE]</td></tr>
 </table>
   
 <!------------------------ Loss ------------------------>
 <table>
   <tr>
     <th rowspan="2" width="150"><h3>Loss</h3></th>
-    <th>Loss Function</th>  <td> Choose a loss depending of your problem.</td>
+    <th align="left">Loss Function</th>  <td> Choose a loss depending of your problem.</td>
   </tr>
   <tr>
-    <th>Weight penalty</th>  <td>[REGULARIZATION]</td>
+    <th align="left">Weight penalty</th>  <td>[REGULARIZATION]</td>
   </tr>
 </table>
   
@@ -40,12 +40,12 @@ but you can use it as a guide for learning deep learning aswell.
 <table>
   <tr>
     <th rowspan="5" width="150"><h3>Train</h3></th>
-    <th>Overview</th>  <td></td>
+    <th align="left">Overview</th>  <td></td>
   </tr>
-  <tr>   <th>Learning Rate</th>              <td>How big the steps are during training.</td></tr>
-  <tr>   <th>Batch size</th>              <td>[REGULARIZATION]</td></tr>
-  <tr>   <th>Num epochs</th>  <td>[FASTER TRAINING]</td></tr>
-  <tr>   <th><a href="#self-attention">Optimizer</a></th>       <td>[MORE PRECISE]</td></tr>
+  <tr>   <th align="left">Learning Rate</th>              <td>How big the steps are during training.</td></tr>
+  <tr>   <th align="left">Batch size</th>              <td>[REGULARIZATION]</td></tr>
+  <tr>   <th align="left">Num epochs</th>  <td>[FASTER TRAINING]</td></tr>
+  <tr>   <th align="left"><a href="#self-attention">Optimizer</a></th>       <td>[MORE PRECISE]</td></tr>
 </table>
 
 <!------------------------ Avoid overfitting ------------------------>
