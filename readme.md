@@ -3,27 +3,97 @@
 Here are my personal deep learning notes. I've written this cheatsheet for keep track my knowledge
 but you can use it as a guide for learning deep learning aswell.
 
-> ## Index
->
-> #### Part 1: Theory
->
-> 0. [**Set up your machine**](#0-set-up-your-machine)
-> 1. [**Prepare the data**](#1-prepare-the-data)
-> 2. [**Choose the model**](#2-choose-the-model)
-> 3. [**Training hyperparameters**](#2-training-hyperparameters)
-> 4. [**Avoid overfitting**](#3-improve-generalization-and-avoid-overfitting-try-in-that-order)
-> 5. [**Train faster**](#4-train-faster-optimization)
-> 
-> #### Part 2: Applications
->
-> - [**Vision**](https://github.com/javiabellan/vision) (external link to my vision repo)
-> - [**NLP**](https://github.com/javiabellan/nlp) (external link to my nlp repo)
-> - [**Supervised DL**](#supervised-dl)
-> - [**Autoencoder**](#autoencoder)
-> - [**Semi-supervised DL**](#semi-supervised-dl)
-> - [**Reinforcement learning**](#reinforcement-learning)
->
-> #### [**Resources**](#resources)
+
+<!------------------------ Dataset ------------------------>
+<table>
+  <tr>
+    <th rowspan="3" width="150"><h3>Dataset</h3></th>
+         <td><a href="#balance-the-data">             Balance the data              </a></td> </tr>
+  <tr>   <td><a href="#split-in-train-and-validation">Split in train and validation </a></td> </tr>
+  <tr>   <td><a href="#normalization">                Normalization                 </a></td> </tr>
+</table>
+  
+<!------------------------ Layers ------------------------>
+<table>
+  <tr>
+    <th rowspan="5" width="150"><h3>Model</h3></th>
+    <th><a href="#activation-function">Activation function</a></th>  <td>sdfsdfsdfsf</td>
+  </tr>
+  <tr>   <th>Weight initalization</th> <td>[REGULARIZATION]</td></tr>
+  <tr>   <th>Dropout</th>              <td>[REGULARIZATION]</td></tr>
+  <tr>   <th>Batch normalization</th>  <td>[FASTER TRAINING]</td></tr>
+  <tr>   <th><a href="#self-attention">Self-attention</a></th>       <td>[MORE PRECISE]</td></tr>
+</table>
+  
+<!------------------------ Loss ------------------------>
+<table>
+  <tr>
+    <th rowspan="2" width="150"><h3>Loss</h3></th>
+    <th>Loss Function</th>  <td> Choose a loss depending of your problem.</td>
+  </tr>
+  <tr>
+    <th>Weight penalty</th>  <td>[REGULARIZATION]</td>
+  </tr>
+</table>
+  
+<!------------------------ Train ------------------------>
+<table>
+  <tr>
+    <th rowspan="5" width="150"><h3>Train</h3></th>
+    <th>Overview</th>  <td></td>
+  </tr>
+  <tr>   <th>Learning Rate</th>              <td>How big the steps are during training.</td></tr>
+  <tr>   <th>Batch size</th>              <td>[REGULARIZATION]</td></tr>
+  <tr>   <th>Num epochs</th>  <td>[FASTER TRAINING]</td></tr>
+  <tr>   <th><a href="#self-attention">Optimizer</a></th>       <td>[MORE PRECISE]</td></tr>
+</table>
+
+<!------------------------ Avoid overfitting ------------------------>
+<table>
+  <tr>
+    <th rowspan="5" width="150"><h3>Avoid</br>overfitting</h3><h5>(Try in that order)</h5></th>
+    <td>1. Get more data</td>  <td>How big the steps are during training.</td>
+  </tr>
+  <tr>   <td>2. Data augmentation</td>              <td>[REGULARIZATION]</td></tr>
+  <tr>   <td>3. Regularization</td>  <td>[FASTER TRAINING]</td></tr>
+  <tr>   <td><a href="#self-attention">4. Reduce model complexity</a></td>       <td>[MORE PRECISE]</td></tr>
+  <tr>   <td><a href="#self-attention">5. Ensemble</a></td>       <td>[MORE PRECISE]</td></tr>
+</table>
+
+<!------------------------ Train faster ------------------------>
+<table>
+  <tr>
+    <th rowspan="5" width="150"><h3>Train</br>faster</h3></th>
+         <td><a href="#transfer-learning">  Transfer learning   </a></td> </tr>
+  <tr>   <td><a href="#batch-normalization">Batch Normalization </a></td> </tr>
+  <tr>   <td><a href="#precomputation">     Precomputation      </a></td> </tr>
+  <tr>   <td><a href="#half-precision">     Half precision      </a></td> </tr>
+  <tr>   <td><a href="#multiple-gpus">      Multiple GPUs       </a></td> </tr>
+</table>
+
+
+<!------------------------ Applications ------------------------>
+<table>
+  <tr>
+    <th rowspan="5" width="150"><h3>Applications</h3></th>
+    <th><a href="https://github.com/javiabellan/vision">Vision</a></th> <td>External link to my vision repo</td>
+  </tr>
+  <tr> <th><a href="https://github.com/javiabellan/nlp">NLP</a></th> <td>External link to my nlp repo</td> </tr>
+  <tr> <th><a href="https://github.com/javiabellan/audio">Audio</a></th>  </tr>
+  <tr> <th><a href="https://github.com/javiabellan/tabular">Tabular</a></th>  </tr>
+  <tr> <th><a href="https://github.com/javiabellan/rl">Reinforcement Learning</a></th>  </tr>
+</table>
+
+<!------------------------ Resources ------------------------>
+<table>
+  <tr>
+    <th rowspan="5" width="150">
+      <h3>
+        <a href="#resources">Resources</a>
+      </h3>
+    </th>
+  </tr>
+</table>
 
 ---
 
@@ -35,29 +105,31 @@ but you can use it as a guide for learning deep learning aswell.
 - [Kaggle](/posts/0-setup/kaggle.md)
 
 
-# 1. Prepare the data
-- **Balance** the data
-  - **Fix it in the dataloader** [`WeightedRandomSampler`](https://pytorch.org/docs/stable/data.html#torch.utils.data.WeightedRandomSampler)
-  - **Subsample majority class**. But you can lose important data.
-  - **Oversample minority class**. But you can overfit.
-  - **Weighted loss function** `CrossEntropyLoss(weight=[…])`
-- **Split** the data
-  - **Training set**: used for learning the parameters of the model. 
-  - **Validation set**: used for evaluating model while training. Don’t create a random validation set! Manually create one so that it matches the distribution of your data. Usaully a `10%` or `20%` of your train set.
-    - N-fold cross-validation. Usually `10`
-  - **Test set**: used to get a final estimate of how well the network works.
-- **Normalization**: Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/whitening/pca helps a lot. Normalization parameters are obtained only **from train set**, and then applied to both train and valid sets.
-  - Option 1: **Standarization** `x = x-x.mean() / x.std()` *Most used*
-     1. **Mean subtraction**: Center the data to zero. `x = x - x.mean()` fights vanishing and exploding gradients
-     2. **Standardize**: Put the data on the same scale. `x = x / x.std()` improves convergence speed and accuracy
-  - Option 2: **PCA Whitening**
-    1. **Mean subtraction**: Center the data in zero. `x = x - x.mean()`
-    2. **Decorrelation** or **PCA**: Rotate the data until there is no correlation anymore.
-    3. **Whitening**: Put the data on the same scale. `whitened = decorrelated / np.sqrt(eigVals + 1e-5)`
-  - Option 3: **ZCA whitening** Zero component analysis (ZCA).
-  - Other options not used:
-    - `(x-x.min()) / (x.max()-x.min())`: Values from 0 to 1
-    - `2*(x-x.min()) / (x.max()-x.min()) - 1`: Values from -1 to 1
+# Balance the data
+- **Fix it in the dataloader** [`WeightedRandomSampler`](https://pytorch.org/docs/stable/data.html#torch.utils.data.WeightedRandomSampler)
+- **Subsample majority class**. But you can lose important data.
+- **Oversample minority class**. But you can overfit.
+- **Weighted loss function** `CrossEntropyLoss(weight=[…])`
+ 
+# Split in train and validation
+- **Training set**: used for learning the parameters of the model. 
+- **Validation set**: used for evaluating model while training. Don’t create a random validation set! Manually create one so that it matches the distribution of your data. Usaully a `10%` or `20%` of your train set.
+  - N-fold cross-validation. Usually `10`
+- **Test set**: used to get a final estimate of how well the network works.
+
+# Normalization
+Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/whitening/pca helps a lot. Normalization parameters are obtained only **from train set**, and then applied to both train and valid sets.
+- Option 1: **Standarization** `x = x-x.mean() / x.std()` *Most used*
+   1. **Mean subtraction**: Center the data to zero. `x = x - x.mean()` fights vanishing and exploding gradients
+   2. **Standardize**: Put the data on the same scale. `x = x / x.std()` improves convergence speed and accuracy
+- Option 2: **PCA Whitening**
+  1. **Mean subtraction**: Center the data in zero. `x = x - x.mean()`
+  2. **Decorrelation** or **PCA**: Rotate the data until there is no correlation anymore.
+  3. **Whitening**: Put the data on the same scale. `whitened = decorrelated / np.sqrt(eigVals + 1e-5)`
+- Option 3: **ZCA whitening** Zero component analysis (ZCA).
+- Other options not used:
+  - `(x-x.min()) / (x.max()-x.min())`: Values from 0 to 1
+  - `2*(x-x.min()) / (x.max()-x.min()) - 1`: Values from -1 to 1
   
 > - In case of images, the scale is from 0 to 255, so it is not strictly necessary normalize.
 > - [**neural networks data preparation**](http://cs231n.github.io/neural-networks-2/#datapre)
@@ -66,16 +138,15 @@ but you can use it as a guide for learning deep learning aswell.
 
 # 2. Choose the model
 
+
 |                                                   | Description                                          |
 |:-------------------------------------------------:|:-----------------------------------------------------|
 | [**Architecture**](#architecture)                 | Choose a model (pretraned if possible)               |
-| [**Loss function**](#loss-function)               | Choose a loss depending of your problem              |
 | [**Activation function**](#activation-function)   | ReLU, Swish, Mish, ...                               |
 | [**Weight initalization**](#weight-initalization) | Pretrained, randNormal, Xavier, Kaiming, ...         |
 | [**Dropout**](#dropout)                           | (yes/no) Regularization                              |
 | [**Batch normalization**](#batch-normalization)   | (yes/no)                                             |
-| [**Self-attention**](#self-attention)             | (yes/no) and Symmetry for self-attention             |
-
+|              | (yes/no) and Symmetry for self-attention             |
 
 ### Activation function
 > [reference](https://mlfromscratch.com/activation-functions-explained)
@@ -145,7 +216,10 @@ Depends on the models architecture. Try to avoid vanishing or exploding outputs.
   - When you use Kaiming, you ha to fix `ReLU(x)` equals to **`min(x,0) - 0.5`** for a correct mean (0)
 - **Delta-Orthogonal initialization**: Good for vanilla CNNs (10000 layers). Read this [paper](https://arxiv.org/abs/1806.05393)
   
-  
+### Dropout
+<p align="center"><img width="50%" src="/posts/img/dropout.png" /></p>
+
+
 # 2. Training hyperparameters
 
 |                                     | Description                                                                 |
