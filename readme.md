@@ -242,7 +242,9 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
   - Too low: like `4`: Lot of updates. Very noisy random updates in the net (bad).
   - Too high: like `512` Few updates. Very general common updates (bad).
     - Faster computation. Takes advantage of GPU mem. But sometimes it can no be fitted (CUDA Out Of Memory)
-  
+
+Some people are tring to make a [batch size finder](https://forums.fast.ai/t/batch-size-finder-from-openai-implemented-using-fastai/57620) according to this [paper](https://arxiv.org/abs/1812.06162).
+
 ## Number of epochs
 > Times to learn the whole dataset.
 - Train until start overffiting (validation loss becomes to increase) (early stopping)
