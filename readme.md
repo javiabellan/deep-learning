@@ -26,9 +26,10 @@ but you can use it as a guide for learning deep learning aswell.
   
 <!------------------------ Loss ------------------------>
 <table>
-  <tr>  <th rowspan="2" width="150"><h3>📉</br>Loss</h3></th>
+  <tr>  <th rowspan="3" width="150"><h3>📉</br>Loss</h3></th>
         <th align="left"><a href="#loss-function">  Loss Function  </a></th></tr>
-  <tr>  <th align="left"><a href="#weight-penalty"> Weight penalty </a></th></tr>
+  <tr>  <th align="left"><a href="#weight-penalty"> Weight Penalty </a></th></tr>
+  <tr>  <th align="left"><a href="#label-tricks"> Label Tricks </a></th></tr>
 </table>
   
 <!------------------------ Train ------------------------>
@@ -130,9 +131,7 @@ Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/w
 
 
 ## Data augmentation
-
-- **Mixup**: Combines pairs of examples and their labels.
-  - Merge 2 samples in 1: `x_mixed = λxᵢ + (1−λ)xⱼ`
+Todo
 
 
 
@@ -215,6 +214,11 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
   - **Log loss**:
 
 
+## Label Tricks
+- **Label Smoothing**: Smooth the one-hot target label
+- **Mixup**: Combines pairs of examples and their labels.
+  - Merge 2 samples in 1: `x_mixed = λxᵢ + (1−λ)xⱼ`
+  - [Fast.ai doc](https://docs.fast.ai/callbacks.mixup.html)
 
 
 <h1 align="center">🔥 Train</h1>
