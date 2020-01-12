@@ -270,6 +270,7 @@ Some people are tring to make a [batch size finder](https://forums.fast.ai/t/bat
 | **RangerLars**         | RAdam + Lookahead + LARS.                          | 2019  |       |
 | **Ralamb**             | RAdam + LARS.                                      | 2019  |       |
 | **Selective-Backprop** | Faster training by focusing on the biggest losers. | [2019](https://arxiv.org/abs/1910.00762) ||
+| **AdaMod**             | [A new deep learning optimizer with memory](https://medium.com/@lessw/meet-adamod-a-new-deep-learning-optimizer-with-memory-f01e831b80bd) | [2019](https://arxiv.org/abs/1910.12249) ||
 
 - **SGD**: `new_w = w - lr[gradient_w]`
 - **SGD with Momentum**: Usually `mom=0.9`.
