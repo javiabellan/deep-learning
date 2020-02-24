@@ -376,6 +376,7 @@ A **teacher** model teach a **student** model.
 
 - Structured
   - **Tabular**
+    - [xDeepFM](https://arxiv.org/pdf/1803.05170.pdf)
     - [Andres solution to ieee-fraud-detection](https://github.com/antorsae/ieee-fraud-detection)
     - NODE: Neural Oblivious Decision Ensembles for Deep Learning on Tabular Data [paper](https://arxiv.org/abs/1909.06312)
     - Continuous variables: Feed them directly to the network
