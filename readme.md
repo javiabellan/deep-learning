@@ -173,10 +173,14 @@ Depends on the models architecture. Try to avoid vanishing or exploding outputs.
 - **Delta-Orthogonal initialization**: Good for vanilla CNNs (10000 layers). Read this [paper](https://arxiv.org/abs/1806.05393)
   
 ## Dropout
+During training, some **neurons** will be deactivated **randomly**. [Hinton, 2012](http://www.cs.toronto.edu/~hinton/absps/dropout.pdf), [Srivasta, 2014](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
+
 <p align="center"><img width="50%" src="/posts/img/dropout.png" /></p>
 
+## DropConnect
+At training and inference, some **connections** (weights) will be deactivated **permanently**. [LeCun, 2013](http://yann.lecun.com/exdb/publis/pdf/wan-icml-13.pdf)
 
-
+<p align="center"><img width="50%" src="/img/dropconnect.png" /></p>
 
 <h1 align="center">📉 Loss</h1>
 
