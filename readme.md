@@ -185,24 +185,27 @@ At training and inference, some **connections** (weights) will be deactivated **
 <p align="center"><img width="30%" src="/img/dropconnect.jpg" /></p>
 
 ### Pruning
-An iterative process of removing connections called Iterative magnitude pruning (Prune/Train/Repeat):
+An automatic way of DropConnect. **Iterative magnitude pruning** is iterative process of removing connections (Prune/Train/Repeat):
 
-<p align="center"><img width="50%" src="/img/pruning.png" /></p>
+<p align="center"><img width="60%" src="/img/TrainLargeThenCompress.jpg" /></p>
 
 1. Train a big model
-2. Compress model
+2. Do early stopping
+3. Compress model
    - **Prune**: Find the 15% of weights with the smallest magnitude and set them to zero.
    - **Train**: Then finetune the model until it reaches within 99.5% of its original validation accuracy.
    - **Repeat**: Then prune another 15% of the smallest magnitude weights and finetune.
    
 At the end you can have pruned the 15%, 30%, 45%, 60%, 75%, and 90% of your original model.
-   
-<p align="center"><img width="60%" src="/img/TrainLargeThenCompress.jpg" /></p>
 
 Papers:
 - [Deep Compression](https://arxiv.org/abs/1510.00149) (2015)
 - [Train Large, Then Compress](https://arxiv.org/abs/2002.11794) (2020)
-### Quantization
+
+### Quantization and Half prcision
+Usually weaight are stored in float32. Decrase the resolution is a way a regualrization and not overfit.
+- **Half prcision**: Use float16.
+- **Quantization**: Less bits per weight.
 
 ### Distillation (teacher-student)
 
