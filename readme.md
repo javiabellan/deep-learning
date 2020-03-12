@@ -19,7 +19,6 @@ but you can use it as a guide for learning deep learning aswell.
   <tr>   <th rowspan="5" width="150"><h3>🧠</br>Model</h3></th>
          <th align="left"><a href="#activation-function">   Activation function  </a></th></tr>
   <tr>   <th align="left"><a href="#weight-initialization"> Weight initialization </a></th></tr>
-  <tr>   <th align="left"><a href="#dropout">               Dropout              </a></th></tr>
   <tr>   <th align="left"><a href="#batch-normalization">   Batch normalization  </a></th></tr>
   <tr>   <th align="left"><a href="#self-attention">        Self-attention       </a></th></tr>
 </table>
@@ -171,18 +170,29 @@ Depends on the models architecture. Try to avoid vanishing or exploding outputs.
   - Normal
   - When you use Kaiming, you ha to fix `ReLU(x)` equals to **`min(x,0) - 0.5`** for a correct mean (0)
 - **Delta-Orthogonal initialization**: Good for vanilla CNNs (10000 layers). Read this [paper](https://arxiv.org/abs/1806.05393)
-  
-## Dropout
+
+
+## Regularization
+
+### Dropout
 During training, some **neurons** will be deactivated **randomly**. [Hinton, 2012](http://www.cs.toronto.edu/~hinton/absps/dropout.pdf), [Srivasta, 2014](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
 
 <p align="center"><img width="50%" src="/posts/img/dropout.png" /></p>
 
-## DropConnect
+### DropConnect
 At training and inference, some **connections** (weights) will be deactivated **permanently**. [LeCun, 2013](http://yann.lecun.com/exdb/publis/pdf/wan-icml-13.pdf)
 
-<p align="center"><img width="50%" src="/img/dropconnect.png" /></p>
+<p align="center"><img width="50%" src="/img/dropconnect.jpg" /></p>
+
+### Pruning
+
+### Quantization
+
+### Distillation (teacher-student)
 
 <h1 align="center">📉 Loss</h1>
+
+
 
 ## Loss function
 - **Regression**
