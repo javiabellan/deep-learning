@@ -182,7 +182,7 @@ During training, some **neurons** will be deactivated **randomly**. [Hinton, 201
 ### DropConnect
 At training and inference, some **connections** (weights) will be deactivated **permanently**. [LeCun, 2013](http://yann.lecun.com/exdb/publis/pdf/wan-icml-13.pdf)
 
-<p align="center"><img width="50%" src="/img/dropconnect.jpg" /></p>
+<p align="center"><img width="30%" src="/img/dropconnect.jpg" /></p>
 
 ### Pruning
 
