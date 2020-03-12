@@ -172,12 +172,24 @@ Depends on the models architecture. Try to avoid vanishing or exploding outputs.
 - **Delta-Orthogonal initialization**: Good for vanilla CNNs (10000 layers). Read this [paper](https://arxiv.org/abs/1806.05393)
 
 
-## Regularization
+<h1 align="center">🧐 Regularization</h1>
 
 ### Dropout
 During training, some **neurons** will be deactivated **randomly**. [Hinton, 2012](http://www.cs.toronto.edu/~hinton/absps/dropout.pdf), [Srivasta, 2014](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
 
 <p align="center"><img width="50%" src="/posts/img/dropout.png" /></p>
+
+### Weight regularization
+Weight penalty: Regularization in loss function (penalice high weights). `Weight decay` hyper-parameter usually `0.0005`.
+
+Visually, the weights only can take a value inside the blue region, and the red circles represent the minimum. Here, there are 2 weight variables.
+
+L1 (LASSO) |	L2 (Ridge)	| Elastic Net
+-----------|--------------|------------
+![wr1](/posts/img/weight-reg-lasso.png) | ![wr2](/posts/img/weight-reg-ridge.png) | ![wr3](/posts/img/weight-reg-elastic-net.png)
+Shrinks coefficients to 0. Good for variable selection | **Most used**. Makes coefficients smaller | Tradeoff between variable selection and small coefficients
+Penalizes the sum of absolute weights | Penalizes the sum of squared weights | Combination of 2 before
+`loss + wd * weights.abs().sum()` | `loss + wd * weights.pow(2).sum()` |
 
 ### DropConnect
 At training and inference, some **connections** (weights) will be deactivated **permanently**. [LeCun, 2013](http://yann.lecun.com/exdb/publis/pdf/wan-icml-13.pdf). This is very useful at the firsts layers.
