@@ -196,7 +196,7 @@ At training and inference, some **connections** (weights) will be deactivated **
 
 <p align="center"><img width="30%" src="/img/dropconnect.jpg" /></p>
 
-### Pruning
+### Weight Pruning
 An automatic way of DropConnect. **Iterative magnitude pruning** is iterative process of removing connections (Prune/Train/Repeat):
 
 <p align="center"><img width="60%" src="/img/TrainLargeThenCompress.jpg" /></p>
@@ -213,17 +213,35 @@ At the end you can have pruned the 15%, 30%, 45%, 60%, 75%, and 90% of your orig
 Papers:
 - [Deep Compression](https://arxiv.org/abs/1510.00149) (2015)
 - [Train Large, Then Compress](https://arxiv.org/abs/2002.11794) (2020)
+- [Neural Networks are Surprisingly Modular](https://arxiv.org/abs/2003.04881) (2020)
 
 ### Quantization and Half prcision
 Usually weaight are stored in float32. Decrase the resolution is a way a regualrization and not overfit.
 - **Half prcision**: Use float16.
 - **Quantization**: Less bits per weight.
 
-### Distillation (teacher-student)
+### Knowledge Distillation (teacher-student)
+
+A **teacher** model teach a **student** model.
+
+- **Smaller** student model → **faster** model.
+  - Model compresion: Less memory and computation
+  - To generalize and avoid outliers.
+  - Used in NLP transformers.
+  - [paper](https://arxiv.org/abs/1909.11723)
+- **Bigger** student model is → **more accurate** model.
+  - Useful when you have extra unlabeled data (kaggle competitions)
+  - **1.** Train the teacher model with labeled dataset.
+  - **2.** With the extra on unlabeled dataset, generate pseudo labels (soft or hard labels)
+  - **3.** Train a student model on both labeled and pseudo-labeled datasets.
+  - **4.** Student becomes teacher and repeat -> **2.**
+  - [Paper: When Does Label Smoothing Help?](https://arxiv.org/abs/1906.02629)
+  - [Paper: Noisy Student](https://arxiv.org/abs/1911.04252)
+  - [Video: Noisy Student](https://youtu.be/Y8YaU9mv_us)
+
+
 
 <h1 align="center">📉 Loss</h1>
-
-
 
 ## Loss function
 - **Regression**
@@ -396,26 +414,6 @@ Some people are tring to make a [batch size finder](https://forums.fast.ai/t/bat
 
 
 ---
-
-## Trick: Knowledge Distillation
-
-A **teacher** model teach a **student** model.
-
-- **Smaller** student model → **faster** model.
-  - Model compresion: Less memory and computation
-  - To generalize and avoid outliers.
-  - Used in NLP transformers.
-  - [paper](https://arxiv.org/abs/1909.11723)
-- **Bigger** student model is → **more accurate** model.
-  - Useful when you have extra unlabeled data (kaggle competitions)
-  - **1.** Train the teacher model with labeled dataset.
-  - **2.** With the extra on unlabeled dataset, generate pseudo labels (soft or hard labels)
-  - **3.** Train a student model on both labeled and pseudo-labeled datasets.
-  - **4.** Student becomes teacher and repeat -> **2.**
-  - [Paper: When Does Label Smoothing Help?](https://arxiv.org/abs/1906.02629)
-  - [Paper: Noisy Student](https://arxiv.org/abs/1911.04252)
-  - [Video: Noisy Student](https://youtu.be/Y8YaU9mv_us)
-
 
 ## Supervised DL
 
