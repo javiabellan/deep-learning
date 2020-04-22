@@ -7,7 +7,8 @@
 
 ## `1957` Perceptron
 <img width="250" align="right" src="https://machinelearningknowledge.ai/wp-content/uploads/2019/11/Frank-Rosenblatt-Perceptron.jpg">
-In his paper “The Perceptron: A Perceiving and Recognizing Automaton”, Rosenblatt shows the new avatar of McCulloch-Pitts neuron – ‘Perceptron’ that had true learning capabilities to do binary classification on it’s own. This inspires the revolution in research of shallow neural network for years to come, till first AI winter.
+
+[Frank Rosenblatt](https://en.wikipedia.org/wiki/Frank_Rosenblatt), in his paper “The Perceptron: A Perceiving and Recognizing Automaton”, shows the new avatar of McCulloch-Pitts neuron – ‘Perceptron’ that had true learning capabilities to do binary classification on it’s own. This inspires the revolution in research of shallow neural network for years to come, till first AI winter.
 
 ## `1960` First Backpropagation Model
 Henry J. Kelley in his paper, “Gradient Theory of Optimal Flight Paths” shows the first ever version of continuous backpropagation model. His model is in context to Control Theory, yet it lays the foundation for further refinement in the model and would be used in ANN in future years.
