@@ -3,101 +3,19 @@
 Here are my personal deep learning notes. I've written this cheatsheet for keep track my knowledge
 but you can use it as a guide for learning deep learning aswell.
 
-
-<!------------------------ Dataset ------------------------>
-<table>
-  <tr>
-    <th rowspan="4" width="150"><h3>🗂</br>Dataset</h3></th>
-        <th align="left"><a href="#balance-the-data">             Balance the data </b>         </a></th> </tr>
-  <tr>  <th align="left"><a href="#split-in-train-and-validation">Split in train and validation </a></th> </tr>
-  <tr>  <th align="left"><a href="#normalization">                Normalization                 </a></th> </tr>
-  <tr>  <th align="left"><a href="#data-augmentation">            Data augmentation             </a></th> </tr>
-</table>
-  
-<!------------------------ Layers ------------------------>
-<table>
-  <tr>   <th rowspan="5" width="150"><h3>🧠</br>Model</h3></th>
-         <th align="left"><a href="#activation-function">   Activation function  </a></th></tr>
-  <tr>   <th align="left"><a href="#weight-initialization"> Weight initialization </a></th></tr>
-  <tr>   <th align="left"><a href="#batch-normalization">   Batch normalization  </a></th></tr>
-  <tr>   <th align="left"><a href="#self-attention">        Self-attention       </a></th></tr>
-</table>
-  
-<!------------------------ Loss ------------------------>
-<table>
-  <tr>  <th rowspan="3" width="150"><h3>📉</br>Loss</h3></th>
-        <th align="left"><a href="#loss-function">  Loss Function  </a></th></tr>
-  <tr>  <th align="left"><a href="#weight-penalty"> Weight Penalty </a></th></tr>
-  <tr>  <th align="left"><a href="#label-tricks"> Label Tricks </a></th></tr>
-</table>
-  
-<!------------------------ Train ------------------------>
-<table>
-  <tr> <th rowspan="4" width="150"><h3>🔥</br>Train</h3></th>
-       <th align="left"><a href="#optimizer">        Optimizer     </a></th></tr>
-  <tr> <th align="left"><a href="#learning-rate">    Learning Rate </a></th></tr>
-  <tr> <th align="left"><a href="#batch-size">       Batch size    </a></th></tr>
-  <tr> <th align="left"><a href="#number-of-epochs"> Num epochs    </a></th></tr>
-</table>
-
-<!------------------------ Avoid overfitting ------------------------>
-<table>
-  <tr>
-    <th rowspan="5" width="150"><h3>🧐</br>Avoid</br>overfitting</h3><h5>(Try in that order)</h5></th>
-         <td><a href="#get-more-data">          1. Get more data            </a></td></tr>
-  <tr>   <td><a href="#data-augmentation">      2. Data augmentation        </a></td></tr>
-  <tr>   <td><a href="#regularization">         3. Regularization           </a></td></tr>
-  <tr>   <td><a href="#reduce-model-complexity">4. Reduce Reduce complexity </a></td></tr>
-  <tr>   <td><a href="#ensemble">               5. Ensemble                 </a></td></tr>
-</table>
-
-<!------------------------ Train faster ------------------------>
-<table>
-  <tr>
-    <th rowspan="5" width="150"><h3>🕓</br>Train</br>faster</h3></th>
-         <td><a href="#transfer-learning">  Transfer learning   </a></td></tr>
-  <tr>   <td><a href="#batch-normalization">Batch Normalization </a></td></tr>
-  <tr>   <td><a href="#precomputation">     Precomputation      </a></td></tr>
-  <tr>   <td><a href="#half-precision">     Half precision      </a></td></tr>
-  <tr>   <td><a href="#multiple-gpus">      Multiple GPUs       </a></td></tr>
-</table>
-
-
-<!------------------------ Applications ------------------------>
-<table>
-  <tr> <th rowspan="5" width="150"><h3>🤖</br>Applications</h3><h5>(External repos)</h5></th>
-       <th><a href="https://github.com/javiabellan/vision"> Vision                 </a></th> </tr>
-  <tr> <th><a href="https://github.com/javiabellan/nlp">    NLP                    </a></th> </tr>
-  <tr> <th><a href="https://github.com/javiabellan/audio">  Audio                  </a></th> </tr>
-  <tr> <th><a href="https://github.com/javiabellan/tabular">Tabular                </a></th> </tr>
-  <tr> <th><a href="https://github.com/javiabellan/rl">     Reinforcement Learning </a></th> </tr>
-</table>
-
-
-<!------------------------ Computer ------------------------>
-<table>
-  <tr> <th rowspan="4" width="150"><h3>🖥️</br>Computer</h3></th>
-       <th align="left"><a href="/posts/0-setup/hardware.md"> Hardware </a></th></tr>
-  <tr> <th align="left"><a href="/posts/0-setup/software.md"> Software </a></th></tr>
-  <tr> <th align="left"><a href="/posts/0-setup/jupyter.md">  Jupyter  </a></th></tr>
-  <tr> <th align="left"><a href="/posts/0-setup/kaggle.md">   Kaggle   </a></th></tr>
-</table>
-  
-
-<!------------------------ Resources ------------------------>
-<table>
-  <tr>
-    <th rowspan="5" width="150">
-      <h3>
-        <a href="#resources">Resources</a>
-      </h3>
-    </th>
-  </tr>
-</table>
+| 🗂 Data            | 🧠 Layers        | 📉 Loss         | 📈 Metrics   | 🔥 Training             | After training  |      
+|--------------------|-----------------|-----------------|-------------|-------------------------|----------------|
+| Pytorch dataset    | Weight init     | Cross entropy   |             | [Optimizers](#optimizers)  | Ensemble       |
+| Pytorch dataloader | Activations     | Weight penalty  |             | Transfer learning       | TTA            |
+| Split              | Self Attention  | Label Smoothing |             | [Clean mem](#clean-mem) | Pseudolabeling |
+| Normalization      | Trained CNN     | Mixup           |             | Half precision          | Serve in web   |
+| Data augmentation  |                 | SoftF1          |             | Multiple GPUs           | Distillation   |
+| Deal imbalance     |                 |                 |             | Precomputation          |                |
+|                    |                 |                 |             | [Set seed](#set-seed)   |                |
 
 ---
 
-<h1 align="center">🗂 Dataset</h1>
+<h1 align="center">🗂 Data</h1>
 
 ## Balance the data
 - **Fix it in the dataloader** [`WeightedRandomSampler`](https://pytorch.org/docs/stable/data.html#torch.utils.data.WeightedRandomSampler)
@@ -312,7 +230,7 @@ Some people are tring to make a [batch size finder](https://forums.fast.ai/t/bat
 > Times to learn the whole dataset.
 - Train until start overffiting (validation loss becomes to increase) (early stopping)
 
-## Optimizer
+## Optimizers
 > Gradient Descent methods. [reference](https://mlfromscratch.com/optimizers-explained):
 
 |                        | Description                                        | Paper | Score |
