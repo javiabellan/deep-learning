@@ -313,6 +313,7 @@ def seed_everything(seed):
 
 ## Clean mem
 
+> Read [this](https://github.com/pytorch/pytorch/issues/25752)
 ```python
 def clean_mem():
 	gc.collect()
