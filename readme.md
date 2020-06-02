@@ -5,7 +5,7 @@ but you can use it as a guide for learning deep learning aswell.
 
 | 🗂 Data            | 🧠 Layers        | 📉 Loss         | 📈 Metrics   | 🔥 Training             | After training  |      
 |--------------------|-----------------|-----------------|-------------|-------------------------|----------------|
-| Pytorch dataset    | Weight init     | Cross entropy   |             | [Optimizers](#optimizers)  | Ensemble       |
+| Pytorch dataset    | [Weight init](weight-init) | Cross entropy |    | [Optimizers](#optimizers)  | Ensemble       |
 | Pytorch dataloader | Activations     | Weight penalty  |             | Transfer learning       | TTA            |
 | Split              | Self Attention  | Label Smoothing |             | [Clean mem](#clean-mem) | Pseudolabeling |
 | Normalization      | Trained CNN     | Mixup           |             | Half precision          | Serve in web   |
@@ -54,6 +54,26 @@ Todo
 
 
 <h1 align="center">🧠 Model</h1>
+
+
+## Weight init
+
+```python
+def weight_init(m):
+
+	# LINEAR
+	if type(m) == nn.Linear:
+		torch.nn.init.xavier_uniform(m.weight)
+		m.bias.data.fill_(0.01)
+
+	# CONVS
+	classname = m.__class__.__name__
+	if classname.find('Conv') != -1:
+		nn.init.xavier_uniform_(m.weight, gain=nn.init.calculate_gain('relu'))
+		nn.init.zeros_(m.bias)
+
+model.apply(weight_init)
+```
 
 ## Activation function
 > [reference](https://mlfromscratch.com/activation-functions-explained)
