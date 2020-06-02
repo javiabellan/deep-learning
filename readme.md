@@ -184,6 +184,18 @@ A **teacher** model teach a **student** model.
     - Range from `0` (worst) to `1` (best)
     - In order to formulate a loss function which can be minimized, we'll simply use `1 − Dice`
 
+
+## Label Smoothing
+Smooth the one-hot target label
+
+## Mixup
+Combines pairs of examples and their labels.
+  - Merge 2 samples in 1: `x_mixed = λxᵢ + (1−λ)xⱼ`
+  - [Fast.ai doc](https://docs.fast.ai/callbacks.mixup.html)
+
+
+<h1 align="center">📈 Metrics</h1>
+
 ## Classification Metrics
 Dataset with 5 disease images and 20 normal images. If the model predicts all images to be normal, its accuracy is 80%, and F1-score of such a model is 0.88
   - **Accuracy**: `TP + TN / TP + TN + FP + FN`
@@ -194,12 +206,6 @@ Dataset with 5 disease images and 20 normal images. If the model predicts all im
   - **ROC, AUC**:
   - **Log loss**:
 
-
-## Label Tricks
-- **Label Smoothing**: Smooth the one-hot target label
-- **Mixup**: Combines pairs of examples and their labels.
-  - Merge 2 samples in 1: `x_mixed = λxᵢ + (1−λ)xⱼ`
-  - [Fast.ai doc](https://docs.fast.ai/callbacks.mixup.html)
 
 
 <h1 align="center">🔥 Train</h1>
@@ -272,7 +278,26 @@ Some people are tring to make a [batch size finder](https://forums.fast.ai/t/bat
 > - [A disciplined approach to neural network hyper-parameters](https://arxiv.org/pdf/1803.09820.pdf) (2018, Leslie Smith)
 > - [The 1cycle policy](https://sgugger.github.io/the-1cycle-policy.html)
 
+## Set seed
 
+```python
+def seed_everything(seed):
+	os.environ['PYTHONHASHSEED'] = str(seed)
+	random.seed(seed)         # Random
+	np.random.seed(seed)      # Numpy
+	torch.manual_seed(seed)   # Pytorch
+	torch.backends.cudnn.deterministic = True
+	torch.backends.cudnn.benchmark     = False
+	#tf.random.set_seed(seed) # Tensorflow
+```
+
+## Clean mem
+
+```python
+def clean_mem():
+	gc.collect()
+	torch.cuda.empty_cache()
+```
 
 <h1 align="center">🧐 Improve generalization</br>and avoid overfitting</h1><h3 align="center">(try in that order)</h3>
 
