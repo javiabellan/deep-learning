@@ -262,8 +262,6 @@ http://dev.fast.ai/optimizer
 https://github.com/jettify/pytorch-optimizer
 
 https://github.com/lessw2020/Best-Deep-Learning-Optimizers
-
-
 |                        | Description                                        | Paper                                    | Fast.ai 2                | Score |
 |:-----------------------|:---------------------------------------------------|------------------------------------------|--------------------------|-------|
 | **SGD**                | Basic method. `new_w = w - lr * grad_w`            |                                          | SGD(lr=0.1)              |       |
@@ -279,14 +277,13 @@ https://github.com/lessw2020/Best-Deep-Learning-Optimizers
 | **LAMB**               | LARC with Adam                                     | [2019](https://arxiv.org/abs/1904.00962) | Lamb(lr=0.1)             |       |
 | **NovoGrad**           | .                                                  | [2019](https://arxiv.org/abs/1905.11286) |                          |       |
 | **Lookahead**          | Is like having a buddy system to explore the loss. | [2019](https://arxiv.org/abs/1907.08610) | Lookahead(SGD(lr=0.1))   |       |
-| **RAdam**              | Rectified Adam. Stabilizes training at the start.  | [2019](https://arxiv.org/abs/1908.03265) | RAdam(lr=0.1)            |
-| **Ranger**             | RAdam + Lookahead.                                 | 2019                                     | ranger() or Lookahead(RAdam()) | ⭐⭐⭐  |
+| **RAdam**              | Rectified Adam. Stabilizes training at the start.  | [2019](https://arxiv.org/abs/1908.03265) | RAdam(lr=0.1)            |       |
+| **Ranger**             | RAdam + Lookahead.                                 | 2019                                     | ranger()                 | ⭐⭐⭐  |
 | **RangerLars**         | RAdam + Lookahead + LARS. (also called Over9000)   | 2019                                     |                          | ⭐⭐⭐  |
 | **Ralamb**             | RAdam + LARS.                                      | 2019                                     |                          |       |
-| **Selective-Backprop** | Faster training by focusing on the biggest losers. | [2019](https://arxiv.org/abs/1910.00762) ||
-| **DiffGrad**           | [Solves Adam’s "overshoot" issue](https://medium.com/@lessw/meet-diffgrad-new-deep-learning-optimizer-that-solves-adams-overshoot-issue-ec63e28e01b2)                     | [2019](https://arxiv.org/abs/1909.11015) ||
-| **AdaMod**             | [A new deep learning optimizer with memory](https://medium.com/@lessw/meet-adamod-a-new-deep-learning-optimizer-with-memory-f01e831b80bd)                                  | [2019](https://arxiv.org/abs/1910.12249) ||
-
+| **Selective-Backprop** | Faster training by focusing on the biggest losers. | [2019](https://arxiv.org/abs/1910.00762) |                          |       |
+| **DiffGrad**           | [Solves Adam’s "overshoot" issue](https://medium.com/@lessw/meet-diffgrad-new-deep-learning-optimizer-that-solves-adams-overshoot-issue-ec63e28e01b2)                     | [2019](https://arxiv.org/abs/1909.11015) |||
+| **AdaMod**             | [A new deep learning optimizer with memory](https://medium.com/@lessw/meet-adamod-a-new-deep-learning-optimizer-with-memory-f01e831b80bd)                                  | [2019](https://arxiv.org/abs/1910.12249) |||
 - **SGD**: `new_w = w - lr[gradient_w]`
 - **SGD with Momentum**: Usually `mom=0.9`.
   - `mom=0.9`, means a `10%` is the normal derivative and a `90%` is the same direction I went last time.
