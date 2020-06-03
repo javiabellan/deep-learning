@@ -3,15 +3,16 @@
 Here are my personal deep learning notes. I've written this cheatsheet for keep track my knowledge
 but you can use it as a guide for learning deep learning aswell.
 
-| 🗂 Data            | 🧠 Layers        | 📉 Loss         | 📈 Metrics   | 🔥 Training             | After training  |      
-|--------------------|-----------------|-----------------|-------------|-------------------------|----------------|
+| 🗂 Data            | 🧠 Layers       | 📉 Loss         | 📈 Metrics   | 🔥 Training               | ✅ Production  |
+|--------------------|-----------------|-----------------|-------------|----------------------------|----------------|
 | Pytorch dataset    | [Weight init](weight-init) | Cross entropy |    | [Optimizers](#optimizers)  | Ensemble       |
-| Pytorch dataloader | Activations     | Weight penalty  |             | Transfer learning       | TTA            |
-| Split              | Self Attention  | Label Smoothing |             | [Clean mem](#clean-mem) | Pseudolabeling |
-| Normalization      | Trained CNN     | Mixup           |             | Half precision          | Serve in web   |
-| Data augmentation  |                 | SoftF1          |             | Multiple GPUs           | Distillation   |
-| Deal imbalance     |                 |                 |             | Precomputation          |                |
-|                    |                 |                 |             | [Set seed](#set-seed)   |                |
+| Pytorch dataloader | Activations     | Weight decay    |             | Transfer learning          | TTA            |
+| Split              | Self Attention  | Label Smoothing |             | [Clean mem](#clean-mem)    | Pseudolabeling |
+| Normalization      | Trained CNN     | Mixup           |             | Half precision (float32)   | Serve in web   |
+| Data augmentation  |                 | SoftF1          |             | Multiple GPUs              | Distillation   |
+| Deal imbalance     |                 |                 |             | Precomputation             | Pruning        |
+|                    |                 |                 |             | [Set seed](#set-seed)      | [Quantization (uint8)](#quantization) |
+|                    |                 |                 |             |                            | TorchScript + JIT  |
 
 ---
 
@@ -323,6 +324,22 @@ def clean_mem():
 	gc.collect()
 	torch.cuda.empty_cache()
 ```
+
+
+<h1 align="center">✅ Production </h1>
+
+
+# Quantization
+
+> ### Reference
+> - https://pytorch.org/docs/stable/quantization.html
+> - https://pytorch.org/blog/introduction-to-quantization-on-pytorch/
+
+### 3 options
+1. Post-training quantization
+2. Quantization-aware training
+
+
 
 <h1 align="center">🧐 Improve generalization</br>and avoid overfitting</h1><h3 align="center">(try in that order)</h3>
 
