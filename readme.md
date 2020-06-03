@@ -214,8 +214,8 @@ Smooth the one-hot target label.
 LabelSmoothingCrossEntropy(eps:float=0.1, reduction='mean')
 ```
 > ### Referennce
-> [Blog: When Does Label Smoothing Help?](https://medium.com/@lessw/label-smoothing-deep-learning-google-brain-explains-why-it-works-and-when-to-use-sota-tips-977733ef020)
-> [Paper: When Does Label Smoothing Help?](https://arxiv.org/abs/1906.02629)
+> - [Blog: When Does Label Smoothing Help?](https://medium.com/@lessw/label-smoothing-deep-learning-google-brain-explains-why-it-works-and-when-to-use-sota-tips-977733ef020)
+> - [Paper: When Does Label Smoothing Help?](https://arxiv.org/abs/1906.02629)
 
 
 
