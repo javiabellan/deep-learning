@@ -6,8 +6,8 @@ but you can use it as a guide for learning deep learning aswell.
 | 🗂 Data            | 🧠 Layers       | 📉 Loss         | 📈 Metrics   | 🔥 Training               | ✅ Production  |
 |--------------------|-----------------|-----------------|-------------|----------------------------|----------------|
 | Pytorch dataset    | [Weight init](#weight-init) | Cross entropy |    | [Optimizers](#optimizers)  | Ensemble       |
-| Pytorch dataloader | Activations     | Weight decay    |             | Transfer learning          | TTA            |
-| Split              | Self Attention  | Label Smoothing |             | [Clean mem](#clean-mem)    | Pseudolabeling |
+| Pytorch dataloader | Activations     | Weight Decay    |             | Transfer learning          | TTA            |
+| Split              | Self Attention  | [Label Smoothing](#label-smoothing) | | [Clean mem](#clean-mem)  | Pseudolabeling |
 | Normalization      | Trained CNN     | Mixup           |             | [Half precision](#half-precision) | [Webserver](#webserver) (Flask) |
 | Data augmentation  |                 | SoftF1          |             | [Multiple GPUs](#multiple-gpus) | Distillation   |
 | Deal imbalance     |                 |                 |             | Precomputation             | [Pruning](#pruning) |
@@ -208,7 +208,17 @@ A **teacher** model teach a **student** model.
 
 
 ## Label Smoothing
-Smooth the one-hot target label
+Smooth the one-hot target label.
+
+```python
+LabelSmoothingCrossEntropy(eps:float=0.1, reduction='mean')
+```
+> ### Referennce
+> [Blog: When Does Label Smoothing Help?](https://medium.com/@lessw/label-smoothing-deep-learning-google-brain-explains-why-it-works-and-when-to-use-sota-tips-977733ef020)
+> [Paper: When Does Label Smoothing Help?](https://arxiv.org/abs/1906.02629)
+
+
+
 
 ## Mixup
 Combines pairs of examples and their labels.
