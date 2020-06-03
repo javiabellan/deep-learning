@@ -257,25 +257,32 @@ Some people are tring to make a [batch size finder](https://forums.fast.ai/t/bat
 - Train until start overffiting (validation loss becomes to increase) (early stopping)
 
 ## Optimizers
-> Gradient Descent methods. [reference](https://mlfromscratch.com/optimizers-explained):
+http://dev.fast.ai/optimizer
 
-|                        | Description                                        | Paper | Score |
-|:-----------------------|:---------------------------------------------------|-------|-------|
-| **SGD**                | Basic method. A bit slowly to get to the optimum.  |       |       |
-| **SGD with Momentum**  | Speed it up with momentum, usually `mom=0.9`       |       |       |
-| **AdaGrad**            | Adaptative lr                                      | 2011  |       |
-| **RMSProp**            | Similar to momentum but with the gradient squared. | 2012  |       |
-| **Adam**               | Combination of Momentum with RMSProp.              | 2014  | ⭐     |
-| **LARS**               | Layer-wise Adaptive Rate Scaling.                  | [2017](https://arxiv.org/abs/1708.03888) ||
-| **AMSGrad**            | Worse than Adam in practice. (AdamX: new verion)   | 2018  |       |
-| **AdamW**              |  .                                                 | 2018  |       |
-| **LAMB**               | LARS improvement.                                  | [2019](https://arxiv.org/abs/1904.00962) ||
-| **NovoGrad**           |  .                                                 | [2019](https://arxiv.org/abs/1905.11286) ||
-| **Lookahead**          | Is like having a buddy system to explore the loss. | [2019](https://arxiv.org/abs/1907.08610) ||
-| **RAdam**              | Rectified Adam. Stabilizes training at the start.  | [2019](https://arxiv.org/abs/1908.03265) ||
-| **Ranger**             | RAdam + Lookahead.                                 | 2019  | ⭐⭐⭐  |
-| **RangerLars**         | RAdam + Lookahead + LARS.                          | 2019  |       |
-| **Ralamb**             | RAdam + LARS.                                      | 2019  |       |
+https://github.com/jettify/pytorch-optimizer
+
+https://github.com/lessw2020/Best-Deep-Learning-Optimizers
+
+
+|                        | Description                                        | Paper                                    | Fast.ai 2                | Score |
+|:-----------------------|:---------------------------------------------------|------------------------------------------|--------------------------|-------|
+| **SGD**                | Basic method. `new_w = w - lr * grad_w`            |                                          | SGD(lr=0.1)              |       |
+| **SGD with Momentum**  | Speed it up with momentum, usually `mom=0.9`       |                                          | SGD(lr=0.1, mom=0.9)     |       |
+| **AdaGrad**            | Adaptative lr                                      | 2011                                     | -                        |       |
+| **RMSProp**            | Similar to momentum but with the gradient squared. | 2012                                     | RMSProp(lr=0.1)          |       |
+| **Adam**               | Momentum + RMSProp.                                | [2014](https://arxiv.org/abs/1412.6980)  | Adam(lr=0.1, wd=0)       | ⭐     |
+| **LARS**               | Compute lr for each layer with a certain trust.    | [2017](https://arxiv.org/abs/1708.03888) | Larc(lr=0.1, clip=False) |       |
+| **LARC**               | Original LARS clipped to be always less than lr    |                                          | Larc(lr=0.1, clip=True)  |       |
+| **AdamW**              | .                                                  | [2017](https://arxiv.org/abs/1711.05101) |                          |       |
+| **AMSGrad**            | Worse than Adam in practice. (AdamX: new verion)   | [2018](https://arxiv.org/abs/1904.09237) |                          |       |
+| **QHAdam**             | Quasi-Hyperbolic Adam                              | [2018](https://arxiv.org/abs/1810.06801) | QHAdam(lr=0.1)           |       |
+| **LAMB**               | LARC with Adam                                     | [2019](https://arxiv.org/abs/1904.00962) | Lamb(lr=0.1)             |       |
+| **NovoGrad**           | .                                                  | [2019](https://arxiv.org/abs/1905.11286) |                          |       |
+| **Lookahead**          | Is like having a buddy system to explore the loss. | [2019](https://arxiv.org/abs/1907.08610) | Lookahead(SGD(lr=0.1))   |       |
+| **RAdam**              | Rectified Adam. Stabilizes training at the start.  | [2019](https://arxiv.org/abs/1908.03265) | RAdam(lr=0.1)            |
+| **Ranger**             | RAdam + Lookahead.                                 | 2019                                     | ranger() or Lookahead(RAdam()) | ⭐⭐⭐  |
+| **RangerLars**         | RAdam + Lookahead + LARS. (also called Over9000)   | 2019                                     |                          | ⭐⭐⭐  |
+| **Ralamb**             | RAdam + LARS.                                      | 2019                                     |                          |       |
 | **Selective-Backprop** | Faster training by focusing on the biggest losers. | [2019](https://arxiv.org/abs/1910.00762) ||
 | **DiffGrad**           | [Solves Adam’s "overshoot" issue](https://medium.com/@lessw/meet-diffgrad-new-deep-learning-optimizer-that-solves-adams-overshoot-issue-ec63e28e01b2)                     | [2019](https://arxiv.org/abs/1909.11015) ||
 | **AdaMod**             | [A new deep learning optimizer with memory](https://medium.com/@lessw/meet-adamod-a-new-deep-learning-optimizer-with-memory-f01e831b80bd)                                  | [2019](https://arxiv.org/abs/1910.12249) ||
