@@ -8,11 +8,12 @@ but you can use it as a guide for learning deep learning aswell.
 | Pytorch dataset    | [Weight init](weight-init) | Cross entropy |    | [Optimizers](#optimizers)  | Ensemble       |
 | Pytorch dataloader | Activations     | Weight decay    |             | Transfer learning          | TTA            |
 | Split              | Self Attention  | Label Smoothing |             | [Clean mem](#clean-mem)    | Pseudolabeling |
-| Normalization      | Trained CNN     | Mixup           |             | Half precision (float32)   | Serve in web   |
+| Normalization      | Trained CNN     | Mixup           |             | Half precision (float32)   | [Webserver](#webserver) (Flask) |
 | Data augmentation  |                 | SoftF1          |             | Multiple GPUs              | Distillation   |
-| Deal imbalance     |                 |                 |             | Precomputation             | Pruning        |
-|                    |                 |                 |             | [Set seed](#set-seed)      | [Quantization (uint8)](#quantization) |
-|                    |                 |                 |             |                            | TorchScript + JIT  |
+| Deal imbalance     |                 |                 |             | Precomputation             | [Pruning](#pruning) |
+|                    |                 |                 |             | [Set seed](#set-seed)      | [Quantization](#quantization) (int8) |
+|                    |                 |                 |             |                            | [TorchScript](#torchscript)  |
+
 
 ---
 
@@ -331,13 +332,40 @@ def clean_mem():
 
 # Quantization
 
+### 3 options
+1. Post-training quantization
+2. Quantization-aware training
+
 > ### Reference
 > - https://pytorch.org/docs/stable/quantization.html
 > - https://pytorch.org/blog/introduction-to-quantization-on-pytorch/
 
-### 3 options
-1. Post-training quantization
-2. Quantization-aware training
+
+
+# Pruning
+
+```python
+import torch.nn.utils.prune as prune
+
+prune.random_unstructured(nn.Conv2d(3, 16, 3), "weight", 0.5)
+```
+
+> ### Reference
+> [Pytorch pruning tutorial](https://pytorch.org/tutorials/intermediate/pruning_tutorial.html)
+
+
+
+# TorchScript
+### An intermediate representation of a PyTorch model
+
+
+
+> ### Reference
+> [Pytorch TorchScript tutorial](https://pytorch.org/tutorials/intermediate/pruning_tutorial.html)
+> [Video: Research to Production: PyTorch JIT/TorchScript (10 mins)](https://www.youtube.com/watch?v=St3gdHJzic0)
+> [Video: From Research to Production with PyTorch (46 mins)](https://www.youtube.com/watch?v=EkELQw9tdWE)
+
+
 
 
 
