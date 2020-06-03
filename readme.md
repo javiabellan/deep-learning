@@ -5,11 +5,11 @@ but you can use it as a guide for learning deep learning aswell.
 
 | 🗂 Data            | 🧠 Layers       | 📉 Loss         | 📈 Metrics   | 🔥 Training               | ✅ Production  |
 |--------------------|-----------------|-----------------|-------------|----------------------------|----------------|
-| Pytorch dataset    | [Weight init](weight-init) | Cross entropy |    | [Optimizers](#optimizers)  | Ensemble       |
+| Pytorch dataset    | [Weight init](#weight-init) | Cross entropy |    | [Optimizers](#optimizers)  | Ensemble       |
 | Pytorch dataloader | Activations     | Weight decay    |             | Transfer learning          | TTA            |
 | Split              | Self Attention  | Label Smoothing |             | [Clean mem](#clean-mem)    | Pseudolabeling |
-| Normalization      | Trained CNN     | Mixup           |             | [Half precision](half-precision) | [Webserver](#webserver) (Flask) |
-| Data augmentation  |                 | SoftF1          |             | [Multiple GPUs](multiple-gpus) | Distillation   |
+| Normalization      | Trained CNN     | Mixup           |             | [Half precision](#half-precision) | [Webserver](#webserver) (Flask) |
+| Data augmentation  |                 | SoftF1          |             | [Multiple GPUs](#multiple-gpus) | Distillation   |
 | Deal imbalance     |                 |                 |             | Precomputation             | [Pruning](#pruning) |
 |                    |                 |                 |             | [Set seed](#set-seed)      | [Quantization](#quantization) (int8) |
 |                    |                 |                 |             |                            | [TorchScript](#torchscript)  |
