@@ -281,7 +281,7 @@ https://github.com/lessw2020/Best-Deep-Learning-Optimizers
 | **Lookahead**          | Is like having a buddy system to explore the loss. | [2019](https://arxiv.org/abs/1907.08610) | Lookahead(SGD(lr=0.1))   |       |
 | **RAdam**              | Rectified Adam. Stabilizes training at the start.  | [2019](https://arxiv.org/abs/1908.03265) | RAdam(lr=0.1)            |       |
 | **Ranger**             | RAdam + Lookahead.                                 | 2019                                     | ranger()                 | ⭐⭐⭐  |
-| **RangerLars**         | RAdam + Lookahead + LARS. (also called Over9000)   | 2019                                     |                          | ⭐⭐⭐  |
+| **RangerLars**         | RAdam + Lookahead + LARS. (aka Over9000)           | 2019                                     |                          | ⭐⭐⭐  |
 | **Ralamb**             | RAdam + LARS.                                      | 2019                                     |                          |       |
 | **Selective-Backprop** | Faster training by focusing on the biggest losers. | [2019](https://arxiv.org/abs/1910.00762) |                          |       |
 | **DiffGrad**           | [Solves Adam’s "overshoot" issue](https://medium.com/@lessw/meet-diffgrad-new-deep-learning-optimizer-that-solves-adams-overshoot-issue-ec63e28e01b2)                     | [2019](https://arxiv.org/abs/1909.11015) |||
@@ -326,6 +326,26 @@ def clean_mem():
 	torch.cuda.empty_cache()
 ```
 
+## Multiple GPUs
+```python
+learn.to_parallel()
+```
+
+> ### Reference
+> https://dev.fast.ai/distributed
+
+
+## Half precision
+
+```python
+learn.to_fp16()
+learn.to_fp32()
+```
+> ### Reference
+> http://dev.fast.ai/callback.fp16
+
+
+
 
 <h1 align="center">✅ Production </h1>
 
@@ -361,9 +381,9 @@ prune.random_unstructured(nn.Conv2d(3, 16, 3), "weight", 0.5)
 
 
 > ### Reference
-> [Pytorch TorchScript tutorial](https://pytorch.org/tutorials/intermediate/pruning_tutorial.html)
-> [Video: Research to Production: PyTorch JIT/TorchScript (10 mins)](https://www.youtube.com/watch?v=St3gdHJzic0)
-> [Video: From Research to Production with PyTorch (46 mins)](https://www.youtube.com/watch?v=EkELQw9tdWE)
+> - [Pytorch TorchScript tutorial](https://pytorch.org/tutorials/intermediate/pruning_tutorial.html)
+> - [Video: Research to Production: PyTorch JIT/TorchScript (10 mins)](https://www.youtube.com/watch?v=St3gdHJzic0)
+> - [Video: From Research to Production with PyTorch (46 mins)](https://www.youtube.com/watch?v=EkELQw9tdWE)
 
 
 
