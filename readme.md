@@ -392,10 +392,13 @@ prune.random_unstructured(nn.Conv2d(3, 16, 3), "weight", 0.5)
 # TorchScript
 ### An intermediate representation of a PyTorch model
 
-
+```python
+torch_script = torch.jit.script(MyModel())
+torch_script.save("my_model_script.pt")
+```
 
 > ### Reference
-> - [Pytorch TorchScript tutorial](https://pytorch.org/tutorials/intermediate/pruning_tutorial.html)
+> - [Pytorch TorchScript tutorial](https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html)
 > - [Video: Research to Production: PyTorch JIT/TorchScript (10 mins)](https://www.youtube.com/watch?v=St3gdHJzic0)
 > - [Video: From Research to Production with PyTorch (46 mins)](https://www.youtube.com/watch?v=EkELQw9tdWE)
 
