@@ -367,12 +367,18 @@ learn.to_fp32()
 # Quantization
 
 ### 3 options
-1. Post-training quantization
-2. Quantization-aware training
+
+|                                 | What                    | Accuracy | Pytorch API                                                              |
+|:--------------------------------|:------------------------|----------|--------------------------------------------------------------------------|
+| **Dynamic Quantization**        | Weights only            | Good     | `qmodel = torch.quantization.quantize_dynamic(model, dtype=torch.qint8)` |
+| **Post Training Quantization**  | Weights and activations | Good     | `model.qconfig = torch.quantization.default_qconfig` `torch.quantization.prepare(model, inplace=True)` `torch.quantization.convert(model, inplace=True)` |
+| **Quantization-Aware Training** | Weights and activations | Best     | `torch.quantization.prepare_qat` -> `torch.quantization.convert`         |
+
 
 > ### Reference
-> - https://pytorch.org/docs/stable/quantization.html
-> - https://pytorch.org/blog/introduction-to-quantization-on-pytorch/
+> - [Official Video (10 mins)](https://www.youtube.com/watch?v=IPQmGzYuxmc)
+> - [Official Docs](https://pytorch.org/docs/stable/quantization.html)
+> - [Official Blog](https://pytorch.org/blog/introduction-to-quantization-on-pytorch)
 
 
 
