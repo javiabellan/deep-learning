@@ -9,10 +9,11 @@ but you can use it as a guide for learning deep learning aswell.
 | Pytorch dataloader | Activations     | Weight Decay    |             | Transfer learning          | TTA            |
 | Split              | Self Attention  | [Label Smoothing](#label-smoothing) | | [Clean mem](#clean-mem)  | Pseudolabeling |
 | Normalization      | Trained CNN     | Mixup           |             | [Half precision](#half-precision) | [Webserver](#webserver) (Flask) |
-| Data augmentation  |                 | SoftF1          |             | [Multiple GPUs](#multiple-gpus) | Distillation   |
+| Data augmentation  | [CoordConv](#corrdconv) | SoftF1          |             | [Multiple GPUs](#multiple-gpus) | Distillation   |
 | Deal imbalance     |                 |                 |             | Precomputation             | [Pruning](#pruning) |
 |                    |                 |                 |             | [Set seed](#set-seed)      | [Quantization](#quantization) (int8) |
 |                    |                 |                 |             |                            | [TorchScript](#torchscript)  |
+
 
 
 ---
@@ -60,6 +61,20 @@ Todo
 
 ## Weight init
 
+Depends on the models architecture. Try to avoid vanishing or exploding outputs. [blog1](https://towardsdatascience.com/weight-initialization-in-neural-networks-a-journey-from-the-basics-to-kaiming-954fb9b47c79), [blog2](https://madaan.github.io/init/).
+- **Constant value**: Very bad
+- **Random**:
+  - Uniform: From 0 to 1. Or from -1 to 1. Bad
+  - Normal: Mean 0, std=1. Better
+- **Xavier initialization**:  Good for MLPs with tanh activation func. [paper](http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf)
+  - Uniform: 
+  - Normal: 
+- **Kaiming initialization**: Good for MLPs with ReLU activation func. (a.k.a. He initialization) [paper](https://arxiv.org/abs/1502.01852)
+  - Uniform
+  - Normal
+  - When you use Kaiming, you ha to fix `ReLU(x)` equals to **`min(x,0) - 0.5`** for a correct mean (0)
+- **Delta-Orthogonal initialization**: Good for vanilla CNNs (10000 layers). Read this [paper](https://arxiv.org/abs/1806.05393)
+
 ```python
 def weight_init(m):
 
@@ -96,30 +111,34 @@ model.apply(weight_init)
   - **myActFunc 2** = `0.5 * x * ( tanh (x+1) + 1)`
   - **myActFunc 3** = `x * ((x+x+1)/(abs(x+1) + abs(x)) * 0.5 + 0.5)`
 
-## Weight initialization
-Depends on the models architecture. Try to avoid vanishing or exploding outputs. [blog1](https://towardsdatascience.com/weight-initialization-in-neural-networks-a-journey-from-the-basics-to-kaiming-954fb9b47c79), [blog2](https://madaan.github.io/init/).
-- **Constant value**: Very bad
-- **Random**:
-  - Uniform: From 0 to 1. Or from -1 to 1. Bad
-  - Normal: Mean 0, std=1. Better
-- **Xavier initialization**:  Good for MLPs with tanh activation func. [paper](http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf)
-  - Uniform: 
-  - Normal: 
-- **Kaiming initialization**: Good for MLPs with ReLU activation func. (a.k.a. He initialization) [paper](https://arxiv.org/abs/1502.01852)
-  - Uniform
-  - Normal
-  - When you use Kaiming, you ha to fix `ReLU(x)` equals to **`min(x,0) - 0.5`** for a correct mean (0)
-- **Delta-Orthogonal initialization**: Good for vanilla CNNs (10000 layers). Read this [paper](https://arxiv.org/abs/1806.05393)
 
+## CoordConv
+
+```python
+class AddCoord2D(torch.nn.Module):
+    def __init__(self, len):
+        super(AddCoord2D, self).__init__()
+        
+        i_coord = torch.linspace(start=1/len, end=1, steps=len).view(len, -1).expand(-1, len)
+        j_coord = torch.linspace(start=1/len, end=1, steps=len).view(-1, len).expand(len, -1)
+        self.coords = torch.stack([i_coord, j_coord])
+
+        print(self.coords.shape)
+
+    def forward(self, x): # X shape: [BS, C, X, Y]
+        BS = x.shape[0]
+        return torch.cat((x, self.coords.expand(BS,-1,-1,-1)), dim=1)
+```
 
 <h1 align="center">🧐 Regularization</h1>
 
-### Dropout
+## Dropout
 During training, some **neurons** will be deactivated **randomly**. [Hinton, 2012](http://www.cs.toronto.edu/~hinton/absps/dropout.pdf), [Srivasta, 2014](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
 
 <p align="center"><img width="50%" src="/posts/img/dropout.png" /></p>
 
-### Weight regularization
+
+## Weight regularization
 Weight penalty: Regularization in loss function (penalice high weights). `Weight decay` hyper-parameter usually `0.0005`.
 
 Visually, the weights only can take a value inside the blue region, and the red circles represent the minimum. Here, there are 2 weight variables.
@@ -131,38 +150,18 @@ Shrinks coefficients to 0. Good for variable selection | **Most used**. Makes co
 Penalizes the sum of absolute weights | Penalizes the sum of squared weights | Combination of 2 before
 `loss + wd * weights.abs().sum()` | `loss + wd * weights.pow(2).sum()` |
 
-### DropConnect
+
+## DropConnect
 At training and inference, some **connections** (weights) will be deactivated **permanently**. [LeCun, 2013](http://yann.lecun.com/exdb/publis/pdf/wan-icml-13.pdf). This is very useful at the firsts layers.
 
 <p align="center"><img width="30%" src="/img/dropconnect.jpg" /></p>
 
-### Weight Pruning
-An automatic way of DropConnect. **Iterative magnitude pruning** is iterative process of removing connections (Prune/Train/Repeat):
 
-<p align="center"><img width="60%" src="/img/TrainLargeThenCompress.jpg" /></p>
 
-1. Train a big model
-2. Do early stopping
-3. Compress model
-   - **Prune**: Find the 15% of weights with the smallest magnitude and set them to zero.
-   - **Train**: Then finetune the model until it reaches within 99.5% of its original validation accuracy.
-   - **Repeat**: Then prune another 15% of the smallest magnitude weights and finetune.
-   
-At the end you can have pruned the 15%, 30%, 45%, 60%, 75%, and 90% of your original model.
 
-Papers:
-- [Deep Compression](https://arxiv.org/abs/1510.00149) (2015)
-- [Train Large, Then Compress](https://arxiv.org/abs/2002.11794) (2020)
-- [Neural Networks are Surprisingly Modular](https://arxiv.org/abs/2003.04881) (2020)
+## Distillation
 
-### Quantization and Half prcision
-Usually weaight are stored in float32. Decrase the resolution is a way a regualrization and not overfit.
-- **Half prcision**: Use float16.
-- **Quantization**: Less bits per weight.
-
-### Knowledge Distillation (teacher-student)
-
-A **teacher** model teach a **student** model.
+Knowledge Distillation (teacher-student) A **teacher** model teach a **student** model.
 
 - **Smaller** student model → **faster** model.
   - Model compresion: Less memory and computation
@@ -364,7 +363,7 @@ learn.to_fp32()
 <h1 align="center">✅ Production </h1>
 
 
-# Quantization
+## Quantization
 
 ### 3 options
 
@@ -384,6 +383,20 @@ learn.to_fp32()
 
 # Pruning
 
+An automatic way of DropConnect. **Iterative magnitude pruning** is iterative process of removing connections (Prune/Train/Repeat):
+
+<p align="center"><img width="60%" src="/img/TrainLargeThenCompress.jpg" /></p>
+
+1. Train a big model
+2. Do early stopping
+3. Compress model
+   - **Prune**: Find the 15% of weights with the smallest magnitude and set them to zero.
+   - **Train**: Then finetune the model until it reaches within 99.5% of its original validation accuracy.
+   - **Repeat**: Then prune another 15% of the smallest magnitude weights and finetune.
+   
+At the end you can have pruned the 15%, 30%, 45%, 60%, 75%, and 90% of your original model.
+
+
 ```python
 import torch.nn.utils.prune as prune
 
@@ -391,8 +404,12 @@ prune.random_unstructured(nn.Conv2d(3, 16, 3), "weight", 0.5)
 ```
 
 > ### Reference
-> [Pytorch pruning tutorial](https://pytorch.org/tutorials/intermediate/pruning_tutorial.html)
-
+> - Code:
+>   - [Pytorch pruning tutorial](https://pytorch.org/tutorials/intermediate/pruning_tutorial.html)
+> - Papers:
+>   - [Deep Compression](https://arxiv.org/abs/1510.00149) (2015)
+>   - [Train Large, Then Compress](https://arxiv.org/abs/2002.11794) (2020)
+>   - [Neural Networks are Surprisingly Modular](https://arxiv.org/abs/2003.04881) (2020)
 
 
 # TorchScript
