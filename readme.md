@@ -6,7 +6,7 @@ but you can use it as a guide for learning deep learning aswell.
 | 🗂 Data            | 🧠 Layers       | 📉 Loss         | 📈 Metrics   | 🔥 Training               | ✅ Production  |
 |--------------------|-----------------|-----------------|-------------|----------------------------|----------------|
 | Pytorch dataset    | [Weight init](#weight-init) | Cross entropy |    | [Optimizers](#optimizers)  | Ensemble       |
-| Pytorch dataloader | Activations     | Weight Decay    |             | Transfer learning          | TTA            |
+| Pytorch dataloader | [Activations](#activations) | Weight Decay  |    | Transfer learning          | TTA            |
 | Split              | Self Attention  | [Label Smoothing](#label-smoothing) | | [Clean mem](#clean-mem)  | Pseudolabeling |
 | Normalization      | Trained CNN     | Mixup           |             | [Half precision](#half-precision) | [Webserver](#webserver) (Flask) |
 | Data augmentation  | [CoordConv](#corrdconv) | SoftF1          |             | [Multiple GPUs](#multiple-gpus) | Distillation   |
@@ -92,7 +92,7 @@ def weight_init(m):
 model.apply(weight_init)
 ```
 
-## Activation function
+## Activations
 > [reference](https://mlfromscratch.com/activation-functions-explained)
 - **Softmax**: Sigle-label classification (last layer)
 - **Sigmoid**: Multi-label classification (last layer)
