@@ -381,9 +381,71 @@ learn.to_fp32()
 
 
 
-# Pruning
+## Pruning
 
-An automatic way of DropConnect. **Iterative magnitude pruning** is iterative process of removing connections (Prune/Train/Repeat):
+```python
+import torch.nn.utils.prune as prune
+
+parameters_to_prune = (
+    (model.conv1, 'weight'),
+    (model.conv2, 'weight'),
+    (model.fc1, 'weight'),
+    (model.fc2, 'weight'),
+    (model.fc3, 'weight'),
+)
+```
+
+#### Percentage Pruning
+```python
+prune.global_unstructured(
+    parameters_to_prune,
+    pruning_method=prune.L1Unstructured,
+    amount=0.2,
+)
+```
+
+#### Threshold Pruning
+```python
+class ThresholdPruning(prune.BasePruningMethod):
+    PRUNING_TYPE = "unstructured"
+    def __init__(self, threshold): self.threshold = threshold
+    def compute_mask(self, tensor, default_mask): return torch.abs(tensor) > self.threshold
+    
+prune.global_unstructured(
+    parameters_to_prune,
+    pruning_method=ThresholdPruning,
+    threshold=0.01
+)
+```
+
+#### See pruning results
+```python
+def pruned_info(model):
+    print("Weights pruned:")
+    print("==============")
+    total_pruned, total_weights = 0,0
+    for name, chil in model.named_children():
+        layer_pruned  = torch.sum(chil.weight == 0)
+        layer_weights = chil.weight.nelement()
+        total_pruned += layer_pruned
+        total_weights  += layer_weights
+
+        print(name, "\t{:.2f}%".format(100 * float(layer_pruned)/ float(layer_weights)))
+    print("==============")
+    print("Total\t{:.2f}%".format(100 * float(total_pruned)/ float(total_weights)))
+    
+# Weights pruned:
+# ==============
+# conv1  1.85%
+# conv2  8.10%
+# fc1    19.76%
+# fc2    10.66%
+# fc3    9.40%
+# ==============
+# Total  17.90%
+```
+
+**Iterative magnitude pruning** is iterative process of removing connections (Prune/Train/Repeat):
 
 <p align="center"><img width="60%" src="/img/TrainLargeThenCompress.jpg" /></p>
 
@@ -397,11 +459,7 @@ An automatic way of DropConnect. **Iterative magnitude pruning** is iterative pr
 At the end you can have pruned the 15%, 30%, 45%, 60%, 75%, and 90% of your original model.
 
 
-```python
-import torch.nn.utils.prune as prune
 
-prune.random_unstructured(nn.Conv2d(3, 16, 3), "weight", 0.5)
-```
 
 > ### Reference
 > - Code:
