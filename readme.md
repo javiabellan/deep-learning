@@ -404,7 +404,7 @@ prune.global_unstructured(
 )
 ```
 
-#### Threshold Pruning
+#### [Threshold Pruning](https://stackoverflow.com/questions/61629395/how-to-prune-weights-less-than-a-threshold-in-pytorch)
 ```python
 class ThresholdPruning(prune.BasePruningMethod):
     PRUNING_TYPE = "unstructured"
