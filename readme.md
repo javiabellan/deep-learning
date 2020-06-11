@@ -501,6 +501,7 @@ print('Export complete. ONNX model saved to %s\nView with https://github.com/lut
 
 > ### Reference
 > - [Pytorch ONNX docs](https://pytorch.org/docs/stable/onnx.html)
+> - [Pytorch ONNX tutorial](https://pytorch.org/tutorials/advanced/super_resolution_with_onnxruntime.html)
 > - [ONNX_export.py for YOLOv5](https://github.com/ultralytics/yolov5/blob/12b0c046d534b18ea586bb0d273d868cf16002f8/models/onnx_export.py)
 
 
