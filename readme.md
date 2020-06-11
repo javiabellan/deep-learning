@@ -12,7 +12,8 @@ but you can use it as a guide for learning deep learning aswell.
 | Data augmentation  | [CoordConv](#corrdconv) | SoftF1          |             | [Multiple GPUs](#multiple-gpus) | Distillation   |
 | Deal imbalance     |                 |                 |             | Precomputation             | [Pruning](#pruning) |
 |                    |                 |                 |             | [Set seed](#set-seed)      | [Quantization](#quantization) (int8) |
-|                    |                 |                 |             |                            | [TorchScript](#torchscript)  |
+|                    |                 |                 |             |            | [TorchScript](#torchscript)  |
+|                    |                 |                 |             |            | [ONNX](#onnx)  |
 
 
 
@@ -484,6 +485,23 @@ torch_script.save("my_model_script.pt")
 > - [Video: From Research to Production with PyTorch (46 mins)](https://www.youtube.com/watch?v=EkELQw9tdWE)
 
 
+# ONNX
+
+```python
+torch.onnx.export(model, img, f, verbose=False, opset_version=11)  # Export to onnx
+
+# Check onnx model
+import onnx
+
+model = onnx.load(f)  # load onnx model
+onnx.checker.check_model(model)  # check onnx model
+print(onnx.helper.printable_graph(model.graph))  # print a human readable representation of the graph
+print('Export complete. ONNX model saved to %s\nView with https://github.com/lutzroeder/netron' % f)
+```
+
+> ### Reference
+> - [Pytorch ONNX docs](https://pytorch.org/docs/stable/onnx.html)
+> - [ONNX_export.py for YOLOv5](https://github.com/ultralytics/yolov5/blob/12b0c046d534b18ea586bb0d273d868cf16002f8/models/onnx_export.py)
 
 
 
