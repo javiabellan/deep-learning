@@ -682,7 +682,7 @@ print('Export complete. ONNX model saved to %s\nView with https://github.com/lut
     - Tree2seq by Polish notation. Duda: only for binary trees?
 
 
-## Autoencoder
+# Autoencoder
 - Standard autoencoders: Made for reconstruct the input. No continuous latant space.
   - **Simple Autoencoder**: Same input and output net with a smaller middle hidden layer (botleneck layer, latent vector).
   - **Denoising Autoencoder (DAE)**: Adds noise to the input to learn how to remove noise.
@@ -695,6 +695,12 @@ print('Export complete. ONNX model saved to %s\nView with https://github.com/lut
   - **Disentangled Variational Autoencoder (β-VAE)**: Improved version. Each parameter of the latent vector is devotod to tweak 1 characteristic. [*paper*](https://arxiv.org/abs/1709.05047).
     - **β** to small: Overfitting. Learn to reconstruct your training data, but i won't generalize
     - **β** to big: Loose high definition details. Worse performance.
+- **Hierarchial VAE (HVAE)**:
+  - Can be thought of as a series of VAEs stacked on top of each other
+- **NVAE**: Hierarchial VAE to the extreme
+  - [video paper explained](https://www.youtube.com/watch?v=x6T1zMSE4Ts)
+  - [original paper](https://arxiv.org/pdf/2007.03898.pdf)
+  - [other paper](https://openreview.net/forum?id=RLRXCV6DbEJ)
 
 
 # Graph Neural Networks
