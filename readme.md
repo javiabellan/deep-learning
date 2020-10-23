@@ -52,7 +52,14 @@ Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/w
 
 
 ## Data augmentation
-Todo
+
+- **Cutout**: Remove parts
+- **Mixup**: Mix 2 samples (both x & y) `x = λxᵢ + (1−λ)xⱼ` & `y = λyᵢ + (1−λ)yⱼ`. [Fast.ai doc](https://docs.fast.ai/callbacks.mixup.html)
+- **CutMix**: Mix 2 samples in some parts.
+- **AugMix**:   . The best!
+
+![](img/dataAug.jpg)
+
 
 
 
@@ -216,14 +223,6 @@ LabelSmoothingCrossEntropy(eps:float=0.1, reduction='mean')
 > ### Referennce
 > - [Blog: When Does Label Smoothing Help?](https://medium.com/@lessw/label-smoothing-deep-learning-google-brain-explains-why-it-works-and-when-to-use-sota-tips-977733ef020)
 > - [Paper: When Does Label Smoothing Help?](https://arxiv.org/abs/1906.02629)
-
-
-
-
-## Mixup
-Combines pairs of examples and their labels.
-  - Merge 2 samples in 1: `x_mixed = λxᵢ + (1−λ)xⱼ`
-  - [Fast.ai doc](https://docs.fast.ai/callbacks.mixup.html)
 
 
 <h1 align="center">📈 Metrics</h1>
