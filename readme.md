@@ -54,14 +54,36 @@ Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/w
 ## Data augmentation
 
 - **Cutout**: Remove parts
+  - Parámetro: Elegir el tamaño correto de cuadrado: 16px por ejemplo.
 - **Mixup**: Mix 2 samples (both x & y) `x = λxᵢ + (1−λ)xⱼ` & `y = λyᵢ + (1−λ)yⱼ`. [Fast.ai doc](https://docs.fast.ai/callbacks.mixup.html)
+  - Parámetro: Elegir `λ` sampleando la **distribución beta**  α=β=0.4 ó 0.2 (Así pocas veces la imgs se mezclarán)
 - **CutMix**: Mix 2 samples in some parts.
-- **AugMix**:   . The best!
+- **AugMix**: No loos info . The best!
 
 ![](img/dataAug.jpg)
 
+> [WandB post with TF2 code](https://wandb.ai/authors/tfaugmentation/reports/Modern-Data-Augmentation-Techniques-for-Computer-Vision--VmlldzoxNzU3NTU)
 
 
+#### Image data aug
+
+| Augmentation | Description                          | Pillow                        |
+|--------------|--------------------------------------|-------------------------------|
+| Rotate       | Rotate some degrees                  | pil_img.rotate()              |
+| Translate    |                                      | pil_img.transform()           |
+| Shear        | Affine transform                     | pil_img.transform()           |
+| Autocontrast | Equalize the histogram  (linear)     | PIL.ImageOps.autocontrast()   |
+| Equalize     | Equalize the histogram  (non-linear) | PIL.ImageOps.equalize()       |
+| Posterize    | Reducing pixel bits                  | PIL.ImageOps.posterize()      |
+| Solarize     | Inverting colors above a threshold   | PIL.ImageOps.solarize()       |
+| Color        |                                      | PIL.ImageEnhance.Color()      |
+| Contrast     |                                      | PIL.ImageEnhance.Contrast()   |
+| Brightness   |                                      | PIL.ImageEnhance.Brightness() |
+| Sharpness    |  Sharpen or blurs the image          | PIL.ImageEnhance.Sharpness()  |
+
+Interpolations when rotate, translate or affine:
+- Image.BILINEAR
+- etc
 
 
 <h1 align="center">🧠 Model</h1>
