@@ -55,9 +55,9 @@ Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/w
 
 - **Cutout**: Remove parts
   - Parámetro: Elegir el tamaño correto de cuadrado: 16px por ejemplo.
-- **Mixup**: Mix 2 samples (both x & y) `x = λxᵢ + (1−λ)xⱼ` & `y = λyᵢ + (1−λ)yⱼ`. [Fast.ai doc](https://docs.fast.ai/callbacks.mixup.html)
+- **Mixup**: Mix 2 samples (both x & y) `x = λxᵢ + (1−λ)xⱼ` & `y = λyᵢ + (1−λ)yⱼ`. [Fast.ai doc](https://docs.fast.ai/callback.mixup)
   - Parámetro: Elegir `λ` sampleando la **distribución beta**  α=β=0.4 ó 0.2 (Así pocas veces la imgs se mezclarán)
-- **CutMix**: Mix 2 samples in some parts.
+- **CutMix**: Mix 2 samples in some parts. [Fast.ai doc](https://docs.fast.ai/callback.cutmix)
 - **AugMix**: No loos info . The best!
 
 ![](img/dataAug.jpg)
