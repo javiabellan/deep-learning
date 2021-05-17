@@ -128,7 +128,9 @@ Scale the inputs to have mean 0 and a variance of 1. Also linear decorrelation/w
 - **Mixup**: Mix 2 samples (both x & y) `x = λxᵢ + (1−λ)xⱼ` & `y = λyᵢ + (1−λ)yⱼ`. [Fast.ai doc](https://docs.fast.ai/callback.mixup)
   - Parámetro: Elegir `λ` sampleando la **distribución beta**  α=β=0.4 ó 0.2 (Así pocas veces la imgs se mezclarán)
 - **CutMix**: Mix 2 samples in some parts. [Fast.ai doc](https://docs.fast.ai/callback.cutmix)
-- **AugMix**: No loos info . The best!
+- **AugMix**: No loos info.
+- **[RandAugment](https://fastai.github.io/timmdocs/RandAugment)**
+- **[AutoAugment](https://fastai.github.io/timmdocs/AutoAugment)**
 
 ![](img/dataAug.jpg)
 
