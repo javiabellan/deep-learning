@@ -388,6 +388,8 @@ Some people are tring to make a [batch size finder](https://forums.fast.ai/t/bat
 | **AdaMod**             | Optimizer with memory                              | [2019](https://arxiv.org/abs/1910.12249) |                          |       |
 | **DeepMemory**         | DiffGrad + AdaMod                                  |                                          |                          |       |
 
+<p align="center"><img width="66%" src="img/SGD vs Adam.png" /></p>
+
 
 - **SGD**: `new_w = w - lr[gradient_w]`
 - **SGD with Momentum**: Usually `mom=0.9`.
