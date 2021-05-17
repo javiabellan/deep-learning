@@ -404,6 +404,15 @@ Some people are tring to make a [batch size finder](https://forums.fast.ai/t/bat
 - [DiffGrad](https://medium.com/@lessw/meet-diffgrad-new-deep-learning-optimizer-that-solves-adams-overshoot-issue-ec63e28e01b2)
 - [AdaMod](https://medium.com/@lessw/meet-adamod-a-new-deep-learning-optimizer-with-memory-f01e831b80bd)
 
+### Optimizers in Fast.ai
+
+You can build every optimizer by doing 2 things:
+1. **Stats**: keep track of whats is going on on the parameters
+2. **Steppers**: Figure out how to update the parameters
+
+<p align="center"><img width="66%" src="img/optimizers-fastai.png" /></p>
+
+
 > TODO: Read:
 > - [Efficient BackProp](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf) (1998, Yann LeCun)
 > - LR finder
