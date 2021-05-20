@@ -203,6 +203,7 @@ model.apply(weight_init)
 - **ELU**: Exponential Linear Unit. [paper](https://arxiv.org/abs/1511.07289)
 - **SELU**: Scaled Exponential Linear Unit. [paper](https://arxiv.org/abs/1706.02515)
 - **PReLU** or **Leaky ReLU**:
+- **GLU**: Gated Linear Unit. (from TabNet paper) [blog](https://medium.com/deeplearningmadeeasy/glu-gated-linear-unit-21e71cd52081) `linear1(x) * sigmoid(linear2(x))`
 - **SERLU**:
 - Smoother ReLU. Differienzable. **BEST**
   - **GeLU**: Gaussian Error Linear Units. Used in transformers. [paper](https://arxiv.org/abs/1606.08415). (2016)
