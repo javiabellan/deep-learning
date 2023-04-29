@@ -16,6 +16,7 @@ but you can use it as a guide for learning deep learning aswell.
 |                    |                 |                 |             |            | [ONNX](#onnx)  |
 
 
+https://github.com/lucidrains?tab=repositories
 
 ---
 
